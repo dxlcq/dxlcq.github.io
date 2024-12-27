@@ -159,7 +159,7 @@
         <a href="https://www.duyaoss.com/archives/3/" target="_blank"> 机场测速 </a> 
     </div>
     <div class="item">
-        <a href="https://xn--mes358aby2apfg.com/#/register?code=LiwVR4BR" target="_blank"> 赔钱机场 </a> 
+        <a href="https://xn--mes358aby2apfg.com/#/register?code=00VpsSlX" target="_blank"> 赔钱机场 </a> 
     </div>
     <div class="item">
         <a href="https://feiniaoyun.top/#/register?code=MfZSDsfM" target="_blank"> 飞鸟云 </a> 

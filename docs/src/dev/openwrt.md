@@ -135,6 +135,17 @@
 
     * `luci-i18n-openvpn-server-zh-cn`
 
+2. 添加 NAT 规则
+
+    * Forwarded `IPv4`；来自 `所有区域`，IP `10.0.8.0/24`；到 `所有区域`；自动重写源 IP
+
+3. 通过修改 `/etc/config/openvpn` 文件，添加一些功能
+
+    * 允许多用户共用同一证书
+
+        ```bash
+        option duplicate_cn '1'
+        ```
 
 #### Client
 
@@ -145,6 +156,21 @@
     * `luci-app-openvpn`
 
     * `luci-i18n-openvpn-zh-cn`
+
+2. 通过修改 `.ovpn` 文件，添加一些功能
+
+    * 只有特定网络流量通过 vpn
+
+        ```ovpn
+        route-nopull
+        route 10.0.0.0 255.255.255.0 vpn_gateway
+        ```
+
+    * 允许服务器访问客户端
+
+        ```ovpn
+        client-to-client
+        ```
 
 
 
