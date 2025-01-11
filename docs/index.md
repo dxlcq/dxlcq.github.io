@@ -363,7 +363,8 @@
 |:-:|:-:|:-:|:-:|
 | 8 | 17 | 4 | 12 | 
 
-<a href="./public/" target="_blank"> 哪晓岁月蹉跎过 依旧名利两无收 </a>
+<a href="./private/" target="_blank"> 哪晓岁月蹉跎过 </a> <a href="./public/" target="_blank"> 依旧名利两无收 </a>
+
 
 </center>
 
