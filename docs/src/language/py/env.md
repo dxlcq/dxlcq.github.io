@@ -55,7 +55,14 @@
 5. 验证
 
     ```bash
-    conda -V
+    conda init
+    source ~/.bashrc
+    ```
+
+6. 删除默认启动 `base` 环境
+
+    ```bash
+    conda config --set auto_activate_base false
     ```
 
 ### command
