@@ -49,7 +49,6 @@ nav:
     - 🐧 Linux:         src/dev/linux.md
     - 🧑‍💻 MacOS:         src/dev/macos.md
     - 📡 OpenWrt:       src/dev/openwrt.md
-    - 📖 mkdocs:        src/dev/mkdocs.md
     # 📋 plan
     # 💻 code
     # 🔨 build
