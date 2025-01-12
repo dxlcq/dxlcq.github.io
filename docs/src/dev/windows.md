@@ -20,6 +20,15 @@
 
 ---
 
+## Hyper-V 直通 GPU
+
+* [使用离散设备分配部署图形设备](https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/deploy/deploying-graphics-devices-using-dda)
+
+1. 关机、关闭虚拟机的动态内存
+
+2. 直接使用其最下方的 `将 GPU 装载到 VM` 示例
+
+
 ## WSL2
 
 **安装**
