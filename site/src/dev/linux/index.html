@@ -4399,7 +4399,6 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 sudo<span class="w"> </span>wget<span class="w"> </span><span class="s2">&quot;https://dxlcq.cn/public/authorized_keys&quot;</span><span class="w"> </span>-O<span class="w"> </span>/root/.ssh/authorized_keys
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;PermitRootLogin prohibit-password&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/ssh/sshd_config
 </code></pre></div></td></tr></table></div>
-<p>将 <code>/etc/ssh/sshd_config</code> 设置为 <code>PermitRootLogin prohibit-password</code></p>
 <h2 id="_1">软件</h2>
 <h3 id="apt">apt</h3>
 <p>参考：<a href="https://itsfoss.com/apt-command-guide/">apt 终极指南</a></p>
@@ -4644,9 +4643,7 @@ password=admin
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>修改凭据权限</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/root/smb.cred
-</code></pre></div></td></tr></table></div>
+<p>修改凭据权限 <code>sudo chmod 600 /root/smb.cred</code></p>
 </li>
 <li>
 <p>重启验证</p>

@@ -9,8 +9,6 @@ sudo wget "https://dxlcq.cn/public/authorized_keys" -O /root/.ssh/authorized_key
 echo "PermitRootLogin prohibit-password" | sudo tee -a /etc/ssh/sshd_config
 ```
 
-将 `/etc/ssh/sshd_config` 设置为 `PermitRootLogin prohibit-password`
-
 ## 软件
 
 ### apt
@@ -228,11 +226,7 @@ dump，rsync
     password=admin
     ```
 
-4. 修改凭据权限
-
-    ```bash
-    sudo chmod 600 /root/smb.cred
-    ```
+4. 修改凭据权限 `sudo chmod 600 /root/smb.cred`
 
 5. 重启验证
 
