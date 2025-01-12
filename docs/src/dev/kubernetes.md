@@ -193,8 +193,6 @@
 
 6. 在 **控制平面** 上安装 `CNI` 网络插件
 
-    * [calico](https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart#install-calico)
-
     ```shell
     kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/calico.yaml
     ```
