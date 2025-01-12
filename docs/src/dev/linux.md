@@ -5,7 +5,8 @@
 ```bash
 sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove
 sudo apt install -y openssh-server wget apt-transport-https ca-certificates curl gpg
-wget "https://dxlcq.cn/public/authorized_keys" -O ~/.ssh/authorized_keys
+sudo wget "https://dxlcq.cn/public/authorized_keys" -O /root/.ssh/authorized_keys
+echo "PermitRootLogin prohibit-password" | sudo tee -a /etc/ssh/sshd_config
 ```
 
 将 `/etc/ssh/sshd_config` 设置为 `PermitRootLogin prohibit-password`

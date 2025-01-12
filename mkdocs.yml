@@ -45,7 +45,7 @@ nav:
     - 🔩 FFmpeg:        src/cpp/ffmpeg.md
     - 🔩 Qt:            src/cpp/qt.md
   - 🌥️ DevOps:
-    - Cloud:            src/dev/cloud.md
+    - 🪟 Windows:       src/dev/windows.md
     - 🐧 Linux:         src/dev/linux.md
     - 🧑‍💻 MacOS:         src/dev/macos.md
     - 📡 OpenWrt:       src/dev/openwrt.md
