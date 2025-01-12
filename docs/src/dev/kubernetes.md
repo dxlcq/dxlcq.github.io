@@ -200,11 +200,11 @@
 
 7. 在 **控制平面** 上启用 Kubernetes 中的 GPU 支持
 
-  * [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin)
+    * [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin)
 
-    ```shell
-    kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.17.0/deployments/static/nvidia-device-plugin.yml
-    ```
+        ```shell
+        kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.17.0/deployments/static/nvidia-device-plugin.yml
+        ```
 
 7. 在控制平面上查看集群状态
 

@@ -3928,11 +3928,13 @@ sudo<span class="w"> </span>chown<span class="w"> </span><span class="k">$(</spa
 </li>
 <li>
 <p>在 <strong>控制平面</strong> 上启用 Kubernetes 中的 GPU 支持</p>
-</li>
+<ul>
 <li>
 <p><a href="https://github.com/NVIDIA/k8s-device-plugin">NVIDIA device plugin for Kubernetes</a></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.17.0/deployments/static/nvidia-device-plugin.yml
 </code></pre></div></td></tr></table></div>
+</li>
+</ul>
 </li>
 <li>
 <p>在控制平面上查看集群状态</p>
