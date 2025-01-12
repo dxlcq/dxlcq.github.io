@@ -1676,10 +1676,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      路由器
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📖 mkdocs
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3607,6 +3637,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      路由器
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3813,6 +3852,121 @@ route 10.0.0.0 255.255.255.0 vpn_gateway
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>route-nopull
 route<span class="w"> </span><span class="m">10</span>.0.0.0<span class="w"> </span><span class="m">255</span>.255.255.0<span class="w"> </span>vpn_gateway
 </code></pre></div></td></tr></table></div>
+<h2 id="_5">路由器</h2>
+<p><strong>WAN</strong></p>
+<ul>
+<li>
+<p><code>PPPoE</code></p>
+<ol>
+<li>光猫改桥接，默认模式拨号</li>
+</ol>
+</li>
+</ul>
+<p><strong>LAN</strong></p>
+<ul>
+<li>
+<p><code>DHCPv4</code> </p>
+<ol>
+<li>
+<p><code>DNS</code> 与网关 <code>10.0.0.3</code></p>
+</li>
+<li>
+<p>地址范围</p>
+<ul>
+<li>
+<p>保留 <code>.2 - .100</code></p>
+</li>
+<li>
+<p>动态 <code>.101 - .200</code> <code>DHCP</code></p>
+</li>
+<li>
+<p>隔离 <code>.201 - .254</code></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><code>static IP</code></p>
+<ul>
+<li>
+<p>长期 <code>.1 - .20</code></p>
+</li>
+<li>
+<p>短期 <code>.21 - .100</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>定时重启</strong></p>
+<ul>
+<li>
+<p>每天 <code>2:00</code>，重新上电 POE</p>
+</li>
+<li>
+<p>每天 <code>2:20</code>，本机清理</p>
+</li>
+<li>
+<p>每天 <code>2:40</code>，射频调优</p>
+</li>
+<li>
+<p>每天 <code>3:00</code>，设备重启</p>
+</li>
+</ul>
+<p><strong>安全管理</strong></p>
+<ul>
+<li>
+<p><code>ARP</code> 防护</p>
+</li>
+<li>
+<p>攻击防护</p>
+</li>
+</ul>
+<p><strong>VPN-PPTP</strong></p>
+<ul>
+<li><a href="https://smb.tp-link.com.cn/service/detail_article_3829.html">[R系列企业VPN路由器] PPTP PC到站点VPN配置指南</a></li>
+</ul>
+<blockquote>
+<p><code>OpenVPN</code> 失效时的冗余方案，平时关闭
+连接手机热点时，客户端 <code>MTU</code> 设置为 <code>1400</code></p>
+</blockquote>
+<p><strong>端口映射</strong></p>
+<p>非必要不做端口映射，尽量使用 <code>VPN</code></p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">设备</th>
+<th style="text-align: center;">IP</th>
+<th style="text-align: center;">外部端口</th>
+<th style="text-align: center;">内部端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">网站</td>
+<td style="text-align: center;">10.0.0.6</td>
+<td style="text-align: center;">2025</td>
+<td style="text-align: center;">2025</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p><strong>DDNS</strong></p>
+<ul>
+<li>
+<p>TP-Link（更新很快，但解析效果不行）</p>
+</li>
+<li>
+<p>科迈（解析效果很好，但是更新很慢）</p>
+</li>
+</ul>
+<p><strong>网络唤醒</strong></p>
+<p><br></p>
+<p><strong>云管理-TP商云</strong></p>
+<blockquote>
+<p>当 <code>VPN</code> 失效时的唯一管理手段</p>
+</blockquote>
 
 
 
