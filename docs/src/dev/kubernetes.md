@@ -200,6 +200,8 @@
 
 7. 在 **控制平面** 上启用 Kubernetes 中的 GPU 支持
 
+    > 需要在有 GPU 的节点上讲 NVIDIA CTK 设置为默认 `sudo nvidia-ctk runtime configure --runtime=docker --set-as-default`
+
     * [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin)
 
         ```shell
