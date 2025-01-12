@@ -94,7 +94,7 @@
         ```shell
         sudo su
 
-        apt install docker.io -y
+        apt install docker.io unzip -y
 
         wget https://github.com/Mirantis/cri-dockerd/archive/refs/tags/v0.3.16.zip
         wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.16/cri-dockerd-0.3.16.amd64.tgz
