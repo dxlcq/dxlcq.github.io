@@ -643,3 +643,18 @@ nmap 会发送一系列的 TCP 和 UDP 包，然后分析返回的包，从而�
 * **`ufw allow 22`** 打开端口
 * **`ufw delete allow 22`** 关闭端口
 * **`ufw status`** 防火墙状态
+
+
+## 远程桌面
+
+### 远程控制windows
+
+直接使用微软的远程桌面协议（RDP）
+
+1. 下载 `sudo apt install xrdp`
+
+2. 打开端口 `sudo ufw allow 3389`
+
+### 忘了
+
+`sudo apt install freerdp2-x11`

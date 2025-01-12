@@ -88,19 +88,3 @@
     ```sh
     Z: /mnt/z drvfs defaults 0 0
     ```
-
-<br>
-
----
-
-### 远程控制本机
-
-直接使用微软的远程桌面协议（RDP）
-
-1. 下载 `sudo apt install xrdp`
-
-2. 打开端口 `sudo ufw allow 3389`
-
-### 远程控制他机
-
-`sudo apt install freerdp2-x11`
