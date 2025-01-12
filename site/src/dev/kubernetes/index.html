@@ -3922,29 +3922,28 @@ sudo<span class="w"> </span>chown<span class="w"> </span><span class="k">$(</spa
 </blockquote>
 </li>
 <li>
-<p>安装 <code>CNI</code> 网络插件</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://projectcalico.docs.tigera.io/manifests/calico.yaml
-</code></pre></div></td></tr></table></div>
-<blockquote>
-<p>安装网络插件，这里使用的是 <code>calico</code>，也可以使用其他插件</p>
-</blockquote>
-</li>
-<li>
-<p>安装 nvidia GPU 插件，以 docker 为例</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.11.0/nvidia-device-plugin.yml
-</code></pre></div></td></tr></table></div>
-<blockquote>
-<p>安装 nvidia GPU 插件</p>
-</blockquote>
+<p>在 <strong>控制平面</strong> 上安装 <code>CNI</code> 网络插件</p>
+<ul>
+<li><a href="https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart#install-calico">calico</a></li>
+</ul>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>nvidia-ctk<span class="w"> </span>runtime<span class="w"> </span>configure<span class="w"> </span>--runtime<span class="o">=</span>docker<span class="w"> </span>--nvidia-set-as-default
-sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>kubelet
-cat<span class="w"> </span>/etc/docker/daemon.json
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/tigera-operator.yaml
+kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/custom-resources.yaml
+kubectl<span class="w"> </span>taint<span class="w"> </span>nodes<span class="w"> </span>--all<span class="w"> </span>node-role.kubernetes.io/control-plane-
+kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span>wide
 </code></pre></div></td></tr></table></div>
-<blockquote>
-<p>配置 docker 使用 nvidia 运行时</p>
-</blockquote>
+</li>
+<li>
+<p>在 <strong>控制平面</strong> 上启用 Kubernetes 中的 GPU 支持</p>
+</li>
+<li>
+<p><a href="https://github.com/NVIDIA/k8s-device-plugin">NVIDIA device plugin for Kubernetes</a></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.17.0/deployments/static/nvidia-device-plugin.yml
+kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.11.0/nvidia-device-plugin.yml
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>在控制平面上查看集群状态</p>

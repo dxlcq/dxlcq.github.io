@@ -191,29 +191,26 @@
 
     > 在 **工作节点** 上执行上述命令，将节点加入集群
 
-6. 安装 `CNI` 网络插件
+6. 在 **控制平面** 上安装 `CNI` 网络插件
+
+    * [calico](https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart#install-calico)
 
     ```shell
-    kubectl apply -f https://projectcalico.docs.tigera.io/manifests/calico.yaml
+    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/tigera-operator.yaml
+    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/custom-resources.yaml
+    kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+    kubectl get nodes -o wide
     ```
 
-    > 安装网络插件，这里使用的是 `calico`，也可以使用其他插件
 
-7. 安装 nvidia GPU 插件，以 docker 为例
+7. 在 **控制平面** 上启用 Kubernetes 中的 GPU 支持
+
+  * [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin)
 
     ```shell
+    kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.17.0/deployments/static/nvidia-device-plugin.yml
     kubectl apply -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.11.0/nvidia-device-plugin.yml
     ```
-
-    > 安装 nvidia GPU 插件
-
-    ```shell
-    sudo nvidia-ctk runtime configure --runtime=docker --nvidia-set-as-default
-    sudo systemctl restart kubelet
-    cat /etc/docker/daemon.json
-    ```
-
-    > 配置 docker 使用 nvidia 运行时
 
 7. 在控制平面上查看集群状态
 
