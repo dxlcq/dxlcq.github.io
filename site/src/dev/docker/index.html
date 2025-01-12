@@ -3709,7 +3709,25 @@
 sudo<span class="w"> </span>sh<span class="w"> </span>get-docker.sh
 </code></pre></div></td></tr></table></div>
 </li>
+<li>
+<p>配置 NVIDIA CTK（<a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">参考文档</a>）：</p>
+<ol>
+<li>
+<p>安装 ctk</p>
+</li>
+<li>
+<p>配置</p>
+</li>
+<li>
+<p>验证</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>nvidia/cuda:12.3.0-base-ubuntu22.04<span class="w"> </span>nvidia-smi
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+</li>
 </ul>
+<p><br></p>
+<hr />
 <h2 id="image">镜像 IMAGE</h2>
 <p>是一个只读模板，用来创建容器，类似于：</p>
 <ul>

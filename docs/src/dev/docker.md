@@ -31,6 +31,22 @@
     sudo sh get-docker.sh
     ```
 
+* 配置 NVIDIA CTK（[参考文档](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)）：
+
+    1. 安装 ctk
+    
+    2. 配置
+
+    3. 验证
+
+        ```sh
+        sudo docker run --rm --gpus all nvidia/cuda:12.3.0-base-ubuntu22.04 nvidia-smi
+        ```
+
+<br>
+
+---
+
 ## 镜像 IMAGE
 
 是一个只读模板，用来创建容器，类似于：
