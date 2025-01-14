@@ -12,42 +12,6 @@
 
 * [k8s 1.29 教程](https://www.bilibili.com/video/BV1PbeueyE8V)
 
-<br>
-
----
-
-## 架构
-
-```
-├── remote
-│   ├── kubectl
-│   └── kubectl-convert
-│
-│
-├── Master Node (主节点，也称为 Control Plane 控制平面)
-│   ├── kube-apiserver          (API 服务器)
-│   ├── apiextensions-apiserver (API 扩展)
-│   ├── kube-aggregator         (API 聚合器)
-│   ├── kube-log-runner         (日志调试)
-│   ├── kube-scheduler          (调度器，选择 pod 所在 node)
-│   └── kube-controller-manager (控制器，管理 Container)
-│
-├── etcd                        (分布式键值存储)
-│
-├── Worker Node (工作节点，一台物理/虚拟机上可以有多个工作节点)
-│   │
-│   ├── Kubeadm                 (初始化集群)
-│   ├── Kubelet                 (管理节点上的 Pod)
-│   ├── kube-proxy              (网络代理, 负载均衡)
-│   ├── mounter                 (挂载器, 管理存储卷的挂载和卸载)
-│   └── Container-Runtime       (容器运行时, 如 Docker)
-│       ├── Pod                 (k8s 最小部署单元，逻辑概念)
-│       │   └── Container       (容器, 建议一个 Pod 一个 Container)
-│       ├── Pod
-│       └── Pod
-│
-└── Worker Node (工作节点)
-```
 
 <br>
 
@@ -200,7 +164,7 @@
 
 7. 在 **控制平面** 上启用 Kubernetes 中的 GPU 支持
 
-    > 需要在有 GPU 的节点上讲 NVIDIA CTK 设置为默认 `sudo nvidia-ctk runtime configure --runtime=docker --set-as-default`
+    > 需要在有 GPU 的节点上将 NVIDIA CTK 设置为默认 `sudo nvidia-ctk runtime configure --runtime=docker --set-as-default`
 
     * [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin)
 
@@ -505,17 +469,23 @@ sudo rm -rf $HOME/.kube
 
 用于控制平面进行操作，如创建、删除、更新资源
 
-### 查看集群相关信息
+### namespace
 
-获取集群信息，包括 API 服务器地址、DNS 等
+```shell
+kubectl get namespaces        # 查看所有命名空间
+```
+
+
+### node
 
 ```shell
 kubectl cluster-info          # 查看集群信息
 kubectl get node              # 查看节点信息
+kubectl get node --show-labels# 查看节点标签
 kubectl describe node <node>  # 查看节点详细信息
 ```
 
-### 查看 Pod 相关信息
+### Pod
 
 ```shell
 kubectl get pod -A              # 查看所有 pod

@@ -1602,15 +1602,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      架构
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
     <span class="md-ellipsis">
       Getting Started
@@ -1759,9 +1750,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#namespace" class="md-nav__link">
     <span class="md-ellipsis">
-      查看集群相关信息
+      namespace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node" class="md-nav__link">
+    <span class="md-ellipsis">
+      node
     </span>
   </a>
   
@@ -1770,7 +1770,7 @@
           <li class="md-nav__item">
   <a href="#pod_1" class="md-nav__link">
     <span class="md-ellipsis">
-      查看 Pod 相关信息
+      Pod
     </span>
   </a>
   
@@ -3470,15 +3470,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      架构
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
     <span class="md-ellipsis">
       Getting Started
@@ -3627,9 +3618,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#namespace" class="md-nav__link">
     <span class="md-ellipsis">
-      查看集群相关信息
+      namespace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node" class="md-nav__link">
+    <span class="md-ellipsis">
+      node
     </span>
   </a>
   
@@ -3638,7 +3638,7 @@
           <li class="md-nav__item">
   <a href="#pod_1" class="md-nav__link">
     <span class="md-ellipsis">
-      查看 Pod 相关信息
+      Pod
     </span>
   </a>
   
@@ -3690,65 +3690,6 @@
 <p><a href="https://www.bilibili.com/video/BV1PbeueyE8V">k8s 1.29 教程</a></p>
 </li>
 </ul>
-<p><br></p>
-<hr />
-<h2 id="_2">架构</h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code>├── remote
-│   ├── kubectl
-│   └── kubectl-convert
-│
-│
-├── Master Node (主节点，也称为 Control Plane 控制平面)
-│   ├── kube-apiserver          (API 服务器)
-│   ├── apiextensions-apiserver (API 扩展)
-│   ├── kube-aggregator         (API 聚合器)
-│   ├── kube-log-runner         (日志调试)
-│   ├── kube-scheduler          (调度器，选择 pod 所在 node)
-│   └── kube-controller-manager (控制器，管理 Container)
-│
-├── etcd                        (分布式键值存储)
-│
-├── Worker Node (工作节点，一台物理/虚拟机上可以有多个工作节点)
-│   │
-│   ├── Kubeadm                 (初始化集群)
-│   ├── Kubelet                 (管理节点上的 Pod)
-│   ├── kube-proxy              (网络代理, 负载均衡)
-│   ├── mounter                 (挂载器, 管理存储卷的挂载和卸载)
-│   └── Container-Runtime       (容器运行时, 如 Docker)
-│       ├── Pod                 (k8s 最小部署单元，逻辑概念)
-│       │   └── Container       (容器, 建议一个 Pod 一个 Container)
-│       ├── Pod
-│       └── Pod
-│
-└── Worker Node (工作节点)
-</code></pre></div></td></tr></table></div>
 <p><br></p>
 <hr />
 <h2 id="getting-started">Getting Started</h2>
@@ -3929,7 +3870,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span><span class="k">$(</spa
 <li>
 <p>在 <strong>控制平面</strong> 上启用 Kubernetes 中的 GPU 支持</p>
 <blockquote>
-<p>需要在有 GPU 的节点上讲 NVIDIA CTK 设置为默认 <code>sudo nvidia-ctk runtime configure --runtime=docker --set-as-default</code></p>
+<p>需要在有 GPU 的节点上将 NVIDIA CTK 设置为默认 <code>sudo nvidia-ctk runtime configure --runtime=docker --set-as-default</code></p>
 </blockquote>
 <ul>
 <li>
@@ -4296,15 +4237,19 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 <hr />
 <h2 id="kubectl">kubectl</h2>
 <p>用于控制平面进行操作，如创建、删除、更新资源</p>
-<h3 id="_3">查看集群相关信息</h3>
-<p>获取集群信息，包括 API 服务器地址、DNS 等</p>
+<h3 id="namespace">namespace</h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>namespaces<span class="w">        </span><span class="c1"># 查看所有命名空间</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="node">node</h3>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>cluster-info<span class="w">          </span><span class="c1"># 查看集群信息</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>cluster-info<span class="w">          </span><span class="c1"># 查看集群信息</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>node<span class="w">              </span><span class="c1"># 查看节点信息</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>node<span class="w"> </span>--show-labels#<span class="w"> </span>查看节点标签
 kubectl<span class="w"> </span>describe<span class="w"> </span>node<span class="w"> </span>&lt;node&gt;<span class="w">  </span><span class="c1"># 查看节点详细信息</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="pod_1">查看 Pod 相关信息</h3>
+<h3 id="pod_1">Pod</h3>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-A<span class="w">              </span><span class="c1"># 查看所有 pod</span>
