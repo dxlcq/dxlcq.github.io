@@ -64,23 +64,26 @@
         wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.16/cri-dockerd-0.3.16.amd64.tgz
 
         unzip v0.3.16.zip
-        cp cri-dockerd/cri-dockerd /usr/local/bin
-        
+
         tar -zxvf cri-dockerd-0.3.16.amd64.tgz
         cd cri-dockerd-0.3.16
         install packaging/systemd/* /etc/systemd/system
         sed -i -e 's,/usr/bin/cri-dockerd,/usr/local/bin/cri-dockerd,' /etc/systemd/system/cri-docker.service
         systemctl daemon-reload
         systemctl enable --now cri-docker.socket
+        cd ..
+        cp cri-dockerd/cri-dockerd /usr/local/bin
         ```
 
         > 下载容器运行时
 
-        > 下载垫片，用于将 `cri-dockerd` 作为 `CRI` 运行时，下载源码
+        > 下载垫片，用于将 `cri-dockerd` 作为 `CRI` 运行时，下载垫片源码
 
-        > 解压垫片，复制二进制文件到 `/usr/local/bin` 目录下
+        > 解压垫片
 
         > 解压源码，安装 `systemd` 服务，修改 `cri-docker.service` 文件，重新加载 `systemd`，启用 `cri-docker` 服务
+
+        > 复制二进制文件到 `/usr/local/bin` 目录下
 
         初始化和加入集群时，都需要指定 `--cri-socket=unix:///var/run/cri-dockerd.sock`
 
@@ -366,7 +369,7 @@ spec:
 
 ---
 
-## service
+## Service
 
 ```yaml
 spec:
@@ -376,6 +379,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
+  type: ClusterIP     # 默认类型，集群内部访问，可以不写
 ```
 
 <br>
@@ -473,6 +477,7 @@ sudo rm -rf $HOME/.kube
 
 ```shell
 kubectl get namespaces        # 查看所有命名空间
+kubectl create namespace <ns> # 创建命名空间
 ```
 
 
@@ -491,4 +496,11 @@ kubectl describe node <node>  # 查看节点详细信息
 kubectl get pod -A              # 查看所有 pod
 kubectl get pod -n kube-system  # 查看 kube-system 命名空间下的 pod
 kubectl get pod -o wide         # 查看 pod 的详细信息
+```
+
+### Service
+
+```shell
+kubectl get service -A          # 查看所有 service
+kubectl get service -n <ns>     # 查看 <ns> 命名空间下的 service
 ```

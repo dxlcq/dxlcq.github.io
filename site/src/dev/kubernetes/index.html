@@ -1673,7 +1673,7 @@
         <li class="md-nav__item">
   <a href="#service" class="md-nav__link">
     <span class="md-ellipsis">
-      service
+      Service
     </span>
   </a>
   
@@ -1771,6 +1771,15 @@
   <a href="#pod_1" class="md-nav__link">
     <span class="md-ellipsis">
       Pod
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service
     </span>
   </a>
   
@@ -3541,7 +3550,7 @@
         <li class="md-nav__item">
   <a href="#service" class="md-nav__link">
     <span class="md-ellipsis">
-      service
+      Service
     </span>
   </a>
   
@@ -3639,6 +3648,15 @@
   <a href="#pod_1" class="md-nav__link">
     <span class="md-ellipsis">
       Pod
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service
     </span>
   </a>
   
@@ -3753,7 +3771,8 @@ sysctl<span class="w"> </span>net.ipv4.ip_forward
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>su
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>su
 
 apt<span class="w"> </span>install<span class="w"> </span>docker.io<span class="w"> </span>unzip<span class="w"> </span>-y
 
@@ -3761,7 +3780,6 @@ wget<span class="w"> </span>https://github.com/Mirantis/cri-dockerd/archive/refs
 wget<span class="w"> </span>https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.16/cri-dockerd-0.3.16.amd64.tgz
 
 unzip<span class="w"> </span>v0.3.16.zip
-cp<span class="w"> </span>cri-dockerd/cri-dockerd<span class="w"> </span>/usr/local/bin
 
 tar<span class="w"> </span>-zxvf<span class="w"> </span>cri-dockerd-0.3.16.amd64.tgz
 <span class="nb">cd</span><span class="w"> </span>cri-dockerd-0.3.16
@@ -3769,12 +3787,15 @@ install<span class="w"> </span>packaging/systemd/*<span class="w"> </span>/etc/s
 sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;s,/usr/bin/cri-dockerd,/usr/local/bin/cri-dockerd,&#39;</span><span class="w"> </span>/etc/systemd/system/cri-docker.service
 systemctl<span class="w"> </span>daemon-reload
 systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>cri-docker.socket
+<span class="nb">cd</span><span class="w"> </span>..
+cp<span class="w"> </span>cri-dockerd/cri-dockerd<span class="w"> </span>/usr/local/bin
 </code></pre></div></td></tr></table></div>
 <blockquote>
 <p>下载容器运行时</p>
-<p>下载垫片，用于将 <code>cri-dockerd</code> 作为 <code>CRI</code> 运行时，下载源码</p>
-<p>解压垫片，复制二进制文件到 <code>/usr/local/bin</code> 目录下</p>
+<p>下载垫片，用于将 <code>cri-dockerd</code> 作为 <code>CRI</code> 运行时，下载垫片源码</p>
+<p>解压垫片</p>
 <p>解压源码，安装 <code>systemd</code> 服务，修改 <code>cri-docker.service</code> 文件，重新加载 <code>systemd</code>，启用 <code>cri-docker</code> 服务</p>
+<p>复制二进制文件到 <code>/usr/local/bin</code> 目录下</p>
 </blockquote>
 <p>初始化和加入集群时，都需要指定 <code>--cri-socket=unix:///var/run/cri-dockerd.sock</code></p>
 </li>
@@ -4130,20 +4151,22 @@ kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> 
 </code></pre></div></td></tr></table></div>
 <p><br></p>
 <hr />
-<h2 id="service">service</h2>
+<h2 id="service">Service</h2>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
 <span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
 <span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
 <span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterIP</span><span class="w">     </span><span class="c1"># 默认类型，集群内部访问，可以不写</span>
 </code></pre></div></td></tr></table></div>
 <p><br></p>
 <hr />
@@ -4238,7 +4261,9 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 <h2 id="kubectl">kubectl</h2>
 <p>用于控制平面进行操作，如创建、删除、更新资源</p>
 <h3 id="namespace">namespace</h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>namespaces<span class="w">        </span><span class="c1"># 查看所有命名空间</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>namespaces<span class="w">        </span><span class="c1"># 查看所有命名空间</span>
+kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>&lt;ns&gt;<span class="w"> </span><span class="c1"># 创建命名空间</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="node">node</h3>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -4255,6 +4280,11 @@ kubectl<span class="w"> </span>describe<span class="w"> </span>node<span class="
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-A<span class="w">              </span><span class="c1"># 查看所有 pod</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w">  </span><span class="c1"># 查看 kube-system 命名空间下的 pod</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>-o<span class="w"> </span>wide<span class="w">         </span><span class="c1"># 查看 pod 的详细信息</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="service_1">Service</h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>service<span class="w"> </span>-A<span class="w">          </span><span class="c1"># 查看所有 service</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>service<span class="w"> </span>-n<span class="w"> </span>&lt;ns&gt;<span class="w">     </span><span class="c1"># 查看 &lt;ns&gt; 命名空间下的 service</span>
 </code></pre></div></td></tr></table></div>
 
 

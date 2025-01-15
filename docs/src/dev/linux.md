@@ -130,6 +130,9 @@ find，grep
 修改
 
 * **`chown` 修改所属人 `u`** 
+
+    * `chmod jiao:jiao file` 修改所属人和所属组
+
 * **`chgrp` 修改所属组 `g`**
 * **`chmod` 修改权限**
 
