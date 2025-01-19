@@ -3455,6 +3455,25 @@
 <span class="nb">Mount-VMHostAssignableDevice</span> <span class="n">-LocationPath</span> <span class="nv">$locationPath</span>
 </code></pre></div></td></tr></table></div>
 </li>
+<li>
+<p>查询</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># 查看设备</span>
+<span class="nb">Get-PnpDevice</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">FriendlyName</span> <span class="o">-like</span> <span class="s2">&quot;*NVIDIA*&quot;</span><span class="p">}</span>
+
+<span class="c"># 获取 locationPath</span>
+<span class="nv">$locationPath</span> <span class="p">=</span> <span class="nb">Get-PnpDevice</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">FriendlyName</span> <span class="o">-like</span> <span class="s2">&quot;*NVIDIA*&quot;</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Get-PnpDeviceProperty</span> <span class="n">DEVPKEY_Device_LocationPaths</span>
+
+<span class="c"># 确认 locationPath</span>
+<span class="nb">Write-OutPut</span> <span class="nv">$locationPath</span>
+</code></pre></div></td></tr></table></div>
+</li>
 </ul>
 <p><br></p>
 <hr />

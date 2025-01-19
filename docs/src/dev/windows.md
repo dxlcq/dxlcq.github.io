@@ -74,6 +74,19 @@
     Mount-VMHostAssignableDevice -LocationPath $locationPath
     ```
 
+* 查询
+
+    ```powershell
+    # 查看设备
+    Get-PnpDevice | Where-Object {$_.FriendlyName -like "*NVIDIA*"}
+
+    # 获取 locationPath
+    $locationPath = Get-PnpDevice | Where-Object {$_.FriendlyName -like "*NVIDIA*"} | Get-PnpDeviceProperty DEVPKEY_Device_LocationPaths
+
+    # 确认 locationPath
+    Write-OutPut $locationPath
+    ```
+
 <br>
 
 ---
