@@ -23,7 +23,13 @@
 4. 生成
 
     ```shell
-    python -m mkdocs build
+    python3 -m mkdocs build
+    ```
+
+5. 生成并提交
+
+    ```shell
+    python3 -m mkdocs build && git add . && git commit -m "🥳" && git push
     ```
 
 **参考**

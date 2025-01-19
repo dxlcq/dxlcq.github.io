@@ -201,15 +201,50 @@ dump，rsync
 
 ### 磁盘管理
 
+### 挂载普通磁盘
+
+**`mount` 磁盘挂载**
+
+* 挂载
+    `mount -t ntfs /dev/sda1 /mnt`
+    * `-t` 指定文件系统类型
+    * `/dev/sda1` 磁盘分区
+    * `/mnt` 挂载点
+
+**`umount` 磁盘卸载**
 
 <br>
 
-### 挂载网络磁盘
+### SMB 服务端
+
+1. 下载 `sudo apt install samba`
+
+2. 配置共享目录 `chmod 777 /home/user/Public/ -R`
+
+3. 添加samba用户 `sudo smbpasswd -a 用户名`
+
+4. 提示输入密码 x2
+
+5. 配置samba `sudo vim /etc/samba/smb.conf`
+    
+    ```sh
+    [share name]            # 共享名
+        path = /home/user/Public/# 共享路径
+        writable = yes      # 可写
+    ```
+
+6. 重启samba `sudo samba restart`
+    
+    * 可能还需要重启一下电脑
+
+7. 开启端口 `sudo ufw allow 445`
+
+### SMB 客户端
 
 参考：[系统启动时自动挂载 SMB 共享](https://docs.redhat.com/zh_hans/documentation/red_hat_enterprise_linux/8/html/managing_file_systems/proc_mounting-an-smb-share-automatically-when-the-system-boots_assembly_mounting-an-smb-share-on-red-hat-enterprise-linux)
 
 
-1. 下载工具 `sudo apt install cifs-utils`
+1. 下载 `sudo apt install cifs-utils`
 
 2. 添加共享条目 `sudo vim /etc/fstab`
 
@@ -233,45 +268,12 @@ dump，rsync
 
 5. 重启验证
 
-<br>
+### NFS 服务端
 
-### 挂载普通磁盘
+1. 下载 `nfs-kernel-server`
 
-**`mount` 磁盘挂载**
+2. 配置共享目录
 
-* 挂载
-    `mount -t ntfs /dev/sda1 /mnt`
-    * `-t` 指定文件系统类型
-    * `/dev/sda1` 磁盘分区
-    * `/mnt` 挂载点
-
-**`umount` 磁盘卸载**
-
-<br>
-
-### SMB 对外共享
-
-1. 下载 `sudo apt install samba`
-
-2. 配置分享文件夹 `chmod 777 /home/user/Public/ -R`
-
-3. 添加samba用户 `sudo smbpasswd -a 用户名`
-
-4. 提示输入密码 x2
-
-5. 配置samba `sudo vim /etc/samba/smb.conf`
-    
-    ```sh
-    [share name]            # 共享名
-        path = /home/user/Public/# 共享路径
-        writable = yes      # 可写
-    ```
-
-6. 重启samba `sudo samba restart`
-    
-    * 可能还需要重启一下电脑
-
-7. 开启端口 `sudo ufw allow 445`
 
 <br>
 
