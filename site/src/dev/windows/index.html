@@ -3399,8 +3399,7 @@
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># 目标虚拟机</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># 目标虚拟机</span>
 <span class="nv">$vm</span> <span class="p">=</span> <span class="s2">&quot;dda&quot;</span>
 
 <span class="c"># 1. 虚拟机关机</span>
@@ -3423,24 +3422,37 @@
 <span class="nb">Disable-PnpDevice</span> <span class="n">-InstanceId</span> <span class="nv">$gpudevs</span><span class="p">[</span><span class="n">0</span><span class="p">].</span><span class="n">InstanceId</span>
 <span class="c"># 2. 从主机中卸载该设备</span>
 <span class="nb">Dismount-VMHostAssignableDevice</span> <span class="n">-Force</span> <span class="n">-LocationPath</span> <span class="nv">$locationPath</span>
-
-<span class="c"># 1. 将设备分配给虚拟机</span>
+<span class="c"># 3. 将设备分配给虚拟机</span>
 <span class="nb">Add-VMAssignableDevice</span> <span class="n">-LocationPath</span> <span class="nv">$locationPath</span> <span class="n">-VMName</span> <span class="nv">$vm</span>
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>取消直通 GPU</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># 目标虚拟机（同上）</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c"># 目标虚拟机（同上）</span>
 
-<span class="c"># 获取到 locationPath（同上）</span>
+<span class="c"># 1. 查找所有 pnp 设备</span>
+<span class="nv">$pnpdevs</span> <span class="p">=</span> <span class="nb">Get-PnpDevice</span>
+<span class="c"># 2. 筛选出制造商为 NVIDIA 且属于“显示”类别的设备</span>
+<span class="nv">$gpudevs</span> <span class="p">=</span> <span class="nv">$pnpdevs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Class</span> <span class="o">-like</span> <span class="s2">&quot;Display&quot;</span> <span class="o">-and</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Manufacturer</span> <span class="o">-like</span> <span class="s2">&quot;NVIDIA&quot;</span><span class="p">}</span>
+<span class="c"># 3. 获取第一个设备的设备位置路径</span>
+<span class="nv">$locationPath</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$gpudevs</span> <span class="p">|</span> <span class="nb">Get-PnpDeviceProperty</span> <span class="n">DEVPKEY_Device_LocationPaths</span><span class="p">).</span><span class="n">data</span><span class="p">[</span><span class="n">0</span><span class="p">]</span>
 
 <span class="c"># 1. 从虚拟机中移除设备</span>
 <span class="nb">Remove-VMAssignableDevice</span> <span class="n">-LocationPath</span> <span class="nv">$locationPath</span> <span class="n">-VMName</span> <span class="nv">$vm</span>
+<span class="c"># 2. 重新启用该设备</span>
+<span class="nb">Mount-VMHostAssignableDevice</span> <span class="n">-LocationPath</span> <span class="nv">$locationPath</span>
 </code></pre></div></td></tr></table></div>
 </li>
 </ul>

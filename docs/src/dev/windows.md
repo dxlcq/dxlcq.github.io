@@ -52,8 +52,7 @@
     Disable-PnpDevice -InstanceId $gpudevs[0].InstanceId
     # 2. 从主机中卸载该设备
     Dismount-VMHostAssignableDevice -Force -LocationPath $locationPath
-
-    # 1. 将设备分配给虚拟机
+    # 3. 将设备分配给虚拟机
     Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
     ```
 
@@ -62,10 +61,17 @@
     ```powershell
     # 目标虚拟机（同上）
 
-    # 获取到 locationPath（同上）
+    # 1. 查找所有 pnp 设备
+    $pnpdevs = Get-PnpDevice
+    # 2. 筛选出制造商为 NVIDIA 且属于“显示”类别的设备
+    $gpudevs = $pnpdevs | Where-Object {$_.Class -like "Display" -and $_.Manufacturer -like "NVIDIA"}
+    # 3. 获取第一个设备的设备位置路径
+    $locationPath = ($gpudevs | Get-PnpDeviceProperty DEVPKEY_Device_LocationPaths).data[0]
 
     # 1. 从虚拟机中移除设备
     Remove-VMAssignableDevice -LocationPath $locationPath -VMName $vm
+    # 2. 重新启用该设备
+    Mount-VMHostAssignableDevice -LocationPath $locationPath
     ```
 
 <br>
