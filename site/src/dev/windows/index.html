@@ -3468,7 +3468,7 @@
 <span class="nb">Get-PnpDevice</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">FriendlyName</span> <span class="o">-like</span> <span class="s2">&quot;*NVIDIA*&quot;</span><span class="p">}</span>
 
 <span class="c"># 获取 locationPath</span>
-<span class="nv">$locationPath</span> <span class="p">=</span> <span class="nb">Get-PnpDevice</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">FriendlyName</span> <span class="o">-like</span> <span class="s2">&quot;*NVIDIA*&quot;</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Get-PnpDeviceProperty</span> <span class="n">DEVPKEY_Device_LocationPaths</span>
+<span class="nv">$locationPath</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-PnpDevice</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">FriendlyName</span> <span class="o">-like</span> <span class="s2">&quot;*NVIDIA*&quot;</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Get-PnpDeviceProperty</span> <span class="n">DEVPKEY_Device_LocationPaths</span><span class="p">).</span><span class="n">data</span><span class="p">[</span><span class="n">0</span><span class="p">]</span>
 
 <span class="c"># 确认 locationPath</span>
 <span class="nb">Write-OutPut</span> <span class="nv">$locationPath</span>

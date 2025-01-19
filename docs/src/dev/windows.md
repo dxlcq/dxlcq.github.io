@@ -81,7 +81,7 @@
     Get-PnpDevice | Where-Object {$_.FriendlyName -like "*NVIDIA*"}
 
     # 获取 locationPath
-    $locationPath = Get-PnpDevice | Where-Object {$_.FriendlyName -like "*NVIDIA*"} | Get-PnpDeviceProperty DEVPKEY_Device_LocationPaths
+    $locationPath = (Get-PnpDevice | Where-Object {$_.FriendlyName -like "*NVIDIA*"} | Get-PnpDeviceProperty DEVPKEY_Device_LocationPaths).data[0]
 
     # 确认 locationPath
     Write-OutPut $locationPath
