@@ -24,9 +24,49 @@
 
 * [使用离散设备分配部署图形设备](https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/deploy/deploying-graphics-devices-using-dda)
 
-1. 关机、关闭虚拟机的动态内存
+**关机、关闭虚拟机的动态内存、关闭检查点、关闭安全启动**
 
-2. 直接使用其最下方的 `将 GPU 装载到 VM` 示例
+* 直通 GPU
+
+    ```powershell
+    # 目标虚拟机
+    $vm = "dda"
+
+    # 1. 虚拟机关机
+    Set-VM -Name $vm -AutomaticStopAction TurnOff
+    # 2. 启用CPU的写合并功能
+    Set-VM -GuestControlledCacheTypes $true -VMName $vm
+    # 3. 配置 32 位 MMIO（内存映射 I/O）空间
+    Set-VM -LowMemoryMappedIoSpace 3Gb -VMName $vm
+    # 4. 配置大于 32 位的 MMIO 空间
+    Set-VM -HighMemoryMappedIoSpace 33280Mb -VMName $vm
+
+    # 1. 查找所有 pnp 设备
+    $pnpdevs = Get-PnpDevice -presentOnly
+    # 2. 筛选出制造商为 NVIDIA 且属于“显示”类别的设备
+    $gpudevs = $pnpdevs | Where-Object {$_.Class -like "Display" -and $_.Manufacturer -like "NVIDIA"}
+    # 3. 获取第一个设备的设备位置路径
+    $locationPath = ($gpudevs | Get-PnpDeviceProperty DEVPKEY_Device_LocationPaths).data[0]
+
+    # 1. 禁用该设备
+    Disable-PnpDevice -InstanceId $gpudevs[0].InstanceId
+    # 2. 从主机中卸载该设备
+    Dismount-VMHostAssignableDevice -Force -LocationPath $locationPath
+
+    # 1. 将设备分配给虚拟机
+    Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
+    ```
+
+* 取消直通 GPU
+
+    ```powershell
+    # 目标虚拟机（同上）
+
+    # 获取到 locationPath（同上）
+
+    # 1. 从虚拟机中移除设备
+    Remove-VMAssignableDevice -LocationPath $locationPath -VMName $vm
+    ```
 
 <br>
 
