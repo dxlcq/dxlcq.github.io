@@ -5,6 +5,26 @@
 * [ImmortalWrt](https://github.com/immortalwrt/immortalwrt) / [搜索镜像](https://firmware-selector.immortalwrt.org/) / [浏览镜像](https://downloads.immortalwrt.org) / [北大镜像](https://mirrors.pku.edu.cn/immortalwrt/releases/)
 
 
+```
+src/gz openwrt_core https://downloads.openwrt.org/releases/24.10.0-rc5/targets/mediatek/filogic/packages
+src/gz openwrt_base https://downloads.openwrt.org/releases/24.10.0-rc5/packages/aarch64_cortex-a53/base
+src/gz openwrt_kmods https://downloads.openwrt.org/releases/24.10.0-rc5/targets/mediatek/filogic/kmods/6.6.69-1-83c6d4e14f7353564d3cadaf38a15bef
+src/gz openwrt_luci https://downloads.openwrt.org/releases/24.10.0-rc5/packages/aarch64_cortex-a53/luci
+src/gz openwrt_packages https://downloads.openwrt.org/releases/24.10.0-rc5/packages/aarch64_cortex-a53/packages
+src/gz openwrt_routing https://downloads.openwrt.org/releases/24.10.0-rc5/packages/aarch64_cortex-a53/routing
+src/gz openwrt_telephony https://downloads.openwrt.org/releases/24.10.0-rc5/packages/aarch64_cortex-a53/telephony
+```
+
+```
+src/gz immortalwrt_core https://mirrors.vsean.net/openwrt/releases/24.10.0-rc3/targets/mediatek/filogic/packages
+src/gz immortalwrt_base https://mirrors.vsean.net/openwrt/releases/24.10.0-rc3/packages/aarch64_cortex-a53/base
+src/gz immortalwrt_kmods https://mirrors.vsean.net/openwrt/releases/24.10.0-rc3/targets/mediatek/filogic/kmods/6.6.67-1-cde7aa5ae483611d69bd37bac0c68bf8
+src/gz immortalwrt_luci https://mirrors.vsean.net/openwrt/releases/24.10.0-rc3/packages/aarch64_cortex-a53/luci
+src/gz immortalwrt_packages https://mirrors.vsean.net/openwrt/releases/24.10.0-rc3/packages/aarch64_cortex-a53/packages
+src/gz immortalwrt_routing https://mirrors.vsean.net/openwrt/releases/24.10.0-rc3/packages/aarch64_cortex-a53/routing
+src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-rc3/packages/aarch64_cortex-a53/telephony
+```
+
 <br>
 
 ---
