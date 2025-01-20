@@ -2,7 +2,7 @@
 
 * [OpenWrt](https://openwrt.org/zh/start) / [搜索镜像](https://firmware-selector.openwrt.org/) / [浏览镜像](https://downloads.openwrt.org) / [清华镜像](https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/?C=N&O=D)
 
-* [ImmortalWrt](https://github.com/immortalwrt/immortalwrt) / [搜索镜像](https://firmware-selector.immortalwrt.org/) / [浏览镜像](https://downloads.immortalwrt.org)
+* [ImmortalWrt](https://github.com/immortalwrt/immortalwrt) / [搜索镜像](https://firmware-selector.immortalwrt.org/) / [浏览镜像](https://downloads.immortalwrt.org) / [北大镜像](https://mirrors.pku.edu.cn/immortalwrt/releases/)
 
 
 <br>
