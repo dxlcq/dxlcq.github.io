@@ -11,7 +11,7 @@
 2. 安装 `mkdocs` 及 `mkdocs-material`
 
     ```shell
-    pip install mkdocs mkdocs-material
+    python3 -m pip install mkdocs mkdocs-material
     ```
 
 3. 拉取本项目

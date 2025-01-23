@@ -7,20 +7,6 @@
         flex: 1;
         margin: 3px 0;
     }
-    .honor {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        }
-    .honor img {
-        width: 300px;
-        cursor: pointer;
-        transition: transform 0.2s;
-    }
-    .honor img:hover {
-        transform: scale(2);
-    }
-
 </style>
 
 # 💫
@@ -44,7 +30,7 @@
 </style>
 
 <div class="search-container">
-  <form action="https://dxlcq.cn/google-search" method="GET">
+  <form action="https://dxlcq.cn/proxy" method="GET">
     <textarea id="searchBox" name="q" placeholder="Workers of all lands, Unite!" rows="1"
       oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px';"
       onkeydown="if(event.key==='Enter' && !event.shiftKey){
@@ -209,7 +195,7 @@
 
 <br>
 
-## Informal Work
+## Intern
 
 ### 中国电信北碚分公司
 
@@ -356,6 +342,28 @@
 ---
 
 ## Honor
+
+<style>
+
+    .honor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+    .honor img {
+        width: 300px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .honor img:hover {
+        transform: scale(2);
+    }
+    .item {
+        flex: 1;
+        margin: 3px 0;
+    }
+
+</style>
 
 <center>
 
