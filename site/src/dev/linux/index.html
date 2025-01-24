@@ -1641,6 +1641,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#nfs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      NFS 客户端
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4037,6 +4046,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#nfs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      NFS 客户端
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4788,10 +4806,24 @@ password=admin
 <h3 id="nfs">NFS 服务端</h3>
 <ol>
 <li>
-<p>下载 <code>nfs-kernel-server</code></p>
+<p>下载 <code>sudo apt install nfs-kernel-server</code></p>
 </li>
 <li>
-<p>配置共享目录</p>
+<p>添加共享目录 <code>sudo vim /etc/exports</code> <code>chown nobody:nogroup /home/user -R</code></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/home/user *(rw,sync,no_subtree_check)
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>重启nfs <code>sudo systemctl restart nfs-kernel-server</code></p>
+</li>
+</ol>
+<h3 id="nfs_1">NFS 客户端</h3>
+<ol>
+<li>
+<p>下载 <code>sudo apt install nfs-common</code></p>
+</li>
+<li>
+<p>挂载 <code>sudo mount 10.0.0.1:/home/user /mnt/nfs</code></p>
 </li>
 </ol>
 <p><br></p>

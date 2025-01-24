@@ -4209,7 +4209,7 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w">
 <span class="w">    </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500Gi</span>
 <span class="w">  </span><span class="nt">volumeMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Filesystem</span>
 <span class="w">  </span><span class="nt">accessModes</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadWriteMany</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadWriteMany</span><span class="w"> </span><span class="c1"># 多个 Pod 可以同时读写</span>
 <span class="w">  </span><span class="nt">nfs</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">180.85.207.45</span>
 <span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/mnt/nfs&quot;</span>

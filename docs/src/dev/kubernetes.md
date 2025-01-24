@@ -414,7 +414,7 @@ spec:
     storage: 500Gi
   volumeMode: Filesystem
   accessModes:
-    - ReadWriteMany
+    - ReadWriteMany # 多个 Pod 可以同时读写
   nfs:
     server: 180.85.207.45
     path: "/mnt/nfs"

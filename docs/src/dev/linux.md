@@ -270,9 +270,22 @@ dump，rsync
 
 ### NFS 服务端
 
-1. 下载 `nfs-kernel-server`
+1. 下载 `sudo apt install nfs-kernel-server`
 
-2. 配置共享目录
+2. 添加共享目录 `sudo vim /etc/exports` `chown nobody:nogroup /home/user -R`
+
+    ```conf
+    /home/user *(rw,sync,no_subtree_check)
+    ```
+
+3. 重启nfs `sudo systemctl restart nfs-kernel-server`
+
+### NFS 客户端
+
+1. 下载 `sudo apt install nfs-common`
+
+2. 挂载 `sudo mount 10.0.0.1:/home/user /mnt/nfs`
+
 
 
 <br>
