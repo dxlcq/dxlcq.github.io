@@ -84,7 +84,9 @@
   <div class="item">
     <a href="https://kimi.moonshot.cn/" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg"></div>
-  </a></div>
+      <div style="font-size: 12px;">dxlcq@outlook.com</div></div>
+    </a>
+  </div>
 </div>
 
 <br>
