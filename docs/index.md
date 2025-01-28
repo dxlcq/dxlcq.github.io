@@ -55,7 +55,7 @@
   .rounded-icon {
     width: 46px; /* 图标宽度 */
     height: 46px; /* 图标高度 */
-    border-radius: 20px; /* 圆角半径 */
+    border-radius: 10px; /* 圆角半径 */
     overflow: hidden; /* 隐藏超出部分 */
     display: inline-block; /* 行内块元素 */
     cursor: pointer; /* 鼠标悬停时显示手型光标 */
@@ -77,13 +77,21 @@
 </style>
 
 <br><div class="container">
-  <div class="item">
+  <div class="item"><a href="https://chatgpt.com/" target="_blank" title="321">
+    <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/120px-ChatGPT-Logo.svg.png" alt="123"></div>
+  </a></div>
 
-  <a href="https://chatgpt.com/" target="_blank">
-    <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/120px-ChatGPT-Logo.svg.png"></div>
-  </a>
-  
-  </div>
+  <div class="item"><a href="https://kimi.moonshot.cn/" target="_blank">
+    <div class="rounded-icon"><img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxj67iNfehPnEzTzmEIq9neLh7RKlj9UuSZu3WghIjFfi2Gt8h0MjUnq4.imaOAbSo0G2WoKCM8DtBURkHZud7WU-&format=source&h=464"></div>
+  </a></div>
+
+  <div class="item"><a href="https://chat.deepseek.com/" target="_blank">
+    <div class="rounded-icon"><img src="https://cdn.deepseek.com/platform/favicon.png"></div>
+  </a></div>
+
+  <div class="item"><a href="https://github.com/copilot/" target="_blank">
+    <div class="rounded-icon"><img src="https://github.gallerycdn.vsassets.io/extensions/github/copilotvs/1.206.0.0/1719349649662/Microsoft.VisualStudio.Services.Icons.Default"></div>
+  </a></div>
 </div><br>
 
 <div class="container"> 📮
