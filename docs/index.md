@@ -51,8 +51,8 @@
 <style>
   /* 图标容器样式 */
   .rounded-icon {
-    width: 46px; /* 图标宽度 */
-    height: 46px; /* 图标高度 */
+    width: 32px; /* 图标宽度 */
+    height: 32px; /* 图标高度 */
     border-radius: 10px; /* 圆角半径 */
     overflow: hidden; /* 隐藏超出部分 */
     display: inline-block; /* 行内块元素 */
@@ -75,67 +75,63 @@
 </style>
 
 <div class="container">
+
   <div class="item">
-    <a href="https://chatgpt.com/" target="_blank">
+    <a href="https://mail.cqu.edu.cn/" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/7/74/Chongqing_University_logo.svg"></div>
       <div style="font-size: 12px;">dxlcq@stu.cqu.edu.cn</div>
     </a>
   </div>
   
   <div class="item">
-    <a href="https://kimi.moonshot.cn/" target="_blank">
+    <a href="https://outlook.live.com/mail/0/" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg"></div>
       <div style="font-size: 12px;">dxlcq@outlook.com</div>
     </a>
   </div>
+
 </div>
 
 <br>
 
 <div class="container">
-  <div class="item"><a href="https://chatgpt.com/" target="_blank" title="321">
-    <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/120px-ChatGPT-Logo.svg.png" alt="123"></div>
-  </a></div>
 
-  <div class="item"><a href="https://kimi.moonshot.cn/" target="_blank">
-    <div class="rounded-icon"><img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxj67iNfehPnEzTzmEIq9neLh7RKlj9UuSZu3WghIjFfi2Gt8h0MjUnq4.imaOAbSo0G2WoKCM8DtBURkHZud7WU-&format=source&h=464"></div>
-  </a></div>
+  <div class="item">
+    <a href="https://chatgpt.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/120px-ChatGPT-Logo.svg.png"></div>
+      <div style="font-size: 12px;">ChatGPT</div>
+    </a>
+  </div>
+  
+  <div class="item">
+    <a href="https://kimi.moonshot.cn/" target="_blank">
+      <div class="rounded-icon"><img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxj67iNfehPnEzTzmEIq9neLh7RKlj9UuSZu3WghIjFfi2Gt8h0MjUnq4.imaOAbSo0G2WoKCM8DtBURkHZud7WU-&format=source&h=464"></div>
+      <div style="font-size: 12px;">月之暗面</div>
+    </a>
+  </div>
 
-  <div class="item"><a href="https://chat.deepseek.com/" target="_blank">
-    <div class="rounded-icon"><img src="https://cdn.deepseek.com/platform/favicon.png"></div>
-  </a></div>
+  <div class="item">
+    <a href="https://chat.deepseek.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://cdn.deepseek.com/platform/favicon.png"></div>
+      <div style="font-size: 12px;">深度求索</div>
+    </a>
+  </div>
 
-  <div class="item"><a href="https://github.com/copilot/" target="_blank">
-    <div class="rounded-icon"><img src="https://github.gallerycdn.vsassets.io/extensions/github/copilotvs/1.206.0.0/1719349649662/Microsoft.VisualStudio.Services.Icons.Default"></div>
-  </a></div>
-</div><br>
+  <div class="item">
+    <a href="https://github.com/copilot/" target="_blank">
+      <div class="rounded-icon"><img src="https://github.gallerycdn.vsassets.io/extensions/github/copilotvs/1.206.0.0/1719349649662/Microsoft.VisualStudio.Services.Icons.Default"></div>
+      <div style="font-size: 12px;">Copilot</div>
+    </a>
+  </div>
 
-
-
-
-
-
-
-
-
-
-<div class="container"> 📮
-    <div class="item">
-        <a href="https://mail.cqu.edu.cn/" target="_blank"> dxlcq@stu.cqu.edu.cn </a>
-    </div>
-    <div class="item">
-        <a href="https://outlook.live.com/mail/0/" target="_blank"> dxlcq@outlook.com </a> 
-    </div>
 </div>
 
-<div class="container"> 🤖
-    <div class="item">
-        <a href="https://kimi.moonshot.cn/" target="_blank"> Kimi </a> 
-    </div>
-    <div class="item">
-        <a href="https://chatgpt.com/" target="_blank"> ChatGPT </a> 
-    </div>
-</div>
+<br>
+
+
+
+
+
 
 <div class="container"> 🌥️
     <div class="item">
