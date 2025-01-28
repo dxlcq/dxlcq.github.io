@@ -1,12 +1,12 @@
 <style>
-    .container {
-        display: flex;
-        text-align: center;
-    }
-    .item {
-        flex: 1;
-        margin: 3px 0;
-    }
+  .container {
+    display: flex;
+    text-align: center;
+  }
+  .item {
+    flex: 1;
+    margin: 3px 0;
+  }
 </style>
 
 # 💫
@@ -46,7 +46,45 @@
   }
 </script>
 
-<br>
+
+
+
+
+<style>
+  /* 图标容器样式 */
+  .rounded-icon {
+    width: 46px; /* 图标宽度 */
+    height: 46px; /* 图标高度 */
+    border-radius: 20px; /* 圆角半径 */
+    overflow: hidden; /* 隐藏超出部分 */
+    display: inline-block; /* 行内块元素 */
+    cursor: pointer; /* 鼠标悬停时显示手型光标 */
+    transition: transform 0.3s; /* 动画过渡效果 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果（可选） */
+  }
+
+  /* 鼠标悬停时的效果 */
+  .rounded-icon:hover {
+    transform: scale(1.05); /* 放大图标 */
+  }
+
+  /* 图标内的图片样式 */
+  .rounded-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持图像比例并覆盖整个容器 */
+  }
+</style>
+
+<br><div class="container">
+  <div class="item">
+
+  <a href="https://chatgpt.com/" target="_blank">
+    <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/120px-ChatGPT-Logo.svg.png"></div>
+  </a>
+  
+  </div>
+</div><br>
 
 <div class="container"> 📮
     <div class="item">
