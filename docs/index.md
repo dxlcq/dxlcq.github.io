@@ -18,7 +18,7 @@
   }
   .search-container textarea {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -46,9 +46,7 @@
   }
 </script>
 
-
-
-
+<br>
 
 <style>
   /* 图标容器样式 */
@@ -76,7 +74,22 @@
   }
 </style>
 
-<br><div class="container">
+<div class="container">
+  <div class="item">
+    <a href="https://chatgpt.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/7/74/Chongqing_University_logo.svg"></div>
+      <div style="font-size: 12px;">dxlcq@stu.cqu.edu.cn</div></div>
+    </a>
+  
+  <div class="item">
+    <a href="https://kimi.moonshot.cn/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg"></div>
+  </a></div>
+</div>
+
+<br>
+
+<div class="container">
   <div class="item"><a href="https://chatgpt.com/" target="_blank" title="321">
     <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/120px-ChatGPT-Logo.svg.png" alt="123"></div>
   </a></div>
@@ -93,6 +106,15 @@
     <div class="rounded-icon"><img src="https://github.gallerycdn.vsassets.io/extensions/github/copilotvs/1.206.0.0/1719349649662/Microsoft.VisualStudio.Services.Icons.Default"></div>
   </a></div>
 </div><br>
+
+
+
+
+
+
+
+
+
 
 <div class="container"> 📮
     <div class="item">
