@@ -88,7 +88,9 @@
     </a>
   </div>
 
-</div><br>
+</div>
+
+---
 
 <div class="container"> <!-- 1 -->
 
