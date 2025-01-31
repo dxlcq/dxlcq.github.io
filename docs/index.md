@@ -120,7 +120,7 @@
     </a>
   </div>
 
-</div><br>
+</div>
 
 ---
 
@@ -198,9 +198,35 @@
 
 ---
 
+<div class="container"> <!-- 1 -->
+
+  <div class="item">
+    <a href="http://cesu.cqwin.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://pp.myapp.com/ma_icon/0/icon_3722_1737177848/256"></div>
+      <div style="font-size: 12px;">联通测速</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="https://www.kdocs.cn/?show=all" target="_blank">
+      <div class="rounded-icon"><img src="https://website-prod.cache.wpscdn.com/img/ai-wps-office-logo.3a18f52.png"></div>
+      <div style="font-size: 12px;">金山文档</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="https://www.alipan.com/drive/file/all" target="_blank">
+      <div class="rounded-icon"><img src="https://img.alicdn.com/imgextra/i2/O1CN011vHpiQ251TseXpbH7_!!6000000007466-2-tps-120-120.png"></div>
+      <div style="font-size: 12px;">阿里云盘</div>
+    </a>
+  </div>
+
+</div>
 
 
 
+
+---
 
 
 
@@ -216,7 +242,7 @@
         <a href="http://10.0.0.3:8080" target="_blank"> Terminal </a> 
     </div>
     <div class="item">
-        <a href="http://10.0.0.6:5202" target="_blank"> SpeedTest </a> / <a href="http://cesu.cqwin.com/" target="_blank"> CU </a> 
+        <a href="http://10.0.0.6:5202" target="_blank"> SpeedTest </a> / <a href="" target="_blank"> CU </a> 
     </div>
 </div>
 
