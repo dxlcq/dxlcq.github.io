@@ -88,7 +88,7 @@
     </a>
   </div>
 
-</div><br>
+</div>
 
 <div class="container"> <!-- 2 -->
 
@@ -147,7 +147,7 @@
     </a>
   </div>
 
-</div><br>
+</div>
 
 <div class="container"> <!-- 2 -->
 
