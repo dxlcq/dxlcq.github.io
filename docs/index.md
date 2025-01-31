@@ -165,6 +165,17 @@
 
 </div>
 
+<div class="container"> <!-- 1 -->
+
+  <div class="item">
+    <a href="https://dash.cloudflare.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png"></div>
+      <div style="font-size: 12px;">赛博大善人</div>
+    </a>
+  </div>
+
+</div>
+
 ---
 
 <div class="container"> <!-- 1 -->
@@ -247,7 +258,7 @@
         <a href="https://console.huaweicloud.com/?locale=zh-cn" target="_blank"> huawei </a> / <a href="https://home.console.aliyun.com/home/dashboard/ProductAndService" target="_blank"> Ali </a>
     </div>
     <div class="item">
-        <a href="https://dash.cloudflare.com/" target="_blank"> Cloudflare </a> 
+        <a href="" target="_blank"> Cloudflare </a> 
     </div>
     <div class="item">
         <a href="https://www.itdog.cn/tcping/" target="_blank"> Tcping </a> 
