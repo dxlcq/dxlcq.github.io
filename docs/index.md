@@ -127,7 +127,32 @@
 <div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="https://account.apple.com/account/manage" target="_blank">
+    <a href="https://www.kdocs.cn/?show=all" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/ISS-40_Thunderheads_near_Borneo.jpg/330px-ISS-40_Thunderheads_near_Borneo.jpg"></div>
+      <div style="font-size: 12px;">私有云盘</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="https://www.kdocs.cn/?show=all" target="_blank">
+      <div class="rounded-icon"><img src="https://website-prod.cache.wpscdn.com/img/ai-wps-office-logo.3a18f52.png"></div>
+      <div style="font-size: 12px;">金山文档</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="https://www.alipan.com/drive/file/all" target="_blank">
+      <div class="rounded-icon"><img src="https://img.alicdn.com/imgextra/i2/O1CN011vHpiQ251TseXpbH7_!!6000000007466-2-tps-120-120.png"></div>
+      <div style="font-size: 12px;">阿里云盘</div>
+    </a>
+  </div>
+
+</div><br>
+
+<div class="container"> <!-- 2 -->
+
+  <div class="item">
+    <a href="http://10.0.0.6:8080" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/160px-Apple_logo_black.svg.png"></div>
       <div style="font-size: 12px;">Apple</div>
     </a>
@@ -149,7 +174,7 @@
 
 </div>
 
-<div class="container"> <!-- 2 -->
+<div class="container"> <!-- 3 -->
 
   <div class="item">
     <a href="https://www.icloud.com/" target="_blank">
@@ -180,19 +205,6 @@
 
 
 
-
-
-<div class="container"> 🌥️
-    <div class="item">
-        <a href="http://10.0.0.6:8080" target="_blank"> Local Cloud </a> 
-    </div>
-    <div class="item">
-        <a href="https://www.kdocs.cn/latest" target="_blank"> WPS Cloud </a> 
-    </div>
-</div>
-
----
-
 <div class="container"> 🖥️
     <div class="item">
         <a href="https://smbcloud.tp-link.com.cn" target="_blank"> Cloud RT </a> / <a href="http://10.0.0.1" target="_blank"> RT </a>
@@ -220,33 +232,6 @@
     </div>
     <div class="item">
         <a href="https://www.speedtest.net/" target="_blank"> SpeedTest </a> / <a href="https://test.nju.edu.cn/" target="_blank">CN</a> 
-    </div>
-</div>
-
----
-
-
-<div class="container"> 🌈
-    <div class="item">
-        <a href="https://account.microsoft.com/" target="_blank"> Microsoft </a> 
-    </div>
-    <div class="item">
-        <a href="https://myaccount.google.com/" target="_blank"> Google </a> 
-    </div>
-    <div class="item">
-        <a href="https://account.apple.com/account/manage" target="_blank"> Apple </a> 
-    </div>
-</div>
-
-<div class="container"> 🌞
-    <div class="item">
-        <a href="https://onedrive.live.com/" target="_blank"> OneDrive </a> 
-    </div>
-    <div class="item">
-        <a href="https://drive.google.com/drive/my-drive" target="_blank"> Google Drive </a> 
-    </div>
-    <div class="item">
-        <a href="https://www.icloud.com/" target="_blank"> iCloud</a> 
     </div>
 </div>
 
