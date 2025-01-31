@@ -68,11 +68,11 @@
   .rounded-icon img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 保持图像比例并覆盖整个容器 */
+    object-fit: contain; /* 保持图像比例并完全适应容器 */
   }
 </style>
 
-<div class="container">
+<div class="container"> <!-- 1 -->
 
   <div class="item">
     <a href="https://mail.cqu.edu.cn/" target="_blank">
@@ -88,11 +88,9 @@
     </a>
   </div>
 
-</div>
+</div><br>
 
-<br>
-
-<div class="container">
+<div class="container"> <!-- 2 -->
 
   <div class="item">
     <a href="https://chatgpt.com/" target="_blank">
@@ -122,9 +120,30 @@
     </a>
   </div>
 
-</div>
+</div><br>
 
-<br>
+<div class="container"> <!-- 3 -->
+
+  <div class="item">
+    <a href="https://mail.cqu.edu.cn/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/160px-Apple_logo_black.svg.png"></div>
+      <div style="font-size: 12px;">dxlcq@stu.cqu.edu.cn</div>
+    </a>
+  </div>
+  
+  <div class="item">
+    <a href="https://outlook.live.com/mail/0/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg"></div>
+      <div style="font-size: 12px;">dxlcq@outlook.com</div>
+    </a>
+  </div>
+
+</div><br>
+
+
+![]()
+
+
 
 
 
@@ -132,9 +151,6 @@
 
 
 <div class="container"> 🌥️
-    <div class="item">
-        <a href="./data/" target="_blank"> Download Site </a>
-    </div>
     <div class="item">
         <a href="http://10.0.0.6:8080" target="_blank"> Local Cloud </a> 
     </div>

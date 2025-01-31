@@ -277,7 +277,7 @@ spec:
 
 ---
 
-## Pod
+### Pod
 
 ```yaml
 apiVersion: v1
@@ -301,7 +301,7 @@ spec:
         claimName: nfs.pvc  # 引用 PVC 名称
 ```
 
-### pause
+**pause**
 
 1 号容器，其他容器共享其 `PID`，`IPC`，`Network`，
 
@@ -311,7 +311,7 @@ spec:
 
 * `Network`：可以通过回环地址 `localhost` 相互通信
 
-### initC
+**initC**
 
 初始化容器，用于初始化环境，如配置文件，数据库等
 
@@ -319,7 +319,7 @@ spec:
 
 * 返回 0 时，开始 mainC 容器
 
-### mainC
+**mainC**
 
 主容器，用于运行应用程序
 
@@ -343,7 +343,9 @@ spec:
 
 ---
 
-## deployment
+## Controller
+
+### deployment
 
 ```yaml
 spec:
@@ -364,6 +366,20 @@ spec:
         ports:
         - containerPort: 80
 ```
+
+### job
+
+```shell
+kubectl apply -f <job.yaml>
+kubectl get jobs
+kubectl get pods
+kubectl logs <pod-name>
+kubectl delete job <job-name>
+```
+
+<br>
+
+---
 
 <br>
 
@@ -386,21 +402,10 @@ spec:
 
 ---
 
-## job
+## Storage
 
-```shell
-kubectl apply -f <job.yaml>
-kubectl get jobs
-kubectl get pods
-kubectl logs <pod-name>
-kubectl delete job <job-name>
-```
 
-<br>
-
----
-
-## PersistentVolume
+### PersistentVolume
 
 ```yaml
 apiVersion: v1
@@ -420,7 +425,7 @@ spec:
     path: "/mnt/nfs"
 ```
 
-## PersistentVolumeClaim
+### PersistentVolumeClaim
 
 ```yaml
 apiVersion: v1
@@ -439,10 +444,20 @@ spec:
 ```
 
 
+<br>
+
+---
+
+## Scheduler
+
+预选，优选，绑定
+
+
 
 <br>
 
 ---
+
 
 ## kubelet
 
