@@ -122,26 +122,58 @@
 
 </div><br>
 
-<div class="container"> <!-- 3 -->
+---
+
+<div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="https://mail.cqu.edu.cn/" target="_blank">
+    <a href="https://account.apple.com/account/manage" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/160px-Apple_logo_black.svg.png"></div>
-      <div style="font-size: 12px;">dxlcq@stu.cqu.edu.cn</div>
+      <div style="font-size: 12px;">Apple</div>
     </a>
   </div>
   
   <div class="item">
-    <a href="https://outlook.live.com/mail/0/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg"></div>
-      <div style="font-size: 12px;">dxlcq@outlook.com</div>
+    <a href="https://myaccount.google.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png"></div>
+      <div style="font-size: 12px;">Google</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="https://account.microsoft.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"></div>
+      <div style="font-size: 12px;">Microsoft</div>
+    </a>
+  </div>
+
+</div>
+
+<div class="container"> <!-- 2 -->
+
+  <div class="item">
+    <a href="https://www.icloud.com/" target="_blank">
+      <div style="font-size: 12px;">iCloud</div>
+    </a>
+  </div>
+  
+  <div class="item">
+    <a href="https://drive.google.com/drive/my-drive" target="_blank">
+      <div style="font-size: 12px;">Google Drive</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="https://onedrive.live.com/" target="_blank">
+      <div style="font-size: 12px;">OneDrive</div>
     </a>
   </div>
 
 </div><br>
 
+---
 
-![]()
+
 
 
 
