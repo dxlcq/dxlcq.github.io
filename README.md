@@ -32,22 +32,35 @@
     python3 -m mkdocs build && git add . && git commit -m "🥳" && git push
     ```
 
-**服务器部署**
+**服务部署**
 
-1. 网页加密所需要的 `htpwd` 文件，直接 [在线生成](https://tool.oschina.net/htpasswd)
+1. SSL 证书
 
-2. SSL 证书
+    * 首次申请
 
-    ```shell
-    sudo apt install certbot
-    sudo certbot certonly --standalone -d dxlcq.com
-    ```
+        ```shell
+        sudo snap install --classic certbot
+        sudo ln -s /snap/bin/certbot /usr/bin/certbot
+        sudo certbot certonly --preferred-challenges dns -d "dxlcq.cn" --manual --cert-name dxlcq.cn
+        ```
 
-1. `sudo docker-compose up -d`
+    * 测试更新
 
+        ```shell
+        sudo certbot renew --dry-run
+        ```
 
+    * 每 6 天自动更新
 
+        ```shell
+        sudo crontab -e
+        ```
 
+        ```shell
+        0 0 */6 * * sudo certbot renew && sudo docker exec nginx nginx -s reload
+        ```
+
+2. `sudo docker-compose up -d`
 
 **参考**
 
