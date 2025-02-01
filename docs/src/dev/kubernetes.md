@@ -450,6 +450,20 @@ spec:
 
 ## Scheduler
 
+**默认调度器的调度流程**
+
+1. 
+
+### Affinity
+
+#### NodeAffinity
+
+#### PodAffinity
+
+#### PodAntiAffinity
+
+### 容忍和污点
+
 预选，优选，绑定
 
 

@@ -32,6 +32,23 @@
     python3 -m mkdocs build && git add . && git commit -m "🥳" && git push
     ```
 
+**服务器部署**
+
+1. 网页加密所需要的 `htpwd` 文件，直接 [在线生成](https://tool.oschina.net/htpasswd)
+
+2. SSL 证书
+
+    ```shell
+    sudo apt install certbot
+    sudo certbot certonly --standalone -d dxlcq.com
+    ```
+
+1. `sudo docker-compose up -d`
+
+
+
+
+
 **参考**
 
 * [Mkdocs配置文件说明(mkdocs.yml)](https://blog.csdn.net/m0_63203517/article/details/129765689)
