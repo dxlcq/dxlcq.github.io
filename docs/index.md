@@ -504,17 +504,6 @@
 
 </style>
 
-<center>
-
-| 国家级奖项 🥇 | 省部级奖项 🥈 | 技能证书 🥉 | 奖学金 💰 |
-|:-:|:-:|:-:|:-:|
-| 8 | 17 | 4 | 12 | 
-
-<a href="./private/" target="_blank"> 哪晓岁月蹉跎过 </a> <a href="./public/" target="_blank"> 依旧名利两无收 </a>
-
-
-</center>
-
 ### XCPC
 
 #### 2024 四川省赛
@@ -1036,3 +1025,14 @@
 <div class="honor">
     <img loading="lazy" src="/images/joker/（金综合21b）400.jpg">
 </div>
+
+<center>
+
+| 国家级奖项 🥇 | 省部级奖项 🥈 | 技能证书 🥉 | 奖学金 💰 |
+|:-:|:-:|:-:|:-:|
+| 8 | 17 | 4 | 12 | 
+
+<a href="./private/" target="_blank"> 哪晓岁月蹉跎过 </a> <a href="./public/" target="_blank"> 依旧名利两无收 </a>
+
+
+</center>
