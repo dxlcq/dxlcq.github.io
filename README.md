@@ -58,7 +58,7 @@
         sudo certbot renew --dry-run
         ```
 
-    * 每天自动更新 `sudo crontab -e`
+    * 每周更新 `sudo crontab -e`
 
         ```shell
         0 0 * * 1 certbot renew && nginx -s reload
