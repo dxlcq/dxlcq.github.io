@@ -60,7 +60,20 @@
         0 0 */6 * * sudo certbot renew && sudo docker exec nginx nginx -s reload
         ```
 
-2. `sudo docker-compose up -d`
+2. `sudo apt install nginx`
+
+3. 添加 `vim /etc/nginx/nginx.conf`
+
+    ```
+    include '/root/dxlcq.github.io/default.conf';
+    ```
+
+4. 重载配置
+
+    ```shell
+    sudo nginx -s reload
+    ```
+
 
 **参考**
 
