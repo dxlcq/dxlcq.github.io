@@ -82,6 +82,13 @@
   </div>
   
   <div class="item">
+    <a href="https://chat.deepseek.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://cdn.deepseek.com/platform/favicon.png"></div>
+      <div style="font-size: 12px;">深度求索</div>
+    </a>
+  </div>
+
+  <div class="item">
     <a href="https://outlook.live.com/mail/0/" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg"></div>
       <div style="font-size: 12px;">dxlcq@outlook.com</div>
@@ -90,7 +97,6 @@
 
 </div>
 
----
 
 <div class="container"> <!-- 1 -->
 
@@ -105,13 +111,6 @@
     <a href="https://kimi.moonshot.cn/" target="_blank">
       <div class="rounded-icon"><img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxj67iNfehPnEzTzmEIq9neLh7RKlj9UuSZu3WghIjFfi2Gt8h0MjUnq4.imaOAbSo0G2WoKCM8DtBURkHZud7WU-&format=source&h=464"></div>
       <div style="font-size: 12px;">月之暗面</div>
-    </a>
-  </div>
-
-  <div class="item">
-    <a href="https://chat.deepseek.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://cdn.deepseek.com/platform/favicon.png"></div>
-      <div style="font-size: 12px;">深度求索</div>
     </a>
   </div>
 
