@@ -65,7 +65,7 @@
 3. 添加 `vim /etc/nginx/nginx.conf`
 
     ```
-    include '/root/dxlcq.github.io/default.conf';
+    include '/var/www/dxlcq.github.io/default.conf';
     ```
 
 4. 重载配置
