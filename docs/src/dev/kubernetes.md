@@ -374,9 +374,6 @@ kubectl delete job <job-name>
 
 ---
 
-<br>
-
----
 
 ## Service
 
@@ -460,15 +457,17 @@ spec:
 
 ### Affinity
 
-* 软亲和性：倾向于调度到满足条件的节点
-
-* 硬亲和性：必须调度到满足条件的节点
-
-* 反软亲和性：倾向于不调度到满足条件的节点
-
-* 反硬亲和性：绝对不能调度到满足条件的节点
-
 #### NodeAffinity
+
+* 软亲和性：倾向于调度到满足条件的 node
+
+* 硬亲和性：必须调度到满足条件的 node
+
+* 软反亲和性：倾向于不调度到满足条件的 node
+
+* 硬反亲和性：绝对不能调度到满足条件的 node
+
+**软亲和性**
 
 ```yaml
 apiVersion: v1
@@ -479,9 +478,9 @@ metadata:
   namespace: tmp
 
 spec:
-  affinity:
-    nodeAffinity:
-      preferredDuringSchedulingIgnoredDuringExecution:
+  affinity:                                             # 亲和
+    nodeAffinity:                                       # 节点亲和
+      preferredDuringSchedulingIgnoredDuringExecution:  # 软亲和
       - weight: 66          # 设置节点的优先级权重
         preference:
           matchExpressions:
@@ -495,7 +494,151 @@ spec:
     image: nginx:latest
 ```
 
+**硬亲和性**
+
+```yaml
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: pod-nginx
+  namespace: tmp
+
+spec:
+  affinity:                                           # 亲和
+    nodeAffinity:                                     # 节点亲和
+      requiredDuringSchedulingIgnoredDuringExecution: # 硬亲和
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: dddd
+            operator: In    # 节点中存在 key:values
+            values:
+            - bdzd
+
+  containers:
+  - name: nginx
+    image: nginx:latest
+```
+
+**反亲和性**
+
+```yaml
+...
+  operator: NotIn
+...
+```
+
 #### PodAffinity
+
+* 软亲和性：倾向于调度到满足条件的 pod 附近
+
+```yaml
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: pod2-nginx
+  namespace: tmp
+
+spec:
+  affinity:
+    podAffinity:                                        # pod 亲和
+      preferredDuringSchedulingIgnoredDuringExecution:  # 软亲和
+      - weight: 66
+        podAffinityTerm:        
+          labelSelector:
+            matchExpressions:
+            - key: bdzd
+              operator: In    # 节点中存在 key:values
+              values:
+              - dddd
+          topologyKey: "kubernetes.io/hostname"
+  containers:
+  - name: nginx
+    image: nginx:latest
+```
+
+* 硬亲和性：必须调度到满足条件的 pod 附近
+
+```yaml
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: pod2-nginx
+  namespace: tmp
+
+spec:
+  affinity:
+    podAffinity:                                      # pod 亲和
+      requiredDuringSchedulingIgnoredDuringExecution: # 硬亲和
+      - labelSelector:
+          matchExpressions:
+          - key: bdzd
+            operator: In    # 节点中存在 key:values
+            values:
+            - dddd
+        topologyKey: "kubernetes.io/hostname"
+  containers:
+  - name: nginx
+    image: nginx:latest
+```
+
+#### PodAntiAffinity
+
+* 软反亲和性：倾向于不调度到满足条件的 pod 附近
+
+```yaml
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: pod2-nginx
+  namespace: tmp
+
+spec:
+  affinity:
+    podAntiAffinity:                                    # pod 反亲和
+      preferredDuringSchedulingIgnoredDuringExecution:  # 软亲和
+      - weight: 66
+        podAffinityTerm:        
+          labelSelector:
+            matchExpressions:
+            - key: bdzd
+              operator: In    # 节点中存在 key:values
+              values:
+              - dddd
+          topologyKey: "kubernetes.io/hostname"
+  containers:
+  - name: nginx
+    image: nginx:latest
+```
+
+* 硬反亲和性：绝对不能调度到满足条件的 pod 附近
+
+```yaml
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: pod2-nginx
+  namespace: tmp
+
+spec:
+  affinity:
+    podAntiAffinity:                                  # pod 反亲和
+      requiredDuringSchedulingIgnoredDuringExecution: # 硬亲和
+      - labelSelector:
+          matchExpressions:
+          - key: bdzd
+            operator: In    # 节点中存在 key:values
+            values:
+            - dddd
+        topologyKey: "kubernetes.io/hostname"
+  containers:
+  - name: nginx
+    image: nginx:latest
+```
 
 ### 容忍和污点
 
