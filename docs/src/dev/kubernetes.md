@@ -254,30 +254,23 @@
 ---
 
 
-## RESOURCE
-
-资源清单，一切皆资源
+## node
 
 ```yaml
-apiVersion: v1                      # 资源的 API 版本
-kind: Pod | Service | Deployment    # kubectl api-resources 查看资源的版本和类型
-
-metadata:                           # 元数据
-  name: name                        # 这个资源的名称
-  namespace: default                # 命名空间，用于隔离资源
-  labels:                           # 标签，用于标识和组织资源
-    key: value                      # 键值对，可以有多个
-
-spec:
-  # 每个资源都有自己的规范
+kubectl label node <node-name> <key>=<value>              # 添加标签
+kubectl label node <node-name> <key>=<value> --overwrite  # 覆写标签
+kubectl label node <node-name> <key>-                     # 删除标签
+kubectl get nodes --show-labels                           # 查看标签
 ```
+
+## namespace
 
 
 <br>
 
 ---
 
-### Pod
+## Pod
 
 ```yaml
 apiVersion: v1
@@ -450,21 +443,62 @@ spec:
 
 ## Scheduler
 
-**默认调度器的调度流程**
+为 pod 分配 node，流程：
 
-1. 
+* 预选（Filtering），过滤
+    
+  1. 资源（CPU，内存）
+
+  2. 亲和性和反亲和性
+
+  3. 污点与容忍
+
+* 优选（Scoring），打分
+
+  1. 资源均衡（将 pod 分配到负载更低的 node）
+
 
 ### Affinity
 
+* 软亲和性：倾向于调度到满足条件的节点
+
+* 硬亲和性：必须调度到满足条件的节点
+
+* 反软亲和性：倾向于不调度到满足条件的节点
+
+* 反硬亲和性：绝对不能调度到满足条件的节点
+
 #### NodeAffinity
+
+```yaml
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: pod-nginx
+  namespace: tmp
+
+spec:
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 66          # 设置节点的优先级权重
+        preference:
+          matchExpressions:
+          - key: dddd
+            operator: In    # 节点中存在 key:values
+            values:
+              - bdzd
+
+  containers:
+  - name: nginx
+    image: nginx:latest
+```
 
 #### PodAffinity
 
-#### PodAntiAffinity
-
 ### 容忍和污点
 
-预选，优选，绑定
 
 
 

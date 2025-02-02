@@ -1657,26 +1657,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resource" class="md-nav__link">
+  <a href="#node" class="md-nav__link">
     <span class="md-ellipsis">
-      RESOURCE
+      node
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="RESOURCE">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pod" class="md-nav__link">
     <span class="md-ellipsis">
       Pod
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1793,15 +1796,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#podantiaffinity" class="md-nav__link">
-    <span class="md-ellipsis">
-      PodAntiAffinity
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1865,7 +1859,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace" class="md-nav__link">
+  <a href="#namespace_1" class="md-nav__link">
     <span class="md-ellipsis">
       namespace
     </span>
@@ -1874,7 +1868,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#node" class="md-nav__link">
+  <a href="#node_1" class="md-nav__link">
     <span class="md-ellipsis">
       node
     </span>
@@ -3661,26 +3655,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resource" class="md-nav__link">
+  <a href="#node" class="md-nav__link">
     <span class="md-ellipsis">
-      RESOURCE
+      node
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="RESOURCE">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      namespace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pod" class="md-nav__link">
     <span class="md-ellipsis">
       Pod
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3797,15 +3794,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#podantiaffinity" class="md-nav__link">
-    <span class="md-ellipsis">
-      PodAntiAffinity
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3869,7 +3857,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#namespace" class="md-nav__link">
+  <a href="#namespace_1" class="md-nav__link">
     <span class="md-ellipsis">
       namespace
     </span>
@@ -3878,7 +3866,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#node" class="md-nav__link">
+  <a href="#node_1" class="md-nav__link">
     <span class="md-ellipsis">
       node
     </span>
@@ -4243,33 +4231,19 @@ kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> 
 </ol>
 <p><br></p>
 <hr />
-<h2 id="resource">RESOURCE</h2>
-<p>资源清单，一切皆资源</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w">                      </span><span class="c1"># 资源的 API 版本</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod | Service | Deployment</span><span class="w">    </span><span class="c1"># kubectl api-resources 查看资源的版本和类型</span>
-
-<span class="nt">metadata</span><span class="p">:</span><span class="w">                           </span><span class="c1"># 元数据</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span><span class="w">                        </span><span class="c1"># 这个资源的名称</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w">                </span><span class="c1"># 命名空间，用于隔离资源</span>
-<span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w">                           </span><span class="c1"># 标签，用于标识和组织资源</span>
-<span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value</span><span class="w">                      </span><span class="c1"># 键值对，可以有多个</span>
-
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># 每个资源都有自己的规范</span>
+<h2 id="node">node</h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">kubectl label node &lt;node-name&gt; &lt;key&gt;=&lt;value&gt;</span><span class="w">              </span><span class="c1"># 添加标签</span>
+<span class="l l-Scalar l-Scalar-Plain">kubectl label node &lt;node-name&gt; &lt;key&gt;=&lt;value&gt; --overwrite</span><span class="w">  </span><span class="c1"># 覆写标签</span>
+<span class="l l-Scalar l-Scalar-Plain">kubectl label node &lt;node-name&gt; &lt;key&gt;-</span><span class="w">                     </span><span class="c1"># 删除标签</span>
+<span class="l l-Scalar l-Scalar-Plain">kubectl get nodes --show-labels</span><span class="w">                           </span><span class="c1"># 查看标签</span>
 </code></pre></div></td></tr></table></div>
+<h2 id="namespace">namespace</h2>
 <p><br></p>
 <hr />
-<h3 id="pod">Pod</h3>
+<h2 id="pod">Pod</h2>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -4489,16 +4463,89 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w">
 <p><br></p>
 <hr />
 <h2 id="scheduler">Scheduler</h2>
-<p><strong>默认调度器的调度流程</strong></p>
-<ol>
-<li></li>
-</ol>
+<p>为 pod 分配 node，流程：</p>
+<ul>
+<li>
+<p>预选（Filtering），过滤</p>
+</li>
+<li>
+<p>资源（CPU，内存）</p>
+</li>
+<li>
+<p>亲和性和反亲和性</p>
+</li>
+<li>
+<p>污点与容忍</p>
+</li>
+<li>
+<p>优选（Scoring），打分</p>
+</li>
+<li>
+<p>资源均衡（将 pod 分配到负载更低的 node）</p>
+</li>
+</ul>
 <h3 id="affinity">Affinity</h3>
+<ul>
+<li>
+<p>软亲和性：倾向于调度到满足条件的节点</p>
+</li>
+<li>
+<p>硬亲和性：必须调度到满足条件的节点</p>
+</li>
+<li>
+<p>反软亲和性：倾向于不调度到满足条件的节点</p>
+</li>
+<li>
+<p>反硬亲和性：绝对不能调度到满足条件的节点</p>
+</li>
+</ul>
 <h4 id="nodeaffinity">NodeAffinity</h4>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-nginx</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tmp</span>
+
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">affinity</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">nodeAffinity</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">preferredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">66</span><span class="w">          </span><span class="c1"># 设置节点的优先级权重</span>
+<span class="w">        </span><span class="nt">preference</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">matchExpressions</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dddd</span>
+<span class="w">            </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:values</span>
+<span class="w">            </span><span class="nt">values</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bdzd</span>
+
+<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="podaffinity">PodAffinity</h4>
-<h4 id="podantiaffinity">PodAntiAffinity</h4>
 <h3 id="_2">容忍和污点</h3>
-<p>预选，优选，绑定</p>
 <p><br></p>
 <hr />
 <h2 id="kubelet">kubelet</h2>
@@ -4518,12 +4565,12 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 <hr />
 <h2 id="kubectl">kubectl</h2>
 <p>用于控制平面进行操作，如创建、删除、更新资源</p>
-<h3 id="namespace">namespace</h3>
+<h3 id="namespace_1">namespace</h3>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>namespaces<span class="w">        </span><span class="c1"># 查看所有命名空间</span>
 kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>&lt;ns&gt;<span class="w"> </span><span class="c1"># 创建命名空间</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="node">node</h3>
+<h3 id="node_1">node</h3>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
