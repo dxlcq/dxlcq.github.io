@@ -120,10 +120,6 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
     
     在图形化界面中安装 `luci-i18n-base-zh-cn`
 
-
-### OpenVPN
-
-
 ### singbox
 
 
