@@ -1811,11 +1811,35 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#taints-tolerations" class="md-nav__link">
     <span class="md-ellipsis">
-      容忍和污点
+      Taints &amp; Tolerations
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Taints & Tolerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#taints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tolerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tolerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3818,11 +3842,35 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#taints-tolerations" class="md-nav__link">
     <span class="md-ellipsis">
-      容忍和污点
+      Taints &amp; Tolerations
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Taints & Tolerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#taints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tolerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tolerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4801,7 +4849,27 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w">
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="_2">容忍和污点</h3>
+<h3 id="taints-tolerations">Taints &amp; Tolerations</h3>
+<h4 id="taints">Taints</h4>
+<p>当 pod 无法容忍 node 上的污点时：</p>
+<ul>
+<li>
+<p><code>NoSchedule</code>：不调度到该 node</p>
+</li>
+<li>
+<p><code>PreferNoSchedule</code> 尽量别调度到 该 node</p>
+</li>
+<li>
+<p><code>NoExecute</code>：不调度到该 node，且驱离正在运行的 pod</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>describe<span class="w"> </span>node<span class="w"> </span>&lt;node-name&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Taints<span class="w">       </span><span class="c1"># 查看污点</span>
+kubectl<span class="w"> </span>taint<span class="w"> </span>node<span class="w"> </span>&lt;node-name&gt;<span class="w"> </span><span class="nv">key</span><span class="o">=</span>value:NoSchedule<span class="w">   </span><span class="c1"># 添加污点</span>
+kubectl<span class="w"> </span>taint<span class="w"> </span>node<span class="w"> </span>&lt;node-name&gt;<span class="w"> </span><span class="nv">key</span><span class="o">=</span>value:NoSchedule-<span class="w">  </span><span class="c1"># 删除污点</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="tolerations">Tolerations</h4>
 <p><br></p>
 <hr />
 <h2 id="kubelet">kubelet</h2>

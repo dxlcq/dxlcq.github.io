@@ -640,7 +640,25 @@ spec:
     image: nginx:latest
 ```
 
-### 容忍和污点
+### Taints & Tolerations
+
+#### Taints
+
+当 pod 无法容忍 node 上的污点时：
+
+* `NoSchedule`：不调度到该 node
+
+* `PreferNoSchedule` 尽量别调度到 该 node
+
+* `NoExecute`：不调度到该 node，且驱离正在运行的 pod
+
+```shell
+kubectl describe node <node-name> | grep Taints       # 查看污点
+kubectl taint node <node-name> key=value:NoSchedule   # 添加污点
+kubectl taint node <node-name> key=value:NoSchedule-  # 删除污点
+```
+
+#### Tolerations
 
 
 
