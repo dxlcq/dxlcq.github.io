@@ -1821,18 +1821,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#taints" class="md-nav__link">
+  <a href="#taint" class="md-nav__link">
     <span class="md-ellipsis">
-      Taints
+      Taint
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tolerations" class="md-nav__link">
+  <a href="#toleration" class="md-nav__link">
     <span class="md-ellipsis">
-      Tolerations
+      Toleration
     </span>
   </a>
   
@@ -3852,18 +3852,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#taints" class="md-nav__link">
+  <a href="#taint" class="md-nav__link">
     <span class="md-ellipsis">
-      Taints
+      Taint
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tolerations" class="md-nav__link">
+  <a href="#toleration" class="md-nav__link">
     <span class="md-ellipsis">
-      Tolerations
+      Toleration
     </span>
   </a>
   
@@ -4601,7 +4601,7 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w">
 <span class="w">        </span><span class="nt">preference</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">matchExpressions</span><span class="p">:</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dddd</span>
-<span class="w">            </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:values</span>
+<span class="w">            </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:value</span>
 <span class="w">            </span><span class="nt">values</span><span class="p">:</span>
 <span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bdzd</span>
 
@@ -4644,7 +4644,7 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w">
 <span class="w">        </span><span class="nt">nodeSelectorTerms</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matchExpressions</span><span class="p">:</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dddd</span>
-<span class="w">            </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:values</span>
+<span class="w">            </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:value</span>
 <span class="w">            </span><span class="nt">values</span><span class="p">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bdzd</span>
 
@@ -4701,7 +4701,7 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w">
 <span class="w">          </span><span class="nt">labelSelector</span><span class="p">:</span>
 <span class="w">            </span><span class="nt">matchExpressions</span><span class="p">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bdzd</span>
-<span class="w">              </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:values</span>
+<span class="w">              </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:value</span>
 <span class="w">              </span><span class="nt">values</span><span class="p">:</span>
 <span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dddd</span>
 <span class="w">          </span><span class="nt">topologyKey</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kubernetes.io/hostname&quot;</span>
@@ -4746,7 +4746,7 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w">
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">labelSelector</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">matchExpressions</span><span class="p">:</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bdzd</span>
-<span class="w">            </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:values</span>
+<span class="w">            </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:value</span>
 <span class="w">            </span><span class="nt">values</span><span class="p">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dddd</span>
 <span class="w">        </span><span class="nt">topologyKey</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kubernetes.io/hostname&quot;</span>
@@ -4796,7 +4796,7 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w">
 <span class="w">          </span><span class="nt">labelSelector</span><span class="p">:</span>
 <span class="w">            </span><span class="nt">matchExpressions</span><span class="p">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bdzd</span>
-<span class="w">              </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:values</span>
+<span class="w">              </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:value</span>
 <span class="w">              </span><span class="nt">values</span><span class="p">:</span>
 <span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dddd</span>
 <span class="w">          </span><span class="nt">topologyKey</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kubernetes.io/hostname&quot;</span>
@@ -4841,7 +4841,7 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w">
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">labelSelector</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">matchExpressions</span><span class="p">:</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bdzd</span>
-<span class="w">            </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:values</span>
+<span class="w">            </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span><span class="w">    </span><span class="c1"># 节点中存在 key:value</span>
 <span class="w">            </span><span class="nt">values</span><span class="p">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dddd</span>
 <span class="w">        </span><span class="nt">topologyKey</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kubernetes.io/hostname&quot;</span>
@@ -4850,7 +4850,7 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w">
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="taints-tolerations">Taints &amp; Tolerations</h3>
-<h4 id="taints">Taints</h4>
+<h4 id="taint">Taint</h4>
 <p>当 pod 无法容忍 node 上的污点时：</p>
 <ul>
 <li>
@@ -4869,7 +4869,28 @@ kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w">
 kubectl<span class="w"> </span>taint<span class="w"> </span>node<span class="w"> </span>&lt;node-name&gt;<span class="w"> </span><span class="nv">key</span><span class="o">=</span>value:NoSchedule<span class="w">   </span><span class="c1"># 添加污点</span>
 kubectl<span class="w"> </span>taint<span class="w"> </span>node<span class="w"> </span>&lt;node-name&gt;<span class="w"> </span><span class="nv">key</span><span class="o">=</span>value:NoSchedule-<span class="w">  </span><span class="c1"># 删除污点</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="tolerations">Tolerations</h4>
+<h4 id="toleration">Toleration</h4>
+<p>pod 可以选择容忍污点</p>
+<ul>
+<li>一般容忍</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">tolerations</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;key&quot;</span>
+<span class="w">  </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Equal&quot;</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;value&quot;</span>
+<span class="w">  </span><span class="nt">effect</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;NoSchedule&quot;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>容忍所有污点</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">tolerations</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Exists&quot;</span>
+</code></pre></div></td></tr></table></div>
 <p><br></p>
 <hr />
 <h2 id="kubelet">kubelet</h2>

@@ -485,7 +485,7 @@ spec:
         preference:
           matchExpressions:
           - key: dddd
-            operator: In    # 节点中存在 key:values
+            operator: In    # 节点中存在 key:value
             values:
               - bdzd
 
@@ -511,7 +511,7 @@ spec:
         nodeSelectorTerms:
         - matchExpressions:
           - key: dddd
-            operator: In    # 节点中存在 key:values
+            operator: In    # 节点中存在 key:value
             values:
             - bdzd
 
@@ -549,7 +549,7 @@ spec:
           labelSelector:
             matchExpressions:
             - key: bdzd
-              operator: In    # 节点中存在 key:values
+              operator: In    # 节点中存在 key:value
               values:
               - dddd
           topologyKey: "kubernetes.io/hostname"
@@ -575,7 +575,7 @@ spec:
       - labelSelector:
           matchExpressions:
           - key: bdzd
-            operator: In    # 节点中存在 key:values
+            operator: In    # 节点中存在 key:value
             values:
             - dddd
         topologyKey: "kubernetes.io/hostname"
@@ -605,7 +605,7 @@ spec:
           labelSelector:
             matchExpressions:
             - key: bdzd
-              operator: In    # 节点中存在 key:values
+              operator: In    # 节点中存在 key:value
               values:
               - dddd
           topologyKey: "kubernetes.io/hostname"
@@ -631,7 +631,7 @@ spec:
       - labelSelector:
           matchExpressions:
           - key: bdzd
-            operator: In    # 节点中存在 key:values
+            operator: In    # 节点中存在 key:value
             values:
             - dddd
         topologyKey: "kubernetes.io/hostname"
@@ -642,7 +642,7 @@ spec:
 
 ### Taints & Tolerations
 
-#### Taints
+#### Taint
 
 当 pod 无法容忍 node 上的污点时：
 
@@ -658,9 +658,26 @@ kubectl taint node <node-name> key=value:NoSchedule   # 添加污点
 kubectl taint node <node-name> key=value:NoSchedule-  # 删除污点
 ```
 
-#### Tolerations
+#### Toleration
 
+pod 可以选择容忍污点
 
+* 一般容忍
+
+```yaml
+tolerations:
+- key: "key"
+  operator: "Equal"
+  value: "value"
+  effect: "NoSchedule"
+```
+
+* 容忍所有污点
+
+```yaml
+tolerations:
+- operator: "Exists"
+```
 
 
 <br>
