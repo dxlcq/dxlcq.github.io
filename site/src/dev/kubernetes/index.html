@@ -4009,6 +4009,8 @@
 <hr />
 <h2 id="getting-started">Getting Started</h2>
 <p><a href="https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">文档</a></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>su
+</code></pre></div></td></tr></table></div>
 <ol>
 <li>
 <p>禁用交换空间，以提高性能，启用 IPv4 转发，以便 <code>kubeadm</code> 可以正确的配置 <code>iptables</code> 链</p>
@@ -4024,35 +4026,26 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>su
-
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 在 /etc/fstab 文件中查找所有包含 swap 的行，将这些行注释掉，然后关闭交换空间</span>
 sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;/\bswap\b/ s/^/#/&#39;</span><span class="w"> </span>/etc/fstab
 swapoff<span class="w"> </span>-a
-
+<span class="c1"># 在 /etc/sysctl.d/ 目录下创建一个 k8s.conf 文件，写入 net.ipv4.ip_forward = 1</span>
 cat<span class="w"> </span><span class="s">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf</span>
 <span class="s">net.ipv4.ip_forward = 1</span>
 <span class="s">EOF</span>
-
+<span class="c1"># 重新加载配置</span>
 sysctl<span class="w"> </span>--system
-
+<span class="c1"># 交换空间成功关闭后，应该是 0</span>
 free<span class="w"> </span>-h
-
+<span class="c1"># IP 转发启用成功后，应该是 1</span>
 sysctl<span class="w"> </span>net.ipv4.ip_forward
 </code></pre></div></td></tr></table></div>
-<blockquote>
-<p>在 <code>/etc/fstab</code> 文件中查找所有包含 <code>swap</code> 的行，并在行首添加 <code>#</code>，将这些行注释掉，然后关闭交换空间</p>
-<p>在 <code>/etc/sysctl.d/</code> 目录下创建一个 <code>k8s.conf</code> 文件，写入 <code>net.ipv4.ip_forward = 1</code></p>
-<p>重新加载配置</p>
-<p>交换空间成功关闭后，应该是 <code>0</code></p>
-<p>检查转发是否启用成功，应该是 <code>1</code></p>
-</blockquote>
 </li>
 <li>
-<p>安装并配置 Container Runtime</p>
+<p>安装并配置容器运行时</p>
 <ul>
 <li>
-<p>使用 <a href="../docker/">Docker</a></p>
+<p>使用 <a href="../docker/">Docker</a>，<strong>注意</strong>，初始化和加入集群时，都需要指定 <code>--cri-socket=unix:///var/run/cri-dockerd.sock</code></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -4066,35 +4059,21 @@ sysctl<span class="w"> </span>net.ipv4.ip_forward
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>su
-
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 下载容器运行时</span>
 apt<span class="w"> </span>install<span class="w"> </span>docker.io<span class="w"> </span>unzip<span class="w"> </span>-y
-
+<span class="c1"># 下载垫片，用于将 cri-dockerd 作为 CRI 运行时，下载垫片源码，用于安装服务</span>
 wget<span class="w"> </span>https://github.com/Mirantis/cri-dockerd/archive/refs/tags/v0.3.16.zip
 wget<span class="w"> </span>https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.16/cri-dockerd-0.3.16.amd64.tgz
-
+<span class="c1"># 解压垫片，解压源码</span>
 unzip<span class="w"> </span>v0.3.16.zip
-
 tar<span class="w"> </span>-zxvf<span class="w"> </span>cri-dockerd-0.3.16.amd64.tgz
-<span class="nb">cd</span><span class="w"> </span>cri-dockerd-0.3.16
-install<span class="w"> </span>packaging/systemd/*<span class="w"> </span>/etc/systemd/system
-sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;s,/usr/bin/cri-dockerd,/usr/local/bin/cri-dockerd,&#39;</span><span class="w"> </span>/etc/systemd/system/cri-docker.service
+<span class="c1"># 复制二进制文件到 /usr/bin 目录下</span>
+cp<span class="w"> </span>cri-dockerd/cri-dockerd<span class="w"> </span>/usr/bin
+<span class="c1"># 安装 systemd 服务，重新加载 systemd，启用 cri-docker 服务</span>
+install<span class="w"> </span>cri-dockerd-0.3.16/packaging/systemd/*<span class="w"> </span>/etc/systemd/system
 systemctl<span class="w"> </span>daemon-reload
 systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>cri-docker.socket
-<span class="nb">cd</span><span class="w"> </span>..
-cp<span class="w"> </span>cri-dockerd/cri-dockerd<span class="w"> </span>/usr/local/bin
 </code></pre></div></td></tr></table></div>
-<blockquote>
-<p>下载容器运行时</p>
-<p>下载垫片，用于将 <code>cri-dockerd</code> 作为 <code>CRI</code> 运行时，下载垫片源码</p>
-<p>解压垫片</p>
-<p>解压源码，安装 <code>systemd</code> 服务，修改 <code>cri-docker.service</code> 文件，重新加载 <code>systemd</code>，启用 <code>cri-docker</code> 服务</p>
-<p>复制二进制文件到 <code>/usr/local/bin</code> 目录下</p>
-</blockquote>
-<p>初始化和加入集群时，都需要指定 <code>--cri-socket=unix:///var/run/cri-dockerd.sock</code></p>
 </li>
 </ul>
 <p><br></p>
@@ -4138,68 +4117,105 @@ systemctl<span class="w"> </span>restart<span class="w"> </span>containerd
 </ul>
 </li>
 <li>
-<p>安装 <code>kubeadm</code> <code>kubelet</code> 和 <code>kubectl</code></p>
+<p>安装 <code>NVIDIA CTK</code></p>
+<p><a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">NVIDIA Container Toolkit</a></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/etc/apt/keyrings/kubernetes-apt-keyring.gpg
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/kubernetes.list
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 添加 nv 的 apt 仓库</span>
+curl<span class="w"> </span>-fsSL<span class="w"> </span>https://nvidia.github.io/libnvidia-container/gpgkey<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg<span class="w"> </span><span class="se">\</span>
+<span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+sed<span class="w"> </span><span class="s1">&#39;s#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/nvidia-container-toolkit.list
+<span class="c1"># 安装 ctk</span>
 sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>kubelet<span class="w"> </span>kubeadm<span class="w"> </span>kubectl
-sudo<span class="w"> </span>apt-mark<span class="w"> </span>hold<span class="w"> </span>kubelet<span class="w"> </span>kubeadm<span class="w"> </span>kubectl
-sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>kubelet
-systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>kubelet
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nvidia-container-toolkit
 </code></pre></div></td></tr></table></div>
-<blockquote>
-<p>官网的脚本，只增加了一个开机自启</p>
-</blockquote>
-</li>
-<li>
-<p>初始化 / 加入集群</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubeadm<span class="w"> </span>init
-</code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/.kube
-sudo<span class="w"> </span>cp<span class="w"> </span>-i<span class="w"> </span>/etc/kubernetes/admin.conf<span class="w"> </span><span class="nv">$HOME</span>/.kube/config
-sudo<span class="w"> </span>chown<span class="w"> </span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span>:<span class="k">$(</span>id<span class="w"> </span>-g<span class="k">)</span><span class="w"> </span><span class="nv">$HOME</span>/.kube/config
-</code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubeadm<span class="w"> </span>token<span class="w"> </span>create<span class="w"> </span>--print-join-command
-</code></pre></div></td></tr></table></div>
-<blockquote>
-<p>在 <strong>控制平面</strong> 上执行上述命令会初始化一个 Kubernetes 集群，输出的最后会有一个 <code>kubeadm join</code> 命令，用于将其他节点加入集群</p>
-<p>在 <strong>控制平面</strong> 上执行上述命令，以便使用 <code>kubectl</code> 命令</p>
-<p><strong>控制平面</strong> 生成 join 命令，其他节点执行该命令加入集群</p>
-</blockquote>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubeadm<span class="w"> </span>join<span class="w"> </span>&lt;control-plane-host&gt;:&lt;control-plane-port&gt;<span class="w"> </span>--token<span class="w"> </span>&lt;token&gt;<span class="w"> </span>--discovery-token-ca-cert-hash<span class="w"> </span>sha256:&lt;hash&gt;
-</code></pre></div></td></tr></table></div>
-<blockquote>
-<p>在 <strong>工作节点</strong> 上执行上述命令，将节点加入集群</p>
-</blockquote>
-</li>
-<li>
-<p>在 <strong>控制平面</strong> 上安装 <code>CNI</code> 网络插件</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/calico.yaml
-</code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>在 <strong>控制平面</strong> 上启用 Kubernetes 中的 GPU 支持</p>
-<blockquote>
-<p>需要在有 GPU 的节点上将 NVIDIA CTK 设置为默认 <code>sudo nvidia-ctk runtime configure --runtime=docker --set-as-default</code></p>
-</blockquote>
 <ul>
 <li>
-<p><a href="https://github.com/NVIDIA/k8s-device-plugin">NVIDIA device plugin for Kubernetes</a></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.17.0/deployments/static/nvidia-device-plugin.yml
+<p>docker</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 将 nv 的容器运行时集成到 docker 中，并设置为 docker 的默认运行时</span>
+sudo<span class="w"> </span>nvidia-ctk<span class="w"> </span>runtime<span class="w"> </span>configure<span class="w"> </span>--runtime<span class="o">=</span>docker<span class="w"> </span>--set-as-default
 </code></pre></div></td></tr></table></div>
 </li>
 </ul>
 </li>
 <li>
-<p>在控制平面上查看集群状态</p>
+<p>安装 <code>kubeadm</code> <code>kubelet</code> 和 <code>kubectl</code></p>
+<p><a href="https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">kubeadm</a></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 添加 k8s 的 apt 仓库</span>
+curl<span class="w"> </span>-fsSL<span class="w"> </span>https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/etc/apt/keyrings/kubernetes-apt-keyring.gpg
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/kubernetes.list
+<span class="c1"># 安装并锁定版本</span>
+sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>kubelet<span class="w"> </span>kubeadm<span class="w"> </span>kubectl
+sudo<span class="w"> </span>apt-mark<span class="w"> </span>hold<span class="w"> </span>kubelet<span class="w"> </span>kubeadm<span class="w"> </span>kubectl
+<span class="c1"># 开机启动 kubelet</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>kubelet
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>初始化 / 加入集群</p>
+<ul>
+<li>
+<p>控制平面</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 初始化集群</span>
+kubeadm<span class="w"> </span>init
+<span class="c1"># </span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/.kube
+sudo<span class="w"> </span>cp<span class="w"> </span>-i<span class="w"> </span>/etc/kubernetes/admin.conf<span class="w"> </span><span class="nv">$HOME</span>/.kube/config
+sudo<span class="w"> </span>chown<span class="w"> </span><span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span>:<span class="k">$(</span>id<span class="w"> </span>-g<span class="k">)</span><span class="w"> </span><span class="nv">$HOME</span>/.kube/config
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 再看一眼 join</span>
+kubeadm<span class="w"> </span>token<span class="w"> </span>create<span class="w"> </span>--print-join-command
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>工作节点</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 加入集群</span>
+kubeadm<span class="w"> </span>join<span class="w"> </span>&lt;control-plane-host&gt;:&lt;control-plane-port&gt;<span class="w"> </span>--token<span class="w"> </span>&lt;token&gt;<span class="w"> </span>--discovery-token-ca-cert-hash<span class="w"> </span>sha256:&lt;hash&gt;
+</code></pre></div></td></tr></table></div>
+</li>
+</ul>
+</li>
+<li>
+<p>安装 <code>CNI</code> 网络插件</p>
+<p><a href="https://github.com/projectcalico/calico/tags">calico</a></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 只需要在控制平面部署</span>
+kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/projectcalico/calico/refs/tags/v3.29.1/manifests/calico.yaml
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>安装 <code>NVIDIA</code> 插件</p>
+<p><a href="https://github.com/NVIDIA/k8s-device-plugin/tags">NVIDIA device plugin for Kubernetes</a></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 只需要在控制平面部署</span>
+kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/refs/tags/v0.17.0/deployments/static/nvidia-device-plugin.yml
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>查看集群状态</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes

@@ -21,71 +21,49 @@
 
 [文档](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
 
+```shell
+sudo su
+```
+
 1. 禁用交换空间，以提高性能，启用 IPv4 转发，以便 `kubeadm` 可以正确的配置 `iptables` 链
 
     ```shell
-    sudo su
-
+    # 在 /etc/fstab 文件中查找所有包含 swap 的行，将这些行注释掉，然后关闭交换空间
     sed -i '/\bswap\b/ s/^/#/' /etc/fstab
     swapoff -a
-
+    # 在 /etc/sysctl.d/ 目录下创建一个 k8s.conf 文件，写入 net.ipv4.ip_forward = 1
     cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
     net.ipv4.ip_forward = 1
     EOF
-    
+    # 重新加载配置
     sysctl --system
-
+    # 交换空间成功关闭后，应该是 0
     free -h
-
+    # IP 转发启用成功后，应该是 1
     sysctl net.ipv4.ip_forward
     ```
-
-    > 在 `/etc/fstab` 文件中查找所有包含 `swap` 的行，并在行首添加 `#`，将这些行注释掉，然后关闭交换空间
-
-    > 在 `/etc/sysctl.d/` 目录下创建一个 `k8s.conf` 文件，写入 `net.ipv4.ip_forward = 1`
-    
-    > 重新加载配置
-
-    > 交换空间成功关闭后，应该是 `0`
-
-    > 检查转发是否启用成功，应该是 `1`
     
 
-3. 安装并配置 Container Runtime
+2. 安装并配置容器运行时
 
-    * 使用 [Docker](./docker.md)
+    * 使用 [Docker](./docker.md)，**注意**，初始化和加入集群时，都需要指定 `--cri-socket=unix:///var/run/cri-dockerd.sock`
 
         ```shell
-        sudo su
-
+        # 下载容器运行时
         apt install docker.io unzip -y
-
+        # 下载垫片，用于将 cri-dockerd 作为 CRI 运行时，下载垫片源码，用于安装服务
         wget https://github.com/Mirantis/cri-dockerd/archive/refs/tags/v0.3.16.zip
         wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.16/cri-dockerd-0.3.16.amd64.tgz
-
+        # 解压垫片，解压源码
         unzip v0.3.16.zip
-
         tar -zxvf cri-dockerd-0.3.16.amd64.tgz
-        cd cri-dockerd-0.3.16
-        install packaging/systemd/* /etc/systemd/system
-        sed -i -e 's,/usr/bin/cri-dockerd,/usr/local/bin/cri-dockerd,' /etc/systemd/system/cri-docker.service
+        # 复制二进制文件到 /usr/bin 目录下
+        cp cri-dockerd/cri-dockerd /usr/bin
+        # 安装 systemd 服务，重新加载 systemd，启用 cri-docker 服务
+        install cri-dockerd-0.3.16/packaging/systemd/* /etc/systemd/system
         systemctl daemon-reload
         systemctl enable --now cri-docker.socket
-        cd ..
-        cp cri-dockerd/cri-dockerd /usr/local/bin
         ```
-
-        > 下载容器运行时
-
-        > 下载垫片，用于将 `cri-dockerd` 作为 `CRI` 运行时，下载垫片源码
-
-        > 解压垫片
-
-        > 解压源码，安装 `systemd` 服务，修改 `cri-docker.service` 文件，重新加载 `systemd`，启用 `cri-docker` 服务
-
-        > 复制二进制文件到 `/usr/local/bin` 目录下
-
-        初始化和加入集群时，都需要指定 `--cri-socket=unix:///var/run/cri-dockerd.sock`
 
     <br>
 
@@ -116,66 +94,90 @@
         > 
         > 重启 `containerd` 服务
 
-4. 安装 `kubeadm` `kubelet` 和 `kubectl`
+3. 安装 `NVIDIA CTK`
+
+    [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 
     ```shell
-    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+    # 添加 nv 的 apt 仓库
+    curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+    && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+    # 安装 ctk
+    sudo apt-get update
+    sudo apt-get install -y nvidia-container-toolkit
+    ```
+
+    * docker
+
+        ```shell
+        # 将 nv 的容器运行时集成到 docker 中，并设置为 docker 的默认运行时
+        sudo nvidia-ctk runtime configure --runtime=docker --set-as-default
+        ```
+
+4. 安装 `kubeadm` `kubelet` 和 `kubectl`
+
+    [kubeadm](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
+
+    ```shell
+    # 添加 k8s 的 apt 仓库
+    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+    # 安装并锁定版本
     sudo apt-get update
     sudo apt-get install -y kubelet kubeadm kubectl
     sudo apt-mark hold kubelet kubeadm kubectl
+    # 开机启动 kubelet
     sudo systemctl enable --now kubelet
-    systemctl enable kubelet
     ```
-
-    > 官网的脚本，只增加了一个开机自启
 
 5. 初始化 / 加入集群
-
-    ```shell
-    kubeadm init
-    ```
-
-    ```shell
-    mkdir -p $HOME/.kube
-    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-    sudo chown $(id -u):$(id -g) $HOME/.kube/config
-    ```
-
-    ```shell
-    kubeadm token create --print-join-command
-    ```
-
-    > 在 **控制平面** 上执行上述命令会初始化一个 Kubernetes 集群，输出的最后会有一个 `kubeadm join` 命令，用于将其他节点加入集群
-
-    > 在 **控制平面** 上执行上述命令，以便使用 `kubectl` 命令
-
-    > **控制平面** 生成 join 命令，其他节点执行该命令加入集群
-
-    ```shell
-    kubeadm join <control-plane-host>:<control-plane-port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
-    ```
-
-    > 在 **工作节点** 上执行上述命令，将节点加入集群
-
-6. 在 **控制平面** 上安装 `CNI` 网络插件
-
-    ```shell
-    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/calico.yaml
-    ```
-
-
-7. 在 **控制平面** 上启用 Kubernetes 中的 GPU 支持
-
-    > 需要在有 GPU 的节点上将 NVIDIA CTK 设置为默认 `sudo nvidia-ctk runtime configure --runtime=docker --set-as-default`
-
-    * [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin)
+    
+    * 控制平面
 
         ```shell
-        kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.17.0/deployments/static/nvidia-device-plugin.yml
+        # 初始化集群
+        kubeadm init
+        # 
+        mkdir -p $HOME/.kube
+        sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+        sudo chown $(id -u):$(id -g) $HOME/.kube/config
+        ```
+        
+        ```shell
+        # 再看一眼 join
+        kubeadm token create --print-join-command
         ```
 
-7. 在控制平面上查看集群状态
+
+    * 工作节点
+
+        ```shell
+        # 加入集群
+        kubeadm join <control-plane-host>:<control-plane-port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+        ```
+
+6. 安装 `CNI` 网络插件
+
+    [calico](https://github.com/projectcalico/calico/tags)
+
+    ```shell
+    # 只需要在控制平面部署
+    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/refs/tags/v3.29.1/manifests/calico.yaml
+    ```
+
+
+7. 安装 `NVIDIA` 插件
+
+    [NVIDIA device plugin for Kubernetes](https://github.com/NVIDIA/k8s-device-plugin/tags)
+
+    ```shell
+    # 只需要在控制平面部署
+    kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/refs/tags/v0.17.0/deployments/static/nvidia-device-plugin.yml
+    ```
+
+7. 查看集群状态
 
     ```shell
     kubectl get nodes
