@@ -12,6 +12,8 @@
 
 * [k8s 1.29 教程](https://www.bilibili.com/video/BV1PbeueyE8V)
 
+* [k8s 调度器开发教程](https://blog.haohtml.com/archives/34665)
+
 
 <br>
 
@@ -19,11 +21,7 @@
 
 ## Getting Started
 
-[文档](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
-
-```shell
-sudo su
-```
+`sudo su`
 
 1. 禁用交换空间，以提高性能，启用 IPv4 转发，以便 `kubeadm` 可以正确的配置 `iptables` 链
 
@@ -64,8 +62,6 @@ sudo su
         systemctl daemon-reload
         systemctl enable --now cri-docker.socket
         ```
-
-    <br>
 
     * 使用 [Containerd](./containerd.md)
 
@@ -258,21 +254,32 @@ sudo su
 
 ## node
 
-```yaml
+```shell
+kubectl describe node <node-name>  # 查看节点详细信息
+
 kubectl label node <node-name> <key>=<value>              # 添加标签
-kubectl label node <node-name> <key>=<value> --overwrite  # 覆写标签
 kubectl label node <node-name> <key>-                     # 删除标签
+kubectl label node <node-name> <key>=<value> --overwrite  # 覆写标签
 kubectl get nodes --show-labels                           # 查看标签
 ```
 
+<br>
+
+---
+
 ## namespace
+
+```shell
+kubectl get namespaces              # 查看所有命名空间
+kubectl create namespace <ns-name>  # 创建命名空间
+```
 
 
 <br>
 
 ---
 
-## Pod
+## pod
 
 ```yaml
 apiVersion: v1
@@ -379,6 +386,11 @@ kubectl delete job <job-name>
 
 ## Service
 
+```shell
+kubectl get service -A          # 查看所有 service
+kubectl get service -n <ns>     # 查看 <ns> 命名空间下的 service
+```
+
 ```yaml
 spec:
   selector:
@@ -394,7 +406,7 @@ spec:
 
 ---
 
-## Storage
+## Persistence
 
 
 ### PersistentVolume
@@ -681,69 +693,9 @@ tolerations:
 - operator: "Exists"
 ```
 
-
-<br>
-
----
+#### 自定义调度器
 
 
-## kubelet
-
-与容器运行时交互，依赖 `CRI` 容器运行时接口
-
-<br>
-
----
-
-## kubeadm
-
-用于初始化集群、加入节点、重置集群等操作
-
-### 完整清理 k8s 集群
-
-```shell
-sudo kubeadm reset
-sudo rm -rf /etc/kubernetes /var/lib/etcd
-sudo rm -rf $HOME/.kube
-```
 
 
-<br>
 
----
-
-## kubectl
-
-用于控制平面进行操作，如创建、删除、更新资源
-
-### namespace
-
-```shell
-kubectl get namespaces        # 查看所有命名空间
-kubectl create namespace <ns> # 创建命名空间
-```
-
-
-### node
-
-```shell
-kubectl cluster-info          # 查看集群信息
-kubectl get node              # 查看节点信息
-kubectl get node --show-labels# 查看节点标签
-kubectl describe node <node>  # 查看节点详细信息
-```
-
-### Pod
-
-```shell
-kubectl get pod -A              # 查看所有 pod
-kubectl get pod -n kube-system  # 查看 kube-system 命名空间下的 pod
-kubectl get pod -o wide         # 查看 pod 的详细信息
-```
-
-### Service
-
-```shell
-kubectl get service -A          # 查看所有 service
-kubectl get service -n <ns>     # 查看 <ns> 命名空间下的 service
-```

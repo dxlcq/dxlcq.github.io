@@ -9,6 +9,28 @@ sudo wget "https://dxlcq.cn/public/authorized_keys" -O /root/.ssh/authorized_key
 echo "PermitRootLogin prohibit-password" | sudo tee -a /etc/ssh/sshd_config
 ```
 
+## dir
+
+```shell
+└── /
+    ├── bin     # binaries 系统运行的基本命令 
+    ├── sbin    # system binaries 系统管理员使用的基本命令
+    ├── lib     # libraries 上面俩的共享库
+    ├── usr     # unix system resource 系统资源（包管理的软件）
+    │    ├── bin
+    │    ├── sbin
+    │    ├── lib
+    │    └── local  # 手动安装的软件，避免与包管理器冲突
+    ├── etc     # editable text config 配置文件（/etc/netplan）
+    ├── dev     # 查看你的设备
+    ├── boot    #   
+    ├── var     # /var/www
+    └── s
+
+
+
+```
+
 ## 软件
 
 ### apt

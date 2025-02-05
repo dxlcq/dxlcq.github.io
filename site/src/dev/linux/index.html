@@ -1516,6 +1516,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      dir
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       软件
@@ -3985,6 +3994,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      dir
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       软件
@@ -4605,6 +4623,35 @@
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>openssh-server<span class="w"> </span>wget<span class="w"> </span>apt-transport-https<span class="w"> </span>ca-certificates<span class="w"> </span>curl<span class="w"> </span>gpg
 sudo<span class="w"> </span>wget<span class="w"> </span><span class="s2">&quot;https://dxlcq.cn/public/authorized_keys&quot;</span><span class="w"> </span>-O<span class="w"> </span>/root/.ssh/authorized_keys
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;PermitRootLogin prohibit-password&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/ssh/sshd_config
+</code></pre></div></td></tr></table></div>
+<h2 id="dir">dir</h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>└──<span class="w"> </span>/
+<span class="w">    </span>├──<span class="w"> </span>bin<span class="w">     </span><span class="c1"># binaries 系统运行的基本命令 </span>
+<span class="w">    </span>├──<span class="w"> </span>sbin<span class="w">    </span><span class="c1"># system binaries 系统管理员使用的基本命令</span>
+<span class="w">    </span>├──<span class="w"> </span>lib<span class="w">     </span><span class="c1"># libraries 上面俩的共享库</span>
+<span class="w">    </span>├──<span class="w"> </span>usr<span class="w">     </span><span class="c1"># unix system resource 系统资源（包管理的软件）</span>
+<span class="w">    </span>│<span class="w">    </span>├──<span class="w"> </span>bin
+<span class="w">    </span>│<span class="w">    </span>├──<span class="w"> </span>sbin
+<span class="w">    </span>│<span class="w">    </span>├──<span class="w"> </span>lib
+<span class="w">    </span>│<span class="w">    </span>└──<span class="w"> </span><span class="nb">local</span><span class="w">  </span><span class="c1"># 手动安装的软件，避免与包管理器冲突</span>
+<span class="w">    </span>├──<span class="w"> </span>etc<span class="w">     </span><span class="c1"># editable text config 配置文件（/etc/netplan）</span>
+<span class="w">    </span>├──<span class="w"> </span>dev<span class="w">     </span><span class="c1"># 查看你的设备</span>
+<span class="w">    </span>├──<span class="w"> </span>boot<span class="w">    </span><span class="c1">#   </span>
+<span class="w">    </span>├──<span class="w"> </span>var<span class="w">     </span><span class="c1"># /var/www</span>
+<span class="w">    </span>└──<span class="w"> </span>s
 </code></pre></div></td></tr></table></div>
 <h2 id="_1">软件</h2>
 <h3 id="apt">apt</h3>

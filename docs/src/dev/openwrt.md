@@ -50,7 +50,7 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
 
 * 一种无需额外硬件的最佳 OpenWrt 安装方法
 
-    1. 下载 [immortalwrt-x86-64-generic-ext4-combined-efi.vhdx](https://downloads.immortalwrt.org/snapshots//targets/x86/64/immortalwrt-x86-64-generic-ext4-combined-efi.vhdx)
+    1. 下载 [immortalwrt-x86-64-generic-ext4-combined-efi.vhdx](https://downloads.immortalwrt.org/snapshots/targets/x86/64/)
 
     2. 直接安装至 hyper-v
 
