@@ -118,7 +118,7 @@
 
     go 1.22
     // 重定向到本地
-    require github.com/daixll/my_project/two => ./two
+    replace github.com/daixll/my_project/two => ./two
     ```
 
 4. `go mod tidy`

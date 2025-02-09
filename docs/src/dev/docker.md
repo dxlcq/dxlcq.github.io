@@ -279,7 +279,7 @@ sudo docker build -t web_server .
 
 ```bash
 sudo docker login
-sudo docker web_server dxlcq/web_server
+sudo docker tag web_server dxlcq/web_server
 sudo docker push dxlcq/web_server
 ```
 

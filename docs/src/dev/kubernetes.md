@@ -12,7 +12,22 @@
 
 * [k8s 1.29 教程](https://www.bilibili.com/video/BV1PbeueyE8V)
 
+---
+
+* [k8s scheduler-plugins](https://github.com/kubernetes-sigs/scheduler-plugins/tree/v0.29.7)
+
+* [调度框架](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/scheduling-framework/)
+
+* [调度器配置](https://kubernetes.io/zh-cn/docs/reference/scheduling/config/)
+
+* [配置多个调度器](https://kubernetes.io/zh-cn/docs/tasks/extend-kubernetes/configure-multiple-schedulers/)
+
 * [k8s 调度器开发教程](https://blog.haohtml.com/archives/34665)
+
+* [同上](https://arthurchiao.art/blog/k8s-scheduling-plugins-zh/)
+
+* [同上](https://www.qikqiak.com/post/custom-kube-scheduler/)
+
 
 
 <br>
@@ -118,8 +133,8 @@
 
     ```shell
     # 添加 k8s 的 apt 仓库
-    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
     # 安装并锁定版本
     sudo apt-get update
     sudo apt-get install -y kubelet kubeadm kubectl
@@ -693,7 +708,74 @@ tolerations:
 - operator: "Exists"
 ```
 
-#### 自定义调度器
+### 二开
+
+按照官方的说法，调度器开发有一种非常简单的做法：
+
+1. 修改默认调度器的启动文件 `/etc/kubernetes/manifests/kube-schdueler.yaml`
+
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      creationTimestamp: null
+      labels:
+        component: kube-scheduler
+        tier: control-plane
+      name: kube-scheduler
+      namespace: kube-system
+    spec:
+      containers:
+      - command:
+        - kube-scheduler
+        - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf
+        - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
+        - --bind-address=127.0.0.1
+        - --kubeconfig=/etc/kubernetes/scheduler.conf
+        - --leader-elect=true
+        image: registry.k8s.io/kube-scheduler:v1.31.4
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 8
+          httpGet:
+            host: 127.0.0.1
+            path: /healthz
+            port: 10259
+            scheme: HTTPS
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 15
+        name: kube-scheduler
+        resources:
+          requests:
+            cpu: 100m
+        startupProbe:
+          failureThreshold: 24
+          httpGet:
+            host: 127.0.0.1
+            path: /healthz
+            port: 10259
+            scheme: HTTPS
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 15
+        volumeMounts:
+        - mountPath: /etc/kubernetes/scheduler.conf
+          name: kubeconfig
+          readOnly: true
+      hostNetwork: true
+      priority: 2000001000
+      priorityClassName: system-node-critical
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
+      volumes:
+      - hostPath:
+          path: /etc/kubernetes/scheduler.conf
+          type: FileOrCreate
+        name: kubeconfig
+    status: {}
+    ```
 
 
 
