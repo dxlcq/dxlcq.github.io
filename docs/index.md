@@ -114,7 +114,7 @@
 <div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="http://10.0.0.6:8080" target="_blank">
+    <a href="http://10.0.0.10:8080" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/ISS-40_Thunderheads_near_Borneo.jpg/330px-ISS-40_Thunderheads_near_Borneo.jpg"></div>
       <div style="font-size: 12px;">私有云盘</div>
     </a>
@@ -195,7 +195,7 @@
   </div>
 
   <div class="item">
-    <a href="http:10.0.0.6:2026" target="_blank">
+    <a href="http:10.0.0.10:2026" target="_blank">
       <div class="rounded-icon"><img src="https://avatars.githubusercontent.com/u/55735736?s=200&v=4"></div>
       <div style="font-size: 12px;">测速</div>
     </a>
@@ -241,7 +241,7 @@
   </div>
 
   <div class="item">
-    <a href="http://10.0.0.1" target="_blank">
+    <a href="https://smbcloud.tp-link.com.cn/login.html" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/TPLINK_Logo_2.svg/2880px-TPLINK_Logo_2.svg.png"></div>
       <div style="font-size: 12px;">路由器</div>
     </a>
@@ -295,7 +295,7 @@
         <a href="https://web.telegram.org/a/" target="_blank"> Telegram </a> 
     </div>
     <div class="item">
-        <a href="http://10.0.0.6:8096" target="_blank"> Emby </a>
+        <a href="http://10.0.0.10:8096" target="_blank"> Emby </a>
     </div>
 </div>
 
