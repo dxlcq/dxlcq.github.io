@@ -32,41 +32,39 @@
     python3 -m mkdocs build && git add . && git commit -m "🥳" && git push
     ```
 
-**服务部署**
+**服务部署（自用）**
 
-1. `sudo apt install nginx`
+* 反向代理服务器：
 
-2. 添加 `vim /etc/nginx/nginx.conf`
+    1. `sudo apt install nginx`
 
-    ```
-    include '/var/www/dxlcq.github.io/default.conf';
-    ```
+    2. `/etc/nginx/conf.d` 下添加配置文件 `reverse.conf`
 
-3. SSL 证书
+    3. 
 
-    * 首次申请
+    3. SSL 证书
 
-        ```shell
-        sudo snap install --classic certbot
-        sudo ln -s /snap/bin/certbot /usr/bin/certbot
-        sudo certbot certonly --webroot -w /var/www/dxlcq.github.io/site -d dxlcq.cn
-        ```
+        * 首次申请
 
-    * 测试更新
+            ```shell
+            sudo snap install --classic certbot
+            sudo ln -s /snap/bin/certbot /usr/bin/certbot
+            sudo certbot certonly --webroot -w /root -d dxlcq.cn
+            ```
 
-        ```shell
-        sudo certbot renew --dry-run
-        ```
+        * 测试更新
 
-    * 每周更新 `sudo crontab -e`
+            ```shell
+            sudo certbot renew --dry-run
+            ```
 
-        ```shell
-        0 0 * * 1 certbot renew && nginx -s reload
-        ```
+        * 每周更新 `sudo crontab -e`
 
-    * 查看证书剩余时长 `certbot certificates`
+            ```shell
+            0 0 * * 1 certbot renew && nginx -s reload
+            ```
 
-
+        * 查看证书剩余时长 `certbot certificates`
 
 **参考**
 
