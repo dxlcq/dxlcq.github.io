@@ -32,39 +32,40 @@
     python3 -m mkdocs build && git add . && git commit -m "🥳" && git push
     ```
 
-**服务部署（自用）**
+**反向代理（自用）**
 
-* 反向代理服务器：
+1. `sudo apt install nginx`
 
-    1. `sudo apt install nginx`
+2. `/etc/nginx/conf.d` 下添加配置文件 `reverse.conf`
 
-    2. `/etc/nginx/conf.d` 下添加配置文件 `reverse.conf`
+3. SSL 证书
 
-    3. 
+    * 安装 `certbot`
 
-    3. SSL 证书
+        ```shell
+        sudo snap install --classic certbot
+        sudo ln -s /snap/bin/certbot /usr/bin/certbot
+        ```
 
-        * 首次申请
+    * 首次申请
 
-            ```shell
-            sudo snap install --classic certbot
-            sudo ln -s /snap/bin/certbot /usr/bin/certbot
-            sudo certbot certonly --webroot -w /root -d dxlcq.cn
-            ```
+        ```shell
+        sudo certbot certonly --webroot -w / -d dxlcq.cn
+        ```
 
-        * 测试更新
+    * 测试更新
 
-            ```shell
-            sudo certbot renew --dry-run
-            ```
+        ```shell
+        sudo certbot renew --dry-run
+        ```
 
-        * 每周更新 `sudo crontab -e`
+    * 每周更新 `sudo crontab -e`
 
-            ```shell
-            0 0 * * 1 certbot renew && nginx -s reload
-            ```
+        ```shell
+        0 0 * * 1 certbot renew && nginx -s reload
+        ```
 
-        * 查看证书剩余时长 `certbot certificates`
+    * 查看证书剩余时长 `certbot certificates`
 
 **参考**
 
