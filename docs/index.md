@@ -195,7 +195,7 @@
   </div>
 
   <div class="item">
-    <a href="10.0.0.10:2026" target="_blank">
+    <a href="http://10.0.0.10:2026" target="_blank">
       <div class="rounded-icon"><img src="https://avatars.githubusercontent.com/u/55735736?s=200&v=4"></div>
       <div style="font-size: 12px;">测速</div>
     </a>
