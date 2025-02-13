@@ -147,21 +147,46 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
 
     * `openvpn-easy-rsa`
 
-    * `luci-app-openvpn-server`
+    * `luci-app-openvpn-server` **仅使用 terminal 下载这一个，前两个自动下**
 
     * `luci-i18n-openvpn-server-zh-cn`
 
 2. 添加 NAT 规则
 
-    * Forwarded `IPv4`；来自 `所有区域`，IP `10.0.8.0/24`；到 `所有区域`；自动重写源 IP
+    * Forwarded `IPv4`；来自 `所有区域`，IP `10.0.1.0/24`；到 `所有区域`；自动重写源 IP
 
-3. 通过修改 `/etc/config/openvpn` 文件，添加一些功能
+3. `/etc/config/openvpn`
 
-    * 允许多用户共用同一证书
-
-        ```bash
+    ```bash
+    config openvpn 'myvpn'
+        option enabled '1'
+        option proto 'tcp-server'
+        option port '1194'
+        option ddns 'dxlcq.com'
+        option dev 'tun'
+        option topology 'subnet'
+        option server '10.0.1.0 255.255.255.0'
+        option comp_lzo 'no'
+        option ca '/etc/openvpn/pki/ca.crt'
+        option dh '/etc/openvpn/pki/dh.pem'
+        option cert '/etc/openvpn/pki/server.crt'
+        option key '/etc/openvpn/pki/server.key'
+        option persist_key '1'
+        option persist_tun '1'
+        option user 'nobody'
+        option group 'nogroup'
+        option max_clients '10'
+        option keepalive '10 120'
+        option verb '3'
+        option status '/var/log/openvpn_status.log'
+        option log '/tmp/openvpn.log'
         option duplicate_cn '1'
-        ```
+        option client_to_client 
+        list push 'comp-lzo no'
+        list push 'redirect-gateway def1 bypass-dhcp'
+        list push 'route 10.0.0.0 255.255.255.0'
+        list push 'dhcp-option DNS 10.0.0.1'
+    ```
 
 #### Client
 
@@ -173,19 +198,13 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
 
     * `luci-i18n-openvpn-zh-cn`
 
-2. 通过修改 `.ovpn` 文件，添加一些功能
+2. （可选）通过修改 `.ovpn` 文件
 
     * 只有特定网络流量通过 vpn
 
         ```ovpn
         route-nopull
         route 10.0.0.0 255.255.255.0 vpn_gateway
-        ```
-
-    * 允许服务器访问客户端
-
-        ```ovpn
-        client-to-client
         ```
 
 

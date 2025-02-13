@@ -3877,7 +3877,7 @@ opkg<span class="w"> </span>install<span class="w"> </span>luci
 <p><code>openvpn-easy-rsa</code></p>
 </li>
 <li>
-<p><code>luci-app-openvpn-server</code></p>
+<p><code>luci-app-openvpn-server</code> <strong>仅使用 terminal 下载这一个，前两个自动下</strong></p>
 </li>
 <li>
 <p><code>luci-i18n-openvpn-server-zh-cn</code></p>
@@ -3887,18 +3887,67 @@ opkg<span class="w"> </span>install<span class="w"> </span>luci
 <li>
 <p>添加 NAT 规则</p>
 <ul>
-<li>Forwarded <code>IPv4</code>；来自 <code>所有区域</code>，IP <code>10.0.8.0/24</code>；到 <code>所有区域</code>；自动重写源 IP</li>
+<li>Forwarded <code>IPv4</code>；来自 <code>所有区域</code>，IP <code>10.0.1.0/24</code>；到 <code>所有区域</code>；自动重写源 IP</li>
 </ul>
 </li>
 <li>
-<p>通过修改 <code>/etc/config/openvpn</code> 文件，添加一些功能</p>
-<ul>
-<li>
-<p>允许多用户共用同一证书</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>option<span class="w"> </span>duplicate_cn<span class="w"> </span><span class="s1">&#39;1&#39;</span>
+<p><code>/etc/config/openvpn</code></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code>config<span class="w"> </span>openvpn<span class="w"> </span><span class="s1">&#39;myvpn&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>enabled<span class="w"> </span><span class="s1">&#39;1&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>proto<span class="w"> </span><span class="s1">&#39;tcp-server&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>port<span class="w"> </span><span class="s1">&#39;1194&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>ddns<span class="w"> </span><span class="s1">&#39;dxlcq.com&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>dev<span class="w"> </span><span class="s1">&#39;tun&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>topology<span class="w"> </span><span class="s1">&#39;subnet&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>server<span class="w"> </span><span class="s1">&#39;10.0.1.0 255.255.255.0&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>comp_lzo<span class="w"> </span><span class="s1">&#39;no&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>ca<span class="w"> </span><span class="s1">&#39;/etc/openvpn/pki/ca.crt&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>dh<span class="w"> </span><span class="s1">&#39;/etc/openvpn/pki/dh.pem&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>cert<span class="w"> </span><span class="s1">&#39;/etc/openvpn/pki/server.crt&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>key<span class="w"> </span><span class="s1">&#39;/etc/openvpn/pki/server.key&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>persist_key<span class="w"> </span><span class="s1">&#39;1&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>persist_tun<span class="w"> </span><span class="s1">&#39;1&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>user<span class="w"> </span><span class="s1">&#39;nobody&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>group<span class="w"> </span><span class="s1">&#39;nogroup&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>max_clients<span class="w"> </span><span class="s1">&#39;10&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>keepalive<span class="w"> </span><span class="s1">&#39;10 120&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>verb<span class="w"> </span><span class="s1">&#39;3&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>status<span class="w"> </span><span class="s1">&#39;/var/log/openvpn_status.log&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>log<span class="w"> </span><span class="s1">&#39;/tmp/openvpn.log&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>duplicate_cn<span class="w"> </span><span class="s1">&#39;1&#39;</span>
+<span class="w">    </span>option<span class="w"> </span>client_to_client<span class="w"> </span>
+<span class="w">    </span>list<span class="w"> </span>push<span class="w"> </span><span class="s1">&#39;comp-lzo no&#39;</span>
+<span class="w">    </span>list<span class="w"> </span>push<span class="w"> </span><span class="s1">&#39;redirect-gateway def1 bypass-dhcp&#39;</span>
+<span class="w">    </span>list<span class="w"> </span>push<span class="w"> </span><span class="s1">&#39;route 10.0.0.0 255.255.255.0&#39;</span>
+<span class="w">    </span>list<span class="w"> </span>push<span class="w"> </span><span class="s1">&#39;dhcp-option DNS 10.0.0.1&#39;</span>
 </code></pre></div></td></tr></table></div>
-</li>
-</ul>
 </li>
 </ol>
 <h4 id="client">Client</h4>
@@ -3918,18 +3967,13 @@ opkg<span class="w"> </span>install<span class="w"> </span>luci
 </ul>
 </li>
 <li>
-<p>通过修改 <code>.ovpn</code> 文件，添加一些功能</p>
+<p>（可选）通过修改 <code>.ovpn</code> 文件</p>
 <ul>
 <li>
 <p>只有特定网络流量通过 vpn</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>route-nopull
 route 10.0.0.0 255.255.255.0 vpn_gateway
-</code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>允许服务器访问客户端</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>client-to-client
 </code></pre></div></td></tr></table></div>
 </li>
 </ul>
