@@ -198,34 +198,25 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
 
     * `luci-i18n-openvpn-zh-cn`
 
-2. （可选）通过修改 `.ovpn` 文件
+2. 添加 NAT 规则
 
-    * 只有特定网络流量通过 vpn
+    * Forwarded `IPv4`；来自 `所有区域`；到 `所有区域`，IP `10.0.0.0/24`；自动重写源 IP
 
-        ```ovpn
-        route-nopull
-        route 10.0.0.0 255.255.255.0 vpn_gateway
-        ```
+3. 在 `.ovpn` 文件中添加，只有特定网络流量通过 vpn
 
+    ```ovpn
+    route-nopull
+    route 10.0.0.0 255.255.255.0 vpn_gateway
+    ```
 
+---
 
 [https://en.wikipedia.org/wiki/List_of_WLAN_channels](https://en.wikipedia.org/wiki/List_of_WLAN_channels)
-
-
 
 [openwrt ovpn教程](https://www.youtube.com/watch?v=yb-g4ZaNm9Y)
 
 [openvpn 网络速率优化](http://www.xixicool.com/870.html)
 
-实际上删除 openvpn comp_lzo 即可
-
-防火墙设置：
-    forwarded ipv4 来自所有区域，ip 10.0.1.0/24 到 lan，静态重写到源 ip 10.0.0.2
-
-```sh
-route-nopull
-route 10.0.0.0 255.255.255.0 vpn_gateway
-```
 
 
 ## 路由器

@@ -3967,28 +3967,23 @@ opkg<span class="w"> </span>install<span class="w"> </span>luci
 </ul>
 </li>
 <li>
-<p>（可选）通过修改 <code>.ovpn</code> 文件</p>
+<p>添加 NAT 规则</p>
 <ul>
+<li>Forwarded <code>IPv4</code>；来自 <code>所有区域</code>；到 <code>所有区域</code>，IP <code>10.0.0.0/24</code>；自动重写源 IP</li>
+</ul>
+</li>
 <li>
-<p>只有特定网络流量通过 vpn</p>
+<p>在 <code>.ovpn</code> 文件中添加，只有特定网络流量通过 vpn</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>route-nopull
 route 10.0.0.0 255.255.255.0 vpn_gateway
 </code></pre></div></td></tr></table></div>
 </li>
-</ul>
-</li>
 </ol>
+<hr />
 <p><a href="https://en.wikipedia.org/wiki/List_of_WLAN_channels">https://en.wikipedia.org/wiki/List_of_WLAN_channels</a></p>
 <p><a href="https://www.youtube.com/watch?v=yb-g4ZaNm9Y">openwrt ovpn教程</a></p>
 <p><a href="http://www.xixicool.com/870.html">openvpn 网络速率优化</a></p>
-<p>实际上删除 openvpn comp_lzo 即可</p>
-<p>防火墙设置：
-    forwarded ipv4 来自所有区域，ip 10.0.1.0/24 到 lan，静态重写到源 ip 10.0.0.2</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>route-nopull
-route<span class="w"> </span><span class="m">10</span>.0.0.0<span class="w"> </span><span class="m">255</span>.255.255.0<span class="w"> </span>vpn_gateway
-</code></pre></div></td></tr></table></div>
 <h2 id="_5">路由器</h2>
 <p><strong>WAN</strong></p>
 <ul>
