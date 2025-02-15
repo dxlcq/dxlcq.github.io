@@ -13,8 +13,7 @@
 
 * [状态监控](https://github.com/zhongyang219/TrafficMonitor) / [Bandizip](https://www.bandisoft.com/bandizip/) / [Office](https://otp.landian.vip/zh-cn/download.html) / [WPS](https://www.wps.cn/) / [todesk](https://dl.todesk.com/windows/ToDesk_Lite.exe)
 
-* [VM-win-linux](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Workstation%20Pro) / [VM-mac](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Fusion)
-
+* [VMware](https://softwareupdate.vmware.com/cds/vmw-desktop/ws/)
 
 <br>
 
