@@ -4961,9 +4961,11 @@ password=admin
 <p>下载 <code>sudo apt install nfs-kernel-server</code></p>
 </li>
 <li>
-<p>添加共享目录 <code>sudo vim /etc/exports</code> <code>chown nobody:nogroup /home/user -R</code></p>
+<p>添加共享目录 <code>sudo vim /etc/exports</code></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/home/user *(rw,sync,no_subtree_check)
 </code></pre></div></td></tr></table></div>
+<p><code>chown nobody:nogroup /home/user -R</code></p>
+<p><code>sudo chmod 777 /home/jiao/Public/ -R</code></p>
 </li>
 <li>
 <p>重启nfs <code>sudo systemctl restart nfs-kernel-server</code></p>

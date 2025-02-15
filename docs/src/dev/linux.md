@@ -294,11 +294,15 @@ dump，rsync
 
 1. 下载 `sudo apt install nfs-kernel-server`
 
-2. 添加共享目录 `sudo vim /etc/exports` `chown nobody:nogroup /home/user -R`
+2. 添加共享目录 `sudo vim /etc/exports`
 
     ```conf
     /home/user *(rw,sync,no_subtree_check)
     ```
+
+    `chown nobody:nogroup /home/user -R`
+    
+    `sudo chmod 777 /home/jiao/Public/ -R`
 
 3. 重启nfs `sudo systemctl restart nfs-kernel-server`
 

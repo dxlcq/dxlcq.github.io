@@ -368,23 +368,39 @@ spec:
 ### deployment
 
 ```yaml
-spec:
-  replicas: 3
+apiVersion: apps/v1
+kind: Deployment
 
-  selector:
-    matchLabels:
-      app: nginx
+metadata:
+  name: deployment-carla
+  namespace: carla
+
+spec:
+  replicas: 2     # 副本数量
   
-  template:
+  selector:       # 选择器
+    matchLabels:
+      app: po-carla
+
+  template:       # 模板，起 pod
     metadata:
-      labels:
-        app: nginx
+      labels:     # 设置标签
+        app: po-carla
+    
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+        - name: c-carla
+          image: carlasim/carla:0.9.15
+          command: ["/bin/bash", "./CarlaUE4.sh", "-RenderOffScreen"]
+          securityContext:          # 启用特权模式
+            privileged: true
+          resources:                # 设置资源限制
+            limits:
+              nvidia.com/gpu: 1
+          ports:
+            - containerPort: 2000
+            - containerPort: 2001
+
 ```
 
 ### job
@@ -409,15 +425,58 @@ kubectl get service -A          # 查看所有 service
 kubectl get service -n <ns>     # 查看 <ns> 命名空间下的 service
 ```
 
+### ClusterIP
+
 ```yaml
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: service-carla
+  namespace: carla
+
 spec:
+  type: ClusterIP       # 集群内部访问
+
   selector:
-    app: nginx
+    app: po-carla
+
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: ClusterIP     # 默认类型，集群内部访问，可以不写
+    - name: carla2000
+      targetPort: 2000  # Pod 端口
+      port: 2000        # Service 端口
+
+    - name: carla2001
+      port: 2001
+      targetPort: 2001
+```
+
+### NodePort
+
+```yaml
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: service-carla
+  namespace: carla
+
+spec:
+  type: NodePort        # 集群外部访问
+
+  selector:
+    app: po-carla
+
+  ports:
+    - name: carla32000
+      targetPort: 32000 # Pod 端口
+      port: 32000       # Service 端口
+      nodePort: 32000   # Node 端口
+
+    - name: carla32001
+      port: 32001
+      targetPort: 32001
+      nodePort: 32001
 ```
 
 <br>
