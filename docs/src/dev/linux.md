@@ -5,8 +5,7 @@
 ```bash
 sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove
 sudo apt install -y openssh-server wget apt-transport-https ca-certificates curl gpg
-sudo mkdir -p /root/.ssh
-sudo wget "https://dxlcq.cn/public/authorized_keys" -O /root/.ssh/authorized_keys
+sudo wget -P "https://dxlcq.cn/public/authorized_keys" -O /root/.ssh/authorized_keys
 sudo echo "PasswordAuthentication no" | sudo tee -a /etc/ssh/sshd_config
 ```
 
