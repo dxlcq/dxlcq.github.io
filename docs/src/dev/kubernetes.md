@@ -301,21 +301,24 @@ apiVersion: v1
 kind: Pod
 
 metadata:
-  name: ubuntu
+  name: po-ubuntu
+  namespace: carla
 
 spec:
   containers:
-  - name: ubuntu
+  - name: c-ubuntu
     image: ubuntu:latest
     command: ["sleep", "infinity"]
     volumeMounts:
-      - name: nfs
-        mountPath: /mnt/nfs  # 挂载路径
+      - name: v-nfs           # 使用的 volume 名称
+        mountPath: /mnt/nfs   # 挂载路径
 
   volumes:
-    - name: nfs
+    - name: v-nfs             # volume 名称
       persistentVolumeClaim:
-        claimName: nfs.pvc  # 引用 PVC 名称
+        claimName: pvc-nfs    # 引用 PVC 名称
+
+# kubectl -n carla exec -it po-ubuntu -c c-ubuntu -- /bin/bash
 ```
 
 **pause**
@@ -431,7 +434,7 @@ apiVersion: v1
 kind: PersistentVolume
 
 metadata:
-  name: nfs
+  name: pv-nfs
 
 spec:
   capacity:
@@ -441,7 +444,7 @@ spec:
     - ReadWriteMany # 多个 Pod 可以同时读写
   nfs:
     server: 180.85.207.45
-    path: "/mnt/nfs"
+    path: "/home/jiao/Public"
 ```
 
 ### PersistentVolumeClaim
@@ -451,7 +454,8 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 
 metadata:
-  name: nfs.pvc
+  name: pvc-nfs
+  namespace: carla
 
 spec:
   accessModes:
@@ -459,7 +463,7 @@ spec:
   resources:
     requests:
       storage: 500Gi
-  volumeName: nfs # 指定 PersistentVolume 的名称
+  volumeName: pv-nfs # 指定 PersistentVolume 的名称
 ```
 
 
