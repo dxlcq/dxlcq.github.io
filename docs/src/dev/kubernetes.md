@@ -363,6 +363,39 @@ spec:
 
 ---
 
+## Network
+
+### Calico
+
+BGP 对等创建失败
+
+添加环境变量，做 CIDR 匹配
+
+```shell
+kubectl set env daemonset/calico-node -n kube-system \
+  IP_AUTODETECTION_METHOD="cidr=180.85.206.0/23"
+```
+
+删除
+
+```shell
+kubectl set env daemonset/calico-node -n kube-system \
+  IP_AUTODETECTION_METHOD-
+```
+
+查看
+
+```shell
+kubectl describe daemonset/calico-node -n kube-system
+```
+
+
+
+
+<br>
+
+---
+
 ## Controller
 
 ### deployment
