@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+<br>
+
+---
+
 <style>
     .container {
         display: flex;
@@ -8,23 +19,6 @@
         margin: 3px 0;
     }
 </style>
-
-[oiwiki](https://oi-wiki.org/)
-
-全部重新整理中
-
-每个知识点，预计分为三个部分
-
-1. 模板(操作?)
-2. 原理
-3. 例题
-
-
-短期目标
-
-* CSP 普及组，写题解录视频
-* 数据结构的链表
-* 图论的二叉树
 
 <div class="container">
     <div class="item">
