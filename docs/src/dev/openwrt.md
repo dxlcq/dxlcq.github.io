@@ -60,82 +60,95 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
 
 ---
 
-## 基础概念
-
-### device
-
-`br-lan`，`br-wan`
+## 开始使用
 
 ### interface
 
-
-
-<br>
-
----
-
-## 开始使用
-
-### os
-
-1. 将镜像烧录至 SD 卡
-
-    ```bash
-    sudo mkfs.vfat -I /dev/sda
-    sudo dd if=openwrt-mediatek-filogic-bananapi_bpi-r4-sdcard.img of=/dev/sda bs=4M status=progress && sync
-    ```
-
-2. 关闭防火墙
-
-    ```bash
-    /etc/init.d/firewall stop
-    /etc/init.d/firewall disable
-    ```
-
-3. 修改网络为静态 ip
+* `terminal`
+    
+    按需修改 ip
 
     ```bash
     vim /etc/config/network
     ```
-
-    ```bash
-    config interface 'wan'                    
-            option device 'br-wan'            
-            option proto 'static'             
-            option ipaddr '180.85.206.164'    
-            option netmask '255.255.254.0'    
-            option gateway '180.85.206.213'  
+    
+    ```network
+    config interface 'wan'
+        option device 'br-wan'
+        option proto 'static'
+        option ipaddr '192.168.1.2'
+        option netmask '255.255.255.0'
+        option gateway '192.168.1.1'
     ```
 
     ```bash
     /etc/init.d/network restart
     ```
 
-4. 更新、安装 luci
+    如果修改之后无法连接，则需要关闭防火墙
 
     ```bash
-    opkg update
-    opkg install luci
+    /etc/init.d/firewall stop
+    # /etc/init.d/firewall disable
     ```
-    
-    在图形化界面中安装 `luci-i18n-base-zh-cn`
 
-### singbox
+#### br-lan
 
+1. IP 地址
 
+2. 使用自定义的 DNS 服务器
 
+#### br-wan
 
+1. DHCP 客户端
+
+<br>
+
+---
+
+### device
+
+#### br-lan
+
+1. 禁用 IPv6
+
+#### br-wan
+
+1. 禁用 IPv6
 
 
 <br>
+
+---
+
+### luci
+
+```bash
+opkg update
+opkg install luci
+opkg install luci-i18n-base-zh-cn
+```
+
+<br>
+
+---
+
 
 ### HomeProxy
 
 [homeproxy 教程](https://www.youtube.com/watch?v=nNRpbn9M2Lc)
 
+安装包位置：
+
+* `/immortalwrt/releases` `/packages-版本` `/在 opkg 中看架构` `/luci`
+
+* `/immortalwrt/releases` `/版本/packages` `/在 opkg 中看架构` `/luci`
+
 
 
 <br>
+
+---
 
 ### OpenVPN
 
@@ -153,7 +166,9 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
 
 2. 添加 NAT 规则
 
-    * Forwarded `IPv4`；来自 `所有区域`，IP `10.0.1.0/24`；到 `所有区域`；自动重写源 IP
+    * `ovpn_server`
+    
+        Forwarded `IPv4`；来自 `所有区域`，IP `10.0.1.0/24`；到 `所有区域`；自动重写源 IP
 
 3. `/etc/config/openvpn`
 
@@ -200,7 +215,9 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
 
 2. 添加 NAT 规则
 
-    * Forwarded `IPv4`；来自 `所有区域`；到 `所有区域`，IP `10.0.0.0/24`；自动重写源 IP
+    * `ovpn_client`
+
+        Forwarded `IPv4`；来自 `所有区域`；到 `所有区域`，IP `10.0.0.0/24`；自动重写源 IP
 
 3. 在 `.ovpn` 文件中添加，只有特定网络流量通过 vpn
 
@@ -209,7 +226,27 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
     route 10.0.0.0 255.255.255.0 vpn_gateway
     ```
 
+<br>
+
 ---
+
+
+### firewall
+
+#### NAT
+
+* 如需要平级设备通过此设备（旁路由）上网，添加 `NAT` 规则
+
+    * 以 `cqu` 为例
+
+        Forwarded `IPv4`；来自 `所有区域`，IP `180.85.206.0/24`；到 `所有区域`；自动重写源 IP
+
+        Forwarded `IPv4`；来自 `所有区域`；到 `所有区域`，IP `180.85.206.0/24`；自动重写源 IP
+
+<br>
+
+---
+
 
 [https://en.wikipedia.org/wiki/List_of_WLAN_channels](https://en.wikipedia.org/wiki/List_of_WLAN_channels)
 
