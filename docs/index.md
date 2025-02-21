@@ -1,9 +1,3 @@
----
-hide:
-  - navigation
-  - toc
----
-
 <style>
   .container {
     display: flex;
@@ -77,12 +71,6 @@ hide:
     object-fit: contain; /* 保持图像比例并完全适应容器 */
   }
 </style>
-
-
-
-<div style="max-width: 1000px; margin: 0 auto; padding: 20px;">
-
-
 
 <div class="container"> <!-- 1 -->
 
@@ -1036,6 +1024,3 @@ hide:
 
 
 </center>
-
-
-</div>
