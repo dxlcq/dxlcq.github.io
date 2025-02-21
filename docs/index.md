@@ -1,8 +1,3 @@
----
-hide:
-  - navigation
----
-
 <style>
   .container {
     display: flex;
