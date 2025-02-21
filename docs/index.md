@@ -78,6 +78,12 @@ hide:
   }
 </style>
 
+
+
+<div style="max-width: 1000px; margin: 0 auto; padding: 20px;">
+
+
+
 <div class="container"> <!-- 1 -->
 
   <div class="item">
@@ -1030,3 +1036,6 @@ hide:
 
 
 </center>
+
+
+</div>
