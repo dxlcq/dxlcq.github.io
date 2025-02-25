@@ -1678,6 +1678,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gpu-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Operator
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3433,6 +3442,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gpu-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Operator
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3459,25 +3477,23 @@
 <hr />
 <h2 id="getting-started">Getting Started</h2>
 <ol>
-<li>安装 helm</li>
-</ol>
+<li>
+<p>安装 helm</p>
 <p><a href="https://github.com/helm/helm/releases">github helm</a></p>
 <p>解压到 /usr/local/bin</p>
-<ol>
-<li>添加 prometheus-community 仓库</li>
-</ol>
+</li>
+<li>
+<p>添加 prometheus-community 仓库</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>prometheus-community<span class="w"> </span>https://prometheus-community.github.io/helm-charts
 </code></pre></div></td></tr></table></div>
-<ol>
-<li>安装 prometheus</li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>prometheus<span class="w"> </span>prometheus-community/prometheus
-helm<span class="w"> </span>install<span class="w"> </span>prometheus<span class="w"> </span>prometheus-community/kube-prometheus-stack<span class="w"> </span>--namespace<span class="w"> </span>prometheus<span class="w"> </span>--create-namespace
+</li>
+<li>
+<p>安装 prometheus</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>prometheus<span class="w"> </span>prometheus-community/kube-prometheus-stack<span class="w"> </span>--namespace<span class="w"> </span>prometheus<span class="w"> </span>--create-namespace
 </code></pre></div></td></tr></table></div>
-<ol>
-<li>让服务暴露出来</li>
-</ol>
+</li>
+<li>
+<p>让服务暴露出来</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3506,11 +3522,26 @@ helm<span class="w"> </span>install<span class="w"> </span>prometheus<span class
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span>prometheus<span class="w"> </span>prometheus-community/kube-prometheus-stack<span class="w"> </span>-n<span class="w"> </span>prometheus<span class="w"> </span>-f<span class="w"> </span>values.yaml
 </code></pre></div></td></tr></table></div>
-<ol>
-<li>康康服务</li>
-</ol>
+</li>
+<li>
+<p>康康服务</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>-n<span class="w"> </span>prometheus
 </code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<h2 id="gpu-operator">GPU Operator</h2>
+<ol>
+<li>
+<p>导入仓库</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>nvidia<span class="w"> </span>https://helm.ngc.nvidia.com/nvidia
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>安装 GPU Operator</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>--generate-name<span class="w"> </span>-n<span class="w"> </span>gpu-operator<span class="w"> </span>--create-namespace<span class="w"> </span>nvidia/gpu-operator
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
 
 
 
