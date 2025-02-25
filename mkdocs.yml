@@ -63,6 +63,7 @@ nav:
     - 🔨 Docker:        src/dev/docker.md
     - 🔨 Containerd:    src/dev/containerd.md
     - 🚀 Kubernetes:    src/dev/kubernetes.md
+    - 🚀 Kubernetes:    src/dev/prometheus.md
     - 🚀 Nginx:         src/dev/nginx.md
     - 🚀 Hadoop:        src/dev/hadoop.md
 

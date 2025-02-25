@@ -1870,6 +1870,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../prometheus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🚀 Kubernetes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nginx/" class="md-nav__link">
         
   
@@ -4196,12 +4218,33 @@ route 10.0.0.0 255.255.255.0 vpn_gateway
 </ul>
 <p><strong>VPN-PPTP</strong></p>
 <ul>
-<li><a href="https://smb.tp-link.com.cn/service/detail_article_3829.html">[R系列企业VPN路由器] PPTP PC到站点VPN配置指南</a></li>
+<li>
+<p><a href="https://smb.tp-link.com.cn/service/detail_article_4464.html">L2TP VPN 企业应用配置实例</a></p>
+</li>
+<li>
+<p>创建 IP 地址池</p>
+<ul>
+<li><code>10.0.2.2 - 10.0.2.10</code></li>
 </ul>
-<blockquote>
-<p><code>OpenVPN</code> 失效时的冗余方案，平时关闭
-连接手机热点时，客户端 <code>MTU</code> 设置为 <code>1400</code></p>
-</blockquote>
+</li>
+<li>
+<p>创建用户</p>
+<ul>
+<li>
+<p>本地地址 <code>10.0.2.1</code></p>
+</li>
+<li>
+<p>设置用户名密码</p>
+</li>
+</ul>
+</li>
+<li>
+<p>创建 l2tp 服务</p>
+<ul>
+<li>设置预共享密钥</li>
+</ul>
+</li>
+</ul>
 <p><strong>端口映射</strong></p>
 <p>非必要不做端口映射，尽量使用 <code>VPN</code></p>
 <p><center></p>
@@ -4234,7 +4277,9 @@ route 10.0.0.0 255.255.255.0 vpn_gateway
 </li>
 </ul>
 <p><strong>网络唤醒</strong></p>
-<p><br></p>
+<ul>
+<li>windows 关闭 <code>快速启动</code></li>
+</ul>
 <p><strong>云管理-TP商云</strong></p>
 <blockquote>
 <p>当 <code>VPN</code> 失效时的唯一管理手段</p>

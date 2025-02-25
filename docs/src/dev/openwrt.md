@@ -305,10 +305,28 @@ opkg install luci-i18n-base-zh-cn
 
 **VPN-PPTP**
 
-* [[R系列企业VPN路由器] PPTP PC到站点VPN配置指南](https://smb.tp-link.com.cn/service/detail_article_3829.html)
+* [L2TP VPN 企业应用配置实例](https://smb.tp-link.com.cn/service/detail_article_4464.html)
 
-> `OpenVPN` 失效时的冗余方案，平时关闭
-> 连接手机热点时，客户端 `MTU` 设置为 `1400`
+* 创建 IP 地址池
+
+    * `10.0.2.2 - 10.0.2.10`
+
+* 创建用户
+
+    * 本地地址 `10.0.2.1`
+
+    * 设置用户名密码
+
+* 创建 l2tp 服务
+
+    * 设置预共享密钥
+
+
+
+
+
+
+
 
 **端口映射**
 
@@ -330,7 +348,7 @@ opkg install luci-i18n-base-zh-cn
 
 **网络唤醒**
 
-<br>
+* windows 关闭 `快速启动`
 
 **云管理-TP商云**
 
