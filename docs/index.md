@@ -102,7 +102,7 @@
   
   <div class="item">
     <a href="https://grok.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/91/7b/3e/917b3ee1-9fc2-8f91-8961-d03af2f37397/AppIcon-0-1x_U007epad-0-1-0-85-220-0.png/434x0w.webp"></div>
+      <div class="rounded-icon"><img src="https://play-lh.googleusercontent.com/8u_y7oCfI5rYEUPOmWE8I7MwPtNMa_o6AoQ6HDOXChQN_YJeABYht36kv0zdqKaRzwM=w480-h960-rw"></div>
       <div style="font-size: 12px;">Grok</div>
     </a>
   </div>
