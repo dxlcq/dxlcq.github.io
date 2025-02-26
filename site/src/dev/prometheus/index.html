@@ -1670,9 +1670,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#helm" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting Started
+      Helm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prometheus
     </span>
   </a>
   
@@ -3434,9 +3443,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#helm" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting Started
+      Helm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prometheus
     </span>
   </a>
   
@@ -3473,15 +3491,80 @@
   <h1>🚀 Prometheus</h1>
 
 <h2 id="_1">参考</h2>
+<ul>
+<li><a href="https://helm.sh/zh/docs/intro/using_helm/">helm 教程</a></li>
+</ul>
+<h2 id="helm">Helm</h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>snap<span class="w"> </span>install<span class="w"> </span>helm<span class="w"> </span>--classic
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>
+<p>repo</p>
+<ul>
+<li>
+<p>查看</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>list
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>添加</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>仓库名称<span class="w"> </span>仓库地址
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>更新</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>update
+</code></pre></div></td></tr></table></div>
+</li>
+</ul>
+</li>
+<li>
+<p>release</p>
+<ul>
+<li>
+<p>查看</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>list<span class="w"> </span>-A
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>卸载</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>uninstall<span class="w"> </span><span class="o">[</span>release<span class="o">]</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>安装</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span><span class="o">[</span>release<span class="o">]</span><span class="w"> </span>仓库名称/包名<span class="w"> </span>-n<span class="w"> </span>命名空间<span class="w"> </span>--create-namespace
+</code></pre></div></td></tr></table></div>
+</li>
+</ul>
+</li>
+<li>
+<p>upgrade</p>
+<ul>
+<li>
+<p>查看</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>get<span class="w"> </span>values<span class="w"> </span><span class="o">[</span>release<span class="o">]</span><span class="w"> </span>-n<span class="w"> </span>命名空间
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>修改</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span><span class="o">[</span>release<span class="o">]</span><span class="w"> </span>仓库名称/包名<span class="w"> </span>-n<span class="w"> </span>命名空间<span class="w"> </span>-f<span class="w"> </span>values.yaml
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>rollback</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>rollback<span class="w"> </span><span class="o">[</span>release<span class="o">]</span><span class="w"> </span>版本号<span class="w"> </span>-n<span class="w"> </span>命名空间
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="o">[</span>release<span class="o">]</span><span class="w"> </span>-n<span class="w"> </span>命名空间
+</code></pre></div></td></tr></table></div>
+</li>
+</ul>
+</li>
+</ul>
 <p><br></p>
 <hr />
-<h2 id="getting-started">Getting Started</h2>
+<h2 id="prometheus">Prometheus</h2>
 <ol>
-<li>
-<p>安装 helm</p>
-<p><a href="https://github.com/helm/helm/releases">github helm</a></p>
-<p>解压到 /usr/local/bin</p>
-</li>
 <li>
 <p>添加 prometheus-community 仓库</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>prometheus-community<span class="w"> </span>https://prometheus-community.github.io/helm-charts
@@ -3506,7 +3589,7 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># values.yaml</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># values-prometheus.yaml</span>
 <span class="nt">prometheus</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">prometheusSpec</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">service</span><span class="p">:</span>
@@ -3520,7 +3603,7 @@
 <span class="w">  </span><span class="nt">service</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodePort</span>
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span>prometheus<span class="w"> </span>prometheus-community/kube-prometheus-stack<span class="w"> </span>-n<span class="w"> </span>prometheus<span class="w"> </span>-f<span class="w"> </span>values.yaml
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span>prometheus<span class="w"> </span>prometheus-community/kube-prometheus-stack<span class="w"> </span>-n<span class="w"> </span>prometheus<span class="w"> </span>-f<span class="w"> </span>values-prometheus.yaml
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
@@ -3529,6 +3612,8 @@
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
+<p><br></p>
+<hr />
 <h2 id="gpu-operator">GPU Operator</h2>
 <ol>
 <li>
@@ -3538,7 +3623,25 @@
 </li>
 <li>
 <p>安装 GPU Operator</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>--generate-name<span class="w"> </span>-n<span class="w"> </span>gpu-operator<span class="w"> </span>--create-namespace<span class="w"> </span>nvidia/gpu-operator
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>gpu-operator<span class="w"> </span>nvidia/gpu-operator<span class="w"> </span>-n<span class="w"> </span>gpu-operator<span class="w"> </span>--create-namespace
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>暴露服务</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># values-gpu-operator.yaml</span>
+<span class="nt">dcgmExporter</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">service</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodePort</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span>gpu-operator<span class="w"> </span>nvidia/gpu-operator<span class="w"> </span>-n<span class="w"> </span>gpu-operator<span class="w"> </span>-f<span class="w"> </span>values-gpu-operator.yaml
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>康康服务</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>-n<span class="w"> </span>gpu-operator
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
