@@ -214,6 +214,7 @@ dump，rsync
 
 ### wget
 
+* 带密码下载 `wget --http-user=用户名 --http-password=密码 http://url`
 
 <br>
 

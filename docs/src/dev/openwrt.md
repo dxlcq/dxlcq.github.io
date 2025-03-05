@@ -62,6 +62,44 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
 
 ## 开始使用
 
+### cfdisk
+
+1. 看看分区
+
+    ```bash
+    ls /dev/
+    fdisk /dev/mmcblk0
+    ```
+
+2. 切换到 `Free Space`
+
+    `New` -> `Primary` -> `Enter` -> `Write` -> `yes` -> `Quit`
+
+    这时候我生成了一个新的分区 `/dev/mmcblk0p8`
+
+3. 格式化
+
+    ```bash
+    mkfs.ext4 /dev/mmcblk0p8
+    ```
+
+4. 在 `web` -> `System` -> `Mount Points`
+
+    生成配置 -> 选择刚才的分区 -> 启用 -> 挂载点 `/` -> 保存
+
+5. 保存，执行刚才生成的命令
+
+    **注意！！！`/dev/sda1` 改为 `/dev/mmcblk0p8`**
+
+    ```bash
+    mount /dev/mmcblk0p8 /mnt
+    ```
+
+    重启
+
+
+
+
 ### interface
 
 * `terminal`

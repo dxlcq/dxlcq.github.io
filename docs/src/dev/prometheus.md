@@ -4,9 +4,9 @@
 
 ## Helm
 
-```shell
-snap install helm --classic
-```
+    ```shell
+    snap install helm --classic
+    ```
 
 * repo
 
@@ -51,6 +51,10 @@ snap install helm --classic
 * upgrade
 
     * 查看
+
+        ```shell
+        helm show values 仓库名称/包名
+        ```
 
         ```shell
         helm get values [release] -n 命名空间

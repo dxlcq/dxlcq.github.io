@@ -72,6 +72,8 @@ nav:
     - 💪🏻 FRP:           src/dev/frp.md
     - 💪🏻 DDNS:          src/dev/ddns.md
     - 💪🏻 MySQL:         src/dev/mysql.md
+  - 🤖 Artificial Intelligence:
+    - 🧠 AI:             src/ai/ai.md
   - 🌿 Language:
     - Python:
       - env:            src/language/py/env.md
@@ -116,15 +118,10 @@ nav:
     - 设计模式:         src/cs/designPattern/designPattern.md
     - 系统架构:         src/cs/systemArchitecture/systemArchitecture.md
     - 工程师:           src/cs/engineer/engineer.md
-  - 👷 Φιλοσοφία:
-    - 马克思主义:       src/philosophy/marx.md
-    - 中国近代史:       src/philosophy/historyOfChina.md
-  - 🕶️ More:
-    - GenRNA3D:        src/more/xd.md
-    - 微积分:           src/more/微积分.md
-    - 概率论:           src/more/概率论.md
-
-
+    - 马克思主义:       src/cs/marx.md
+    - 中国近代史:       src/cs/historyOfChina.md
+    - 微积分:           src/cs/微积分.md
+    - 概率论:           src/cs/概率论.md
 
 
 
