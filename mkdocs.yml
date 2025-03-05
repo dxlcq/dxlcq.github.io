@@ -45,6 +45,7 @@ nav:
     - 🔩 FFmpeg:        src/cpp/ffmpeg.md
     - 🔩 Qt:            src/cpp/qt.md
   - 🌥️ DevOps:
+    - 🤖 AI:            src/dev/ai.md
     - 🪟 Windows:       src/dev/windows.md
     - 🐧 Linux:         src/dev/linux.md
     - 🧑‍💻 MacOS:         src/dev/macos.md
@@ -72,8 +73,7 @@ nav:
     - 💪🏻 FRP:           src/dev/frp.md
     - 💪🏻 DDNS:          src/dev/ddns.md
     - 💪🏻 MySQL:         src/dev/mysql.md
-  - 🤖 Artificial Intelligence:
-    - 🧠 AI:             src/ai/ai.md
+
   - 🌿 Language:
     - Python:
       - env:            src/language/py/env.md
