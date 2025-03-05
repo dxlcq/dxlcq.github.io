@@ -1,1 +1,1 @@
-python3 -m mkdocs build && git add . && git commit -m "AI值得单独开一节" && git push
+python3 -m mkdocs build && git add . && git commit -m "🥳" && git push
