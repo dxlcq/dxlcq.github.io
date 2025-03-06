@@ -77,7 +77,7 @@
   <div class="item">
     <a href="https://mail.cqu.edu.cn/" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/7/74/Chongqing_University_logo.svg"></div>
-      <div style="font-size: 12px;">dxlcqqqq@stu.cqu.edu.cn</div>
+      <div style="font-size: 12px;">dxlcq@stu.cqu.edu.cn77777</div>
     </a>
   </div>
 
