@@ -2,10 +2,11 @@
 
 * [硬核翻墙系列](https://www.youtube.com/playlist?list=PLqybz7NWybwUgR-S6m78tfd-lV4sBvGFG) 扫盲
 
-* 机场 [赔钱](https://xn--mes358aby2apfg.com/#/register?code=00VpsSlX) / [飞鸟](https://feiniaoyun.top/#/register?code=MfZSDsfM) / [魔戒](https://mojie.me/#/register?code=H6CrDt7x)
+* 机场 [赔钱](https://xn--mes358aby2apfg.com/#/register?code=00VpsSlX) / [飞鸟](https://feiniaoyun.xyz/#/register?code=MfZSDsfM) / [魔戒](https://mojie.me/#/register?code=H6CrDt7x)
 
+* 机场测速 [duyaoss](https://www.duyaoss.com/archives/3/)
 
-
+* 客户端 [clash-verge](https://github.com/clash-verge-rev/clash-verge-rev) / [mihomo](https://github.com/mihomo-party-org/mihomo-party)
 
 <br>
 
@@ -37,27 +38,6 @@ src/gz immortalwrt_packages https://mirrors.vsean.net/openwrt/releases/24.10.0-r
 src/gz immortalwrt_routing https://mirrors.vsean.net/openwrt/releases/24.10.0-rc3/packages/aarch64_cortex-a53/routing
 src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-rc3/packages/aarch64_cortex-a53/telephony
 ```
-
-<br>
-
----
-
-
-<div class="container"> 🛩
-    <div class="item">
-        <a href="https://www.duyaoss.com/archives/3/" target="_blank"> 机场测速 </a> 
-    </div>
-    <div class="item">
-        <a href="https://xn--mes358aby2apfg.com/#/register?code=00VpsSlX" target="_blank"> 赔钱机场 </a> 
-    </div>
-    <div class="item">
-        <a href="https://feiniaoyun.top/#/register?code=MfZSDsfM" target="_blank"> 飞鸟云 </a> 
-    </div>
-    <div class="item">
-        <a href="https://mojie.me/#/register?code=H6CrDt7x" target="_blank"> 魔戒 </a> 
-    </div>
-</div>
-
 
 <br>
 
