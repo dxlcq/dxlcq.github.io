@@ -1,6 +1,6 @@
 ## 参考
 
-* [硬核翻墙系列](https://www.youtube.com/playlist?list=PLqybz7NWybwUgR-S6m78tfd-lV4sBvGFG) 扫盲
+* 扫盲 [你管这破玩意叫网络？](https://www.bilibili.com/video/BV17x6hYZEzJ) [硬核翻墙系列](https://www.youtube.com/playlist?list=PLqybz7NWybwUgR-S6m78tfd-lV4sBvGFG)
 
 * 机场 [赔钱](https://xn--mes358aby2apfg.com/#/register?code=00VpsSlX) / [飞鸟](https://feiniaoyun.xyz/#/register?code=MfZSDsfM) / [魔戒](https://mojie.me/#/register?code=H6CrDt7x)
 
