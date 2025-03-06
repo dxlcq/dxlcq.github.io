@@ -1,5 +1,18 @@
 ## 参考
 
+* [硬核翻墙系列](https://www.youtube.com/playlist?list=PLqybz7NWybwUgR-S6m78tfd-lV4sBvGFG) 扫盲
+
+* 机场 [赔钱](https://xn--mes358aby2apfg.com/#/register?code=00VpsSlX) / [飞鸟](https://feiniaoyun.top/#/register?code=MfZSDsfM) / [魔戒](https://mojie.me/#/register?code=H6CrDt7x)
+
+
+
+
+<br>
+
+---
+
+## openwrt
+
 * [OpenWrt](https://openwrt.org/zh/start) / [搜索镜像](https://firmware-selector.openwrt.org/) / [浏览镜像](https://downloads.openwrt.org) / [清华镜像](https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/?C=N&O=D)
 
 * [ImmortalWrt](https://github.com/immortalwrt/immortalwrt) / [搜索镜像](https://firmware-selector.immortalwrt.org/) / [浏览镜像](https://downloads.immortalwrt.org) / [北大镜像](https://mirrors.pku.edu.cn/immortalwrt/releases/)
@@ -28,6 +41,28 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
 <br>
 
 ---
+
+
+<div class="container"> 🛩
+    <div class="item">
+        <a href="https://www.duyaoss.com/archives/3/" target="_blank"> 机场测速 </a> 
+    </div>
+    <div class="item">
+        <a href="https://xn--mes358aby2apfg.com/#/register?code=00VpsSlX" target="_blank"> 赔钱机场 </a> 
+    </div>
+    <div class="item">
+        <a href="https://feiniaoyun.top/#/register?code=MfZSDsfM" target="_blank"> 飞鸟云 </a> 
+    </div>
+    <div class="item">
+        <a href="https://mojie.me/#/register?code=H6CrDt7x" target="_blank"> 魔戒 </a> 
+    </div>
+</div>
+
+
+<br>
+
+---
+
 
 ## 我的设备
 
