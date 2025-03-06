@@ -1,1 +1,0 @@
-python3 -m mkdocs build && git add . && git commit -m "🥳" && git push
