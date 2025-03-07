@@ -1,2 +1,2 @@
 ## Stargazers over time
-[![Stargazers over time](https://starchart.cc/alsyundawy/dxlcq.github.io.svg?variant=adaptive)](https://starchart.cc/alsyundawy/dxlcq.github.io)
+[![Stargazers over time](https://starchart.cc/dxlcq/dxlcq.github.io.svg?variant=adaptive)](https://starchart.cc/dxlcq/dxlcq.github.io)
