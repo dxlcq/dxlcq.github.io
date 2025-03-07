@@ -46,28 +46,19 @@ nav:
     - 🔩 Qt:            src/cpp/qt.md
   - 🌥️ DevOps:
     - 🤖 AI:            src/dev/ai.md
-    - 🪟 Windows:       src/dev/windows.md
-    - 🐧 Linux:         src/dev/linux.md
     - 🧑‍💻 MacOS:         src/dev/macos.md
+    - 🐧 Linux:         src/dev/linux.md
     - 📡 OpenWrt:       src/dev/openwrt.md
-    # 📋 plan
-    # 💻 code
-    # 🔨 build
-    # 🧪 test
-    # 📦 release
-    # 🚀 deploy
-    # 🔧 operation:
-    # 📊 monitor:
-
-    - 💻 Git:           src/dev/git.md
+    - 🪟 Windows:       src/dev/windows.md
+        
     #- 💻GitLab:        src/dev/gitlab.md
-    - 🔨 Docker:        src/dev/docker.md
-    - 🔨 Containerd:    src/dev/containerd.md
+    - 🚀 Docker:        src/dev/docker.md
+    - 🚀 Containerd:    src/dev/containerd.md
     - 🚀 Kubernetes:    src/dev/kubernetes.md
     - 🚀 Prometheus:    src/dev/prometheus.md
-    - 🚀 Nginx:         src/dev/nginx.md
-    - 🚀 Hadoop:        src/dev/hadoop.md
 
+    - 💻 Git:           src/dev/git.md
+    - 💪🏻 Nginx:         src/dev/nginx.md
     - 💪🏻 OpenSSH:       src/dev/openssh.md
     - 💪🏻 Coturn:        src/dev/coturn.md
     - 💪🏻 FRP:           src/dev/frp.md

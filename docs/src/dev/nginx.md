@@ -193,3 +193,72 @@ sudo docker run \
 ```
 
 热重载配置文件：`sudo docker exec [CONTAINER ID] nginx -s reload`
+
+
+
+**反向代理（自用）**
+
+1. `sudo apt install nginx`
+
+2. `/etc/nginx/conf.d` 下添加配置文件 `reverse.conf`
+
+3. SSL 证书
+
+    * 安装 `certbot`
+
+        ```shell
+        sudo snap install --classic certbot
+        sudo ln -s /snap/bin/certbot /usr/bin/certbot
+        ```
+
+    * 首次申请
+
+        ```shell
+        sudo certbot certonly --webroot -w / -d dxlcq.cn
+        ```
+
+    * 测试更新
+
+        ```shell
+        sudo certbot renew --dry-run
+        ```
+
+    * 每周更新 `sudo crontab -e`
+
+        ```shell
+        0 0 * * 1 certbot renew && nginx -s reload
+        ```
+
+    * 查看证书剩余时长 `certbot certificates`
+
+```conf
+server {
+    listen 80;                              # 将 http 重定向到 https
+    server_name dxlcq.cn;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name dxlcq.cn;
+
+    ssl_certificate     /etc/letsencrypt/live/dxlcq.cn/fullchain.pem;   # SSL 完整证书
+    ssl_certificate_key /etc/letsencrypt/live/dxlcq.cn/privkey.pem;     # SSL 私钥
+    ssl_session_cache   shared:SSL:1m;                                  # 缓存 SSL 会话
+    ssl_ciphers         HIGH:!aNULL:!MD5;                               # 支持的密码套件
+    ssl_protocols       TLSv1.2 TLSv1.3;                                # 支持的协议版本
+    ssl_prefer_server_ciphers on;                                       # 优先使用服务器密码套件
+
+    location /.well-known { # 用于验证域名所有权
+        root /;
+    }
+
+    resolver 8.8.8.8 valid=6s;  # dns 解析 6 秒刷新一次
+
+    location / {            # 反向代理到后端服务器
+        proxy_pass http://xxxxxxx;                     # 后端服务器地址和端口
+        proxy_set_header Host $host;                                # 保持主机头不变
+        proxy_set_header X-Forwarded-Proto $scheme;                 # 转发协议
+    }
+}
+```
