@@ -1,6 +1,9 @@
 # 文章
 nav:
-  - 骄:               index.md
+  - Jiao:               
+    - 😘:                index.md
+    - CV:               src/jiao/cv.md
+
   - 🪂 Algorithm:
     - Pre:              src/algorithm/pre.md
     - CSP:              src/algorithm/really/csp.md
@@ -117,8 +120,8 @@ nav:
 
 
 
-site_name: 戴兴龙
-copyright: 版权所有 © 2020 - 2025 全世界无产阶级战士
+site_name: DAI X.L.
+copyright: Copyright © 2020 - 2025 Workers of All Lands
 repo_name: dxlcq.github.io
 repo_url: https://github.com/dxlcq
 

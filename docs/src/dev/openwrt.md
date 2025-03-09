@@ -2,7 +2,7 @@
 
 * 扫盲 [你管这破玩意叫网络？](https://www.bilibili.com/video/BV17x6hYZEzJ) [硬核翻墙系列](https://www.youtube.com/playlist?list=PLqybz7NWybwUgR-S6m78tfd-lV4sBvGFG)
 
-* 机场 [赔钱](https://xn--mes358aby2apfg.com/#/register?code=00VpsSlX) / [飞鸟](https://feiniaoyun.xyz/#/register?code=MfZSDsfM) / [魔戒](https://mojie.me/#/register?code=H6CrDt7x)
+* 机场 [赔钱](https://xn--cp3a08l.com/#/register?code=00VpsSlX) / [飞鸟](https://feiniaoyun.xyz/#/register?code=MfZSDsfM) / [魔戒](https://mojie.me/#/register?code=H6CrDt7x)
 
 * 机场测速 [duyaoss](https://www.duyaoss.com/archives/3/)
 
@@ -272,7 +272,9 @@ opkg install luci-i18n-base-zh-cn
 
         Forwarded `IPv4`；来自 `所有区域`；到 `所有区域`，IP `10.0.0.0/24`；自动重写源 IP
 
-3. 在 `.ovpn` 文件中添加，只有特定网络流量通过 vpn
+3. 常规设置 转发 接受
+
+4. 在 `.ovpn` 文件中添加，只有特定网络流量通过 vpn
 
     ```ovpn
     route-nopull
