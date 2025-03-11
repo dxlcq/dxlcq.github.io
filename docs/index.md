@@ -1,3 +1,5 @@
+# ✈️
+
 <style>
   .container {
     display: flex;
@@ -112,23 +114,23 @@
 <div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="https://account.apple.com/account/manage" target="_blank">
+    <a href="https://www.icloud.com/" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/160px-Apple_logo_black.svg.png"></div>
-      <div style="font-size: 12px;">Apple</div>
+      <div style="font-size: 12px;">iCloud</div>
     </a>
   </div>
   
   <div class="item">
-    <a href="https://myaccount.google.com/" target="_blank">
+    <a href="https://drive.google.com/drive/my-drive" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png"></div>
-      <div style="font-size: 12px;">Google</div>
+      <div style="font-size: 12px;">Google Drive</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="https://account.microsoft.com/" target="_blank">
+    <a href="https://onedrive.live.com/" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"></div>
-      <div style="font-size: 12px;">Microsoft</div>
+      <div style="font-size: 12px;">OneDrive</div>
     </a>
   </div>
 
@@ -137,26 +139,58 @@
 <div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="https://www.icloud.com/" target="_blank">
-      <div style="font-size: 12px;">iCloud</div>
+    <a href="https://account.apple.com/account/manage/section/information" target="_blank">
+      <div style="font-size: 12px;">Apple</div>
     </a>
   </div>
   
   <div class="item">
-    <a href="https://drive.google.com/drive/my-drive" target="_blank">
-      <div style="font-size: 12px;">Google Drive</div>
+    <a href="https://myaccount.google.com/" target="_blank">
+      <div style="font-size: 12px;">Google</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="https://onedrive.live.com/" target="_blank">
-      <div style="font-size: 12px;">OneDrive</div>
+    <a href="https://account.microsoft.com/" target="_blank">
+      <div style="font-size: 12px;">Microsoft</div>
     </a>
   </div>
 
 </div>
 
 ---
+
+<div class="container"> <!-- 1 -->
+
+  <div class="item">
+    <a href="http://10.0.0.10:2026" target="_blank">
+      <div class="rounded-icon"><img src="https://avatars.githubusercontent.com/u/55735736?s=200&v=4"></div>
+      <div style="font-size: 12px;">Speed Test</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="http://cesu.cqwin.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://pp.myapp.com/ma_icon/0/icon_3722_1737177848/256"></div>
+      <div style="font-size: 12px;">unicom</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="https://test.nju.edu.cn/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/f/fb/%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.svg/536px-%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.svg.png?20121015073640"></div>
+      <div style="font-size: 12px;">CN</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="https://www.speedtest.net/zh-Hans" target="_blank">
+      <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/04/fa/ac/04faace5-ae8f-313f-4d10-d809fb397e7f/AppIcon-85-220-0-4-2x.png/460x0w.webp"></div>
+      <div style="font-size: 12px;">UN</div>
+    </a>
+  </div>
+
+</div>
 
 <div class="container"> <!-- 1 -->
 
@@ -168,30 +202,23 @@
   </div>
 
   <div class="item">
-    <a href="http://10.0.0.10:2026" target="_blank">
-      <div class="rounded-icon"><img src="https://avatars.githubusercontent.com/u/55735736?s=200&v=4"></div>
-      <div style="font-size: 12px;">测速</div>
+    <a href="https://smbcloud.tp-link.com.cn/login.html" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/TPLINK_Logo_2.svg/2880px-TPLINK_Logo_2.svg.png"></div>
+      <div style="font-size: 12px;">Router</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="http://cesu.cqwin.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://pp.myapp.com/ma_icon/0/icon_3722_1737177848/256"></div>
-      <div style="font-size: 12px;">联通</div>
+    <a href="http://10.0.0.2" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/2880px-Cisco_logo_blue_2016.svg.png"></div>
+      <div style="font-size: 12px;">Switch</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="https://test.nju.edu.cn/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/f/fb/%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.svg/536px-%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.svg.png?20121015073640"></div>
-      <div style="font-size: 12px;">大陆</div>
-    </a>
-  </div>
-
-  <div class="item">
-    <a href="https://www.speedtest.net/zh-Hans" target="_blank">
-      <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/04/fa/ac/04faace5-ae8f-313f-4d10-d809fb397e7f/AppIcon-85-220-0-4-2x.png/460x0w.webp"></div>
-      <div style="font-size: 12px;">全球</div>
+    <a href="http://10.0.0.3" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/OpenWrt_Logo.svg"></div>
+      <div style="font-size: 12px;">Gateway</div>
     </a>
   </div>
 
@@ -207,30 +234,23 @@
   </div>
 
   <div class="item">
-    <a href="https://www.cloudns.net/main/" target="_blank">
-      <div class="rounded-icon"><img src="https://www.cloudns.net/images/logo/social.png"></div>
-      <div style="font-size: 12px;">ClouDNS</div>
+    <a href="https://dash.cloudflare.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png"></div>
+      <div style="font-size: 12px;">赛博大善人</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="https://smbcloud.tp-link.com.cn/login.html" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/TPLINK_Logo_2.svg/2880px-TPLINK_Logo_2.svg.png"></div>
-      <div style="font-size: 12px;">路由器</div>
+    <a href="https://dash.cloudflare.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png"></div>
+      <div style="font-size: 12px;">赛博大善人</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="http://10.0.0.2" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/2880px-Cisco_logo_blue_2016.svg.png"></div>
-      <div style="font-size: 12px;">交换机</div>
-    </a>
-  </div>
-
-  <div class="item">
-    <a href="http://10.0.0.3" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/OpenWrt_Logo.svg"></div>
-      <div style="font-size: 12px;">网关</div>
+    <a href="https://dash.cloudflare.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png"></div>
+      <div style="font-size: 12px;">赛博大善人</div>
     </a>
   </div>
 
@@ -238,38 +258,36 @@
 
 ---
 
+<div class="container">
+    <div class="item">
+      <a href="https://www.youtube.com/@骄骄" target="_blank">
+        <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f5/ac/a8/f5aca8ee-b304-1aec-c656-66a36ae88a94/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-6-0-0-0-85-220.png/492x0w.webp"></div>
+        <div style="font-size: 12px;">YouTube</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://open.spotify.com/user/312fhhabg3hdhdlcyq5r7zidpt5e?si=2f6fcb6ff1c64a79&nd=1&dlsi=12f6bab9fb1446d8" target="_blank">
+        <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/7a/63/7a7a63b4-6370-c782-c7c5-68d0f85d753a/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/460x0w.webp"></div>
+        <div style="font-size: 12px;">Spotify</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://x.com/dxlcqy" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/220px-X_logo_2023.svg.png"></div>
+        <div style="font-size: 12px;">X</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://www.tiktok.com/@dxlcq" target="_blank"> 
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/TikTok_logo.svg/440px-TikTok_logo.svg.png"></div>
+        <div style="font-size: 12px;">TikTok</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://web.telegram.org/a/" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/300px-Telegram_2019_Logo.svg.png"></div>
+        <div style="font-size: 12px;">Telegram</div>
+      </a> 
+    </div>
 
-<div class="container"> 🌊
-    <div class="item">
-        <a href="https://www.youtube.com/@骄骄" target="_blank"> YouTube </a> 
-    </div>
-    <div class="item">
-        <a href="https://www.tiktok.com/@dxlcq" target="_blank"> TikTok </a> 
-    </div>
-    <div class="item">
-        <a href="https://x.com/dxlcqy" target="_blank"> X </a> 
-    </div>
-    <div class="item">
-        <a href="https://web.telegram.org/a/" target="_blank"> Telegram </a> 
-    </div>
-    <div class="item">
-        <a href="http://10.0.0.10:8096" target="_blank"> Emby </a>
-    </div>
-</div>
-
----
-
-<div class="container"> 🔭
-    <div class="item">
-        <a href="https://www.sci-hub.pub/" target="_blank"> Sci-Hub </a> 
-    </div>
-    <div class="item">
-        <a href="https://www.library.hb.cn/resource/szzy/" target="_blank"> 免费知网 </a> 
-    </div>
-    <div class="item">
-        <a href="https://scholar.google.com/" target="_blank"> 谷歌学术 </a> 
-    </div>
-    <div class="item">
-        <a href="https://xueshu.baidu.com/" target="_blank"> 百度学术 </a> 
-    </div>
 </div>

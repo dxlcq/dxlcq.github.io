@@ -1,7 +1,7 @@
 # 文章
 nav:
   - Jiao:               
-    - Profile:          index.md
+    - Navigation:          index.md
     - CV:               src/jiao/cv.md
 
   - 🪂 Algorithm:
@@ -94,6 +94,7 @@ nav:
       - HTML:           src/language/html/html.md
       - CSS:            src/language/html/css.md
   - 📖 CS:
+    - CS:               src/cs/cs.md
     - 操作系统:
       - 操作系统结构:    src/cs/os/操作系统结构.md
     - 网络:
