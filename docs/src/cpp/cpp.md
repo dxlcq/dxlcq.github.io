@@ -191,7 +191,7 @@
 
         * 只初始化一次，且在程序运行期间一直存在
 
-    * 静态全局变量
+    * 静态全局变量 / 静态函数
 
         * 只能在当前文件中使用
 
@@ -205,13 +205,13 @@
 
         ```cpp
         class Math {
-        public:
-          static int add(int a, int b) { return a + b; }
+           public:
+            static int add(int a, int b) { return a + b; }
         };
 
         int main() {
-          std::cout << Math::add(2, 3); // 直接调用
-          return 0;
+            std::cout << Math::add(2, 3);  // 直接调用
+            return 0;
         }
         ```
 
@@ -235,20 +235,21 @@
 
     * 修饰类的成员变量
 
-    * 允许在 `const` 函数中修改成员变量
+    * 允许修改（被 `const` 限定的）对象的成员变量
 
     ```cpp
     class A {
-    public:
-      mutable int x;
-      int y;
+       public:
+        mutable int x;
+        int y;
+        A() {};
     };
 
     int main() {
-      const A a;
-      a.x = 666; // 可以修改
-      //a.y = 888; // 不可以修改
-      return 0;
+        const A a;
+        a.x = 666;  // 可以修改
+        // a.y = 888; // 不可以修改
+        return 0;
     }
     ```
 

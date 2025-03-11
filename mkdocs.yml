@@ -1,7 +1,7 @@
 # 文章
 nav:
   - Jiao:               
-    - 😘:                index.md
+    - Profile:          index.md
     - CV:               src/jiao/cv.md
 
   - 🪂 Algorithm:
@@ -29,6 +29,8 @@ nav:
       - 线段树:         src/algorithm/data-struct/segment-tree.md
     #- 字符串:
     #- 计算几何:
+    - raft:             src/algorithm/raft.md
+
   - 🚀 C/C++:
     - CPP:              src/cpp/cpp.md
     - STL:              src/cpp/stl.md
@@ -59,6 +61,8 @@ nav:
     - 🚀 Containerd:    src/dev/containerd.md
     - 🚀 Kubernetes:    src/dev/kubernetes.md
     - 🚀 Prometheus:    src/dev/prometheus.md
+
+    - 🚡 Kafka:         src/dev/kafka.md
 
     - 💻 Git:           src/dev/git.md
     - 💪🏻 Nginx:         src/dev/nginx.md

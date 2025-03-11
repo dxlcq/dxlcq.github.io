@@ -112,7 +112,7 @@
 <div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="" target="_blank">
+    <a href="https://account.apple.com/account/manage" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/160px-Apple_logo_black.svg.png"></div>
       <div style="font-size: 12px;">Apple</div>
     </a>
@@ -244,7 +244,7 @@
         <a href="https://www.youtube.com/@骄骄" target="_blank"> YouTube </a> 
     </div>
     <div class="item">
-        <a href="https://www.tiktok.com/@daixllg" target="_blank"> TikTok </a> 
+        <a href="https://www.tiktok.com/@dxlcq" target="_blank"> TikTok </a> 
     </div>
     <div class="item">
         <a href="https://x.com/dxlcqy" target="_blank"> X </a> 

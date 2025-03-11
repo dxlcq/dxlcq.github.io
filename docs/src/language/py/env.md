@@ -1,18 +1,3 @@
-## pip
-
-* 下载 `wget https://bootstrap.pypa.io/get-pip.py`
-* 安装 `python get-pip.py`
-* 测试 `python -m pip --version`
-
-**查看当前软件包**
-
-* `pip list`
-
-
-<br>
-
----
-
 ## miniconda
 
 1. 下载安装脚本
@@ -116,6 +101,22 @@
     ```bash
     conda remove django
     ```
+
+<br>
+
+---
+
+
+## pip
+
+* 下载 `wget https://bootstrap.pypa.io/get-pip.py`
+* 安装 `python get-pip.py`
+* 测试 `python -m pip --version`
+
+**查看当前软件包**
+
+* `pip list`
+
 
 <br>
 
