@@ -234,23 +234,23 @@
   </div>
 
   <div class="item">
-    <a href="https://dash.cloudflare.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png"></div>
-      <div style="font-size: 12px;">赛博大善人</div>
+    <a href="https://console.huaweicloud.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/0/04/Huawei_Standard_logo.svg/1920px-Huawei_Standard_logo.svg.png"></div>
+      <div style="font-size: 12px;">华为云</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="https://dash.cloudflare.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png"></div>
-      <div style="font-size: 12px;">赛博大善人</div>
+    <a href="https://home.console.aliyun.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://img.alicdn.com/tfs/TB1qNVdXlGw3KVjSZFDXXXWEpXa-620-620.png"></div>
+      <div style="font-size: 12px;">阿里云</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="https://dash.cloudflare.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png"></div>
-      <div style="font-size: 12px;">赛博大善人</div>
+    <a href="https://console.cloud.tencent.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://avatars.githubusercontent.com/u/12334581"></div>
+      <div style="font-size: 12px;">腾讯云</div>
     </a>
   </div>
 

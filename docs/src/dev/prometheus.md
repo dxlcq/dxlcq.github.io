@@ -4,9 +4,9 @@
 
 ## Helm
 
-    ```shell
-    snap install helm --classic
-    ```
+```shell
+snap install helm --classic
+```
 
 * repo
 

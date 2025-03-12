@@ -493,77 +493,99 @@ namespace A{
 
 **继承**
 
-* 一个类可以继承（或者扩展）另一个类的属性和方法
+* 子类可以继承（或者扩展）父类的属性和方法
 
 * 通过继承，可以实现代码的复用
 
 * 主要有两种继承的概念：**实现继承** 和 **接口继承**
 
-    * **实现继承** 是指一个类（子类）继承另一个类（父类）的实现
-
-        ```cpp
-        #include <iostream>
-
-        class A{
-        public:
-          A() { std::cout << 666 << std::endl; }
-        };
-
-        class B : public A {};
-
-        int main() {
-          B b;  // 666
-          return 0;
-        }
-        ```
-
-    * **接口继承** 是指一个类（子类）继承另一个类（父类）的接口
+    * **实现继承** 是指（子类）继承（父类）的实现
 
         ```cpp
         #include <iostream>
 
         class A {
-        public:
-          virtual void func() = 0;  // = 0 意味着这是纯虚函数
+           public:
+            A() { std::cout << 666 << std::endl; }
         };
 
-        class B : public A {
-        public:
-          void func() override { std::cout << 888 << std::endl; }
-        };
+        class B : public A {};
 
         int main() {
-          B b; // 888
-          b.func();
-          return 0;
+            B b;  // 666
+            return 0;
         }
         ```
 
+    * **接口继承** 是指（子类）继承（父类）的接口
+
+        > 即，使用 **纯虚函数** 的 **动态多态**
+
 **多态**
 
-* 一个类的实例可以被当作它的父类的实例
+* 多种形态：同一个接口，不同的表现
 
-* 不同类的对象使用相同的接口名字
+    1. 动态（运行时）多态，通过（继承+虚函数）实现
 
-    ```cpp
-    #include <iostream>
+        ```cpp
+        #include <iostream>
 
-    class A {
-    public:
-      virtual void func() = 0;
-    };
+        class A {
+           public:
+            virtual void func1() = 0;                                // 纯虚函数必重写
+            virtual void func2() { std::cout << 666 << std::endl; }  // 虚函数可选重写
+        };
 
-    class B : public A {
-    public:
-      void func() override { std::cout << 888 << std::endl; }
-    };
+        class B : public A {
+           public:
+            void func1() override { std::cout << 888 << std::endl; }
+            // void func2() override { std::cout << 555 << std::endl; }
+        };
 
-    int main() {
-      A *a = new B;
-      a->func(); // 888
-      return 0;
-    }
-    ```
+        int main() {
+            A *a = new B;
+            a->func1();  // 888
+            a->func2();  // 666
+            return 0;
+        }
+        ```
+
+    2. 静态（编译时）多态
+
+        * 函数重载
+
+        * 运算符重载
+
+***虚函数***
+
+* 类中有纯虚函数，这个类是抽象类，抽象类不能实例化
+
+* 类中有纯虚函数，子类没有实现这个函数，子类也是抽象类
+
+* 类继承了抽象类，只有实现了抽象类中的纯虚函数，这个类才能实例化
+
+```cpp
+class A {
+   public:
+    virtual ~A() = default;    // 存在虚函数时，析构函数也应该是虚函数
+    virtual void func2() = 0;  // 必须重写（纯虚函数）
+    virtual void func1() { std::cout << 6 << std::endl; }        // 可选重写
+    virtual void func3() final { std::cout << 8 << std::endl; }  // 不可重写
+};
+```
+
+* 虚函数表 V-Table
+
+    * 当一个类中有虚函数时，编译器会在对象中添加一个指向虚函数表的指钋
+    * 当子类重写了父类的虚函数，子类会有自己的虚函数表
+    * 存储在静态区中的 `.rodata` 段
+
+* 虚函数表指针 V-Table Pointer
+
+    * 如果一个类中有虚函数，那么这个类的对象中会有一个指向虚函数表的指针
+    * 存储在对象的内存中（对象在哪个内存区域，这个指针就在哪个内存区域），通常是对象的第一个成员
+
+
 
 <br>
 
@@ -600,41 +622,6 @@ namespace A{
 * 如果是 `protected` 继承，那么派生类最高的访问权限是 `protected`
 
 * 如果是 `private` 继承，那么派生类最高的访问权限是 `private`
-
-<br>
-
----
-
-### 虚函数
-
-```cpp
-class A {
-public:
-  virtual ~A() = default;                                       // 默认析构函数（存在虚函数时，析构函数也应该是虚函数）
-  virtual void func1() { std::cout << 6 << std::endl; }         // 可选重写
-  virtual void func2() = 0;                                     // 必须重写（纯虚函数）
-  virtual void func3() final { std::cout << 8 << std::endl; }   // 不可重写
-};
-
-class B : public A {
-public:
-  void func1() override { std::cout << 66 << std::endl; }       // 重写
-  void func2() override { std::cout << 88 << std::endl; }       // 重写
-  //void func3() override { std::cout << 888 << std::endl; }    // 不可重写
-};
-```
-
-**虚函数表 V-Table**
-
-* 当一个类中有虚函数时，编译器会在对象中添加一个指向虚函数表的指钋
-* 当子类重写了父类的虚函数，子类会有自己的虚函数表
-* 存储在静态区中的 `.rodata` 段
-
-**虚函数表指针 V-Table Pointer**
-
-* 如果一个类中有虚函数，那么这个类的对象中会有一个指向虚函数表的指针
-* 存储在对象的内存中（对象在哪个内存区域，这个指针就在哪个内存区域），通常是对象的第一个成员
-
 
 <br>
 

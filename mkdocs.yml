@@ -63,6 +63,7 @@ nav:
     - 🚀 Prometheus:    src/dev/prometheus.md
 
     - 🚡 Kafka:         src/dev/kafka.md
+    - 📦 PostgreSQL:    src/dev/postgresql.md
 
     - 💻 Git:           src/dev/git.md
     - 💪🏻 Nginx:         src/dev/nginx.md
