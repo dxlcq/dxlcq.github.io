@@ -1,55 +1,50 @@
+**比赛：**
+
+* <a href="https://ac.nowcoder.com/acm/contest/vip-index" target="_blank"> nowcoder </a>
+
+* <a href="https://codeforces.com/contests" target="_blank"> codeforces </a>
 
 
+**专题：**
 
+* <a href="http://ybt.ssoier.cn:8088/index.php" target="_blank"> ybt </a> 一本通，适合入门
 
+* <a href="https://www.luogu.com.cn/training/list" target="_blank"> Luogu </a> 在一本通基础上进阶
 
+* <a href="https://www.acwing.com/user/myspace/activity/126160/" target="_blank"> yxc </a> 付费，基础课物超所值
 
+* <a href="https://www.luogu.com/paste/b7vhgqco" target="_blank"> TEMP </a> 洛谷社区整理的模版题
 
-<br>
+* <a href="https://www.acwing.com/activity/content/6/" target="_blank"> lyd </a> 算法竞赛进阶指南
 
----
+* <a href="https://www.acwing.com/activity/content/90/" target="_blank"> Kb </a> kuangbin专题，进阶一点
 
-<style>
-    .container {
-        display: flex;
-        text-align: center;
-    }
-    .item {
-        flex: 1;
-        margin: 3px 0;
-    }
-</style>
+**真题：**
 
-<div class="container">
-    <div class="item">
-        <a href="https://www.acwing.com/user/myspace/activity/126160/" target="_blank"> yxc </a> | <a href="https://www.luogu.com.cn/training/list" target="_blank"> Luogu </a> | <a href="https://www.luogu.com/paste/b7vhgqco" target="_blank"> TEMP </a> | <a href="https://www.acwing.com/activity/content/90/" target="_blank"> Kb </a> | <a href="https://www.acwing.com/activity/content/6/" target="_blank"> lyd </a> | <a href="http://ybt.ssoier.cn:8088/index.php" target="_blank"> ybt </a>
-    </div>
-    <div class="item">
-         <a href="https://www.luogu.com.cn/problem/list?type=B%7CP&tag=343%7C37&page=1" target="_blank"> CSP </a> | <a href="https://www.acwing.com/activity/content/89/" target="_blank"> USACO </a> | <a href="https://pintia.cn/market" target="_blank"> PTA-XCPC </a> | <a href="http://noi.openjudge.cn/" target="_blank"> CIE-C </a>
-    </div>
-</div>
+* <a href="http://noi.openjudge.cn/" target="_blank"> CIE-C </a> 梯度小
 
-<div class="container">
-    <div class="item">
-        <a href="https://csacademy.com/app/graph_editor/" target="_blank"> 画图-图论</a>
-    </div>
-    <div class="item">
-        <a href="https://www.desmos.com/calculator?lang=zh-CN" target="_blank"> 画图-坐标系 </a>
-    </div>
-    <div class="item">
-        <a href="https://mathsolver.microsoft.com/zh" target="_blank"> 计算-MS </a> | 
-        <a href="https://mathdf.com/cn/" target="_blank"> 计算-DF </a> 
-    </div>
-</div>
+* <a href="https://www.luogu.com.cn/problem/list?type=B%7CP&tag=343%7C37&page=1" target="_blank"> CSP </a> OI爷
 
+* <a href="https://www.acwing.com/activity/content/89/" target="_blank"> USACO </a> cow
 
+* <a href="https://pintia.cn/market" target="_blank"> PTA-XCPC </a> 打铁
+
+**工具：**
+
+* <a href="https://csacademy.com/app/graph_editor/" target="_blank"> 画图-图论</a>
+
+* <a href="https://www.desmos.com/calculator?lang=zh-CN" target="_blank"> 画图-坐标系 </a>
+
+* <a href="https://mathsolver.microsoft.com/zh" target="_blank"> 计算-MS </a>
+
+* <a href="https://mathdf.com/cn/" target="_blank"> 计算-DF </a>
 
 
 <br>
 
 ---
 
-## 这是知识点 1
+## 这是知识点甲
 
 **模板** | [题]()
 
@@ -176,4 +171,4 @@ int main() {
 ---
 
 
-## 这是知识点 2
+## 这是知识点乙

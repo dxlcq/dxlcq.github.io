@@ -1,7 +1,8 @@
 # 文章
 nav:
   - Jiao:               
-    - Navigation:          index.md
+    - Navigation:       index.md
+    - Profile:          src/jiao/profile.md
     - CV:               src/jiao/cv.md
 
   - 🪂 Algorithm:
@@ -36,7 +37,7 @@ nav:
     - STL:              src/cpp/stl.md
     - Thread:           src/cpp/thread.md
     - Network:          src/cpp/network.md
-    - GUI:              src/cpp/gui.md
+    - Qt:               src/cpp/qt.md
     - AV:               src/cpp/av.md
     - ROS:              src/cpp/ros.md
     - 🔩 GCC:           src/cpp/gcc.md
@@ -48,7 +49,6 @@ nav:
     - 🔩 Boost:         src/cpp/boost.md
     - 🔩 OpenSSL:       src/cpp/openssl.md
     - 🔩 FFmpeg:        src/cpp/ffmpeg.md
-    - 🔩 Qt:            src/cpp/qt.md
   - 🌥️ DevOps:
     - 🤖 AI:            src/dev/ai.md
     - 🧑‍💻 MacOS:         src/dev/macos.md
@@ -62,10 +62,13 @@ nav:
     - 🚀 Kubernetes:    src/dev/kubernetes.md
     - 🚀 Prometheus:    src/dev/prometheus.md
 
+    - 🚡 gRPC:          src/dev/grpc.md
     - 🚡 Kafka:         src/dev/kafka.md
+
     - 📦 PostgreSQL:    src/dev/postgresql.md
 
     - 💻 Git:           src/dev/git.md
+    
     - 💪🏻 Nginx:         src/dev/nginx.md
     - 💪🏻 OpenSSH:       src/dev/openssh.md
     - 💪🏻 Coturn:        src/dev/coturn.md

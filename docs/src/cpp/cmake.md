@@ -1,8 +1,4 @@
-## setup
-
-### linux
-
-### windows
+## 参考
 
 <br>
 
@@ -20,15 +16,21 @@
 
 3. `cmake --build .` 执行相应的构建命令（例如 `make`）
 
-### must
+### example
 
 ```c
-cmake_minimum_required(VERSION 3.29)    # 指定 CMake 的最低版本要求
+cmake_minimum_required(VERSION 3.31)    # 指定 CMake 的最低版本要求
 
-project(main VERSION 1.0)               # 设置项目名称和版本号
+project(oneProject VERSION 1.0.0.0618)  # 设置项目名称和版本号
 
 set(CMAKE_CXX_STANDARD 23)              # 指定 C++ 标准版本
 set(CMAKE_CXX_STANDARD_REQUIRED True)   # 编译器必须严格遵循指定的 C++ 标准版本
+
+set(QT_DIR /usr/local/Qt)                # 设置 Qt 库的路径，非必须
+find_package(Qt6 REQUIRED)               # 查找 Qt 库
+
+add_executable(main main.cpp)            # 生成可执行文件
+target_link_libraries(main Qt6::Widgets) # 链接 Qt 库到 main
 ```
 
 ### find_package
@@ -75,6 +77,9 @@ LINK_DIRECTORIES(dir1 dir2)                 # 添加动态库目录，不推荐�
 target_link_libraries(main libssl.so)       # 链接库到 main
 target_link_libraries(a ${Boost_LIBRARIES}) # 链接 Boost 库到 a
 ```
+
+private 的库不会传递给依赖项，public 的库会传递给依赖项
+
 
 ### add_library
 
