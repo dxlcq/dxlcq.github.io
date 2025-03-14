@@ -201,12 +201,55 @@
 
 ## QML && project
 
+<br>
+
+---
+
+
+
+
+## 第三方库
+
+### qicstable
+
+[qicstable](https://gitlab.com/ics-qicstable/qicstable)
+
+* 生成动态库：
+
+    1. `qmake -qicstable.pro`
+
+    2. `make -j8`
+
+* 生成文档：
+
+    1. `../bin/generate_docs`
+
+* 使用动态库：
+
+
 
 
 
 <br>
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 信号与槽
 

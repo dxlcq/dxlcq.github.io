@@ -70,7 +70,9 @@
 ```Dockerfile
 FROM ubuntu:latest AS builder
 
-RUN apt update && apt install -y build-essential cmake pkg-config librdkafka-dev libglib2.0-dev
+RUN apt update && apt install -y \
+    build-essential cmake pkg-config \
+    librdkafka-dev libglib2.0-dev
 ```
 
 生成镜像：
