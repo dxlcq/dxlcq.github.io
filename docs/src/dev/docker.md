@@ -1,5 +1,11 @@
-[Docker 入门教程 - 阮一峰](https://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
+## 参考
 
+
+<br>
+
+---
+
+## 引子
 
 **Virtual Machines** 
 
@@ -16,26 +22,17 @@
 
 ---
 
-## 安装 Docker
+## Install Docker
 
-* 使用 `apt` 安装（[参考文档](https://linux.cn/article-16531-1.html)）：
+1. 使用 [apt](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository) 安装 docker engine
 
-    ```sh
-    sudo snap install docker.io
-    ```
 
-* 使用官方安装脚本（[参考文档](https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script)）：
 
-    ```sh
-    curl -fsSL https://get.docker.com -o get-docker.sh
-    sudo sh get-docker.sh
-    ```
+2. NVIDIA CTK
 
-* 配置 NVIDIA CTK（[参考文档](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)）：
-
-    1. 安装 ctk
+    1. [安装](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#with-apt-ubuntu-debian)
     
-    2. 配置
+    2. [配置](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker)
 
     3. 验证
 

@@ -75,6 +75,11 @@
     </a>
   </div>
 
+  <div class="item" style="font-size: 14px;">
+    <div><a href="http://10.0.0.10:22434/" target="_blank"> ai </a></div>
+    <div><a href="https://chatgpt.com/" target="_blank"> chatgpt </a></div>
+  </div>
+
   <div class="item">
     <a href="https://outlook.live.com/mail/0/" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg"></div>
@@ -145,9 +150,9 @@
   </div>
   
   <div class="item">
-    <a href="https://myaccount.google.com/" target="_blank">
+    <a href="https://passwords.google.com/" target="_blank">
       <div style="font-size: 12px;">Google</div>
-    </a>
+    </a> 
   </div>
 
   <div class="item">
