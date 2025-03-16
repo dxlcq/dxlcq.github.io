@@ -28,7 +28,8 @@
 3. 添加环境变量：
 
     ```shell
-    export PATH=$PATH:/home/user/Qt/x.y.z/gcc_64/bin
+    export PATH=/home/user/Qt/x.y.z/gcc_64/bin:$PATH
+    export LD_LIBRARY_PATH=/home/user/Qt/x.y.z/gcc_64/lib:$LD_LIBRARY_PATH
     ```
 
 4. vscode
@@ -41,7 +42,7 @@
         {
             "configurations": [
                 {
-                    "name": "Simple C++ QT Configuration",
+                    "name": "Qt",
                     "includePath": [
                         "${workspaceFolder}/**",
                         "/home/user/Qt/x.y.z/gcc_64/include/**"
@@ -85,7 +86,7 @@
     2. `CMakeLists.txt`
 
         ```CMakeLists.txt
-        cmake_minimum_required(VERSION 3.31)
+        cmake_minimum_required(VERSION 3.28)
         project(HelloQt VERSION 1.0.0.0313)
         
         # C++ 标准配置
@@ -141,11 +142,19 @@
                     "MIMode": "gdb",
                     // 指定gdb的可执行文件路径
                     "miDebuggerPath": "gdb",
+                    // 配置调试会话的环境变量，这里设置 DISPLAY 以便远程调试（非必需）
+                    // 可以设置为 x11 的转发的 DISPLAY 环境变量，localhost:10.0
+                    "environment": [
+                        {
+                            "name": "DISPLAY",
+                            "value": ":10.0"
+                        }
+                    ],
                 }
             ]
         }
         ```
-    
+
     2. 依次点击：`运行` -> `启动调试`，即可开始调试
         
         1. 继续：运行到下一个断点

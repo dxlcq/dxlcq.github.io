@@ -5,8 +5,16 @@
 ```bash
 sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove
 sudo apt install -y openssh-server wget apt-transport-https ca-certificates curl gpg
-sudo wget -P /root/.ssh "https://dxlcq.cn/public/authorized_keys"
+sudo wget -O /root/.ssh/authorized_keys "https://dxlcq.cn/public/authorized_keys"
 sudo echo "PasswordAuthentication no" | sudo tee -a /etc/ssh/sshd_config
+sudo systemctl restart ssh
+```
+
+```bash
+sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove
+sudo apt install -y openssh-server wget apt-transport-https ca-certificates curl gpg
+sudo wget -O /home/jiao/.ssh/authorized_keys "https://dxlcq.cn/public/authorized_keys"
+sudo systemctl restart ssh
 ```
 
 ## dir
@@ -26,9 +34,6 @@ sudo echo "PasswordAuthentication no" | sudo tee -a /etc/ssh/sshd_config
     ├── boot    #   
     ├── var     # /var/www
     └── s
-
-
-
 ```
 
 ## 软件
@@ -272,13 +277,17 @@ dump，rsync
 2. 添加共享条目 `sudo vim /etc/fstab`
 
     ```conf
-    //10.0.0.2/administrator /mnt/idc cifs credentials=/root/smb.cred,uid=1000,gid=1000,iocharset=utf8 0 0
+    //ip/public /mnt/public cifs credentials=/root/smb.cred,uid=1000,gid=1000,iocharset=utf8 0 0
     ```
 
-    * `//idc/administrator` 网络路径
-    * `/mnt/idc` 本地挂载路径
+    * `//ip/public` 网络路径
+    * `/mnt/public` 本地挂载路径
+    * `cifs` 文件系统类型
     * `credentials=/root/smb.cred` 指定了一个包含登录凭据（用户名和密码）的文件
+    * `uid=1000,gid=1000` 用户和组 ID，确保挂载后的文件权限正确
+    * `iocharset=utf8` 设置字符集为 UTF-8，以支持中文等非 ASCII 字符
     * `0 0` 不要进行 dump 备份，启动时不需要检查
+
 
 3. 创建登陆凭据 `sudo vim /root/smb.cred`
 

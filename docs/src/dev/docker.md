@@ -1,5 +1,6 @@
 ## 参考
 
+* [docker manuals](https://docs.docker.com/manuals/)
 
 <br>
 
@@ -267,7 +268,7 @@ CMD ["./web_server"]
 ### 2 构建镜像
 
 ```bash
-sudo docker build -t web_server .
+sudo docker buildx build -t web_server .
 ```
 
 * `-t` 指定名称
@@ -286,20 +287,14 @@ sudo docker push dxlcq/web_server
 
 ---
 
-## docker-compose.yml
-
-### 安装
-
-```bash
-sudo apt install docker-compose
-```
+## docker compose
 
 ### 常用命令
 
 * 启动容器组
 
     ```bash
-    sudo docker-compose up -d
+    sudo docker compose up -d
     ```
 
     * `-d` 后台运行
@@ -307,33 +302,19 @@ sudo apt install docker-compose
 * 停止容器组
 
     ```bash
-    sudo docker-compose down
+    sudo docker compose down
     ```
 
 * 查看容器组
 
     ```bash
-    sudo docker-compose ps
+    sudo docker compose ps
     ```
 
 * 查看日志
 
     ```bash
-    sudo docker-compose logs -f
+    sudo docker compose logs -f
     ```
 
     * `-f` 实时查看
-
-### 配置文件的编写
-
-```yml
-version: '3'
-services:
-  [服务名]:
-    image: [镜像名]
-    ports:
-      - "[外部端口]:[容器端口]"
-    volumes:
-      - "[主机目录]:[容器目录]"
-    restart: unless-stopped
-```

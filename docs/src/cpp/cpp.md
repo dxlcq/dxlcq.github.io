@@ -22,6 +22,25 @@
 
 ## 1 预备知识
 
+### C++ 开发环境
+
+```Dockerfile
+FROM ubuntu:latest
+
+RUN apt update && apt install -y \
+    build-essential cmake vim \
+    openssh-server wget apt-transport-https ca-certificates curl gpg
+
+# ssh login (use your own key)
+RUN wget -O /root/.ssh/authorized_keys "https://dxlcq.cn/public/authorized_keys"
+RUN mkdir /run/sshd
+
+# vim chinese support
+RUN echo "set encoding=utf-8" >> /etc/vim/vimrc
+
+CMD ["/etc/init.d/ssh", "restart","-D"]
+```
+
 ### 支持的编程范式
 
 * 过程式编程
