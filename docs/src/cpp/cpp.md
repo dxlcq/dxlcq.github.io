@@ -41,6 +41,10 @@ RUN echo "set encoding=utf-8" >> /etc/vim/vimrc
 CMD ["/etc/init.d/ssh", "restart","-D"]
 ```
 
+<br>
+
+---
+
 ### 支持的编程范式
 
 * 过程式编程

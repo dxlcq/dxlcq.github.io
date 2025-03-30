@@ -169,6 +169,26 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
 
 1. 禁用 IPv6
 
+<br>
+
+---
+
+### USB
+
+1. 添加接口
+    
+    名称 `usb`
+
+    协议 `DHCP客户端`
+
+    设备 `usb0`
+
+2. 添加 NAT 规则
+
+    * `usb`
+
+        Forwarded `IPv4`；来自 `所有区域`；到 `所有区域`，通过设备 `usb0`；自动重写源 IP
+
 
 <br>
 

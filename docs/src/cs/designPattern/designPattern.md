@@ -1,16 +1,109 @@
+##  参考
+
+* [我常用的六种设计模式-C++程序员昊天](https://mp.weixin.qq.com/s/yWCVZX_82V3GfaZkFHTTdA)
+
+<br>
+
 ---
-html:
-    toc: true   # 打开侧边目录
-export_on_save:
-    html: true  # 自动保存
+
+## 设计原则
+
+1. `SRP` 单一职责
+    一个类只负责一个功能，职责单一。
+2. `OCP` 开闭
+    对扩展开放，对修改关闭（封装应当遵守的原则）。
+3. `LSP` 里式替换
+    子类可以扩展父类的功能，但不能修改父类原有的功能（继承应当遵守的原则）。
+4. `*DIP` 依赖倒置
+    高层模块不依赖低层模块，它们共同依赖同一个抽象。抽象不要依赖具体实现细节，具体实现细节依赖抽象。
+5. `ISP` 接口隔离
+    客户端不应该依赖那些它不需要的接口（封装应当遵守的原则）。
+
+6. `CRP` 合成复用
+7. `LoD` 迪米特
+
+
+<br>
+
 ---
 
-# 参考
+## 单例模式
 
-**书籍：** [阿里云盘]()
+一个类只有一个实例，并提供一个全局访问点。适用于日志、公共数据等全局性质的对象。
+
+* Meyers’ Singleton
+
+    ```cpp
+    class Singleton {
+       public:
+        static Singleton& getInstance() {
+            static Singleton inst;
+            return inst;
+        };
+
+        Singleton(const Singleton&) = delete;             // 禁止拷贝构造函数
+        Singleton& operator=(const Singleton&) = delete;  // 禁止拷贝赋值运算符
+        Singleton(Singleton&&) = delete;                  // 禁止移动构造函数
+        Singleton& operator=(Singleton&&) = delete;       // 禁止移动赋值运算符
+
+       private:
+        Singleton() = default;
+    };
+    ```
+
+* 饿汉式：类加载时初始化实例
+* 懒汉式：第一次使用时初始化实例
+* 懒汉式-线程安全：每次使用时通过锁机制保证线程安全
+* 懒汉式-DCL：检查指针，指针为空再加锁，双重检查锁定
 
 
-# 面向对象
+
+<br>
+
+---
+
+## 观察者模式
+
+```
+┌─────────┐               ┌───────────┐
+│         │ -- attach --> │           │
+│         │               │ Observer1 │
+│         │ -- notify --> │           │
+│ Subject │               └───────────┘
+│         │
+│         │               ┌───────────┐
+│         │ ------------- │ Observer2 │
+└─────────┘               └───────────┘
+```
+
+* `Subject` 被观察者，维护一组 `Observer` 对象，提供添加、删除、通知方法
+* `Observer` 观察者，定义一个 `update` 接口，当收到通知时调用 `update` 更新状态
+
+
+<br>
+
+---
+
+## 发布订阅模式
+
+```
+┌────────────┐                ┌─────────┐                  ┌─────────────┐
+│ Publisher1 │ -- publish --> │         │ <-- subscribe -- │ Subscriber1 │
+└────────────┘                │  Event  │                  └─────────────┘
+┌────────────┐                │ Channel │                  ┌─────────────┐
+│ Publisher2 │ -- publish --> │         │ <-- subscribe -- │ Subscriber2 │
+└────────────┘                └─────────┘                  └─────────────┘
+```
+
+* `Publisher` 发布者，向 `Event Channel` 发布消息
+
+* `Subscriber` 订阅者，向 `Event Channel` 订阅消息
+
+
+<br>
+
+---
+
 
 ## 设计模式
 
@@ -458,8 +551,3 @@ int main() {
 
 
 
-
-
-
-
-# 泛型编程

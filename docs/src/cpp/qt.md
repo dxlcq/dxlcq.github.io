@@ -223,17 +223,21 @@
 
 [qicstable](https://gitlab.com/ics-qicstable/qicstable)
 
-* 生成动态库：
+* Build the DLL
 
-    1. `qmake -qicstable.pro`
+    ```bash
+    qmake qicstable.pro && make -j8
+    ```
 
-    2. `make -j8`
+    ```bash
+    echo "export LD_LIBRARY_PATH=/home/jiao/Desktop/qtp/qicstable-master/lib:\$LD_LIBRARY_PATH" >> ~/.bashrc
+    source ~/.bashrc
+    ```
 
-* 生成文档：
+* Build the Docs
 
     1. `../bin/generate_docs`
 
-* 使用动态库：
 
 
 
