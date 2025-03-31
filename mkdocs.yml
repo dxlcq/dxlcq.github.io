@@ -44,11 +44,13 @@ nav:
     - 🔩 GDB:           src/cpp/gdb.md
     - 🔩 Make:          src/cpp/make.md
     - 🔩 CMake:         src/cpp/cmake.md
-    - 🔩 GTest:         src/cpp/gtest.md
     - 🔩 Perf:          src/cpp/perf.md
-    - 🔩 Boost:         src/cpp/boost.md
-    - 🔩 OpenSSL:       src/cpp/openssl.md
-    - 🔩 FFmpeg:        src/cpp/ffmpeg.md
+    - 📦 GTest:         src/cpp/gtest.md
+    - 📦 Boost:         src/cpp/boost.md
+    - 📦 OpenSSL:       src/cpp/openssl.md
+    - 📦 FFmpeg:        src/cpp/ffmpeg.md
+    - 📦 HMBDC:         src/cpp/hmbdc.md
+    - 📦 sqlpp11:       src/cpp/sqlpp11.md
   - 🌥️ DevOps:
     - 🤖 AI:            src/dev/ai.md
     - 🧑‍💻 MacOS:         src/dev/macos.md

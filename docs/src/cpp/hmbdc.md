@@ -25,6 +25,10 @@ make -j8 CXX=g++-12
 
 * `Domain` 多个 Node 组成一个 Domain，消息通过 Domain 传播（发布/订阅）
 
+<br>
+
+---
+
 ## example 解析
 
 ### hello_world.cpp
@@ -43,6 +47,8 @@ make -j8 CXX=g++-12
 // [term2] ./hello-world 127.0.0.1
 // running as sender, ctrl-c to exit
 //
+// PS: 可以启动多个send，recv都可以收到
+//
 // to debug:
 // 必要时需要清理共享内存 "rm /dev/shm/*" 
 // - SHM 的所有权由 ipcTransportOwnership 配置项决定，该项的具体配置可以在 tips/DefaultUserConfig.hpp 文件中找到
@@ -56,17 +62,17 @@ using namespace std;
 using namespace hmbdc::app;
 using namespace hmbdc::tips;
 
-// 搞一个消息类型试一试
+// 搞一个消息类型试一试，消息类型为 Hello
 struct Hello : hasTag<1001> { // 为每个消息类型分配一个16位的标签，标签需要大于1000且唯一
     char msg[6] = "hello";
 };
 
-/// write a simple Node subscribe to the above message
-struct Receiver : Node<Receiver
-    , std::tuple<Hello> // only subscribe Hello
-    , std::tuple<>      // not publishing anything
+// 编写一个简单的 Node 订阅上述消息
+struct Receiver : Node<Receiver // 标识当前 Node 的类型为 Receiver，用于接收消息
+    , std::tuple<Hello>         // 订阅 Hello 消息，如果需要订阅多个：std::tuple<Hello, World, ...>
+    , std::tuple<>              // 发布消息
 > {
-    /// message callback - won't compile if missing
+    // 消息回调，对于订阅的每个消息类型，都必须实现一个 handleMessageCb 函数，否则无法通过编译
     void handleMessageCb(Hello const& m) {
         cout << m.msg << endl;
     }
@@ -74,31 +80,38 @@ struct Receiver : Node<Receiver
 
 int main(int argc, char** argv) {
     using namespace std;
+    // 判断传入参数数量
     if (argc < 2) {
         cerr << argv[0] << " local-ip [recv]" << endl;
         cerr << "start application as sender (default) or as Receiver" << endl;
         return -1;
     }
+    // 拿到 IP
     std::string ifaceAddr = argv[1];
     bool isSender = argc <= 2;
 
-    Config config; //other config values are default
-    config.put("ifaceAddr", ifaceAddr);//which net IP to use for net communication
-    
-    SingletonGuardian<tcpcast::Protocol> g; //RAII for tcpcast::Protocol resources
+    Config config;
+    config.put("ifaceAddr", ifaceAddr); // 用于网络通信的 IP，仅修改一个配置项，其他保持默认
+
+    // tcpcast::Protocol 是 HMBDC 网络栈的上下文
+    // 通过 SingletonGuardian 单例确保只有一个上下文存在
+    SingletonGuardian<tcpcast::Protocol> g; // RAII
 
     if (isSender) {
         cout << "running as sender, ctrl-c to exit" << endl;
-        using MyDomain = Domain<std::tuple<>    /// no subscribing
-            , ipc_property<>                    /// default IPC params (using shared mem)
-            , net_property<tcpcast::Protocol>>; /// use tcpcast as network transport
+        // 定义一个域
+        using MyDomain = Domain<std::tuple<>    // 无需订阅（因为这是发送者）
+            , ipc_property<>                    // 默认 IPC 参数（使用共享内存）
+            , net_property<tcpcast::Protocol>>; // 使用 tcpcast 作为网络传输
+        // 通过配置启动域
         auto domain = MyDomain{config};
         domain.startPumping();
-        /// handle ctrl-c
+        // 捕获 control+c，并通过原子变量 stopped 通知程序停止运行
         auto stopped = std::atomic<bool>{false};
         hmbdc::os::HandleSignals::onTermIntDo([&](){stopped = true;});
-        while (!stopped) { // until ctrl-c pressed
-            // publish is a fast/async and theadsafe call, all subscribing Nodes in the domain receive it
+        // 直到 control+c 被按下 
+        while (!stopped) {
+            // 向 domain 中发布一个 Hello 消息，每秒一次
             domain.publish(Hello{});
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
@@ -106,13 +119,13 @@ int main(int argc, char** argv) {
         domain.join();
     } else {
         cout << "running as receiver, ctrl-c to exit" << endl;
-        using MyDomain = Domain<std::tuple<Hello>   /// subscribe to Hello - compile time checked
-            , ipc_property<>                        /// match sender side
-            , net_property<tcpcast::Protocol>>;     /// match sender side
+        using MyDomain = Domain<std::tuple<Hello>
+            , ipc_property<>
+            , net_property<tcpcast::Protocol>>;
         auto domain = MyDomain{config};
         Receiver recv;
-        domain.add(recv).startPumping();            /// recv Node and IO started
-        /// handle ctrl-c
+        domain.add(recv).startPumping();    // 添加接收者并启动消息循环
+        // 捕获 control+c，并通过原子变量 stopped 通知程序停止运行
         hmbdc::os::HandleSignals::onTermIntDo([&](){domain.stop();});
         domain.join();
     }
