@@ -1,60 +1,123 @@
 ## 参考
 
+* [cmake 官方文档](https://cmake.org/cmake/help/latest/manual/cmake.1.html)
+
+* [cmake 最佳实践](https://modern-cmake-cn.github.io/Modern-CMake-zh_CN/)
+
 <br>
 
 ---
+
+## 安装
+
+* `sudo apt install cmake`
+
+* [从源码安装](https://github.com/Kitware/CMake?tab=readme-ov-file#building-cmake-from-scratch)
+
+<br>
 
 ## 基础用法
 
-当前目录下存在 `CMakeLists.txt` 文件
-
-```CMakeLists.txt
-cmake_minimum_required(VERSION 3.28)
-
-project(
-    "MyProject"
-    VERSION 1.0.0.250319
-)
-
-# 生成可执行文件
-add_executable(MyExecutable
-    src/main.cpp
-)
-
-# 为目标添加头文件和源文件
-target_sources(MyLibrary
-    PUBLIC include/api.h
-    PRIVATE src/internals.cpp src/foo.cpp)
-
-
-
-
-target_sources(MyExecutable PRIVATE src/main.cpp)
-
-target_include_directories(MyExecutable PUBLIC include)
+```bash
+cmake -B build
+cmake --build build -j$(nproc)
 ```
 
+* 在顶层 `CMakeLists.txt` 目录中执行
 
-1. `mkdir build && cd build` 通常做法，避免中间文件污染源代码目录（out-of-source）
+* `cmake -B build`
+    
+    * 生成构建系统文件（例如 `Makefile`），避免中间文件污染源代码目录（out-of-source）
 
-2. `cmake ..` 生成构建系统文件（例如 `Makefile`）
+    * `-B` 指定输出目录为 `build`
 
-3. `cmake --build . -j8` 执行相应的构建命令（例如 `make`）
+* `cmake --build build -j$(nproc)`
+
+    * 使用指定构建系统进行编译（例如 `make`）
+
+    * `-j$(nproc)` 并行编译，`$(nproc)` 表示使用所有 CPU 核心数
 
 <br>
 
 ---
 
-## 包含头文件
+## 快速上手
+
+如同使用 `g++` 编译项目一样，需要：
+
+* 指定需要编译的源文件
+
+* 指定第三方库的头文件路径 `target_include_directories`
+
+* 指定第三方库的库文件路径 `target_link_directories`
+
+* 接接库 `target_link_libraries`
+
+其中最混乱的就是第三方库的管理，网上的教程五花八门，这里通过三种情况来分析：
+
+### 存在 `.cmake`
+
+如果第三方库存在 `.cmake` 文件，不要犹豫，直接使用 `find_package`
 
 ```CMakeLists.txt
-include_directories
+# 设置 Qt 的 CMake 模块路径，如果不在 /usr/lib /usr/local/lib 等常见路径下
+set(Qt6_DIR ".../Qt/x.y.z/gcc_64/lib/cmake/Qt6")
+
+# 导入 Qt6 模块
+# REQUIRED 必须找到
+# COMPONENTS 需要的组件
+find_package(Qt6 REQUIRED COMPONENTS
+    Core
+    Xml
+)
+
+# 链接库
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    Qt6::Core
+    Qt6::Xml
+)
 ```
 
+### 存在 `.pc`
+
+如果第三方库存在 `.pc` 文件，不要犹豫，优先使用 `pkg_check_modules`
+
+```CMakeLists.txt
+# 导入 pkg-config 模块
+find_package(PkgConfig REQUIRED)
+
+# pkg_check_modules 查找的路径
+set(ENV{PKG_CONFIG_PATH} ".../lib/pkgconfig")
+pkg_check_modules(PQ REQUIRED IMPORTED_TARGET
+    libpq
+)
+
+# 链接库目录
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    PkgConfig::PQ
+)
+```
+
+### 手动
+
+只给你 `lib` 和 `include` 目录，直接复制到你项目目录下
+
+```CMakeLists.txt
+target_include_directories(${PROJECT_NAME} PRIVATE
+    ${PROJECT_SOURCE_DIR}/libs/xxx/include
+)
+
+find_library(LIBQICSTABLE libqicstable.so.3 PATHS /home/jiao/Desktop/qicstable-master/lib)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    ${LIBQICSTABLE}
+)
+```
 
 <br>
 
 ---
+
 
 ### 查找依赖库
 
@@ -66,13 +129,6 @@ find_package(Boost REQUIRED)            # 查找 Boost 库
 find_package(Boost 1.75 REQUIRED)       # 查找 Boost 库的指定版本
 find_package(Boost COMPONENTS system filesystem REQUIRED)  # 查找 Boost 库的 system 和 filesystem 组件
 ```
-
-常见的变量：
-
-`PackageName_FOUND`：是否找到了指定的包
-`PackageName_INCLUDE_DIRS`：包含目录
-`PackageName_LIBRARIES`：库文件
-`PackageName_VERSION`：版本号
 
 ### include_directories
 

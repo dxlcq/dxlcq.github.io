@@ -2,6 +2,8 @@
 
 目的是形成一套集 **查询** 与 **八股** 的手册
 
+* [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
+
 * 以 [《C++ Primer Plus》](https://www.kdocs.cn/l/cf3MMQTFyNku) 为主线
 
 * 以 [《Effective C++》](https://www.kdocs.cn/l/cjUist8CmOmt) 与 [《More Effecitve C++》](https://www.kdocs.cn/l/clykya3sDwyW) 为规范

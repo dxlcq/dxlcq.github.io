@@ -221,6 +221,8 @@ dump，rsync
 
 * 带密码下载 `wget --http-user=用户名 --http-password=密码 http://url`
 
+* 代理下载 `wget -e "https_proxy=http://192.168.19.19:7890"`
+
 <br>
 
 ---

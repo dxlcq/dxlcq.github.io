@@ -21,9 +21,13 @@ make -j8 CXX=g++-12
 
 * `POTS` Pub/sub On Topic String，基于主题字符串的发布订阅
 
-* `Node` 每个 Node 代表一个 OS 线程，可以发布/订阅消息
+* `Node` 每个 Node 代表一个 OS 线程，其实就是 sender / receiver
 
 * `Domain` 多个 Node 组成一个 Domain，消息通过 Domain 传播（发布/订阅）
+
+* fa运行逻辑:
+
+    1. 
 
 <br>
 
@@ -31,7 +35,7 @@ make -j8 CXX=g++-12
 
 ## example 解析
 
-### hello_world.cpp
+### hello-world.cpp
 
 ```cpp
 // hello-world for hmbdc TIPS
@@ -132,3 +136,119 @@ int main(int argc, char** argv) {
 }
 ```
 
+### hello-pots.cpp
+
+```cpp
+// hello world for hmbdc POTS 
+// 同上
+#include "hmbdc/pots/Pots.hpp"
+#include "hmbdc/os/Signals.hpp"
+
+#include <iostream>
+#include <iterator>
+
+using namespace hmbdc;
+
+// 列出所有主题，在所有 .h / .cpp 文件中，顺序应当一致
+char const* AllTopics[] = {
+    "/hello",
+    "/hi-back",
+};
+
+/// write a Node to publish on the topic "/hello" @1HZ for 10 times and print out the echoing "/hi-back"
+struct Sender : pots::Node<Sender> {
+    Sender() 
+    : Node{
+        {"/hi-back"}        // subscribe topics
+        , {"/hello"}        // publish topics
+    } {
+        // schedule the 1HZ timer - first firing asap from now
+        Node::schedule(time::SysTime::now(), timer1Hz);
+    }
+
+    /// node/thread name
+    char const* hmbdcName() const {return "Sender";}
+
+    /// called only once before any message dispatching (or timer callback) happens
+    virtual void messageDispatchingStartedCb(std::atomic<size_t> const*) override {
+        std::cout << "start messaging and timers" << std::endl;
+    }
+
+    // callback called once whenever this Sender
+    // thread is unblocked - by new message arriving, timer wake up
+    // or max blocking timeouts (1 sec by default)
+    void invokedCb(size_t count) override {
+        if (count) std::cout << "msgs just received =" << count << std::endl;
+    }
+
+    /// message callback
+    virtual void potsCb(std::string_view topic, void const* msg, size_t msgLen) override {
+        std::cout << static_cast<char const*>(msg) << std::endl;
+    }
+
+    /// timer
+    time::ReoccuringTimer timer1Hz{time::Duration::seconds(1) // re-occure every 1 sec
+        , [this](auto&&, auto&&) {                            // do this when timer fires  
+        static auto count = 10;
+        if (count--) { 
+            std::cout << "sending a Hello" << std::endl;
+            auto msg = "hello world!";
+            publish("/hello", msg, strlen(msg) + 1);
+        } else {
+            throw (ExitCode(0)); // node finished and exits it by throw an exception
+        }
+    }};
+};
+
+/// write a Node subscribe to the topic "/hellow" and echo back on "/hi-back"
+struct Receiver : pots::Node<Receiver> {
+    Receiver()
+    : Node(
+        {"/hello"}          // 1 subscription
+        , {"/hi-back"})     // publish 1 topic
+    {}
+    char const* hmbdcName() const {return "Receiver";}
+    /// message callback - won't compile if missing
+    void potsCb(std::string_view topic, void const* msg, size_t msgLen) {
+        std::cout << static_cast<char const*>(msg) << std::endl;
+
+        std::string back{"world hi back"};
+        publish("/hi-back", back.c_str(), back.size() + 1);
+    }
+};
+
+int main(int argc, char** argv) {
+    using namespace std;
+    if (argc < 2) {
+        cerr << argv[0] << " local-ip [recv]" << endl;
+        cerr << "start application as sender (default) or as Receiver" << endl;
+        return -1;
+    }
+    auto ifaceAddr = argv[1];
+    bool isSender = argc <= 2;
+    
+    // RAII
+    // pots::MessageConfigurator 是 HMBDC pots 的上下文
+    // 在程序运行早期，将 AllTopics 注册到 pots 的上下文中，使用单例模式实例化
+    hmbdc::pattern::SingletonGuardian<pots::MessageConfigurator> g{AllTopics};
+    // 使用的域
+    auto domain = pots::DefaultDomain{ifaceAddr};
+
+    if (isSender) {
+        cout << "running as sender for 10 sec and exit" << endl;
+        Sender sender;
+        domain.add(sender);                     /// start sender as a thread
+        domain.startPumping();                  /// start process-level message IO
+        sleep(10);           // let the sender thread run for a while
+        domain.stop();       // wrap up and exit
+        domain.join();
+    } else {
+        cout << "running as receiver, ctrl-c to exit" << endl;
+        Receiver recv;
+        domain.add(recv).startPumping();            /// recv Node and IO started
+        /// handle ctrl-c
+        hmbdc::os::HandleSignals::onTermIntDo([&](){domain.stop();});
+        domain.join();
+    }
+}
+```
