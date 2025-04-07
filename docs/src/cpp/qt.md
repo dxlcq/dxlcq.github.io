@@ -20,6 +20,7 @@
         libxcb-cursor0 libxcb-cursor-dev \
         libgl1-mesa-dev \
         libxkbcommon-dev \
+        libxkbcommon-x11-0 \
         libvulkan-dev
     ```
 

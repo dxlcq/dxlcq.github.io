@@ -12,6 +12,8 @@
 
 * 其他参考 [cpp 面试指北](https://csguide.cn/cpp/intro.html)、
 
+* [C++语言面试问题集锦](https://cppguide.cn/pages/cppinterviewmostaskedquestions01/)
+
 * [C++ 语言面向对象](https://docs.net9.org/languages/c-oop/)
 
 * [C++ 运算符号重载](https://www.runoob.com/cplusplus/cpp-overloading.html)

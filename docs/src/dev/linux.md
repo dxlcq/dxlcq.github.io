@@ -271,6 +271,8 @@ dump，rsync
 
 ### SMB 客户端
 
+> samba 是 SMB 的 linux 实现
+
 参考：[系统启动时自动挂载 SMB 共享](https://docs.redhat.com/zh_hans/documentation/red_hat_enterprise_linux/8/html/managing_file_systems/proc_mounting-an-smb-share-automatically-when-the-system-boots_assembly_mounting-an-smb-share-on-red-hat-enterprise-linux)
 
 

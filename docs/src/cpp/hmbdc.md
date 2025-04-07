@@ -13,7 +13,7 @@ apt install g++-12
 make -j8 CXX=g++-12
 ```
 
-在 docker 中运行时，需要 `--ipc=host` 参数。
+在 docker 中运行时，需要 `--ipc=host` 参数
 
 ## 一些概念
 
@@ -25,9 +25,90 @@ make -j8 CXX=g++-12
 
 * `Domain` 多个 Node 组成一个 Domain，消息通过 Domain 传播（发布/订阅）
 
-* fa运行逻辑:
+<br>
 
-    1. 
+---
+
+## 运行逻辑
+
+### TIPS
+
+**发送端**
+
+1. 通过单例模式创建 HMBDC 网络栈的上下文
+
+    ```cpp
+    hmbdc::app::SingletonGuardian<hmbdc::tips::tcpcast::Protocol> g;
+    ```
+
+2. 通过配置文件启动 domain（需要指定两部分配置）
+
+    ```cpp
+    Config config;
+
+    auto domain = Domain<std::tuple<>
+        , ipc_property<>
+        , net_property<tcpcast::Protocol>>{config};
+    
+    domain.startPumping();
+    ```
+
+3. 发布消息：向 domain 中 push 消息结构体
+
+    ```cpp
+    struct Hello : hasTag<1001> { 
+        char msg[6] = "hello";
+    };
+
+    domain.publish(Hello{});
+    ```
+
+**接收端**
+
+1. 通过单例模式创建 HMBDC 网络栈的上下文
+
+2. 创建消息结构体
+
+    ```cpp
+    struct Hello : hasTag<1001> { 
+        char msg[6] = "hello";
+    };
+    ```
+
+3. 创建 domain（还未启动）
+
+    ```cpp
+    Config config
+
+    auto domain = Domain<std::tuple<Hello>
+        , ipc_property<>
+        , net_property<tcpcast::Protocol>>{config};
+    ```
+
+4. 创建 Receiver Node
+
+    ```cpp
+    struct Receiver : Node<Receiver
+        , std::tuple<Hello>>
+        , std::tuple<>> {
+
+        void handleMessageCb(Hello const& m) {
+            cout << m.msg << endl;
+        }
+    };
+    ```
+
+5. 向 domain 注册 Receiver Node 并启动
+
+    ```cpp
+    domain.add(recv).startPumping();
+    ```
+
+
+
+### POTS 
+
+
 
 <br>
 
