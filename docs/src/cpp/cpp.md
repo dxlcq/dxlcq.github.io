@@ -32,7 +32,7 @@
 FROM ubuntu:latest
 
 RUN apt update && apt install -y \
-    build-essential cmake vim \
+    build-essential cmake gdb vim \
     openssh-server wget apt-transport-https ca-certificates curl gpg
 
 # ssh login (use your own key)

@@ -31,6 +31,12 @@ make -j8 CXX=g++-12
 
 ## 运行逻辑
 
+* 发送端和接收端实际上都可以接发消息，区别在于：
+
+    * Sender 的实现通常包括一个定时器或者主动触发事件的机制。它的重点是 **定期发送消息**，不需要等待接收到其他消息
+
+    * Receiver 则依赖于 **消息的到达**，它的核心是 **订阅和响应消息**，通常包含一个处理回调（例如 `potsCb`）来处理接收到的消息。
+
 ### TIPS
 
 **发送端**
@@ -104,10 +110,51 @@ make -j8 CXX=g++-12
     domain.add(recv).startPumping();
     ```
 
-
-
 ### POTS 
 
+**发送端**
+
+1. 列出所有的 topic
+
+    ```cpp
+    char const* AllTopics[] = {
+        "/hello",
+        "/hi-back",
+    };
+    ```
+
+2. 通过单例模式创建 HMBDC 网络栈的上下文
+
+    ```cpp
+    hmbdc::pattern::SingletonGuardian<pots::MessageConfigurator> g{AllTopics};
+    ```
+
+3. 创建 Domain
+
+    ```cpp
+    auto domain = pots::DefaultDomain{ifaceAddr};
+    ```
+
+4. 创建 Sender Node
+
+5. 向 domain 注册 Sender Node 并启动
+
+    ```cpp
+    domain.add(sender);
+    domain.startPumping();
+    ```
+
+**接收端**
+
+1. 列出所有的 topic
+
+2. 通过单例模式创建 HMBDC 网络栈的上下文
+
+3. 创建 Domain
+
+4. 创建 Receiver Node
+
+5. 向 domain 注册 Receiver Node 并启动
 
 
 <br>
@@ -230,70 +277,74 @@ int main(int argc, char** argv) {
 
 using namespace hmbdc;
 
-// 列出所有主题，在所有 .h / .cpp 文件中，顺序应当一致
+// 列出所有主题，在所有 .h 或 .cpp 文件中，顺序应当一致
 char const* AllTopics[] = {
     "/hello",
     "/hi-back",
 };
 
-/// write a Node to publish on the topic "/hello" @1HZ for 10 times and print out the echoing "/hi-back"
+// 向 /hello 话题发布消息，并且每次收到 /hi-back 话题的消息时，输出接收到的消息内容
 struct Sender : pots::Node<Sender> {
     Sender() 
     : Node{
-        {"/hi-back"}        // subscribe topics
-        , {"/hello"}        // publish topics
+        {"/hi-back"}        // 订阅 topics
+        , {"/hello"}        // 发布 topics
     } {
-        // schedule the 1HZ timer - first firing asap from now
+        // 启动一个定时器，每秒触发一次，并且第一次触发尽可能快地发生
         Node::schedule(time::SysTime::now(), timer1Hz);
     }
 
-    /// node/thread name
+    // 节点名称
     char const* hmbdcName() const {return "Sender";}
 
-    /// called only once before any message dispatching (or timer callback) happens
+    // 节点的初始化阶段，所有消息的调度和定时器触发之前，框架会调用这个回调函数
     virtual void messageDispatchingStartedCb(std::atomic<size_t> const*) override {
+        // 消息调度和定时器触发已经开始
         std::cout << "start messaging and timers" << std::endl;
     }
 
-    // callback called once whenever this Sender
-    // thread is unblocked - by new message arriving, timer wake up
-    // or max blocking timeouts (1 sec by default)
+    // 每当此 Sender 线程被解锁时，回调函数会被调用一次。
+    // 线程解锁的原因可能是：新消息到达、定时器唤醒，或者最大阻塞超时（默认 1 秒）。
     void invokedCb(size_t count) override {
         if (count) std::cout << "msgs just received =" << count << std::endl;
     }
 
-    /// message callback
+    // 处理接收到的消息 - 消息回调，sender 可以不实现这个函数
+    // topic: 消息所属主题
+    // msg: 指向消息内容的指针
+    // msgLen: 消息长度（字节数）
     virtual void potsCb(std::string_view topic, void const* msg, size_t msgLen) override {
         std::cout << static_cast<char const*>(msg) << std::endl;
     }
 
     /// timer
-    time::ReoccuringTimer timer1Hz{time::Duration::seconds(1) // re-occure every 1 sec
-        , [this](auto&&, auto&&) {                            // do this when timer fires  
+    time::ReoccuringTimer timer1Hz{time::Duration::seconds(1) // 每秒触发一次
+        , [this](auto&&, auto&&) {                            // 在 timer 触发时执行此操作
         static auto count = 10;
         if (count--) { 
             std::cout << "sending a Hello" << std::endl;
             auto msg = "hello world!";
-            publish("/hello", msg, strlen(msg) + 1);
+            publish("/hello", msg, strlen(msg) + 1);          // 向 "/hello" 发布消息
         } else {
-            throw (ExitCode(0)); // node finished and exits it by throw an exception
+            throw (ExitCode(0));    // 发送完成后，节点会抛出一个 ExitCode(0) 异常，表示它的任务已完成并退出。
         }
     }};
 };
 
-/// write a Node subscribe to the topic "/hellow" and echo back on "/hi-back"
 struct Receiver : pots::Node<Receiver> {
     Receiver()
     : Node(
-        {"/hello"}          // 1 subscription
-        , {"/hi-back"})     // publish 1 topic
+        {"/hello"}          // 订阅 "/hello" topic
+        , {"/hi-back"})     // 发布 "/hi-back" topic
     {}
     char const* hmbdcName() const {return "Receiver";}
-    /// message callback - won't compile if missing
+    
+    // 处理接收到的消息 回调函数 必须有，否则编译不过
     void potsCb(std::string_view topic, void const* msg, size_t msgLen) {
         std::cout << static_cast<char const*>(msg) << std::endl;
 
         std::string back{"world hi back"};
+        // 发布消息到 "/hi-back"
         publish("/hi-back", back.c_str(), back.size() + 1);
     }
 };
@@ -318,16 +369,16 @@ int main(int argc, char** argv) {
     if (isSender) {
         cout << "running as sender for 10 sec and exit" << endl;
         Sender sender;
-        domain.add(sender);                     /// start sender as a thread
-        domain.startPumping();                  /// start process-level message IO
-        sleep(10);           // let the sender thread run for a while
-        domain.stop();       // wrap up and exit
-        domain.join();
+        domain.add(sender);                     // 将 sender 添加到域中，作为线程启动
+        domain.startPumping();                  // 启动进程级别的消息IO
+        sleep(10);           // 让 sender 线程运行一段时间
+        domain.stop();       // 完成并退出
+        domain.join();       // 等待 sender 线程结束
     } else {
         cout << "running as receiver, ctrl-c to exit" << endl;
         Receiver recv;
-        domain.add(recv).startPumping();            /// recv Node and IO started
-        /// handle ctrl-c
+        domain.add(recv).startPumping();
+        // 捕获 control+c，并通过原子变量 stopped 通知程序停止运行
         hmbdc::os::HandleSignals::onTermIntDo([&](){domain.stop();});
         domain.join();
     }
