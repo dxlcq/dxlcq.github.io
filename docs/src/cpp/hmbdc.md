@@ -18,7 +18,7 @@ make -j8 CXX=g++-12
 单独编译
 
 ```
-g++-12 hello-world.cpp -O3 -g -std=c++20 -pthread -D BOOST_BIND_GLOBAL_PLACEHOLDERS -I/root/dxl/hmbdc-master/ -lrt
+g++-12 hello-world.cpp -O3 -g -std=c++20 -pthread -D BOOST_BIND_GLOBAL_PLACEHOLDERS -I/mnt/dxl/hmbdc-master/ -lrt
 ```
 
 > * `-std=c++20` 低于 c++20 无法通过编译
