@@ -6,14 +6,29 @@
 
 ---
 
-## 安装
+## 编译
+
+全量编译
 
 ```bash
-apt install g++-12
+apt install g++-12 libboost-all-dev
 make -j8 CXX=g++-12
 ```
 
+单独编译
+
+```
+g++-12 hello-world.cpp -O3 -g -std=c++20 -pthread -D BOOST_BIND_GLOBAL_PLACEHOLDERS -I/root/dxl/hmbdc-master/ -lrt
+```
+
+> * `-std=c++20` 低于 c++20 无法通过编译
+> * `-D BOOST_BIND_GLOBAL_PLACEHOLDERS` 在编译开始前定义了一个宏
+
 在 docker 中运行时，需要 `--ipc=host` 参数
+
+<br>
+
+---
 
 ## 一些概念
 

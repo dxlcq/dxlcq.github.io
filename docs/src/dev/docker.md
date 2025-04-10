@@ -135,18 +135,26 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 docker run \ 
     --name [c_name] \           # 容器名
     --rm \                      # 退出时删除容器
+
     -it \                       # 台前运行，容器在没有指定长时间运行的进程时会立即退出
-    --detach \                  # 后台运行
-    --restart unless-stopped \  # 非手动停止自动重启
+    -d, --detach \              # 后台运行
+    --restart=unless-stopped \  # 非手动停止自动重启
+
+    --privileged \              # root 权限
+
     --net=host \                # 使用主机网络
-    -p 10086:80 \               # 容器内 80 -> 主机 10086
+    --ipc=host \                # 使用主机的 IPC
+
+    -p 10086:80 \               # 主机 10086 <- 容器内 80
     -P \                        # 容器公开的所有端口随机映射到主机的可用端口
+
     -v /host/path:/c/path \     # 映射目录
     -v /host/file:/c/file:ro \  # 映射文件 [:ro] 只读
+
     -w /c/path \                # 工作目录
+
     [image_name]                # 镜像名
 ```
-
 
 ### 进出容器
 
@@ -204,8 +212,6 @@ myapp/
 └── static/
     └── index.html
 ```
-
-
 
 <details><summary>code</summary>
 
@@ -318,3 +324,13 @@ sudo docker push dxlcq/web_server
     ```
 
     * `-f` 实时查看
+
+
+<br>
+
+---
+
+
+## 网络
+
+### 查看所有的 

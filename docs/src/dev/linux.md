@@ -247,6 +247,8 @@ dump，rsync
 
 ### SMB 服务端
 
+> samba 是 SMB 的 linux 实现
+
 1. 下载 `sudo apt install samba`
 
 2. 配置共享目录 `chmod 777 /home/user/Public/ -R`
@@ -270,8 +272,6 @@ dump，rsync
 7. 开启端口 `sudo ufw allow 445`
 
 ### SMB 客户端
-
-> samba 是 SMB 的 linux 实现
 
 参考：[系统启动时自动挂载 SMB 共享](https://docs.redhat.com/zh_hans/documentation/red_hat_enterprise_linux/8/html/managing_file_systems/proc_mounting-an-smb-share-automatically-when-the-system-boots_assembly_mounting-an-smb-share-on-red-hat-enterprise-linux)
 
@@ -308,15 +308,19 @@ dump，rsync
 
 1. 下载 `sudo apt install nfs-kernel-server`
 
-2. 添加共享目录 `sudo vim /etc/exports`
+2. 添加共享目录 
 
-    ```conf
-    /home/user *(rw,sync,no_subtree_check)
-    ```
-
-    `chown nobody:nogroup /home/user -R`
+    * `sudo mkdir -p /mnt/nfs`
     
-    `sudo chmod 777 /home/jiao/Public/ -R`
+    * `sudo vim /etc/exports`
+
+        ```conf
+        /mnt/nfs *(rw,sync,no_subtree_check)
+        ```
+
+    * `chown nobody:nogroup /mnt/nfs -R`
+    
+    * `sudo chmod 777 /mnt/nfs -R`
 
 3. 重启nfs `sudo systemctl restart nfs-kernel-server`
 
@@ -324,9 +328,12 @@ dump，rsync
 
 1. 下载 `sudo apt install nfs-common`
 
-2. 挂载 `sudo mount 10.0.0.1:/home/user /mnt/nfs`
+2. 挂载 `sudo mount 10.0.0.1:/mnt/nfs /mnt/nfs`
 
-
+```
+service rpcbind start
+service nfs-common start
+```
 
 <br>
 

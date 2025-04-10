@@ -18,9 +18,10 @@
     ```bash
     sudo apt install -y \
         libxcb-cursor0 libxcb-cursor-dev \
-        libgl1-mesa-dev \
-        libxkbcommon-dev \
-        libxkbcommon-x11-0 \
+        mesa-common-dev libgl1-mesa-dev \
+        libxcb-xinerama0 \
+        
+        libxkbcommon-x11-0 libxkbcommon-dev\
         libvulkan-dev
     ```
 
@@ -165,6 +166,14 @@
 
 
 ### WINDOWS
+
+### Source
+
+1. 下载 [https://download.qt.io/official_releases/qt/](https://download.qt.io/official_releases/qt/)
+
+2. `./configure -prefix $PWD/qtbase -opensource -nomake tests`
+
+3. `make -j$(nproc)`
 
 <br>
 
