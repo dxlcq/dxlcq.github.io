@@ -4,6 +4,8 @@ nav:
     - Navigation:       index.md
     - Profile:          src/jiao/profile.md
     - CV:               src/jiao/cv.md
+    - Live:
+      - 数字移民:         src/jiao/live/数字移民.md
 
   - 🪂 Algorithm:
     - Pre:              src/algorithm/pre.md

@@ -76,8 +76,8 @@
   </div>
 
   <div class="item" style="font-size: 14px;">
-    <div><a href="http://10.0.0.10:22434/" target="_blank"> ai </a></div>
-    <div><a href="https://chatgpt.com/" target="_blank"> chatgpt </a></div>
+    <div><a href="http://10.0.0.10:8080/" target="_blank"> ai </a></div>
+    <div><a href="https://github.com/copilot" target="_blank"> copilot </a></div>
   </div>
 
   <div class="item">
@@ -94,7 +94,7 @@
 <div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="http://10.0.0.10:8080" target="_blank">
+    <a href="http://10.0.0.10:8088" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/ISS-40_Thunderheads_near_Borneo.jpg/330px-ISS-40_Thunderheads_near_Borneo.jpg"></div>
       <div style="font-size: 12px;">私有云盘</div>
     </a>

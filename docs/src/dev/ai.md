@@ -1,23 +1,31 @@
-# web
+## SET
+
+* [Chatbot Arena](https://lmarena.ai/?leaderboard)
+
+* [Github Copilot](https://github.com/copilot)
+
+## web
 
 * [deepseek](https://chat.deepseek.com/) / [api](https://platform.deepseek.com/)
 
 * [chatgpt](https://chatgpt.com/?model=auto)
 
-* [kimi](https://kimi.moonshot.cn/chat/empty) / [api](https://platform.moonshot.cn/console/account)
-
 * [grok](https://grok.com/)
 
 * [gemini](https://gemini.google.com/app)
 
-# find
+* [kimi](https://kimi.moonshot.cn/chat/empty) / [api](https://platform.moonshot.cn/console/account)
 
-* 排行榜：[Chatbot Arena](https://lmarena.ai/?leaderboard) | [web](https://web.lmarena.ai/)
+* [microsoft copilot](https://copilot.microsoft.com/)
 
-* models：[huggingface](https://huggingface.co/models)
-
-# API
+## API
 
 * [siliconflow](https://cloud.siliconflow.cn/models)
 
+* [O3](https://o3.fan/account/profile)
+
+## Deployment
+
 * [ollama](https://ollama.com/search)
+
+* [huggingface](https://huggingface.co/models)
