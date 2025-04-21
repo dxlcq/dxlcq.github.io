@@ -51,7 +51,7 @@ sudo apt update && sudo apt full-upgrade && sudo apt autoremove
 * 使用代理
 
 ```bash
--o Acquire::http::proxy="http://127.0.0.1:7897/"
+-o Acquire::http::proxy="http://192.168.19.19:7890/"
 ```
 
 * 删除软件
@@ -212,16 +212,6 @@ dump，rsync
 
 ### scp
 
-
-<br>
-
-
-
-### wget
-
-* 带密码下载 `wget --http-user=用户名 --http-password=密码 http://url`
-
-* 代理下载 `wget -e "https_proxy=http://192.168.19.19:7890"`
 
 <br>
 
@@ -516,6 +506,14 @@ default via 180.85.207.254 dev eth0 proto static src 180.85.207.68
 <br>
 
 ### curl
+
+* 代理请求 `curl -x http://192.168.19.19:7890`
+
+### wget
+
+* 带密码下载 `wget --http-user=用户名 --http-password=密码 http://url`
+
+* 代理下载 `wget -e "https_proxy=http://192.168.19.19:7890"`
 
 
 <br>

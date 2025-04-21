@@ -119,7 +119,7 @@
 <div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="https://www.icloud.com/" target="_blank">
+    <a href="https://www.icloud.com/iclouddrive/" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/160px-Apple_logo_black.svg.png"></div>
       <div style="font-size: 12px;">iCloud</div>
     </a>

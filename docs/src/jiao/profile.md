@@ -12,9 +12,9 @@
 
 * **重庆大学** ｜ 智能网联汽车 ｜ 国家卓越工程师学院交换生 <span style="float: right; margin-right: 10px;">2024.9 - 2025.6</span>
 
-* **重庆科技大学** ｜ 计算机科学与技术 ｜ 全日制本科 <span style="float: right; margin-right: 10px;">2023.9 - 2024.6</span>
+* **重庆科技大学** ｜ 计算机科学与技术 ｜ [全日制本科](https://www.chsi.com.cn/xlcx/bg.do?vcode=AK7J41XHYJLJUNY1&srcid=bgcx) <span style="float: right; margin-right: 10px;">2023.9 - 2024.6</span>
 
-* **重庆工业职业技术学院** ｜ 计算机网络技术 ｜ 全日制专科 <span style="float: right; margin-right: 10px;">2020.9 - 2023.6</span>
+* **重庆工业职业技术学院** ｜ 计算机网络技术 ｜ [全日制专科](https://www.chsi.com.cn/xlcx/bg.do?vcode=AJMQ3S1HRKAJ5Y4Z&srcid=bgcx) <span style="float: right; margin-right: 10px;">2020.9 - 2023.6</span>
 
 ---
 

@@ -51,10 +51,11 @@ nav:
     - 📦 Boost:         src/cpp/boost.md
     - 📦 OpenSSL:       src/cpp/openssl.md
     - 📦 FFmpeg:        src/cpp/ffmpeg.md
+    - 📦 cyclonedds:    src/cpp/cyclonedds.md
     - 📦 HMBDC:         src/cpp/hmbdc.md
     - 📦 sqlpp11:       src/cpp/sqlpp11.md
   - 🌥️ DevOps:
-    - 🤖 AI:            src/dev/ai.md
+    - 🤖 AI与云:         src/dev/ai.md
     - 🧑‍💻 MacOS:         src/dev/macos.md
     - 🐧 Linux:         src/dev/linux.md
     - 📡 OpenWrt:       src/dev/openwrt.md

@@ -1,31 +1,16 @@
-## SET
+<center>
 
-* [Chatbot Arena](https://lmarena.ai/?leaderboard)
+| WEB | | | |
+|:-:|:-:|:-:|:-:|
+| [Github Copilot](https://github.com/copilot) | [Chatbot Arena](https://lmarena.ai/?leaderboard) | [deepseek](https://chat.deepseek.com/) / [api](https://platform.deepseek.com/) | [kimi](https://kimi.moonshot.cn/chat/empty) / [api](https://platform.moonshot.cn/console/account) |
+| [chatgpt](https://chatgpt.com/?model=auto) | [grok](https://grok.com/) | [gemini](https://gemini.google.com/app) | [microsoft copilot](https://copilot.microsoft.com/) |
 
-* [Github Copilot](https://github.com/copilot)
+| API | | Deployment | |
+|:-:|:-:|:-:|:-:|
+| [siliconflow](https://cloud.siliconflow.cn/models) | [O3](https://o3.fan/account/profile) | [ollama](https://ollama.com/search) | [huggingface](https://huggingface.co/models) |
 
-## web
+| CLOUD |  |  |  |
+|:-:|:-:|:-:|:-:|
+| [azure](https://portal.azure.com/) | [huawei](https://console.huaweicloud.com/) | [aliyun](https://home.console.aliyun.com/) | [tencent](https://console.cloud.tencent.com/) |
 
-* [deepseek](https://chat.deepseek.com/) / [api](https://platform.deepseek.com/)
-
-* [chatgpt](https://chatgpt.com/?model=auto)
-
-* [grok](https://grok.com/)
-
-* [gemini](https://gemini.google.com/app)
-
-* [kimi](https://kimi.moonshot.cn/chat/empty) / [api](https://platform.moonshot.cn/console/account)
-
-* [microsoft copilot](https://copilot.microsoft.com/)
-
-## API
-
-* [siliconflow](https://cloud.siliconflow.cn/models)
-
-* [O3](https://o3.fan/account/profile)
-
-## Deployment
-
-* [ollama](https://ollama.com/search)
-
-* [huggingface](https://huggingface.co/models)
+</center>
