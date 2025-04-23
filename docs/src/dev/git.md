@@ -469,8 +469,8 @@ git checkout 分支名
 **设置代理**
 
 ```shell
-git config --global http.proxy http://127.0.0.1:7890
-git config --global https.proxy https://127.0.0.1:7890
+git config --local http.proxy http://192.168.19.19:7890
+git config --local https.proxy http://192.168.19.19:7890
 ```
 
 **取消代理**

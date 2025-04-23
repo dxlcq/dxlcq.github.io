@@ -305,12 +305,15 @@ dump，rsync
     * `sudo vim /etc/exports`
 
         ```conf
-        /mnt/nfs *(rw,sync,no_subtree_check)
+        /mnt/nfs *(rw,sync,no_subtree_check,all_squash)
         ```
 
-    * `chown nobody:nogroup /mnt/nfs -R`
+        > 服务端不要自己添加文件，客户端无法访问
+        > 此配置下，所有用户（nobody）都可以访问共享目录
+
+    * `sudo chown nobody:nogroup /mnt/nfs -R`
     
-    * `sudo chmod 777 /mnt/nfs -R`
+    * `sudo chmod 700 /mnt/nfs -R`
 
 3. 重启nfs `sudo systemctl restart nfs-kernel-server`
 
@@ -323,6 +326,12 @@ dump，rsync
 ```
 service rpcbind start
 service nfs-common start
+```
+
+* 强行卸载
+
+```bash
+sudo umount -f -l /mnt/nfs
 ```
 
 <br>
@@ -400,6 +409,12 @@ service nfs-common start
 
 ```bash
 sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
+
+校准时间
+
+```bash
+sudo date -s "$(wget -S  "https://www.google.com/" 2>&1 | grep -E '^[[:space:]]*[dD]ate:' | sed 's/^[[:space:]]*[dD]ate:[[:space:]]*//' | head -1l | awk '{print $1, $3, $2,  $5 ,"GMT", $4 }' | sed 's/,//')"
 ```
 
 <br>
