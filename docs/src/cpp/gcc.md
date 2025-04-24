@@ -44,10 +44,9 @@
         sudo make install
         ```
 
-    6. 添加动态连接
-        ```
-        export LD_LIBRARY_PATH=/usr/local/gcc-x.y.z/lib64:$LD_LIBRARY_PATH
-        ```
+    * 在手动安装 GCC 后，使用 `cmake -B build -DCMAKE_CXX_COMPILER=/usr/local/gcc-14.2.0/bin/g++` 来指定编译器
+
+    * 临时运行 `LD_LIBRARY_PATH=/usr/local/gcc-14.2.0/lib64:$LD_LIBRARY_PATH ./xxx` 来指定运行时的动态链接库路径
 
 <br>
 
