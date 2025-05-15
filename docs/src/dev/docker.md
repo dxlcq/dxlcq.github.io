@@ -29,17 +29,13 @@
 
 
 
-2. NVIDIA CTK
+2. 安装并配置 [NVIDIA CTK](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#with-apt-ubuntu-debian)
 
-    1. [安装](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#with-apt-ubuntu-debian)
-    
-    2. [配置](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker)
+3. 验证
 
-    3. 验证
-
-        ```sh
-        sudo docker run --rm --gpus all nvidia/cuda:12.3.0-base-ubuntu22.04 nvidia-smi
-        ```
+    ```sh
+    sudo docker run --rm --gpus all nvidia/cuda:12.3.0-base-ubuntu22.04 nvidia-smi
+    ```
 
 <br>
 

@@ -54,8 +54,11 @@ nav:
     - 📦 cyclonedds:    src/cpp/cyclonedds.md
     - 📦 HMBDC:         src/cpp/hmbdc.md
     - 📦 sqlpp11:       src/cpp/sqlpp11.md
+  
+  - 🤖 AI:
+    - AI:               src/ai/ai.md
+
   - 🌥️ DevOps:
-    - 🤖 AI与云:         src/dev/ai.md
     - 🧑‍💻 MacOS:         src/dev/macos.md
     - 🐧 Linux:         src/dev/linux.md
     - 📡 OpenWrt:       src/dev/openwrt.md

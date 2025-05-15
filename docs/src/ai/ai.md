@@ -9,8 +9,4 @@
 |:-:|:-:|:-:|:-:|
 | [siliconflow](https://cloud.siliconflow.cn/models) | [O3](https://o3.fan/account/profile) | [ollama](https://ollama.com/search) | [huggingface](https://huggingface.co/models) |
 
-| CLOUD |  |  |  |
-|:-:|:-:|:-:|:-:|
-| [azure](https://portal.azure.com/) | [huawei](https://console.huaweicloud.com/) | [aliyun](https://home.console.aliyun.com/) | [tencent](https://console.cloud.tencent.com/) |
-
 </center>
