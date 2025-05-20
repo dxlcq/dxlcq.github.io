@@ -94,7 +94,7 @@
 <div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="http://10.0.0.10:8088" target="_blank">
+    <a href="http://10.0.0.12:8088" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/ISS-40_Thunderheads_near_Borneo.jpg/330px-ISS-40_Thunderheads_near_Borneo.jpg"></div>
       <div style="font-size: 12px;">私有云盘</div>
     </a>
@@ -168,7 +168,7 @@
 <div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="http://10.0.0.10:2026" target="_blank">
+    <a href="http://10.0.0.12:2026" target="_blank">
       <div class="rounded-icon"><img src="https://avatars.githubusercontent.com/u/55735736?s=200&v=4"></div>
       <div style="font-size: 12px;">Speed Test</div>
     </a>
