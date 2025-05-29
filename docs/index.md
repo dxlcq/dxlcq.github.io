@@ -59,9 +59,9 @@
 </div>
 
 <script>
-  window.onload = function() {
-    document.getElementById('searchBox').focus(); // 页面加载时自动聚焦搜索框
-  }
+  //window.onload = function() {
+  //  document.getElementById('searchBox').focus(); // 页面加载时自动聚焦搜索框
+  //}
 </script>
 
 <br>
