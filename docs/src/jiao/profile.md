@@ -4,7 +4,7 @@
 
 **求职意向：C/C++、DevOps、AI**
 
-男 ｜ 22岁 ｜ 应届本科 ｜ 134-5295-9422 ｜ dxlcq@outlook.com | dxlcq.cn
+男 ｜ 22岁 ｜ 应届本科 ｜ xxx-xxxx-xxxx ｜ dxlcq@outlook.com | dxlcq.cn
 
 ---
 
@@ -16,21 +16,21 @@
 
 * **重庆工业职业技术学院** ｜ 计算机网络技术 ｜ 全日制专科 <span style="float: right; margin-right: 10px;">2020.9 - 2023.6</span>
 
-#### 技术栈
+#### 个人能力
 
-* 对数据结构和算法有一定的理解，曾获**ACM川渝赛区银牌**、蓝桥杯国二、RAICOM国一、百度之星省二等奖项
+* 对**数据结构和算法**有一定的理解，曾获**ACM川渝赛区银牌**、蓝桥杯国二、RAICOM国一、百度之星省二等奖项
 
-* 较扎实的计算机基础知识，热爱计算机，独立搭建并运维无人监管的 HomeLab（用于AI、DEV等）
+* 较扎实的计算机**工程能力**，热爱云原生，曾独立搭建并运维无人监管的 HomeLab（用于 AI、DEV 等）
 
-* 熟悉 C/C++，掌握 cmake、vs 等编译调试工具
+* 熟悉 Linux 环境下的 C/C++ 编程，掌握 cmake、vs 等编译调试工具，对网络、音视频、多线程等有一定了解
 
 #### 实习经历
 
 * **北京中科海讯** ｜ 系统研发部 - C/C++工程师 <span style="float: right; margin-right: 10px;">2025.3 - 至今</span>
 
-    * 中间件
+    * 根据工作安排，参与客户端（Qt）与服务端相关模块的设计与开发
 
-    * key-value 存储引擎
+    * 
 
 * **中国电信北碚分公司** ｜ 系统集成中心 - 研发工程师 <span style="float: right; margin-right: 10px;">2024.6 - 2025.9</span>
 
@@ -40,13 +40,11 @@
 
 #### 个人项目
 
-* **AI 直播数字人** ｜ 从0到1落地盈利的个人商业项目 <span style="float: right; margin-right: 10px;">2025.5 - 至今</span>
+* **AI 直播数字人** <span style="float: right; margin-right: 10px;">2025.5 - 至今</span>
 
     * 基于 Livetalking + Ollama + Qdrant 实现的 **实时互动** AI 直播数字人
 
-    * 基于 WebRTC + OBS + OCR 做到 **全直播平台** 支持
-
-    * 极致的性价比控制，给到客户的报价仅为同类产品的 **1/2** 乃至更低
+    * 基于 WebRTC + SRS + OBS 推流，能够兼容多种直播平台
 
 * **自动驾驶分布式仿真测试系统设计与实现** ｜ 本科毕设 ｜ 中国汽研横向科研 <span style="float: right; margin-right: 10px;">2025.1 - 2025.3</span>
 
