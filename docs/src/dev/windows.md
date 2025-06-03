@@ -129,8 +129,7 @@
     ```sh
     [wsl2]
     networkingMode=mirrored
-    dnsTunneling=true
-    autoProxy=true
+    memory=48GB
     ```
 
 <br>
@@ -158,3 +157,21 @@
     ```sh
     Z: /mnt/z drvfs defaults 0 0
     ```
+
+<br>
+
+**GPU 问题**
+
+> wsl2 默认已经有 NVIDIA GPU 支持，如果出现 nvidia-smi 对不上版本的情况，如下
+
+```shell
+sudo cp /usr/lib/wsl/lib/nvidia-smi /usr/lib/wsl/lib/nvidia-smi.backup
+# 创建包装脚本替换 WSL 版本
+sudo tee /usr/lib/wsl/lib/nvidia-smi > /dev/null << 'EOF'
+#!/bin/bash
+exec /mnt/c/Windows/System32/nvidia-smi.exe "$@"
+EOF
+
+# 设置执行权限
+sudo chmod +x /usr/lib/wsl/lib/nvidia-smi
+```

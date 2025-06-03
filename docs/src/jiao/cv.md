@@ -33,6 +33,28 @@
   }
 </style>
 
+<style>
+
+    .honor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+    .honor img {
+        width: 300px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .honor img:hover {
+        transform: scale(2);
+    }
+    .item {
+        flex: 1;
+        margin: 3px 0;
+    }
+
+</style>
+
 ## Education
 
 ### 重庆大学
@@ -181,39 +203,23 @@
 
 ---
 
-
-
 ## Honor
-
 <center>
-
-| 国家级奖项 🥇 | 省部级奖项 🥈 | 技能证书 🥉 | 奖学金 💰 |
-|:-:|:-:|:-:|:-:|
-| 8 | 17 | 4 | 12 | 
-
+<table style="text-align: center;">
+    <tr>
+        <th>国家级奖项 🥇</th>
+        <th>省部级奖项 🥈</th>
+        <th>技能证书 🥉</th>
+        <th>奖学金 💰</th>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>17</td>
+        <td>4</td>
+        <td>12</td>
+    </tr>
+</table>
 </center>
-
-<style>
-
-    .honor {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        }
-    .honor img {
-        width: 300px;
-        cursor: pointer;
-        transition: transform 0.2s;
-    }
-    .honor img:hover {
-        transform: scale(2);
-    }
-    .item {
-        flex: 1;
-        margin: 3px 0;
-    }
-
-</style>
 
 ### XCPC
 
@@ -263,10 +269,17 @@
 
 ### 2024
 
+#### 校级先进个人
+
+- `2024-12` `重庆科技大学科技创新优秀学生`
+
+<div class="honor">
+    <img loading="lazy" src="/assets/joker/（证）科技创新优秀学生.jpg">
+</div>
 
 #### 省二 码蹄杯
 
-- `2024-6-22` `第` `省赛银奖` [公示 / 排名](https://mp.weixin.qq.com/s/yZjUuFb_OZ7Yw66sHmEQjQ)
+- `2024-6-22` `第六届码梯杯全国大学生程序设计大赛` `省赛银奖` [公示 / 排名](https://mp.weixin.qq.com/s/yZjUuFb_OZ7Yw66sHmEQjQ)
 
 <div class="honor">
     <div class="item">
@@ -296,7 +309,7 @@
 
 <div class="honor">
     <div class="item">
-        <img loading="lazy" src="/assets/joker/ckcpc2.jpg">
+        <img loading="lazy" src="/assets/joker/（校）ckcpc.jpg">
     </div>
     <div class="item">
         <img loading="lazy" src="/assets/joker/排名/ckcpc2.jpg">
