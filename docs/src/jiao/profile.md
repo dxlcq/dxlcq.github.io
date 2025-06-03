@@ -28,26 +28,32 @@
 
 * **北京中科海讯** ｜ 系统研发部 - C/C++工程师 <span style="float: right; margin-right: 10px;">2025.3 - 至今</span>
 
-    * 根据工作安排，参与客户端（Qt）与服务端相关模块的设计与开发
+    * 服从领导安排，出差协助客户完成系统联调工作
 
-    * 
+    * 根据业务需求，参与客户端（Qt）与服务端相关模块的设计与开发
+
+    * 优化日志查询模块性能，使用 QicsTable 替代 QTable 实现高效的数据展示
+
+    * 参与新项目的前期架构设计与技术选型，调研多个开源项目，如 taskflow、subprocess、cyclonedds 等
 
 * **中国电信北碚分公司** ｜ 系统集成中心 - 研发工程师 <span style="float: right; margin-right: 10px;">2024.6 - 2025.9</span>
 
-    * 参与无纸化会议平台开发，负责屏幕共享与视频通话模块的设计与实现（WebRTC）
+    * 参与无纸化会议平台开发，独立完成屏幕共享与视频通话模块的设计与实现（WebRTC）
 
-    * 协助网络部门完成了全区 C/SVLAN 架构迁移与验证，负责数据迁移工具的开发与测试
+    * 协助网络部门完成了全区 C/SVLAN 架构迁移与验证，负责数据迁移工具的开发
 
 #### 个人项目
 
 * **AI 直播数字人** <span style="float: right; margin-right: 10px;">2025.5 - 至今</span>
 
-    * 基于 Livetalking + Ollama + Qdrant 实现的 **实时互动** AI 直播数字人
+    * 基于 Livetalking + Ollama + Qdrant 实现的实时互动 AI 直播数字人
 
-    * 基于 WebRTC + SRS + OBS 推流，能够兼容多种直播平台
+    * 集成 WebRTC + SRS + OBS 推流方案，能够兼容主流直播平台
 
 * **自动驾驶分布式仿真测试系统设计与实现** ｜ 本科毕设 ｜ 中国汽研横向科研 <span style="float: right; margin-right: 10px;">2025.1 - 2025.3</span>
 
     * 基于 Kubernetes + Carla 实现了自动驾驶算法的分布式仿真测试
 
-    * 二次开发 Scheduler，通过 NVIDIA DCGM 引入 GPU 的实时状态（显存占用量、核心利用率），实现了更加细粒度的资源调度，硬件利用率与仿真效率提升 40%
+    * 核心贡献：二次开发 K8s Scheduler，集成 NVIDIA DCGM 监控，实现细粒度资源调度
+
+    * 性能提升：硬件利用率与仿真效率提升 40%，支持并发测试场景数增长一倍
