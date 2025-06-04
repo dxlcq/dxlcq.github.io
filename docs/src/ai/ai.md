@@ -9,4 +9,185 @@
 
 ---
 
-## 
+## GPU
+
+* CPU 支持复杂指令集，而 GPU 只能执行简单指令集。简单的结构使得 GPU 可以在同一时间内处理更多的指令
+
+* GPU 通过 SIMD（单指令多数据）来实现并行处理，在同一时间内对多个数据进行相同的操作，这使得它在处理大规模数据时具有更高的效率
+
+## CUDA
+
+* NVIDIA 推出的并行计算架构，本质就是一个 C 库，调用 GPU 参与计算
+
+* 可以通过编写 CPU / GPU 代码进行矩阵运算查看效果
+
+    <details>
+    <summary>CPU 代码</summary>
+    ```cpp
+    #include <iostream>
+    #include <thread>
+    #include <vector>
+
+    const int N = 3e3 + 10;
+
+    std::vector<std::thread> threads;
+    int A[N][N], B[N][N], C[N][N];
+    int n = N - 10;
+
+    void cpu_matrix_multiply(int i) {  // 线程函数，用于计算矩阵乘法的一行
+        for (int j = 1; j <= n; ++j) {
+            for (int k = 1; k <= n; ++k) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+
+    int main() {
+        // g++ main.cpp && ./a.out
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                A[i][j] = i + j;
+                B[i][j] = i - j;
+            }
+        }  // 初始化矩阵 A, B
+
+        auto start = std::chrono::high_resolution_clock::now();  // 记录开始时间
+
+        for (int i = 1; i <= n; ++i)
+            threads.emplace_back(cpu_matrix_multiply, i);
+        for (auto& t : threads)
+            t.join();
+
+        auto end = std::chrono::high_resolution_clock::now();  // 记录结束时间
+        std::chrono::duration<double> duration = end - start;
+        std::cout << "Time taken: " << duration.count() << " seconds" << std::endl;
+
+        return 0;
+    }
+    ```
+    </details>
+
+    <details>
+    <summary>GPU 代码</summary>
+    ```cpp
+    #include <cuda_runtime.h>
+    #include <chrono>
+    #include <iostream>
+
+    const int N = 3e3 + 10;
+    int A[N][N], B[N][N], C[N][N];
+    int n = N - 10;
+
+    __global__ void cuda_matrix_multiply(int* A, int* B, int* C, int n) {
+        int row = blockIdx.y * blockDim.y + threadIdx.y + 1;
+        int col = blockIdx.x * blockDim.x + threadIdx.x + 1;
+
+        if (row <= n && col <= n) {
+            int sum = 0;
+            for (int k = 1; k <= n; ++k) {
+                sum += A[row * N + k] * B[k * N + col];
+            }
+            C[row * N + col] = sum;
+        }
+    }
+
+    int main() {
+        // nvcc main.cu && ./a.out
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                A[i][j] = i + j;
+                B[i][j] = i - j;
+            }
+        }  // 初始化矩阵 A, B
+
+        // 分配 GPU 内存
+        int *d_A, *d_B, *d_C;
+        cudaMalloc(&d_A, N * N * sizeof(int));
+        cudaMalloc(&d_B, N * N * sizeof(int));
+        cudaMalloc(&d_C, N * N * sizeof(int));
+
+        // 复制数据到 GPU
+        cudaMemcpy(d_A, A, N * N * sizeof(int), cudaMemcpyHostToDevice);
+        cudaMemcpy(d_B, B, N * N * sizeof(int), cudaMemcpyHostToDevice);
+        cudaMemcpy(d_C, C, N * N * sizeof(int), cudaMemcpyHostToDevice);
+
+        auto start = std::chrono::high_resolution_clock::now();
+
+        dim3 blockSize(16, 16);
+        dim3 gridSize((n + blockSize.x - 1) / blockSize.x, 
+                      (n + blockSize.y - 1) / blockSize.y);
+
+        cuda_matrix_multiply<<<gridSize, blockSize>>>(d_A, d_B, d_C, n);
+
+        cudaDeviceSynchronize();
+
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> duration = end - start;
+        std::cout << "Time taken: " << duration.count() << " seconds" << std::endl;
+
+        // 清理内存
+        cudaFree(d_A);
+        cudaFree(d_B);
+        cudaFree(d_C);
+
+        return 0;
+    }
+    ```
+    </details>
+
+<center>
+<table>
+<tr>
+<td align="center">CPU</td>
+<td align="center">GPU</td>
+</tr>
+<tr>
+<td align="center">AMD 7900x</td>
+<td align="center">NVIDIA 4070</td>
+</tr>
+<tr>
+<td align="center">7s</td>
+<td align="center">0.03s</td>
+</tr>
+</table>
+</center>
+
+## PyTorch
+
+* PyTorch 是对 CUDA 的封装，提供了更高层次的 API 来简化 GPU 编程
+
+## 机器学习
+
+> “计算机程序可以在给定某种类别的任务 T 和性能度量 P 下学习经验 E（数据） ，如果其在任务 T 中的性能恰好可以用 P 度量，则随着经验 E（数据） 而提高。” -- Tom Mitchell
+
+* f(x) = y
+    机器学习的目标是通过数据来**创造**函数 f，使得输入 x 能够映射到输出 y
+
+## 回归问题
+
+* 有这么一个数据集，包含房屋的面积、楼层、房龄和房价，我们想要预测新房屋的价格
+
+    ```python
+    data = {
+        '面积': [80, 100, 120, 90, 110],
+        '楼层': [5, 10, 15, 8, 12], 
+        '房龄': [5, 10, 2, 8, 3],
+        '房价': [45, 60, 75, 50, 68]
+    }
+
+    new_house = [[95, 7, 5]]  # 95平米，7楼，5年房龄
+    ```
+    
+    通过多元线性回归，我们可以找到一个函数来预测房价：
+
+    房价 = w1 * 面积 + w2 * 楼层 + w3 * 房龄 + b
+
+* 回归问题的本质是通过历史数据学习输入特征与连续输出值之间的函数关系，然后用这个函数对新数据进行数值预测
+
+## 神经网络
+
+
+
+
+## 深度学习
+
