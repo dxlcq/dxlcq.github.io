@@ -4,7 +4,7 @@
 
 **求职意向：C/C++、DevOps、AI**
 
-男 ｜ 22岁 ｜ 应届本科 ｜ xxx-xxxx-xxxx ｜ dxlcq@outlook.com | dxlcq.cn
+男 ｜ 22岁 ｜ 25届本科 ｜ xxx-xxxx-xxxx ｜ dxlcq@outlook.com | dxlcq.cn
 
 ---
 
@@ -56,4 +56,4 @@
 
     * 核心贡献：二次开发 K8s Scheduler，集成 NVIDIA DCGM 监控，实现细粒度资源调度
 
-    * 性能提升：硬件利用率与仿真效率提升 40%，支持并发测试场景数增长一倍
+    * 性能提升：硬件利用率与仿真效率提升 40%，并发测试场景数增长一倍
