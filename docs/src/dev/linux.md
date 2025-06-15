@@ -219,6 +219,26 @@ dump，rsync
 
 ## 磁盘
 
+### 磁盘性能
+
+* 测试磁盘的写入速度
+
+```sh
+time dd if=/dev/zero of=test.t bs=4k count=200000
+```
+
+* 清除缓存
+
+```sh
+sudo sync && sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches'
+```
+
+* 测试磁盘的读取速度
+
+```sh
+time dd if=test.t of=/dev/null bs=4k
+```
+
 ### 磁盘管理
 
 ### 挂载普通磁盘
