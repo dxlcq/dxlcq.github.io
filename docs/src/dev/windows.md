@@ -65,22 +65,16 @@
 
 **挂载网络磁盘** [非官文档](https://www.public-health.uiowa.edu/it/support/kb48568/)
 
-1. 下载软件 `sudo apt install cifs-utils`
 
-2. 创建挂载目录 `sudo mkdir /mnt/z`
-
-3. 挂载 `sudo mount -t drvfs Z: /mnt/z`
-
-4. 持久化 `vim /etc/fstab`
-    ```sh
-    Z: /mnt/z drvfs defaults 0 0
-    ```
+```sh
+//10.0.0.5/D /mnt/d cifs credentials=/root/smb.cred,uid=1000,gid=1000,iocharset=utf8 0 0
+```
 
 <br>
 
 **挂载 NFS**
 
-```
+```sh
 sudo mount -t nfs -o noresvport 10.0.0.15:/mnt/nfs /mnt/nfs
 ```
 
