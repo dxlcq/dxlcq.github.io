@@ -19,6 +19,104 @@
 
 ---
 
+## WSL2
+
+**安装**
+
+* 自动安装 [官方文档](https://learn.microsoft.com/en-us/windows/wsl/install) / [基本命令](https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands)
+    
+    * 启用适用于 Linux 的 Windows 子系统
+    
+    ```sh
+    wsl --update --web-download     # 更新 WSL
+    ```
+
+    ```sh
+    wsl -l -o                       # 查看可用 Linux 发行版
+    ```
+
+    ```sh
+    wsl --install -d Ubuntu-22.04   # 下载安装 Ubuntu 22.04
+    ```
+
+    ```sh
+    wsl -l -v                       # 查看已安装的
+    ```
+
+    ```sh
+    wsl --unregister Ubuntu         # 删除 Ubuntu
+    ```
+    
+
+* 手动安装：[ms/WSL](https://github.com/microsoft/WSL/releases)
+
+<br>
+
+**镜像网络** [官方文档](https://learn.microsoft.com/zh-cn/windows/wsl/networking#mirrored-mode-networking)
+
+* 创建 `C:\Users\<UserName>\.wslconfig` 文件
+    ```sh
+    [wsl2]
+    networkingMode=mirrored
+    memory=48GB
+    ```
+
+<br>
+
+**挂载网络磁盘** [非官文档](https://www.public-health.uiowa.edu/it/support/kb48568/)
+
+1. 下载软件 `sudo apt install cifs-utils`
+
+2. 创建挂载目录 `sudo mkdir /mnt/z`
+
+3. 挂载 `sudo mount -t drvfs Z: /mnt/z`
+
+4. 持久化 `vim /etc/fstab`
+    ```sh
+    Z: /mnt/z drvfs defaults 0 0
+    ```
+
+<br>
+
+**挂载 NFS**
+
+```
+sudo mount -t nfs -o noresvport 10.0.0.15:/mnt/nfs /mnt/nfs
+```
+
+<br>
+
+**启动脚本**
+
+1. win + r 输入  `shell:startup`
+2. 新建 `wsl.vbs` 文件
+    ```sh
+    Set ws = WScript.CreateObject("WScript.Shell")        
+    ws.run "wsl -d Ubuntu-22.04 -u user /home/user/startupsh"
+    ```
+
+<br>
+
+**GPU 问题**
+
+> wsl2 默认已经有 NVIDIA GPU 支持，如果出现 nvidia-smi 对不上版本的情况，如下
+
+```shell
+sudo cp /usr/lib/wsl/lib/nvidia-smi /usr/lib/wsl/lib/nvidia-smi.backup
+# 创建包装脚本替换 WSL 版本
+sudo tee /usr/lib/wsl/lib/nvidia-smi > /dev/null << 'EOF'
+#!/bin/bash
+exec /mnt/c/Windows/System32/nvidia-smi.exe "$@"
+EOF
+
+# 设置执行权限
+sudo chmod +x /usr/lib/wsl/lib/nvidia-smi
+```
+
+<br>
+
+---
+
 ## Hyper-V 直通 GPU
 
 * [使用离散设备分配部署图形设备](https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/deploy/deploying-graphics-devices-using-dda)
@@ -85,93 +183,3 @@
     # 确认 locationPath
     Write-OutPut $locationPath
     ```
-
-<br>
-
----
-
-## WSL2
-
-**安装**
-
-* 自动安装 [官方文档](https://learn.microsoft.com/en-us/windows/wsl/install) / [基本命令](https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands)
-    
-    * 启用适用于 Linux 的 Windows 子系统
-    
-    ```sh
-    wsl --update --web-download     # 更新 WSL
-    ```
-
-    ```sh
-    wsl -l -o                       # 查看可用 Linux 发行版
-    ```
-
-    ```sh
-    wsl --install -d Ubuntu-22.04   # 下载安装 Ubuntu 22.04
-    ```
-
-    ```sh
-    wsl -l -v                       # 查看已安装的
-    ```
-
-    ```sh
-    wsl --unregister Ubuntu         # 删除 Ubuntu
-    ```
-    
-
-* 手动安装：[ms/WSL](https://github.com/microsoft/WSL/releases)
-
-<br>
-
-**镜像网络** [官方文档](https://learn.microsoft.com/zh-cn/windows/wsl/networking#mirrored-mode-networking)
-
-* 创建 `C:\Users\<UserName>\.wslconfig` 文件
-    ```sh
-    [wsl2]
-    networkingMode=mirrored
-    memory=48GB
-    ```
-
-<br>
-
-**启动脚本**
-
-1. win + r 输入  `shell:startup`
-2. 新建 `wsl.vbs` 文件
-    ```sh
-    Set ws = WScript.CreateObject("WScript.Shell")        
-    ws.run "wsl -d Ubuntu-22.04 -u user /home/user/startupsh"
-    ```
-
-<br>
-
-**挂载网络磁盘** [非官文档](https://www.public-health.uiowa.edu/it/support/kb48568/)
-
-1. 下载软件 `sudo apt install cifs-utils`
-
-2. 创建挂载目录 `sudo mkdir /mnt/z`
-
-3. 挂载 `sudo mount -t drvfs Z: /mnt/z`
-
-4. 持久化 `vim /etc/fstab`
-    ```sh
-    Z: /mnt/z drvfs defaults 0 0
-    ```
-
-<br>
-
-**GPU 问题**
-
-> wsl2 默认已经有 NVIDIA GPU 支持，如果出现 nvidia-smi 对不上版本的情况，如下
-
-```shell
-sudo cp /usr/lib/wsl/lib/nvidia-smi /usr/lib/wsl/lib/nvidia-smi.backup
-# 创建包装脚本替换 WSL 版本
-sudo tee /usr/lib/wsl/lib/nvidia-smi > /dev/null << 'EOF'
-#!/bin/bash
-exec /mnt/c/Windows/System32/nvidia-smi.exe "$@"
-EOF
-
-# 设置执行权限
-sudo chmod +x /usr/lib/wsl/lib/nvidia-smi
-```

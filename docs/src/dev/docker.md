@@ -282,7 +282,7 @@ CMD ["./web_server"]
 ### 2 构建镜像
 
 ```bash
-sudo docker buildx build -t web_server .
+sudo docker buildx build -t dxlcq/web_server .
 ```
 
 * `-t` 指定名称
@@ -293,7 +293,6 @@ sudo docker buildx build -t web_server .
 
 ```bash
 sudo docker login
-sudo docker tag web_server dxlcq/web_server
 sudo docker push dxlcq/web_server
 ```
 

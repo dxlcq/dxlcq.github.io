@@ -1,6 +1,12 @@
+## 参考
+
 [官网](https://ffmpeg.org/) | [下载](https://ffmpeg.org/download.html) | [文档](https://ffmpeg.org/documentation.html)
 
 [中文文档 6.0.1](https://ffmpeg.github.net.cn/documentation.html)
+
+<br>
+
+---
 
 ## setup
 
@@ -33,7 +39,7 @@
 
 6. 编译
     ```bash
-    g++ a.cpp -I/.../FFmpeg-7.0.1/include -L/.../FFmpeg-7.0.1/lib -o a -lavutil
+    g++ a.cpp -I/.../FFmpeg-7.0.1/include -L/.../FFmpeg-7.0.1/lib -lavutil
     ```
 
 ### windows
@@ -42,10 +48,28 @@
 
 ---
 
-## use
+## use_ffmpeg
+
+> ```bash
+> ffmpeg \
+> -y \                              # 全局参数（如果输出文件已存在，则覆盖它）
+> -c:a libfdk_aac -c:v libx264 \    # 输入文件参数（指定音频和视频编解码器）
+> -i input.mp4 \                    # 输入文件
+> -c:a libvorbis -c:v libvpx-vp9 \  # 输出文件参数（指定输出音频和视频编解码器）
+> output.webm                       # 输出文件
+> ```
+
+### drawtext
+
+```bash
+ffmpeg \
+-y \
+-i input.mp4 \
+-vf "drawtext='你好' \
+output.mp4
+```
 
 
-捕获 `rtmp` 流并播放
 
 
 <br>

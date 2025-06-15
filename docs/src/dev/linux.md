@@ -321,18 +321,30 @@ dump，rsync
 
 1. 下载 `sudo apt install nfs-common`
 
+    ```
+    service rpcbind start
+    service nfs-common start
+    ```
+
 2. 挂载 `sudo mount 10.0.0.1:/mnt/nfs /mnt/nfs`
 
-```
-service rpcbind start
-service nfs-common start
-```
 
 * 强行卸载
 
-```bash
-sudo umount -f -l /mnt/nfs
-```
+    ```bash
+    sudo umount -f -l /mnt/nfs
+    ```
+
+* 测试
+
+    ```bash
+    sudo docker run --rm -it --privileged ubuntu:latest bash -c "
+        export DEBIAN_FRONTEND=noninteractive &&
+        ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&
+        apt update && apt install -y nfs-common && mkdir -p /mnt/nfs &&
+        mount -t nfs 10.0.0.15:/mnt/nfs /mnt/nfs &&
+        ls -la /mnt/nfs"
+    ```
 
 <br>
 
