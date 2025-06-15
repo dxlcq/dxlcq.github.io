@@ -9,6 +9,8 @@
 
 * [MS 激活](https://github.com/massgravel/Microsoft-Activation-Scripts) `irm https://get.activated.win | iex`
 
+* [xbox](https://www.xbox.com/en-US/apps/xbox-app-on-pc)
+
 * [微软商店免费下载](https://store.rg-adguard.net/)
 
 * [状态监控](https://github.com/zhongyang219/TrafficMonitor) / [Bandizip](https://www.bandisoft.com/bandizip/) / [Office](https://otp.landian.vip/zh-cn/download.html) / [WPS](https://www.wps.cn/) / [todesk](https://dl.todesk.com/windows/ToDesk_Lite.exe)
