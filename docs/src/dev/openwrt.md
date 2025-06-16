@@ -126,8 +126,8 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
     ```
     
     ```network
-    config interface 'wan'
-        option device 'br-wan'
+    config interface 'lan'
+        option device 'br-lan'
         option proto 'static'
         option ipaddr '192.168.1.2'
         option netmask '255.255.255.0'
