@@ -73,6 +73,15 @@
   </div>
 </div>
 
+<div class="honor">
+    <div class="item">
+        <img loading="lazy" src="/assets/joker/cqu-start.jpg">
+    </div>
+    <div class="item">
+        <img loading="lazy" src="/assets/joker/cqu-end.jpg">
+    </div>
+</div>
+
 ---
 
 ### 重庆科技大学
@@ -91,6 +100,15 @@
   </div>
 </div>
 
+<div class="honor">
+    <div class="item">
+        <img loading="lazy" src="/assets/joker/cqust-start.jpg">
+    </div>
+    <div class="item">
+        <img loading="lazy" src="/assets/joker/cqust-end.jpg">
+    </div>
+</div>
+
 ---
 
 ### 重庆工业职业技术学院
@@ -106,6 +124,15 @@
       <ul>专业：计算机网络技术</ul>
     </ol>
   </div>
+</div>
+
+<div class="honor">
+    <div class="item">
+        <img loading="lazy" src="/assets/joker/cqipc-start.jpeg">
+    </div>
+    <div class="item">
+        <img loading="lazy" src="/assets/joker/cqipc-end.jpg">
+    </div>
 </div>
 
 <br>
