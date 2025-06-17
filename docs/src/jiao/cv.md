@@ -143,6 +143,21 @@
 
 ### 北京中科海讯
 
+<div style="display: flex; align-items: center;">
+  <div style="flex: 1;">
+    <img src="https://img202.yun300.cn/img/zklogoa.png?tenantId=19949&viewType=1&k=1658733974000" alt="Image" style="max-width: 100%; height: auto;">
+  </div>
+  <div style="flex: 3; padding-left: 20px;">
+    <ol>
+      <ul>时间：2025.3 - 至今</ul>
+      <ul>职务：[全职] 数字技术部 - C/C++工程师</ul>
+      <ul>职责：开发</ul>
+    </ol>
+  </div>
+</div>
+
+---
+
 ### 中国电信北碚分公司
 
 <div style="display: flex; align-items: center;">
