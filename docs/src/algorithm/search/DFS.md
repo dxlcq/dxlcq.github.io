@@ -14,37 +14,38 @@
 #include <iostream>
 using namespace std;
 
-int n, k;               // 从 n 个选 k 个
+int n, k;  // 从 n 个选 k 个
 char a[9];
 bool st[9];
 
-void dfs(int u, int m){ // 选到 u 个，选了 m 个
+void dfs(int u, int m) {  // 选到 u 个，选了 m 个
     // 答案
-    if(m == k){
-        for(int i=1; i<=n; i++)
-            if(st[i] == 1)
+    if (m == k) {
+        for (int i = 1; i <= n; i++)
+            if (st[i] == 1)
                 cout << a[i] << " ";
         cout << "\n";
-        return ;
+        return;
     }
 
     // 边界
-    if(u > n){
-        return ;
+    if (u > n) {
+        return;
     }
 
     // 情况 1，选择
     st[u] = 1;
-    dfs(u+1, m+1);
+    dfs(u + 1, m + 1);
 
     // 情况 2, 不选择
     st[u] = 0;
-    dfs(u+1, m);
+    dfs(u + 1, m);
 }
 
-int main(){
+int main() {
     cin >> n >> k;
-    for(int i=1; i<=n; i++) a[i] = 'a' + i - 1;
+    for (int i = 1; i <= n; i++)
+        a[i] = 'a' + i - 1;
     dfs(1, 0);
     return 0;
 }
@@ -56,7 +57,7 @@ int main(){
 
 ### 排列
 
-* 从 $n$ 和元素中选出 $k$ 个，并考虑顺序
+* 从 $n$ 个元素中选出 $k$ 个，并考虑顺序
 
     > $\{1, 2\}$ 与 $\{2, 1\}$ 视为 **不同排序**
 
@@ -69,24 +70,28 @@ int main(){
 #include <vector>
 using namespace std;
 
-const int N=2e5+10;
-
-int n, k;
-char a[N];
-bool st[N];
+int n, k;  // 从 n 个选 k 个进行排序
+char a[9];
+bool st[9];
 
 vector<char> ans;
 
-void dfs(){
-    if(ans.size() == k){
-        for(auto i: ans)
+void dfs() {
+    // 答案
+    if (ans.size() == k) {
+        for (auto i : ans)
             cout << i << " ";
         cout << "\n";
-        return ;
+        return;
     }
 
-    for(int i=1; i<=n; i++)
-        if(st[i] == 0){
+    // 边界
+    if (ans.size() > k)
+        return;
+
+    // 情况
+    for (int i = 1; i <= n; i++)
+        if (st[i] == 0) {
             st[i] = 1;
             ans.push_back(a[i]);
             dfs();
@@ -96,9 +101,10 @@ void dfs(){
         }
 }
 
-int main(){
+int main() {
     cin >> n >> k;
-    for(int i=1; i<=n; i++) a[i] = 'a' + i - 1;
+    for (int i = 1; i <= n; i++)
+        a[i] = 'a' + i - 1;
     dfs();
     return 0;
 }
@@ -111,7 +117,7 @@ int main(){
 
 ### 全排列
 
-* 从 $n$ 和元素中选出 $n$ 个，并考虑顺序
+* 从 $n$ 个元素中选出 $n$ 个，并考虑顺序
 
     > $\{1, 2, 3\}, \{1, 3, 2\}, \{2, 1, 3\}, \{2, 3, 1\}, \{3, 1, 2\}, \{3, 2, 1\}$
 
@@ -120,20 +126,89 @@ int main(){
 <details><summary><a href="" target="_blank"></a>dfs 求全排列</summary>
 
 ```cpp
+// 同上，将 k 改为 n 就可以了
+```
+</details>
 
+<details><summary> <a href="" target="_blank"></a>next_permutaion</summary>
+
+```cpp
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+int a[9], n;
+
+int main() {
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        cin >> a[i];
+    // next_permutaion 会生成下一个排列
+    // 下一个排列是字典序中比当前排列大的下一个排列
+    // 如果当前排列是最后一个排列，则返回 false
+    do {
+        for (int i = 1; i <= n; i++)
+            cout << a[i] << " ";
+        cout << endl;
+    } while (next_permutation(a + 1, a + n + 1));
+    return 0;
+}
 ```
 </details>
 
 <br>
 
-### 排列组合
+### 有放回的重复排列
 
-* 从 $n$ 和元素中选出 $k$ 个，并考虑顺序，并允许重复
+* 从 $n$ 个元素中选出 $k$ 个，并考虑顺序，并允许重复
 
-    > $\{1, 1\}, \{1, 2\}, \{2, 1\}, \{2, 2\},$
+    > $\{1, 1\}, \{1, 2\}, \{2, 1\}, \{2, 2\}$
 
 * 数量：$n^k$
 
+<details><summary> <a href="" target="_blank"></a>dfs 求 k 重集排列</summary>
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int n, k;  // 从 n 个选 k 个进行可重复排列
+char a[9];
+
+vector<char> ans;
+
+void dfs() {
+    // 答案
+    if (ans.size() == k) {
+        for (auto i : ans)
+            cout << i << " ";
+        cout << "\n";
+        return;
+    }
+
+    // 边界
+    if (ans.size() > k)
+        return;
+
+    // 情况
+    for (int i = 1; i <= n; i++) {
+        ans.push_back(a[i]);
+        dfs();
+        ans.pop_back();
+    }
+}
+
+int main() {
+    cin >> n >> k;
+    for (int i = 1; i <= n; i++)
+        a[i] = 'a' + i - 1;
+    dfs();
+    return 0;
+}
+```
+
+</details>
 
 
 

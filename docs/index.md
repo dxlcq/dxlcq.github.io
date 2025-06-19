@@ -263,7 +263,42 @@
 
 ---
 
-<div class="container">
+<div class="container"> <!-- 1 -->
+
+  <div class="item">
+    <a href="https://time.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Time_Magazine_logo.svg/360px-Time_Magazine_logo.svg.png"></div>
+      <div style="font-size: 12px;">时代周刊</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="http://paper.people.com.cn/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/People%27s_Daily_logo.svg/300px-People%27s_Daily_logo.svg.png"></div>
+      <div style="font-size: 12px;">人民日报</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="https://www.reuters.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Reuters_logo_2024.svg/500px-Reuters_logo_2024.svg.png"></div>
+      <div style="font-size: 12px;">路透社</div>
+    </a>
+  </div>
+
+  <div class="item">
+    <a href="https://www.nature.com/nature/current-issue" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Nature_journal_logo.svg/500px-Nature_journal_logo.svg.png"></div>
+      <div style="font-size: 12px;">自然</div>
+    </a>
+  </div>
+
+</div>
+
+
+
+
+<div class="container"> <!-- 1 -->
     <div class="item">
       <a href="https://www.youtube.com/@骄骄" target="_blank">
         <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f5/ac/a8/f5aca8ee-b304-1aec-c656-66a36ae88a94/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-6-0-0-0-85-220.png/492x0w.webp"></div>
