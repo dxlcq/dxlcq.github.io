@@ -6,17 +6,11 @@
 
 * 以 [《C++ Primer Plus》](https://www.kdocs.cn/l/cf3MMQTFyNku) 为主线
 
-* 以 [《Effective C++》](https://www.kdocs.cn/l/cjUist8CmOmt) 与 [《More Effecitve C++》](https://www.kdocs.cn/l/clykya3sDwyW) 为规范
+* 以 [《Effective C++》](https://www.kdocs.cn/l/cjUist8CmOmt) 与 [《More Effecitve C++》](https://www.kdocs.cn/l/clykya3sDwyW) 、[《Effective Modern C++》](https://www.kdocs.cn/l/ckkj7wm8s8lg) 为规范
 
 * 以 [cppreference.com](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5) 与 [C++ 语言参考](https://learn.microsoft.com/zh-cn/cpp/cpp/cpp-language-reference?view=msvc-170)、[ILE C/C++ 语言参考](https://www.ibm.com/docs/zh/i/7.5?topic=c-ile-cc-language-reference) 为标准
 
-* 其他参考 [cpp 面试指北](https://csguide.cn/cpp/intro.html)、
-
-* [C++语言面试问题集锦](https://cppguide.cn/pages/cppinterviewmostaskedquestions01/)
-
-* [C++ 语言面向对象](https://docs.net9.org/languages/c-oop/)
-
-* [C++ 运算符号重载](https://www.runoob.com/cplusplus/cpp-overloading.html)
+* 其他参考 [cpp 面试指北](https://csguide.cn/cpp/intro.html)、[C++语言面试问题集锦](https://cppguide.cn/pages/cppinterviewmostaskedquestions01/)、[C++ 语言面向对象](https://docs.net9.org/languages/c-oop/)、[C++ 运算符号重载](https://www.runoob.com/cplusplus/cpp-overloading.html)
 
 
 

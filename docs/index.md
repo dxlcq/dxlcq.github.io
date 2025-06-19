@@ -78,6 +78,7 @@
   <div class="item" style="font-size: 14px;">
     <div><a href="https://chatgpt.com/" target="_blank"> chatgpt </a></div>
     <div><a href="https://github.com/copilot" target="_blank"> copilot </a></div>
+    <div><a href="http://10.0.0.11" target="_blank"> ragflow </a></div>
   </div>
 
   <div class="item">
