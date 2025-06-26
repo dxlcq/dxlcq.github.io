@@ -4,7 +4,7 @@
 
 * [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 
-* 以 [《C++ Primer Plus》](https://www.kdocs.cn/l/cf3MMQTFyNku) 为主线
+* 以 [《C++ Primer Plus》](https://www.kdocs.cn/l/cbUGSlyNNZ5o) 为主线
 
 * 以 [《Effective C++》](https://www.kdocs.cn/l/cjUist8CmOmt) 与 [《More Effecitve C++》](https://www.kdocs.cn/l/clykya3sDwyW) 、[《Effective Modern C++》](https://www.kdocs.cn/l/ckkj7wm8s8lg) 为规范
 
