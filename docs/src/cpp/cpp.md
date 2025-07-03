@@ -168,6 +168,92 @@
 
 ---
 
+## 3 处理数据
+
+### 类型推导
+
+<br>
+
+---
+
+## 8 函数探幽
+
+### 函数模版
+
+* 模版在编译时被实例化，例如 `mmax(1, 2.0)` 会被实例化为 `double mmax<int, double>(int, double)`
+
+    ```cpp
+    template <typename T1, typename T2>
+    auto mmax(T1 a, T2 b) {
+        return a > b ? a : b;
+    }
+    ```
+
+* 引用类型推导
+
+    ```cpp
+    template <typename T>
+    void swap(T &a, T &b) {
+        T temp = a;
+        a = b;
+        b = temp;
+    }
+    ```
+
+    1. 推导 `T` 的类型时，引用性先被忽略
+    
+    2. 保留类型限定符
+    
+    3. 推导出基本类型
+
+    例如 `swap(x,y)`, 且 `x` 和 `y` 都是 `int` 类型，那么
+    
+    * `T` 为 `int`
+
+    * `a` 和 `b` 的类型为 `int &`
+
+* 指针类型推导
+
+    ```cpp
+    template <typename T>
+    void swap(T* a, T* b) {
+        T c = *a;
+        *a = *b;
+        *b = c;
+    }
+    // int a = 5;
+    // int b = 10;
+    // int* ptr_a = &a;
+    // int* ptr_b = &b;
+    // swap(ptr_a, ptr_b);
+    ```
+
+    同上，如果是 `const int* ptr_a` 则会在编译时 `read-only variable is not assignable`
+
+* 按值传递推导
+
+    ```cpp
+    template <typename T>
+    void f(T x) {
+        x = 666;
+        std::cout << x << std::endl;
+    }
+    ```
+
+    例如 `f(x)`，且 `x` 是 `const int&` 类型，那么
+
+    * 忽略引用性，再忽略类型限定符
+
+    * `T` 为 `int`
+
+    * `x` 的类型为 `int`
+
+
+
+<br>
+
+---
+
 ## 9 内存模型和名称空间
 
 ### 存储说明符和类型限定符
