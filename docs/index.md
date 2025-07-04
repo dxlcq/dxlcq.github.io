@@ -72,6 +72,7 @@
     <a href="https://mail.cqu.edu.cn/" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/7/74/Chongqing_University_logo.svg"></div>
       <div style="font-size: 12px;">dxlcq@stu.cqu.edu.cn</div>
+      <a href="https://edu.icoremail.net/" style="font-size: 12px;"> 30187416@alu.cqu.edu.cn </a>
     </a>
   </div>
 
