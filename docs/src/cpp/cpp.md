@@ -170,13 +170,70 @@
 
 ## 3 处理数据
 
-### 类型推导
+### auto
+
+同 [函数模版](#8-函数探幽) 中的类型推导
+
+* 值语义推导，忽略引用性和类型限定符
+
+    ```cpp
+    int x = 10;
+    const int& y = x;
+    auto z = y;  // z 的类型为 int
+    ```
+
+* 引用语义推导，忽略引用性保留类型限定符
+
+    ```cpp
+    int x = 10;
+    const int& y = x;
+    auto& z = y;  // z 的类型为 const int&
+    ```
+
+* 万能引用
+
+
 
 <br>
 
 ---
 
 ## 8 函数探幽
+
+### 引用
+
+```cpp
+#include <iostream>
+
+// f1：传值（复制）
+// - 参数 res 是值传递，函数接收到的是传入对象的副本
+// - 修改 res 不会影响外部原对象
+void f1(int res) {
+    std::cout << res << std::endl;
+}
+
+// f2：左值引用
+// - 参数 res 是左值引用，必须传入一个可命名的变量（左值）
+// - 修改 res 会影响外部原对象
+void f2(int& res) {
+    std::cout << res << std::endl;
+}
+
+// f3：右值引用
+// - 参数 res 是右值引用，只能绑定到右值（临时对象）
+// - 虽然是引用，但绑定的是一个临时对象，修改 res 不会影响任何外部变量
+void f3(int&& res) {
+    std::cout << res << std::endl;
+}
+
+int main() {
+    int x = 6;
+    f1(x);   // 传值，创建副本
+    f2(x);   // 左值引用，直接操作 x
+    f3(6);   // 右值引用，绑定临时值 6
+    return 0;
+}
+```
 
 ### 函数模版
 
@@ -228,7 +285,7 @@
     // swap(ptr_a, ptr_b);
     ```
 
-    同上，如果是 `const int* ptr_a` 则会在编译时 `read-only variable is not assignable`
+    同上，如果是 `const int* ptr_a` 则在编译时 `read-only variable is not assignable`
 
 * 按值传递推导
 
