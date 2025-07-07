@@ -174,23 +174,17 @@
 
 同 [函数模版](#8-函数探幽) 中的类型推导
 
-* 值语义推导，忽略引用性和类型限定符
+* `auto list = {1, 2, 3, 4}`
+    
+    这里 `list` 的类型是 `std::initializer_list<int>`，元素只读
 
-    ```cpp
-    int x = 10;
-    const int& y = x;
-    auto z = y;  // z 的类型为 int
-    ```
+* `auto x{1]`
 
-* 引用语义推导，忽略引用性保留类型限定符
+    这里 `x` 的类型是 `int`
 
-    ```cpp
-    int x = 10;
-    const int& y = x;
-    auto& z = y;  // z 的类型为 const int&
-    ```
+### decltype
 
-* 万能引用
+
 
 
 
