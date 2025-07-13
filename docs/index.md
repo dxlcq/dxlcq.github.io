@@ -77,9 +77,9 @@
   </div>
 
   <div class="item" style="font-size: 14px;">
-    <div><a href="https://chatgpt.com/" target="_blank"> chatgpt </a></div>
-    <div><a href="https://github.com/copilot" target="_blank"> copilot </a></div>
-    <div><a href="http://10.0.0.11" target="_blank"> ragflow </a></div>
+    <br>
+    <div><a href="https://chatgpt.com/" target="_blank"> chatgpt </a> / <a href="https://aistudio.google.com/prompts/new_chat" target="_blank"> gemini </a> / <a href="https://grok.com/chat" target="_blank"> grok </a> </div>
+    <div><a href="https://github.com/copilot" target="_blank"> copilot </a> / <a href="http://10.0.0.11" target="_blank"> ragflow </a></div>
   </div>
 
   <div class="item">

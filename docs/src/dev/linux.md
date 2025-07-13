@@ -17,7 +17,39 @@ sudo wget -O /home/jiao/.ssh/authorized_keys "https://dxlcq.cn/public/authorized
 sudo systemctl restart ssh
 ```
 
-## dir
+<br>
+
+---
+
+## 基础
+
+### 配置速查
+
+* cpu
+
+    ```shell
+    lscpu
+    ```
+
+* 内存
+
+    ```shell
+    free -h
+    ``` 
+
+* 硬盘
+
+    ```shell
+    lsblk -d -o NAME,SIZE,VENDOR,MODEL
+    ```
+
+* 网络
+
+    ```shell
+    ip a
+    ```
+
+### 目录结构
 
 ```shell
 └── /
@@ -35,6 +67,11 @@ sudo systemctl restart ssh
     ├── var     # /var/www
     └── s
 ```
+
+
+<br>
+
+---
 
 ## 软件
 
@@ -325,7 +362,7 @@ time dd if=test.t of=/dev/null bs=4k
     * `sudo vim /etc/exports`
 
         ```conf
-        /mnt/nfs *(rw,sync,no_subtree_check,all_squash)
+        /mnt/nfs *(rw,no_subtree_check,all_squash,insecure)
         ```
 
         > 服务端不要自己添加文件，客户端无法访问
