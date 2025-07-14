@@ -362,7 +362,7 @@ time dd if=test.t of=/dev/null bs=4k
     * `sudo vim /etc/exports`
 
         ```conf
-        /mnt/nfs *(rw,no_subtree_check,all_squash,insecure)
+        /mnt/nfs *(rw,sync,no_subtree_check,all_squash)
         ```
 
         > 服务端不要自己添加文件，客户端无法访问

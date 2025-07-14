@@ -141,17 +141,15 @@ git --version        # 验证 git 安装成功
 git init
 ```
 
-* 将目标目录初始化成 git 可以管理的仓库，会生成一个 `.git` 目录
-
-* 同时，会创建一个 `master` 分支，看不见，但是存在
+> 将目标目录初始化成 git 可以管理的仓库，会生成一个 `.git` 目录
+>
+> 同时，会创建一个 `master` 分支，看不见，但是存在
 
 <br>
 
 ### 设置名字和邮箱
 
-此操作的目的，是为了追踪每次操作，究竟是谁做的，我们一般将其存储在 `config` 中
-
-配置文件有三个级别，权重从高到底：
+此操作的目的，是为了追踪每次操作，究竟是谁做的，我们一般将其存储在 `config` 中，配置文件有三个级别，权重从高到底：
 
 1. 仓库 `local`，此配置文件只对 **当前仓库** 有效
 
@@ -186,7 +184,7 @@ git init
 git add 目标文件
 ```
 
-追踪所有文件：
+或者追踪所有文件：
 
 ```shell
 git add .
@@ -206,29 +204,11 @@ git commit -m "提交说明"
 
 ### 将本地仓库推送到远程仓库
 
-将本地仓库推送到远程仓库，需要使用 `SSH key` 进行身份验证
-
-私钥存储在本地，公钥存储在远程仓库
-
-当你推送的时候，远程仓库会验证你的身份，如果验证通过，就可以推送
+将本地仓库推送到远程仓库，需要使用 `SSH key` 进行身份验证；私钥存储在本地，公钥存储在远程仓库；当你推送的时候，远程仓库会验证你的身份，如果验证通过，则可以推送
 
 1. 生成 `SSH key`
 
-    **Windows**：
-
-    ```shell
-    ssh-keygen -t rsa -C "email"
-    ```
-
-    > `-t rsa`：指定加密算法为 RSA
-
-    > `-C "email"`：指定注释，一般填邮箱
-
-    **Linux**：
-
-    ```shell
-    ssh-keygen -t rsa -C "email"
-    ```
+    [在线生成](https://bkssl.com/ssl/ssh_generate)
 
 2. 将公钥添加到远程仓库（[github](https://github.com/) or [gitee](https://gitee.com/)）
     
@@ -243,12 +223,6 @@ git commit -m "提交说明"
     > `key`：填写公钥的内容
 
 3. 在远程仓库中新建仓库
-    
-    > 名称和本地仓库可以不一样，但建议一致
-    
-    > 开源和私有暂且不论，但建议开源
-    
-    > 复制仓库地址，使用 `ssh`
 
 4. 添加远程仓库
     
@@ -264,28 +238,33 @@ git commit -m "提交说明"
     git push origin master
     ```
 
-> 注意，以上操作只是将本地仓库推送到远程仓库，但是远程仓库并不会自动创建分支
+    > 如果远程仓库没有 `master` 分支，则会自动创建一个 `master` 分支
 
 <br>
 
 ### 将远程仓库拉取到本地仓库
 
-1. `git fetch origin`
+* `git fetch origin`
     
-    * 拉取远程仓库的所有分支到本地仓库，但是不会自动合并
+    > 下载但不合并
 
-    * `git merge origin/master`
-        * 将远程仓库的 `master` 合并到本地仓库的当前分支
-
-2. `git pull origin`
+* `git merge origin/master`
     
-    * 拉取远程仓库的所有分支到本地仓库，并自动合并
+    > 合并分支
 
-3. `git clone 远程仓库地址`
+* `git pull origin`
     
-    * 在本地创建一个远程仓库的克隆（副本）
+    > 下载并合并
+
+* `git clone 远程仓库地址`
+    
+    > 在本地创建一个远程仓库的克隆（副本）
 
 <br>
+
+---
+
+## 123
 
 ### 创建分支
 
@@ -445,18 +424,17 @@ git remote rm origin
 ```
 
 > 删除远程仓库的别名为 `origin` 的仓库（地址）
-
 > 仅仅是删除了别名，远程仓库并没有被删除
 
 <br> 
 
 ### 切换分支
 
-```shell
-git checkout 分支名
-```
+* 切换到指定分支
 
-> 切换到指定分支
+    ```shell
+    git checkout 分支名
+    ```
 
 <br> 
 
@@ -468,17 +446,17 @@ git checkout 分支名
 
 **设置代理**
 
-```shell
-git config --local http.proxy http://192.168.19.19:7890
-git config --local https.proxy http://192.168.19.19:7890
-```
+    ```shell
+    git config --local http.proxy http://192.168.19.19:7890
+    git config --local https.proxy http://192.168.19.19:7890
+    ```
 
-**取消代理**
+* 取消代理
 
-```shell
-git config --global --unset http.proxy
-git config --global --unset https.proxy
-```
+    ```shell
+    git config --local --unset http.proxy
+    git config --local --unset https.proxy
+    ```
 
 ### 同时推送到多个远程仓库
 
@@ -495,16 +473,20 @@ git config --global --unset https.proxy
     ```
 
 > 注意，此方案只适用于多个远程仓库的代码完全一致的情况
-
+>
 > 因为我们只是给 `origin` 添加了多个 `URL`
-
+>
 > 虽然效果上看起来是推送到了多个仓库，但是实际上只是推送到了一个仓库
 
 ### gitee 记住账号密码
 
-```
+```shell
 git config --local credential.helper store
 ```
+
+<br>
+
+---
 
 ## .gitignore
 
