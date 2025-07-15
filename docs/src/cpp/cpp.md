@@ -185,8 +185,26 @@
 ### decltype
 
 
+### 类型转换
 
+* `static_cast` 静态类型转换
 
+    ```cpp
+    auto x = static_cast<char>(65);
+    // 将 int 65 转换为 char 'A'
+    ```
+
+* `dynamic_cast` 动态类型转换 
+
+* `reinterpret_cast` 重新解释类型转换
+
+* `const_cast` 去除 `const` 限定符
+
+    ```cpp
+    const int x = 666;
+    int* p = const_cast<int*>(&x);
+    *p = 888;
+    ```
 
 <br>
 
@@ -404,14 +422,19 @@ int main() {
     const int* const p = &x; // 指针和指针指向的值都不能被修改
     ```
 
-* `const_cast`
+* `mutable`
 
-    * 用于去除 `const` 限定符
+    * 允许在 `const` 对象中修改成员变量
+
+    * 修改的成员不应该影响对象的逻辑状态，即对象的逻辑状态是 `const`
 
     ```cpp
-    const int x = 666;
-    int* p = const_cast<int*>(&x);
-    *p = 888;
+    class A {
+       public:
+        mutable int x;
+        A() : x(0) {}
+        void setX(int val) const { x = val; }  // 可以修改
+    };
     ```
 
 * `constexpr`
@@ -427,8 +450,24 @@ int main() {
     int constexpr add(int a, int b) { return a + b; }
     ```
 
-
-
+> 值得一提的是 `enum`，枚举
+> ```cpp
+> enum nums {
+>     ZERO,     // 枚举值从 0 开始
+>     ONE = 6,  // 也可以指定枚举值 
+>     TWO       // 7, 如果没有指定，枚举值会自动递增
+> };
+> ```
+> 
+> 更安全的是强类型枚举 `enum class : int`
+> 
+> ```cpp
+> enum class nums : char {
+>     ZERO
+>     ONE
+>     TWO
+> };
+> ```
 
 * `volatile`
 
@@ -785,6 +824,12 @@ public:
 * 也可以显式声明一个默认构造函数
 
 **初始化列表**
+
+* 效率更高，没有临时对象的创建和销毁
+
+* `const` 成员必须在初始化列表中初始化
+
+* 明确指定成员的初始化顺序（存在依赖关系）
 
 ```cpp
 class A{
