@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "name": "Simple C++ Configuration",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "compilerPath": "/usr/bin/gcc"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "name": "Simple C++ QT Configuration",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/QT/**"
+            ],
+            "compilerPath": "/usr/bin/gcc"
+        }
+    ],
+    "version": 4
+}

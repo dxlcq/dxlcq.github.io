@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // 配置的名称，可以自定义
+            "name": "Debug",
+            // 配置类型为cppdbg，表示C++调试
+            "type": "cppdbg",
+            // 请求类型为launch，表示启动调试
+            "request": "launch",
+            // 可执行文件路径为当前打开文件的路径和文件名（不带扩展名）
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            // 是否在程序入口处停止
+            "stopAtEntry": false,
+            // 当前工作目录为VS Code的工作区目录
+            "cwd": "${workspaceFolder}",
+            // 调试器类型为gdb
+            "MIMode": "gdb",
+            // 指定gdb的可执行文件路径
+            "miDebuggerPath": "gdb",
+        }
+    ]
+}
