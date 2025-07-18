@@ -374,11 +374,22 @@ time dd if=test.t of=/dev/null bs=4k
     * `sudo vim /etc/exports`
 
         ```conf
-        /mnt/nfs *(rw,sync,no_subtree_check,all_squash)
+        /mnt/nfs *(rw,async,no_subtree_check,all_squash,insecure)
         ```
 
         > 服务端不要自己添加文件，客户端无法访问
+        >
         > 此配置下，所有用户（nobody）都可以访问共享目录
+        > 
+        > `rw` 读写权限
+        >
+        > `async` 异步写入
+        >
+        > `no_subtree_check` 禁止子目录检查
+        >
+        > `all_squash` 所有用户都映射为 nobody 用户
+        >
+        > `insecure` 允许非特权端口访问
 
     * `sudo chown nobody:nogroup /mnt/nfs -R`
     
@@ -395,8 +406,13 @@ time dd if=test.t of=/dev/null bs=4k
     service nfs-common start
     ```
 
-2. 挂载 `sudo mount 10.0.0.1:/mnt/nfs /mnt/nfs`
+2. 挂载 `sudo mount 10.0.0.15:/mnt/nfs /mnt/nfs`
 
+3. 持久化
+
+    ```bash
+    10.0.0.15:/mnt/nfs /mnt/nfs nfs nfsvers=4.1,noresvport 0 0
+    ```
 
 * 强行卸载
 
