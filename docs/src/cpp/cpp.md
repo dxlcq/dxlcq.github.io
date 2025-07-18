@@ -4,6 +4,8 @@
 
 * [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 
+* 格式化 `"C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Chromium, IndentWidth: 4}",`
+
 * 以 [《C++ Primer Plus》](https://www.kdocs.cn/l/cbUGSlyNNZ5o) 为主线
 
 * 以 [《Effective C++》](https://www.kdocs.cn/l/cjUist8CmOmt) 与 [《More Effecitve C++》](https://www.kdocs.cn/l/clykya3sDwyW) 、[《Effective Modern C++》](https://www.kdocs.cn/l/ckkj7wm8s8lg) 为规范
@@ -1037,6 +1039,43 @@ xixi 0x16f777338 6 0x12be05f00
 <br>
 
 ---
+
+## 12 类和动态内存分配
+
+### RAII
+
+* 资源获取即初始化（在构造时获取资源，在析构时释放资源），作用域结束时自动清理
+
+* `RAII` 对象，有必要提供访问原始资源的接口
+
+    例如 `std::unique_ptr` 和 `std::shared_ptr` 都提供了 `get()` 方法来访问原始指针
+
+* 在复制 `RAII` 对象时，必须实现深拷贝
+
+**`RAII` 的复制策略必须与资源语义保持一致**
+
+* 独占，禁止复制、允许移动
+
+    ```cpp
+    class OnlyOne {
+       public:
+        OnlyOne() = default;
+        OnlyOne(const OnlyOne&) = delete;             // 禁止拷贝构造
+        OnlyOne& operator=(const OnlyOne&) = delete;  // 禁止拷贝赋值
+        OnlyOne(OnlyOne&&) = default;                 // 允许移动构造
+        OnlyOne& operator=(OnlyOne&&) = default;      // 允许移动赋值
+    };
+    ```
+
+* 共享，引用计数 `std::shared_ptr`
+
+* 可复制，深度拷贝
+
+
+<br>
+
+---
+
 
 ## 1 异常处理
 
