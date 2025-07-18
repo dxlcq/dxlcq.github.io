@@ -81,33 +81,45 @@ sudo systemctl restart ssh
 
 * 更新软件源、软件，自动删除无关依赖
 
-```bash
-sudo apt update && sudo apt full-upgrade && sudo apt autoremove
-```
+    ```bash
+    sudo apt update && sudo apt full-upgrade && sudo apt autoremove
+    ```
 
 * 使用代理
 
-```bash
--o Acquire::http::proxy="http://192.168.19.19:7890/"
-```
+    ```bash
+    -o Acquire::http::proxy="http://192.168.19.19:7890/"
+    ```
 
 * 删除软件
 
-```bash
-sudo apt purge 软件名
-```
+    ```bash
+    sudo apt purge 软件名
+    ```
 
 * 查找软件
 
-```bash
-sudo apt-cache search 软件名
-```
+    ```bash
+    sudo apt-cache search 软件名
+    ```
 
 * 查看已安装的软件
 
-```bash
-sudo apt list --installed | grep 软件名
-```
+    ```bash
+    sudo apt list --installed | grep 软件名
+    ```
+
+* 只下载不安装
+
+    ```bash
+    sudo apt install --download-only 软件名
+    ```
+
+    > 下载的软件包会保存在 `/var/cache/apt/archives`
+    > 
+    > 全部安装 `sudo dpkg -i *.deb`
+    > 
+    > 清理下载的软件包 `sudo apt clean`
 
 * 添加软件源
 
