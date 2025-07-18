@@ -308,9 +308,9 @@
       </a> 
     </div>
     <div class="item">
-      <a href="https://open.spotify.com/user/312fhhabg3hdhdlcyq5r7zidpt5e?si=2f6fcb6ff1c64a79&nd=1&dlsi=12f6bab9fb1446d8" target="_blank">
-        <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/7a/63/7a7a63b4-6370-c782-c7c5-68d0f85d753a/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/460x0w.webp"></div>
-        <div style="font-size: 12px;">Spotify</div>
+      <a href="https://www.instagram.com/daixinglong666/" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/330px-Instagram_logo_2022.svg.png"></div>
+        <div style="font-size: 12px;">Instagram</div>
       </a> 
     </div>
     <div class="item">
@@ -332,4 +332,15 @@
       </a> 
     </div>
 
+</div>
+
+
+
+<div class="container"> <!-- 1 -->
+    <div class="item">
+      <a href="https://open.spotify.com/user/312fhhabg3hdhdlcyq5r7zidpt5e?si=2f6fcb6ff1c64a79&nd=1&dlsi=12f6bab9fb1446d8" target="_blank">
+        <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/7a/63/7a7a63b4-6370-c782-c7c5-68d0f85d753a/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/460x0w.webp"></div>
+        <div style="font-size: 12px;">Spotify</div>
+      </a> 
+    </div>
 </div>
