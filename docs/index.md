@@ -302,6 +302,12 @@
 
 <div class="container"> <!-- 1 -->
     <div class="item">
+      <a href="https://open.spotify.com/user/312fhhabg3hdhdlcyq5r7zidpt5e?si=2f6fcb6ff1c64a79&nd=1&dlsi=12f6bab9fb1446d8" target="_blank">
+        <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/7a/63/7a7a63b4-6370-c782-c7c5-68d0f85d753a/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/460x0w.webp"></div>
+        <div style="font-size: 12px;">Spotify</div>
+      </a> 
+    </div>
+    <div class="item">
       <a href="https://www.youtube.com/@骄骄" target="_blank">
         <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f5/ac/a8/f5aca8ee-b304-1aec-c656-66a36ae88a94/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-6-0-0-0-85-220.png/492x0w.webp"></div>
         <div style="font-size: 12px;">YouTube</div>
@@ -319,28 +325,65 @@
         <div style="font-size: 12px;">X</div>
       </a> 
     </div>
-    <div class="item">
-      <a href="https://www.tiktok.com/@dxlcq" target="_blank"> 
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/TikTok_logo.svg/440px-TikTok_logo.svg.png"></div>
-        <div style="font-size: 12px;">TikTok</div>
-      </a> 
-    </div>
-    <div class="item">
-      <a href="https://web.telegram.org/a/" target="_blank">
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/300px-Telegram_2019_Logo.svg.png"></div>
-        <div style="font-size: 12px;">Telegram</div>
-      </a> 
-    </div>
-
 </div>
 
 
 
 <div class="container"> <!-- 1 -->
     <div class="item">
-      <a href="https://open.spotify.com/user/312fhhabg3hdhdlcyq5r7zidpt5e?si=2f6fcb6ff1c64a79&nd=1&dlsi=12f6bab9fb1446d8" target="_blank">
-        <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/7a/63/7a7a63b4-6370-c782-c7c5-68d0f85d753a/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/460x0w.webp"></div>
-        <div style="font-size: 12px;">Spotify</div>
+      <a href="https://web.telegram.org/a/" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/300px-Telegram_2019_Logo.svg.png"></div>
+        <div style="font-size: 12px;">Telegram</div>
       </a> 
     </div>
+    <div class="item">
+      <a href="https://www.bilibili.com/" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Bilibili_logo.svg/1024px-Bilibili_logo.svg.png?20210929021120"></div>
+        <div style="font-size: 12px;">噼里啪啦</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://www.xiaohongshu.com/explore" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/XiaohongshuLOGO.png"></div>
+        <div style="font-size: 12px;">🍠</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://www.tiktok.com/@dxlcq" target="_blank"> 
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/TikTok_logo.svg/440px-TikTok_logo.svg.png"></div>
+        <div style="font-size: 12px;">TikTok</div>
+      </a> 
+    </div>
+</div>
+
+
+---
+
+<div class="container"> <!-- 1 -->
+    <div class="item">
+      <a href="https://www.paypal.com/" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/PayPal2007.svg/500px-PayPal2007.svg.png"></div>
+        <div style="font-size: 12px;">PayPal</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://www.taobao.com/" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/0/04/Taobao_logo_%282021%29.svg/2560px-Taobao_logo_%282021%29.svg.png"></div>
+        <div style="font-size: 12px;">淘宝</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://www.jd.com/" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/en/c/c4/JD.com_logo.png"></div>
+        <div style="font-size: 12px;">京东</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://www.jd.com/" target="_blank">
+        <div class="rounded-icon"><img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHM0OYfiFeMI2p9MWie0CvL99U4GA1gf6_kayTt_kBblFwHwo8BW8JXlqfnYxKPmmBc8ZsaWrLKilEzT.lyuelJolW082qQ4478qhgDkKTNsmyQgg5NauJSKh4GlRpXhzS9cyxOmHXLzqR6dQNNjsdGE-&format=webp&h=307"></div>
+        <div style="font-size: 12px;">闲鱼</div>
+      </a> 
+    </div>
+
+
 </div>
