@@ -379,7 +379,7 @@
       </a> 
     </div>
     <div class="item">
-      <a href="https://www.jd.com/" target="_blank">
+      <a href="https://www.goofish.com/" target="_blank">
         <div class="rounded-icon"><img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHM0OYfiFeMI2p9MWie0CvL99U4GA1gf6_kayTt_kBblFwHwo8BW8JXlqfnYxKPmmBc8ZsaWrLKilEzT.lyuelJolW082qQ4478qhgDkKTNsmyQgg5NauJSKh4GlRpXhzS9cyxOmHXLzqR6dQNNjsdGE-&format=webp&h=307"></div>
         <div style="font-size: 12px;">闲鱼</div>
       </a> 
