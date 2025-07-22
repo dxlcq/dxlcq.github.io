@@ -16,11 +16,13 @@
 
 <br>
 
+---
+
 ## 基础用法
 
 ```bash
 cmake -B build
-cmake --build build -j$(nproc)
+cmake --build build -j
 ```
 
 * 在顶层 `CMakeLists.txt` 目录中执行
@@ -31,11 +33,13 @@ cmake --build build -j$(nproc)
 
     * `-B` 指定输出目录为 `build`
 
-* `cmake --build build -j$(nproc)`
+* `cmake --build build/ -j`
 
     * 使用指定构建系统进行编译（例如 `make`）
 
-    * `-j$(nproc)` 并行编译，`$(nproc)` 表示使用所有 CPU 核心数
+    * `--build` 指定构建目录为 `build/`
+
+    * `-j` 多线程编译
 
 <br>
 
@@ -47,20 +51,18 @@ cmake --build build -j$(nproc)
 
 * 指定需要编译的源文件
 
-* 指定第三方库的头文件路径 `target_include_directories`
+* 头文件目录 `target_include_directories`
 
-* 指定第三方库的库文件路径 `target_link_directories`
+* 动态库 `target_link_libraries`，相当于 `-l`，具体的库
 
-* 接接库 `target_link_libraries`
-
-其中最混乱的就是第三方库的管理，网上的教程五花八门，这里通过三种情况来分析：
+时代的巨轮滚滚向前，网上的教程可以说是五花八门，这里通过三种情况分析
 
 ### 存在 `.cmake`
 
 如果第三方库存在 `.cmake` 文件，不要犹豫，直接使用 `find_package`
 
-```CMakeLists.txt
-# 设置 Qt 的 CMake 模块路径，如果不在 /usr/lib /usr/local/lib 等常见路径下
+```CMake
+# 设置 Qt 的 CMake 模块目录，如果不在 /usr/lib /usr/local/lib 等常见目录下
 set(Qt6_DIR ".../Qt/x.y.z/gcc_64/lib/cmake/Qt6")
 
 # 导入 Qt6 模块
@@ -71,7 +73,7 @@ find_package(Qt6 REQUIRED COMPONENTS
     Xml
 )
 
-# 链接库
+# 链接
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt6::Core
     Qt6::Xml
@@ -82,17 +84,17 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 
 如果第三方库存在 `.pc` 文件，不要犹豫，优先使用 `pkg_check_modules`
 
-```CMakeLists.txt
+```CMake
 # 导入 pkg-config 模块
 find_package(PkgConfig REQUIRED)
 
-# pkg_check_modules 查找的路径
+# pkg_check_modules 在什么目录查找
 set(ENV{PKG_CONFIG_PATH} ".../lib/pkgconfig")
 pkg_check_modules(PQ REQUIRED IMPORTED_TARGET
     libpq
 )
 
-# 链接库目录
+# 链接
 target_link_libraries(${PROJECT_NAME} PRIVATE
     PkgConfig::PQ
 )
@@ -100,17 +102,46 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 
 ### 手动
 
-只给你 `lib` 和 `include` 目录，直接复制到你项目目录下
+只给 `include` 和 `lib` 目录
 
-```CMakeLists.txt
+```CMake
+# 头文件目录
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${PROJECT_SOURCE_DIR}/libs/xxx/include
 )
 
-find_library(LIBQICSTABLE libqicstable.so.3 PATHS /home/jiao/Desktop/qicstable-master/lib)
+# 查找指定库
+find_library(LIBQICSTABLE libqicstable.so.3 
+    PATHS /home/jiao/Desktop/qicstable-master/lib
+)
 
+# 链接
 target_link_libraries(${PROJECT_NAME} PRIVATE
     ${LIBQICSTABLE}
+)
+```
+
+### 源码
+
+项目和源码一起编
+
+```CMake
+# 第三方库目录
+add_subdirectory(subprocess)
+
+# 生成可执行文件
+add_executable(${PROJECT_NAME} 
+    ${SOURCES}
+)
+
+# 头文件目录
+target_include_directories(${PROJECT_NAME} PRIVATE
+    ${PROJECT_SOURCE_DIR}/subprocess/src/cpp
+)
+
+# 链接
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    subprocess
 )
 ```
 
@@ -118,67 +149,29 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 
 ---
 
-
-### 查找依赖库
-
-查找库文件
-
-```c
-set(Boost_DIR /usr/local/boost)         # 设置 Boost 库的路径，非必须
-find_package(Boost REQUIRED)            # 查找 Boost 库
-find_package(Boost 1.75 REQUIRED)       # 查找 Boost 库的指定版本
-find_package(Boost COMPONENTS system filesystem REQUIRED)  # 查找 Boost 库的 system 和 filesystem 组件
-```
-
-### include_directories
-
-添加头文件目录
-
-```c
-include_directories(/usr/local/include)     # 添加头文件目录
-include_directories(${Boost_INCLUDE_DIRS})  # 添加 Boost 头文件目录
-```
-
-### add_executable
-
-生成可执行文件
-
-```c
-add_executable(main main.cpp)               # 生成可执行文件
-```
-
-### target_link_libraries
-
-链接库文件
-
-```c
-LINK_DIRECTORIES(dir1 dir2)                 # 添加动态库目录，不推荐使用
-target_link_libraries(main libssl.so)       # 链接库到 main
-target_link_libraries(a ${Boost_LIBRARIES}) # 链接 Boost 库到 a
-```
-
-private 的库不会传递给依赖项，public 的库会传递给依赖项
-
+## 常用
 
 ### add_library
 
-生成库文件
-
-```c
+```CMake
 add_library(util STATIC util.cpp)       # 生成静态库 libutil.a
 add_library(util SHARED util.cpp)       # 生成动态库 libutil.so
 ```
 
-### if_else
+### ifelse
 
-选择判断
-
-```c
+```CMake
 if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
     set(LIB_PATH "/usr/local/xyz/lib")
 elseif (CMAKE_SYSTEM_NAME STREQUAL "Windows")
     set(LIB_PATH "C:/Path/To/Your/Libraries")
 endif()
 
-LINK_DIRECTORIES(${LIB_PATH})
+find_library(LIB_UTIL util 
+    PATHS ${LIB_PATH}
+)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    ${LIB_UTIL}
+)
 ```
