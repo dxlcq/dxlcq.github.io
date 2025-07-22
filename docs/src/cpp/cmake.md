@@ -53,7 +53,7 @@ cmake --build build -j
 
 * 头文件目录 `target_include_directories`
 
-* 动态库 `target_link_libraries`，相当于 `-l`，具体的库
+* 链接库 `target_link_libraries`，相当于 `-l`，具体的库
 
 时代的巨轮滚滚向前，网上的教程可以说是五花八门，这里通过四种情况分析
 
