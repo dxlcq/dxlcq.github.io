@@ -543,8 +543,17 @@ network:
   version: 2
 ```
 
-
 <br>
+
+### port
+
+* 查看某进程占用的端口
+
+    ```bash
+    watch -n 1 'lsof -i -nP | grep 进程'
+    ```
+
+
 
 ### ping
 
