@@ -212,42 +212,98 @@
 
 ---
 
-## 8 函数探幽
+## 7 & 8 函数探幽
 
-### 引用
+### Pass by Any
+
+* 能用 `const int&` 就尽量别值传递，特别是传递大对象时
+
+* `STL` 直接传值
+
+**Pass by Value（传值）**
 
 ```cpp
-#include <iostream>
-
-// f1：传值（复制）
-// - 参数 res 是值传递，函数接收到的是传入对象的副本
-// - 修改 res 不会影响外部原对象
-void f1(int res) {
-    std::cout << res << std::endl;
-}
-
-// f2：左值引用
-// - 参数 res 是左值引用，必须传入一个可命名的变量（左值）
-// - 修改 res 会影响外部原对象
-void f2(int& res) {
-    std::cout << res << std::endl;
-}
-
-// f3：右值引用
-// - 参数 res 是右值引用，只能绑定到右值（临时对象）
-// - 虽然是引用，但绑定的是一个临时对象，修改 res 不会影响任何外部变量
-void f3(int&& res) {
-    std::cout << res << std::endl;
-}
-
-int main() {
-    int x = 6;
-    f1(x);   // 传值，创建副本
-    f2(x);   // 左值引用，直接操作 x
-    f3(6);   // 右值引用，绑定临时值 6
-    return 0;
+void PassByValue(int x) {
+    // PassByValue(x + 6);
+    // PassByValue(x);
 }
 ```
+
+* 可以传入左值或右值
+
+* 传入的值是一个副本，函数内部修改不会影响外部变量
+
+
+**Pass by Reference（传引用）**
+
+```cpp
+void PassByReference(int& x) {
+    // PassByReference(x);
+}
+```
+
+* 只能传入左值
+
+* 传入的值是一个引用，函数内部修改会影响外部变量
+
+**Pass by Rvalue Reference（传右值引用）**
+
+```cpp
+void PassByRvalueReference(int&& x) {
+    // PassByRvalueReference(x + 6);
+}
+```
+
+* 只能传入右值
+
+* 传入的值是一个临时变量，例如 `x + 6` 的结果，函数内部修改不会影响外部变量，只是拿到了这个临时变量的引用
+
+**Pass by Pointer（传指针）**
+
+```cpp
+void PassByPointer(int* x) {
+    // int y = 6;
+    // int* x = &y;
+    // PassByPointer(x);
+}
+```
+
+* 可以传入左值或右值
+
+* 传入的值是一个指针，函数内部修改会影响外部变量
+
+**Pass by Smart Pointer（传智能指针）**
+
+```cpp
+void PassBySmartPointer(std::unique_ptr<std::string> s) {
+    // std::unique_ptr<std::string> p = std::make_unique<std::string>("Hello");
+    // PassBySmartPointer(std::move(p));
+    // PassBySmartPointer(std::make_unique<std::string>("Hello"));
+}
+```
+
+* 可以传入左值或右值
+
+* 严格使用 `std::make_xx` 创建智能指针
+
+**Pass by STL（传递STL）**
+
+```cpp
+void PassBySTL(std::vector<int> v) {
+    // std::vector<int> v = {1, 2, 3};
+    // PassBySTL(v);
+    // PassBySTL({4, 5, 6});
+    // PassBySTL(std::move(v));
+}
+```
+
+* 可以传入左值或右值
+
+* 如果使用 `std::move`，会将 `v` 的资源搬走，`v` 变成一个空的容器
+
+<br>
+
+---
 
 ### 函数模版
 
