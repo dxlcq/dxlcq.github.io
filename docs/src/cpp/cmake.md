@@ -21,8 +21,7 @@
 ## 基础用法
 
 ```bash
-cmake -B build
-cmake --build build -j
+rm -rf build/ && cmake -B build && cmake --build build/ -j20
 ```
 
 * 在顶层 `CMakeLists.txt` 目录中执行
