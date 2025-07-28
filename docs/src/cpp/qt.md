@@ -129,7 +129,7 @@
             "configurations": [
                 {
                     // 配置的名称，可以自定义
-                    "name": "Debug",
+                    "name": "debug",
                     // 配置类型为cppdbg，表示C++调试
                     "type": "cppdbg",
                     // 请求类型为launch，表示启动调试

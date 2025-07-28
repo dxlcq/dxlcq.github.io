@@ -2,9 +2,9 @@
 
 # 戴兴龙
 
-**求职意向：C/C++、DevOps、AI**
+**求职意向：C/C++**
 
-男 ｜ 22岁 ｜ 25届本科 ｜ xxx-xxxx-xxxx ｜ dxlcq@outlook.com | dxlcq.cn
+男 ｜ 23岁 ｜ 1 年经验 ｜ xxx-xxxx-xxxx ｜ dxlcq@outlook.com | dxlcq.cn
 
 ---
 
@@ -24,7 +24,7 @@
 
 * 熟悉 Linux 环境下的 C/C++ 编程，掌握 cmake、vs 等编译调试工具，对网络、音视频、多线程等有一定了解
 
-#### 实习经历
+#### 工作经历
 
 * **北京中科海讯** ｜ 系统研发部 - C/C++工程师 <span style="float: right; margin-right: 10px;">2025.3 - 至今</span>
 
@@ -36,19 +36,7 @@
 
     * 参与新项目的前期架构设计与技术选型，调研多个开源项目，如 taskflow、subprocess、cyclonedds 等
 
-* **中国电信北碚分公司** ｜ 系统集成中心 - 研发工程师 <span style="float: right; margin-right: 10px;">2024.6 - 2025.9</span>
-
-    * 参与无纸化会议平台开发，独立完成屏幕共享与视频通话模块的设计与实现（WebRTC）
-
-    * 协助网络部门完成了全区 C/SVLAN 架构迁移与验证，负责数据迁移工具的开发
-
 #### 个人项目
-
-* **AI 直播数字人** <span style="float: right; margin-right: 10px;">2025.5 - 至今</span>
-
-    * 基于 Livetalking + Ollama + Qdrant 实现的实时互动 AI 直播数字人
-
-    * 集成 WebRTC + SRS + OBS 推流方案，能够兼容主流直播平台
 
 * **自动驾驶分布式仿真测试系统设计与实现** ｜ 本科毕设 ｜ 中国汽研横向科研 <span style="float: right; margin-right: 10px;">2025.1 - 2025.3</span>
 

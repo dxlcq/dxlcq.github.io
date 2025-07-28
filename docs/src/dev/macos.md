@@ -15,3 +15,10 @@
 - `command` `shift` `3`：全屏截图，`control`：截图到剪贴板
 
 ## brew
+
+
+## 关闭 `.DS_Store`
+
+```bash
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+```

@@ -54,6 +54,7 @@ nav:
     - 📦 cyclonedds:    src/cpp/cyclonedds.md
     - 📦 subprocess:    src/cpp/subprocess.md
     - 📦 taskflow:      src/cpp/taskflow.md
+    - 📦 rocksdb:       src/cpp/rocksdb.md
     - 📦 HMBDC:         src/cpp/hmbdc.md
     - 📦 sqlpp11:       src/cpp/sqlpp11.md
   
