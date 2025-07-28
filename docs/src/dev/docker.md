@@ -96,13 +96,13 @@ sudo docker rmi IMAGE_NAME[:TAG]
 ### 导出镜像
 
 ```sh
-sudo docker image save -o image.tar image:tag
+sudo docker image save -o 镜像.tar 镜像:tag
 ```
 
 ### 导入镜像
 
 ```sh
-sudo docker image load -i image.tar
+sudo docker image load -i 镜像.tar
 ```
 
 <br>

@@ -305,6 +305,63 @@ void PassBySTL(std::vector<int> v) {
 
 ---
 
+## Return Any
+
+**Return Value（返回值）**
+
+```cpp
+std::string ReturnValue() {
+    std::string s = "Hello";
+    return s;   // 返回值是 s 的副本
+}
+```
+
+**Return Reference（返回引用）**
+
+不是非常清晰的场景下，不要返回引用
+
+```cpp
+class A {
+   public:
+    A(int val) : x(val) {}
+    /*
+    @return x 的引用
+    */
+    int& modifyX() { return x; }
+    // a.modifyX() += 6;
+    // 通过引用修改 x 的值
+   private:
+    int x;
+};
+```
+
+**Return Rvalue Reference（返回右值引用）**
+
+嘤嘤婴
+
+**Return Pointer（返回指针）**
+
+```cpp
+int* ReturnPointer() {
+    int* p = new int(6);
+    return p;
+    // auto* p = ReturnPointer();
+}
+```
+
+**Return Smart Pointer（返回智能指针）**
+
+```cpp
+std::unique_ptr<std::string> ReturnSmartPointer() {
+    return std::make_unique<std::string>("Hello");
+    // auto p = ReturnSmartPointer();
+}
+```
+
+<br>
+
+---
+
 ### 函数模版
 
 * 模版在编译时被实例化，例如 `mmax(1, 2.0)` 会被实例化为 `double mmax<int, double>(int, double)`
@@ -714,6 +771,19 @@ namespace A{
 ---
 
 ## 10 对象和类
+
+### 类的设计
+
+* 用非成员非友元函数来替换成员函数，让类可以更加专一
+
+    * 例如 STL 中 `std::vector`，`std::string` 没有 `std::sort`
+
+    * 可以在不修改已有代码的情况下，为它增加新功能
+
+<br>
+
+---
+
 
 ### 三大特性
 
