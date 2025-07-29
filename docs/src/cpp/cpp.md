@@ -1161,6 +1161,40 @@ xixi 0x16f777338 6 0x12be05f00
     };
     ```
 
+* 使用 `friend const` 修饰符来重载运算符
+
+    可以实现 `A - int`，`int - A` 这样的
+
+    ```cpp
+    #include <iostream>
+
+    class A {
+       public:
+        A(int a) : _value(a) {}
+
+        friend std::ostream& operator<<(std::ostream& os, const A& a) {
+            os << a._value;
+            return os;
+        }
+
+        friend A operator-(const A& a, const A& b);
+
+       private:
+        int _value;
+    };
+
+    A operator-(const A& a, const A& b) {
+        return a._value - b._value;
+    }
+
+    int main() {
+        std::cout << 8 - A(2) << std::endl;
+        std::cout << A(8) - 2 << std::endl;
+
+        return 0;
+    }
+    ```
+
 
 <br>
 
