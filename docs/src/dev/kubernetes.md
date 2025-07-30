@@ -65,15 +65,15 @@
         # 下载容器运行时
         apt install docker.io unzip -y
         # 下载垫片，用于将 cri-dockerd 作为 CRI 运行时，下载垫片源码，用于安装服务
-        wget https://github.com/Mirantis/cri-dockerd/archive/refs/tags/v0.3.16.zip
-        wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.16/cri-dockerd-0.3.16.amd64.tgz
+        wget https://github.com/Mirantis/cri-dockerd/archive/refs/tags/v0.3.18.zip
+        wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.18/cri-dockerd-0.3.18.amd64.tgz
         # 解压垫片，解压源码
-        unzip v0.3.16.zip
-        tar -zxvf cri-dockerd-0.3.16.amd64.tgz
+        unzip v0.3.18.zip
+        tar -zxvf cri-dockerd-0.3.18.amd64.tgz
         # 复制二进制文件到 /usr/bin 目录下
         cp cri-dockerd/cri-dockerd /usr/bin
         # 安装 systemd 服务，重新加载 systemd，启用 cri-docker 服务
-        install cri-dockerd-0.3.16/packaging/systemd/* /etc/systemd/system
+        install cri-dockerd-0.3.18/packaging/systemd/* /etc/systemd/system
         systemctl daemon-reload
         systemctl enable --now cri-docker.socket
         ```
@@ -134,8 +134,8 @@
 
     ```shell
     # 添加 k8s 的 apt 仓库
-    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.33/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.33/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
     # 安装并锁定版本
     sudo apt-get update
     sudo apt-get install -y kubelet kubeadm kubectl
@@ -176,7 +176,7 @@
 
     ```shell
     # 只需要在控制平面部署
-    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/refs/tags/v3.29.1/manifests/calico.yaml
+    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/refs/tags/v3.30.2/manifests/calico.yaml
     ```
 
 
