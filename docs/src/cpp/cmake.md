@@ -148,6 +148,25 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 
 ---
 
+## 常见变量
+
+| 变量名 | 说明 |
+|:-|:-|
+| **`CMAKE_SOURCE_DIR`** | 顶层 `CMakeLists.txt` 所在目录 |
+| **`CMAKE_CURRENT_SOURCE_DIR`** | 当前 `CMakeLists.txt` 所在目录 |
+| **`CMAKE_BINARY_DIR`** | 顶层 `CMakeLists.txt` 生成的构建目录 |
+| **`CMAKE_CURRENT_BINARY_DIR`** | 当前 `CMakeLists.txt` 生成的构建目录 |
+
+
+
+
+
+
+<br>
+
+---
+
+
 ## 常用
 
 ### add_library
@@ -156,6 +175,12 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 add_library(util STATIC util.cpp)       # 生成静态库 libutil.a
 add_library(util SHARED util.cpp)       # 生成动态库 libutil.so
 ```
+
+<br>
+
+
+
+<br>
 
 ### ifelse
 

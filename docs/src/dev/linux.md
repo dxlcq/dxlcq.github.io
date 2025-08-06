@@ -23,6 +23,30 @@ sudo systemctl restart ssh
 
 ## 基础
 
+### vscode 配置
+
+* 查看 `Commit ID`
+
+* 下载 `vscode-server`
+
+    ```bash
+    wget https://update.code.visualstudio.com/commit:{Commit ID}/server-linux-x64/stable
+    ```
+
+* 解压到 `~/.vscode-server/bin/{Commit ID}`
+
+    ```bash
+    mkdir -p ~/.vscode-server/bin/{Commit ID}
+    tar -zxvf vscode-server-linux-x64.tar.gz -C ~/.vscode-server/bin/{Commit ID} --strip-components 1
+    ```
+
+* 降低 `remotessh` 插件的版本
+
+
+<br>
+
+---
+
 ### 配置速查
 
 * cpu

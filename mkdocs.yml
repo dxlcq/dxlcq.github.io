@@ -128,7 +128,8 @@ nav:
         - MTU:          src/cs/net/mtu.md
     - 数据结构:
       - 线性表:         src/cs/dataStruct/list.md
-    - 数据库: 
+      - 队列:           src/cs/dataStruct/queue.md
+    - 数据库:
       - 第一章:         src/cs/dataBase/t.md
     - 设计模式:         src/cs/designPattern/designPattern.md
     - 系统架构:         src/cs/systemArchitecture/systemArchitecture.md
