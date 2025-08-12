@@ -50,6 +50,19 @@
     conda config --set auto_activate_base false
     ```
 
+### for windows
+
+```bash
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe -o .\miniconda.exe
+start /wait "" .\miniconda.exe /S
+del .\miniconda.exe
+C:\ProgramData\miniconda3\Scripts\activate.bat
+```
+
+* [安装](https://www.anaconda.com/docs/getting-started/miniconda/install#windows-powershell)
+
+* [激活](https://www.anaconda.com/docs/reference/glossary#miniconda)
+
 ### command
 
 * 查看所有环境
