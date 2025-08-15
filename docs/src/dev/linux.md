@@ -3,17 +3,10 @@
 ## for me
 
 ```bash
-sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove
+sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove && sudo mkdir -p /root/.ssh
 sudo apt install -y openssh-server wget apt-transport-https ca-certificates curl gpg
 sudo wget -O /root/.ssh/authorized_keys "https://dxlcq.cn/public/authorized_keys"
 sudo echo "PasswordAuthentication no" | sudo tee -a /etc/ssh/sshd_config
-sudo systemctl restart ssh
-```
-
-```bash
-sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove
-sudo apt install -y openssh-server wget apt-transport-https ca-certificates curl gpg
-sudo wget -O /home/jiao/.ssh/authorized_keys "https://dxlcq.cn/public/authorized_keys"
 sudo systemctl restart ssh
 ```
 
@@ -22,30 +15,6 @@ sudo systemctl restart ssh
 ---
 
 ## 基础
-
-### vscode 配置
-
-* 查看 `Commit ID`
-
-* 下载 `vscode-server`
-
-    ```bash
-    wget https://update.code.visualstudio.com/commit:{Commit ID}/server-linux-x64/stable
-    ```
-
-* 解压到 `~/.vscode-server/bin/{Commit ID}`
-
-    ```bash
-    mkdir -p ~/.vscode-server/bin/{Commit ID}
-    tar -zxvf vscode-server-linux-x64.tar.gz -C ~/.vscode-server/bin/{Commit ID} --strip-components 1
-    ```
-
-* 降低 `remotessh` 插件的版本
-
-
-<br>
-
----
 
 ### 配置速查
 
