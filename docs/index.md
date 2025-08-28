@@ -184,14 +184,14 @@
   </div>
 
   <div class="item">
-    <a href="https://test.nju.edu.cn/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/f/fb/%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.svg/536px-%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.svg.png?20121015073640"></div>
+    <a href="https://test.ustc.edu.cn/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/6/64/USTC_logo_2008.svg/205px-USTC_logo_2008.svg.png"></div>
       <div style="font-size: 12px;">CN</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="https://www.speedtest.net/zh-Hans" target="_blank">
+    <a href="https://fiber.google.com/speedtest/" target="_blank">
       <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/04/fa/ac/04faace5-ae8f-313f-4d10-d809fb397e7f/AppIcon-85-220-0-4-2x.png/460x0w.webp"></div>
       <div style="font-size: 12px;">UN</div>
     </a>

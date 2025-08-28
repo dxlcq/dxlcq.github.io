@@ -170,6 +170,76 @@
 
 ---
 
+## 2 开始学习 C++
+
+### 声明与定义
+
+**声明**
+
+```cpp
+extern int a;
+```
+
+**定义声明（简称定义）**
+
+```cpp
+int a;
+```
+
+<br>
+
+---
+
+### 初始化
+
+**默认初始化**
+
+```cpp
+int a;          // 未知值
+int b[6];       // 未知值
+std::vector<int> v; // 调用默认构造函数
+std::string s;      // 调用默认构造函数
+```
+
+**值初始化**
+
+```cpp
+int a = int();  // 0
+std::vector<int> v = std::vector<int>();// 直接调用默认构造函数
+std::string s = std::string();          // 直接调用默认构造函数
+```
+
+**拷贝初始化**
+
+```cpp
+int a = 6;
+std::string s = "jiao"; // 调用构造函数
+std::string ss = s;     // 调用拷贝构造函数
+```
+
+**直接初始化**
+
+```cpp
+int a(6);
+std::vector<int> v(6);      // 调用构造函数, 大小为 6
+std::vector<int> vv(3, 1);  // 调用构造函数, 大小为 3, 值都为 1
+std::string s("jiao");      // 调用构造函数
+```
+
+**列表初始化**
+
+```cpp
+int a{6};
+std::vector<int> v{3, 1};  // 大小为 2, 值为 3, 1
+std::string s{"jiao"};  // 调用构造函数
+```
+
+
+<br>
+
+---
+
+
 ## 3 处理数据
 
 ### auto
@@ -196,7 +266,7 @@
     // 将 int 65 转换为 char 'A'
     ```
 
-* `dynamic_cast` 动态类型转换 
+* `dynamic_cast` 动态类型转换
 
 * `reinterpret_cast` 重新解释类型转换
 
@@ -211,6 +281,26 @@
 <br>
 
 ---
+
+## 6 分支语句和逻辑运算符
+
+### if
+
+**if-init**
+
+```cpp
+if (auto p = getPointer(); p != nullptr) {
+    // 使用 p
+}
+```
+
+* 将 `p` 的生命周期限制在 `if` 语句块内
+
+
+<br>
+
+---
+
 
 ## 7 & 8 函数探幽
 
@@ -305,7 +395,7 @@ void PassBySTL(std::vector<int> v) {
 
 ---
 
-## Return Any
+### Return Any
 
 **Return Value（返回值）**
 
@@ -432,7 +522,19 @@ std::unique_ptr<std::string> ReturnSmartPointer() {
 
     * `x` 的类型为 `int`
 
+<br>
 
+---
+
+### 内联函数
+
+```cpp
+inline int add(int a, int b) {
+    return a + b;
+}
+```
+
+* 内联函数会在编译时被展开，减少函数调用的开销，只适用于小函数
 
 <br>
 
@@ -771,6 +873,24 @@ namespace A{
 ---
 
 ## 10 对象和类
+
+### 命名
+
+* 类文件名 `my_class_interface.hpp`，小写加下划线，为全平台统一
+
+* 类名 `MyClassInterface`，大驼峰命名法，不要使用动词
+
+* 私有成员变量 `_myMemberVariable`，小驼峰命名法，前缀加下划线
+
+* 函数 `getMyMemberVariable()`，小驼峰命名法，动词开头
+
+* 常量 `MY_CONSTANT_VALUE`，全大写加下划线
+
+* 指针后缀 `Ptr`，引用后缀 `Ref`
+
+<br>
+
+---
 
 ### 类的设计
 
@@ -1252,61 +1372,39 @@ xixi 0x16f777338 6 0x12be05f00
 ---
 
 
-## 1 异常处理
-
-### 1.1 errno
-
-* 一个全局变量，用于存储最后一次调用标准库函数产生的错误代码，需要包含头文件 `errno.h`
-
-* 通常会被 `#define` 为一些别名，如 `EINTR`、`ENOENT` 等
-
-* 使用 `peeror` 输出：
-
-    ```cpp
-    perror("打开文件错误"); // 打开文件错误: No such file or directory
-    ```
-
-* 使用 `strerror` 输出：
-
-    ```cpp
-    std::cout << errno << " " << strerror(errno) << "\n";
-    ```
-
-### 1.2 异常处理
+## 15 友元、异常和其他
 
 
-
+### try catch
 
 ```cpp
 #include <iostream>
-#include <fstream>
-#include <cstring>
+#include <vector>
 
-void openfile(std::string filename){
-    std::ifstream file(filename);
-    if(!file.is_open()) throw std::runtime_error("无法打开文件 " + filename);
-    return ;
+void f(std::vector<int>& v) {
+    try {
+        std::cout << v.at(3) << std::endl;
+    } catch (const std::out_of_range& e) {
+        std::cerr << "out_of_range\n";
+        throw;
+    }
 }
 
-int32_t main(){
-    try{
-        openfile("txt.txt");
-    }
-    catch(std::exception& e){
-        std::cerr << e.what() << std::endl;
-        std::cerr << "errno: " << errno << " " << strerror(errno) << "\n";
+int main() {
+    std::vector<int> v = {0, 1, 2};
+    while (true) {
+        try {
+            f(v);
+            break;
+        } catch (const std::out_of_range& e) {
+            std::cerr << "try fix: out_of_range\n";
+            v.emplace_back(3);
+        }
     }
     return 0;
 }
 ```
 
-* `try` 尝试
-
-* `throw` 抛出
-
-* `catch` 捕获
-
-<br>
 
 ---
 
