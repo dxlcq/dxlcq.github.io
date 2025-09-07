@@ -268,7 +268,7 @@ std::string s{"jiao"};  // 调用构造函数
 
 * `dynamic_cast` 动态类型转换
 
-* `reinterpret_cast` 重新解释类型转换
+* `reinterpret_cast` 重新解释类型转换（强转）
 
 * `const_cast` 去除 `const` 限定符
 

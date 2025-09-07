@@ -150,7 +150,7 @@
   <div style="flex: 3; padding-left: 20px;">
     <ol>
       <ul>时间：2025.3 - 至今</ul>
-      <ul>职务：[全职] 数字技术部 - C/C++工程师</ul>
+      <ul>职务：[全职] 通用计算事业部 - C/C++工程师</ul>
       <ul>职责：开发</ul>
     </ol>
   </div>
