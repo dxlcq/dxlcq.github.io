@@ -165,6 +165,40 @@
         
         > **链接器会检查函数的定义，如果找不到定义，就会报错**
 
+### vscode 如何配置
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cmake",
+            "type": "shell",
+            "command": [
+                "rm -rf ${workspaceFolder}/build &&",
+                "cmake -B ${workspaceFolder}/build -DCMAKE_BUILD_TYPE=Debug &&",
+                "cmake --build ${workspaceFolder}/build -j"
+            ]
+        }
+    ]
+}
+```
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "preLaunchTask": "cmake",
+            "name": "gdb",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/main",
+            "cwd": "${fileDirname}"
+        }
+    ]
+}
+```
 
 <br>
 
@@ -277,6 +311,31 @@ std::string s{"jiao"};  // 调用构造函数
     int* p = const_cast<int*>(&x);
     *p = 888;
     ```
+
+<br>
+
+---
+
+## 4 复合类型
+
+### 数组
+
+```cpp
+int arr[3];
+int brr[] = {1, 2, 3};
+int crr[3] = {1, 2}; // 剩下的元素初始化为 0
+
+
+```
+
+
+<br>
+
+---
+
+### 指针
+
+
 
 <br>
 
@@ -1568,171 +1627,4 @@ ptr.reset(nullptr); // 销毁 ptr 指向的内存（等价）
 为了避免 `shared_ptr` 的循环引用问题，引入了 `weak_ptr`
 
 todo
-
-<br>
-
----
-
-
-## 内存管理
-
-
-<br>
-
----
-
-## 文件操作
-
-<br>
-
----
-
-## 面向对象
-
-### 构造：初始化列表
-
-
-
-### 构造：拷贝构造
-
-### 构造：移动构造
-
-### 构造：委托构造
-
-### 构造：委派构造
-
-### 重载运算符
-
-```cpp
-#include <iostream>
-
-class A{
-public:
-    A(int x, int y): _x(x), _y(y){};
-
-    // 重载 输出运算符 <<
-    friend std::ostream &operator<<(std::ostream& output, A a){
-        output << a._x << " " << a._y;
-        return output;            
-    }
-    
-    // 重载 输入运算符 >>
-    friend std::istream &operator>>(std::istream& input, A a){
-        input >> a._x >> a._y;
-        return input;            
-    }
-    
-    // 重载 一元运算符 -
-    A operator- (){
-        return A(-_x, -_y);
-    }
-
-    // 重载 二元运算符 +
-    A operator+ (A a){
-        return A(_x + a._x, _y + a._y);
-    }
-
-    // 重载 关系运算符 <
-    bool operator< (A a){
-        if(_x < a._x) return true;
-        if(_x > a._x) return false;
-        if(_y < a._y) return true;
-        return false;
-    }
-
-private:
-    int _x, _y;
-};
-
-int main(){
-    A a(-1, 2);
-    std::cout << a << "\n";
-    std::cout << -a << "\n";
-    std::cout << a+a << "\n";
-    std::cout << (a+a<a) << "\n";
-    
-    return 0;
-}
-```
-
-<br>
-
-### 继承
-
-**基类**
-
-```cpp
-class A{
-public:
-    void pubShow(){
-        std::cout << "A_pub\n";
-    }
-private:
-    void priShow(){
-        std::cout << "A_pri\n";
-    }
-protected:
-    void proShow(){
-        std::cout << "A_pro\n";
-    }
-};
-```
-
-<br>
-
-**派生**
-
-
-
-<br>
-
-### 多态
-
-```cpp
-#include <iostream>
-
-class A{
-public:
-    virtual void pubShow(){
-        std::cout << "A_pub\n";
-    }
-private:
-    void priShow(){
-        std::cout << "A_pri\n";
-    }
-protected:
-    void proShow(){
-        std::cout << "A_pro\n";
-    }
-};
-
-class B: public A{
-public:
-    void pubShow(){
-        std::cout << "B_pub\n";
-    }
-};
-
-class C: public A{
-public:
-    void pubShow(){
-        std::cout << "C_pub\n";
-    }
-};
-
-int main(){
-    A* a = new B();
-    a->pubShow();
-
-    delete a;
-    a = new C();
-    a->pubShow();
-
-    return 0;
-}
-```
-
-<br>
-
----
 
