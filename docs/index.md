@@ -1,5 +1,3 @@
-# ✈️
-
 <style>
   .container {
     display: flex;
@@ -8,21 +6,6 @@
   .item {
     flex: 1;
     margin: 3px 0;
-  }
-  .search-container {
-    width: 100%; /* 搜索框宽度与页面相同 */
-    margin: 0 auto;
-  }
-  .search-container textarea {
-    width: 100%;
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: transparent;
-    outline: none;
-    resize: none; /* 禁止用户手动调整大小 */
-    overflow: hidden; /* 防止出现滚动条 */
   }
   /* 图标容器样式 */
   .rounded-icon {
@@ -47,22 +30,11 @@
   }
 </style>
 
-<div class="search-container">
-  <form action="https://dxlcq.cn/proxy" method="GET">
-    <textarea id="searchBox" name="q" placeholder="Workers of all lands, Unite!" rows="1"
-      oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px';"
-      onkeydown="if(event.key==='Enter' && !event.shiftKey){
-        event.preventDefault();
-        if(this.value.trim() !== ''){ this.form.submit(); }
-      }"></textarea>
-  </form>
-</div>
+# Welcome to DAI X.L.'s Home Page !
 
-<script>
-  //window.onload = function() {
-  //  document.getElementById('searchBox').focus(); // 页面加载时自动聚焦搜索框
-  //}
-</script>
+{%
+include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
+%}
 
 <br>
 
@@ -343,7 +315,7 @@
       </a> 
     </div>
     <div class="item">
-      <a href="https://www.xiaohongshu.com/explore" target="_blank">
+      <a href="https://www.xiaohongshu.com/user/profile/5eb496510000000001007fa0" target="_blank">
         <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/XiaohongshuLOGO.png"></div>
         <div style="font-size: 12px;">🍠</div>
       </a> 

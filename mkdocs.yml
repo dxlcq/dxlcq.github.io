@@ -4,8 +4,12 @@ nav:
     - Navigation:       index.md
     - Profile:          src/jiao/profile.md
     - CV:               src/jiao/cv.md
-    - Live:
-      - 数字移民:         src/jiao/live/数字移民.md
+    - 🇭🇰:               src/jiao/live/hk.md
+    - 🇯🇵:               src/jiao/live/jp.md
+    - 🇫🇷:               src/jiao/live/fr.md
+    - 🇩🇰:               src/jiao/live/dk.md
+    - 🇮🇸:               src/jiao/live/is.md
+    - 🇺🇸:               src/jiao/live/us.md
 
   - 🪂 Algorithm:
     - Pre:              src/algorithm/pre.md
@@ -49,6 +53,8 @@ nav:
     - 🔩 Perf:          src/cpp/perf.md
     - 📦 GTest:         src/cpp/gtest.md
     - 📦 Boost:         src/cpp/boost.md
+    - 📦 Grpc:          src/cpp/grpc.md
+    - 📦 Kafka:         src/cpp/kafka.md
     - 📦 OpenSSL:       src/cpp/openssl.md
     - 📦 FFmpeg:        src/cpp/ffmpeg.md
     - 📦 cyclonedds:    src/cpp/cyclonedds.md
@@ -202,3 +208,6 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true         # 启用通用的数学公式支持 貌似是 $$ 的支持
 
+plugins:
+  - include-markdown        # pip install mkdocs-include-markdown-plugin
+  - search
