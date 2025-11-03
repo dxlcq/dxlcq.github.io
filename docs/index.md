@@ -56,7 +56,7 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
 
   <div class="item">
     <a href="https://outlook.live.com/mail/0/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg"></div>
+      <div class="rounded-icon"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_Outlook_Icon_(2025–present).svg"></div>
       <div style="font-size: 12px;">dxlcq@outlook.com</div>
     </a>
   </div>
@@ -286,7 +286,7 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
       </a> 
     </div>
     <div class="item">
-      <a href="https://www.instagram.com/daixinglong666/" target="_blank">
+      <a href="https://www.instagram.com/dxlcqins/" target="_blank">
         <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/330px-Instagram_logo_2022.svg.png"></div>
         <div style="font-size: 12px;">Instagram</div>
       </a> 
