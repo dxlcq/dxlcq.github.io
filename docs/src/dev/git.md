@@ -264,6 +264,43 @@ git commit -m "提交说明"
 
 ---
 
+## 子模块
+
+* 拉取含有子模块的仓库
+
+    ```shell
+    git clone --recursive 远程仓库地址
+    ```
+
+* 添加子模块
+
+    ```shell
+    git submodule add 远程仓库地址 子模块目录
+    ```
+
+* 删除子模块
+
+    ```shell
+    git rm 子模块目录
+    ```
+
+* 查看子模块
+
+    ```shell
+    git submodule
+    ```
+
+* 更新子模块
+
+    ```shell
+    git submodule update
+    ```
+
+<br>
+
+---
+
+
 ## 123
 
 ### 创建分支

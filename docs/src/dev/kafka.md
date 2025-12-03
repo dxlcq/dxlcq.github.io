@@ -16,8 +16,6 @@
 
 * 解耦
 
-    
-
 * 异步
 
 * 削峰
@@ -32,7 +30,7 @@
 
 ---
 
-## 安装
+## docker
 
 1. 使用 docker 启动
 
@@ -58,6 +56,15 @@
 
     ```shell
     sudo docker exec -it <container_id> /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test-topic --from-beginning
+    ```
+
+## bin
+
+1. 后台启动 zookeeper 和 kafka
+
+    ```shell
+    ./bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
+    ./bin/kafka-server-start.sh -daemon config/server.properties
     ```
 
 <br>
