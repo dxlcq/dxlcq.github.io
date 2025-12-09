@@ -1,4 +1,10 @@
-参考：[Linux 命令大全](https://www.linuxcool.com/)
+## 参考
+
+* [Linux 命令大全](https://www.linuxcool.com/)
+
+<br>
+
+---
 
 ## for me
 
@@ -36,7 +42,7 @@ sudo systemctl restart ssh
     lsblk -d -o NAME,SIZE,VENDOR,MODEL
     ```
 
-* 网络
+* 网卡
 
     ```shell
     ip a
@@ -46,18 +52,18 @@ sudo systemctl restart ssh
 
 ```shell
 └── /
-    ├── bin     # binaries 系统运行的基本命令 
-    ├── sbin    # system binaries 系统管理员使用的基本命令
-    ├── lib     # libraries 上面俩的共享库
-    ├── usr     # unix system resource 系统资源（包管理的软件）
+    ├── bin         # binaries 系统运行的基本命令 
+    ├── sbin        # system binaries 系统管理员使用的基本命令
+    ├── lib         # libraries 上面俩的共享库
+    ├── usr         # unix system resource 系统资源（包管理的软件）
     │    ├── bin
     │    ├── sbin
     │    ├── lib
     │    └── local  # 手动安装的软件，避免与包管理器冲突
-    ├── etc     # editable text config 配置文件（/etc/netplan）
-    ├── dev     # 查看你的设备
-    ├── boot    #   
-    ├── var     # /var/www
+    ├── etc         # editable text config 配置文件（/etc/netplan）
+    ├── dev         # 查看你的设备
+    ├── boot        #   
+    ├── var         # /var/www
     └── s
 ```
 
@@ -139,8 +145,13 @@ sudo systemctl restart ssh
 
 find，grep
 
-
 <br>
+
+### 文件大小
+
+* **`du -h --max-depth=1`** 查看当前目录下各文件和文件夹的大小
+
+
 
 ### 文件管理
 
@@ -249,10 +260,6 @@ tar，zip
 ### 文件备份
 
 dump，rsync
-
-<br>
-
-### scp
 
 
 <br>
@@ -501,6 +508,39 @@ time dd if=test.t of=/dev/null bs=4k
 
 <br>
 
+### 守护进程
+
+[Systemd](https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html)
+
+* 刷新 `sudo systemctl daemon-reload`
+
+* 重置失败状态 `sudo systemctl reset-failed`
+
+* 一个简单的守护进程模板
+
+    ```ini
+    # /etc/systemd/system/xxx.service
+    [Unit]
+    Description=xxx             # 服务描述
+    After=network.target        # 在网络启动后启动
+
+    [Service]
+    Type=simple                 # 简单类型
+    User=root                   # 运行用户
+    Group=root                  # 运行用户组
+    WorkingDirectory=/root      # 工作目录
+
+    ExecStart=python3 xxx.py    # 启动命令
+
+    Restart=always              # 总是重启
+    RestartSec=10               # 重启间隔时间
+    TimeoutStopSec=60           # 停止超时时间
+
+    [Install]
+    WantedBy=multi-user.target  # 多用户模式启动
+    ```
+
+
 ### MEM
 
 
@@ -533,6 +573,13 @@ sudo date -s "$(wget -S  "https://www.google.com/" 2>&1 | grep -E '^[[:space:]]*
 
 ## 网络
 
+### 网络性能
+
+测试网卡速度
+
+<br>
+
+
 ### net
 
 ```bash
@@ -541,20 +588,20 @@ sudo vi /etc/netplan/00-installer-config.yaml
 
 * 静态 IP
 
-```yaml
-network:
-  ethernets:
-      eth0:
-        dhcp4: false
-        addresses:
-          - 10.0.0.2/24
-        routes:
-          - to: default
-            via: 10.0.0.1
-        nameservers:
-          addresses: [10.0.0.1,8.8.8.8]
-  version: 2
-```
+    ```yaml
+    network:
+      ethernets:
+          eth0:
+            dhcp4: false
+            addresses:
+              - 10.0.0.2/24
+            routes:
+              - to: default
+                via: 10.0.0.1
+            nameservers:
+              addresses: [10.0.0.1,8.8.8.8]
+      version: 2
+    ```
 
 <br>
 
@@ -566,7 +613,33 @@ network:
     watch -n 1 'lsof -i -nP | grep 进程'
     ```
 
+<br>
 
+### tcpdump
+
+* 查看某端口的 TCP 流量
+
+    ```bash
+    sudo tcpdump -i any port 10086
+    ```
+
+* 查看某端口的 UDP 流量
+
+    ```bash
+    sudo tcpdump -i any udp port 10086
+    ```
+
+* 查看某 IP 的 TCP 流量
+
+    ```bash
+    sudo tcpdump -i any host 127.0.0.1
+    ```
+
+* 查看某 IP 的 UDP 流量
+
+    ```bash
+    sudo tcpdump -i any udp and host
+    ```
 
 ### ping
 
@@ -819,16 +892,6 @@ nmap 会发送一系列的 TCP 和 UDP 包，然后分析返回的包，从而�
 
 ---
 
-## 守护进程
-
-[Systemd](https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html)
-
-
-
-<br>
-
----
-
 ## 计划作业
 
 `crontab`
@@ -841,7 +904,7 @@ nmap 会发送一系列的 TCP 和 UDP 包，然后分析返回的包，从而�
 
 ---
 
-## UFW
+## ufw
 
 * **`ufw enable`** 启动防火墙 
 * **`ufw disenable`**  关闭防火墙 
@@ -853,7 +916,7 @@ nmap 会发送一系列的 TCP 和 UDP 包，然后分析返回的包，从而�
 
 ---
 
-## 远程桌面
+## remote desktop
 
 ### other -> linux
 
