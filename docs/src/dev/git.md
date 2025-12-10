@@ -240,6 +240,14 @@ git commit -m "提交说明"
 
     > 如果远程仓库没有 `master` 分支，则会自动创建一个 `master` 分支
 
+如果是通过账号密码进行身份验证
+
+* 记住账号密码
+
+    ```shell
+    git config --local credential.helper store
+    ```
+
 <br>
 
 ### 将远程仓库拉取到本地仓库
