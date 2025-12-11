@@ -74,6 +74,32 @@ sudo systemctl restart ssh
 
 ## 软件
 
+### package manager
+
+Debian 系: `ubuntu` `kylinOS` `Deepin` `UOS Desktop`
+
+> 镜像站点: `https://mirrors.aliyun.com/debian/pool/main/`
+
+* dpkg / apt
+
+    ```shell
+    dpkg -i *.deb       # i: install
+    apt install ./*.deb
+    ```
+
+<br>
+
+RedHat 系: `centos` `UOS Server`
+
+> 镜像站点: `https://mirrors.aliyun.com/centos/7/os/x86_64/Packages`
+
+* rpm / yum / dnf (yum 的升级版)
+
+    ```shell
+    rpm -ivh *.rpm      # i: install  v: verbose  h: hash
+    yum install ./*.rpm
+    ```
+
 ### apt
 
 参考：[apt 终极指南](https://itsfoss.com/apt-command-guide/)
