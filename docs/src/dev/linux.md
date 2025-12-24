@@ -542,6 +542,10 @@ time dd if=test.t of=/dev/null bs=4k
 
 * 重置失败状态 `sudo systemctl reset-failed`
 
+* 查看部分在运行的服务 `systemctl list-units --type=service --state=running | grep srv`
+
+* 查看设置开机启动的服务 `systemctl list-unit-files --type=service | grep enabled | grep srv`
+
 * 一个简单的守护进程模板
 
     ```ini
