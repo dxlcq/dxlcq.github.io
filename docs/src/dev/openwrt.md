@@ -8,6 +8,13 @@
 
 * 客户端 [clash-verge](https://github.com/clash-verge-rev/clash-verge-rev) / [mihomo](https://github.com/mihomo-party-org/mihomo-party)
 
+
+[https://en.wikipedia.org/wiki/List_of_WLAN_channels](https://en.wikipedia.org/wiki/List_of_WLAN_channels)
+
+[openwrt ovpn教程](https://www.youtube.com/watch?v=yb-g4ZaNm9Y)
+
+[openvpn 网络速率优化](http://www.xixicool.com/870.html)
+
 <br>
 
 ---
@@ -110,7 +117,7 @@ src/gz immortalwrt_telephony https://mirrors.vsean.net/openwrt/releases/24.10.0-
     mount /dev/mmcblk0p8 /mnt
     ```
 
-    重启
+6. 重启
 
 
 
@@ -306,30 +313,13 @@ opkg install luci-i18n-base-zh-cn
 ---
 
 
-### firewall
+## 交换机
 
-#### NAT
 
-* 如需要平级设备通过此设备（旁路由）上网，添加 `NAT` 规则
-
-    * 以 `cqu` 为例
-
-        Forwarded `IPv4`；来自 `所有区域`，IP `180.85.206.0/24`；到 `所有区域`；自动重写源 IP
-
-        Forwarded `IPv4`；来自 `所有区域`；到 `所有区域`，IP `180.85.206.0/24`；自动重写源 IP
 
 <br>
 
 ---
-
-
-[https://en.wikipedia.org/wiki/List_of_WLAN_channels](https://en.wikipedia.org/wiki/List_of_WLAN_channels)
-
-[openwrt ovpn教程](https://www.youtube.com/watch?v=yb-g4ZaNm9Y)
-
-[openvpn 网络速率优化](http://www.xixicool.com/870.html)
-
-
 
 ## 路由器
 

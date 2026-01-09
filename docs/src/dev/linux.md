@@ -181,6 +181,19 @@ find，grep
 
 ### 文件管理
 
+* **`rsync` 高效复制**
+
+    ```bash
+    rsync -avh /source/dir /destination/dir
+    rsync -avh /source/dir user@remote:/destination/dir
+    ```
+
+    * `-a` 归档模式，保留文件属性
+    * `-v` 详细输出
+    * `-h` 以人类可读的格式显示文件大小
+    * `-P` 显示进度条，并支持断点续传
+    
+
 * **`ls` 查看**
 
     * `ls -a` 列出全部文件（含隐藏）
