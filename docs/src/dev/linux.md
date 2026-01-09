@@ -184,8 +184,8 @@ find，grep
 * **`rsync` 高效复制**
 
     ```bash
-    rsync -avh /source/dir /destination/dir
-    rsync -avh /source/dir user@remote:/destination/dir
+    rsync -avhP /source/dir /destination/dir
+    rsync -avhP /source/dir user@remote:/destination/dir
     ```
 
     * `-a` 归档模式，保留文件属性
