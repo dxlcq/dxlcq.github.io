@@ -156,8 +156,8 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
   </div>
 
   <div class="item">
-    <a href="https://test.ustc.edu.cn/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/6/64/USTC_logo_2008.svg/205px-USTC_logo_2008.svg.png"></div>
+    <a href="https://test.nju.edu.cn/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/f/fb/%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.svg/250px-%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.svg.png"></div>
       <div style="font-size: 12px;">CN</div>
     </a>
   </div>
@@ -213,16 +213,16 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
   </div>
 
   <div class="item">
-    <a href="https://portal.azure.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/300px-Microsoft_Azure.svg.png"></div>
-      <div style="font-size: 12px;">Azure</div>
+    <a href="https://console.huaweicloud.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/0/04/Huawei_Standard_logo.svg/1920px-Huawei_Standard_logo.svg.png"></div>
+      <div style="font-size: 12px;">华为云</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="https://console.huaweicloud.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/0/04/Huawei_Standard_logo.svg/1920px-Huawei_Standard_logo.svg.png"></div>
-      <div style="font-size: 12px;">华为云</div>
+    <a href="https://portal.azure.com/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/300px-Microsoft_Azure.svg.png"></div>
+      <div style="font-size: 12px;">Azure</div>
     </a>
   </div>
 
@@ -236,41 +236,6 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
 </div>
 
 ---
-
-<div class="container"> <!-- 1 -->
-
-  <div class="item">
-    <a href="https://time.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Time_Magazine_logo.svg/360px-Time_Magazine_logo.svg.png"></div>
-      <div style="font-size: 12px;">时代周刊</div>
-    </a>
-  </div>
-
-  <div class="item">
-    <a href="http://paper.people.com.cn/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/People%27s_Daily_logo.svg/300px-People%27s_Daily_logo.svg.png"></div>
-      <div style="font-size: 12px;">人民日报</div>
-    </a>
-  </div>
-
-  <div class="item">
-    <a href="https://www.reuters.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Reuters_logo_2024.svg/500px-Reuters_logo_2024.svg.png"></div>
-      <div style="font-size: 12px;">路透社</div>
-    </a>
-  </div>
-
-  <div class="item">
-    <a href="https://www.nature.com/nature/current-issue" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Nature_journal_logo.svg/500px-Nature_journal_logo.svg.png"></div>
-      <div style="font-size: 12px;">自然</div>
-    </a>
-  </div>
-
-</div>
-
-
-
 
 <div class="container"> <!-- 1 -->
     <div class="item">
@@ -326,36 +291,4 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
         <div style="font-size: 12px;">TikTok</div>
       </a> 
     </div>
-</div>
-
-
----
-
-<div class="container"> <!-- 1 -->
-    <div class="item">
-      <a href="https://www.paypal.com/" target="_blank">
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/PayPal2007.svg/500px-PayPal2007.svg.png"></div>
-        <div style="font-size: 12px;">PayPal</div>
-      </a> 
-    </div>
-    <div class="item">
-      <a href="https://www.taobao.com/" target="_blank">
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/0/04/Taobao_logo_%282021%29.svg/2560px-Taobao_logo_%282021%29.svg.png"></div>
-        <div style="font-size: 12px;">淘宝</div>
-      </a> 
-    </div>
-    <div class="item">
-      <a href="https://www.jd.com/" target="_blank">
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/en/c/c4/JD.com_logo.png"></div>
-        <div style="font-size: 12px;">京东</div>
-      </a> 
-    </div>
-    <div class="item">
-      <a href="https://www.goofish.com/" target="_blank">
-        <div class="rounded-icon"><img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHM0OYfiFeMI2p9MWie0CvL99U4GA1gf6_kayTt_kBblFwHwo8BW8JXlqfnYxKPmmBc8ZsaWrLKilEzT.lyuelJolW082qQ4478qhgDkKTNsmyQgg5NauJSKh4GlRpXhzS9cyxOmHXLzqR6dQNNjsdGE-&format=webp&h=307"></div>
-        <div style="font-size: 12px;">闲鱼</div>
-      </a> 
-    </div>
-
-
 </div>

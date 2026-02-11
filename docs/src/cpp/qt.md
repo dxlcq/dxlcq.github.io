@@ -171,9 +171,9 @@
 
 1. 下载 [https://download.qt.io/official_releases/qt/](https://download.qt.io/official_releases/qt/)
 
-2. `./configure -prefix $PWD/qtbase -opensource -nomake tests`
+2. `./configure -prefix /opt/Qt -opensource -confirm-license`
 
-3. `make -j$(nproc)`
+3. `make -j && make install`
 
 <br>
 

@@ -60,49 +60,46 @@
 
 ## bin
 
-1. 后台启动 zookeeper 和 kafka
+1. 下载
+
+    ```shell
+    wget https://dlcdn.apache.org/kafka/3.9.1/kafka_2.13-3.9.1.tgz
+    wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
+    ```
+
+2. 设置环境变量
+
+    ```shell
+    export JAVA_HOME=.../jdk-21.0.10
+    export PATH=$JAVA_HOME/bin:$PATH
+    ```
+
+3. 修改配置文件
+
+    ```shell
+    # config/server.properties
+    # 监听地址为本机 IP 地址
+    advertised.listeners=PLAINTEXT://x.x.x.x:9092
+    # 单条消息最大大小 100MB
+    message.max.bytes=104857600
+    # log 保留时间 60 秒, 每 10 秒检查一次
+    log.retention.ms=60000
+    log.retention.check.interval.ms=10000
+    ```
+
+4. 后台启动 zookeeper 和 kafka
 
     ```shell
     ./bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
     ./bin/kafka-server-start.sh -daemon config/server.properties
     ```
 
+5. 看看有没有收到消息
+
+    ```shell
+    ./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test-topic --from-beginning
+    ```
+
 <br>
 
 ---
-
-
-## C++
-
-```Dockerfile
-FROM ubuntu:latest AS builder
-
-RUN apt update && apt install -y \
-    build-essential cmake pkg-config \
-    librdkafka-dev libglib2.0-dev
-```
-
-生成镜像：
-
-```shell
-sudo docker build -t dxlcq/kafka_builder_cpp .
-```
-
-编译：
-
-```shell
-sudo docker run --rm -v /kafka-c-getting-started:/kafka-c-getting-started -w /kafka-c-getting-started/build dxlcq/kafka_builder_cpp cmake ..
-sudo docker run --rm -v /kafka-c-getting-started:/kafka-c-getting-started -w /kafka-c-getting-started/build dxlcq/kafka_builder_cpp cmake --build .
-```
-
-消费者：
-
-```shell
-sudo docker run --rm --net=host -v /kafka-c-getting-started:/kafka-c-getting-started -w /kafka-c-getting-started/build dxlcq/kafka_builder_cpp ./consumer
-```
-
-生产者：
-
-```shell
-sudo docker run --rm --net=host -v /kafka-c-getting-started:/kafka-c-getting-started -w /kafka-c-getting-started/build dxlcq/kafka_builder_cpp ./producer
-```
