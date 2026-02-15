@@ -51,7 +51,7 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
   <div class="item" style="font-size: 14px;">
     <br>
     <div><a href="https://chatgpt.com/" target="_blank"> chatgpt </a> / <a href="https://aistudio.google.com/prompts/new_chat" target="_blank"> gemini </a> / <a href="https://grok.com/chat" target="_blank"> grok </a> </div>
-    <div><a href="https://www.kimi.com/" target="_blank"> kimi </a> / <a href="https://github.com/copilot" target="_blank"> copilot </a> / <a href="http://10.0.0.11" target="_blank"> ragflow </a></div>
+    <div><a href="https://www.perplexity.ai/" target="_blank"> perplexity </a> / <a href="https://github.com/copilot" target="_blank"> copilot </a> / <a href="http://10.0.0.11" target="_blank"> ragflow </a></div>
   </div>
 
   <div class="item">
@@ -151,14 +151,14 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
   <div class="item">
     <a href="http://cesu.cqwin.com/" target="_blank">
       <div class="rounded-icon"><img src="https://pp.myapp.com/ma_icon/0/icon_3722_1737177848/256"></div>
-      <div style="font-size: 12px;">unicom</div>
+      <div style="font-size: 12px;">CQ</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="https://test.nju.edu.cn/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/f/fb/%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.svg/250px-%E5%8D%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.svg.png"></div>
-      <div style="font-size: 12px;">CN</div>
+    <a href="https://test.ustc.edu.cn/" target="_blank">
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/6/64/USTC_logo_2008.svg/500px-USTC_logo_2008.svg.png"></div>
+      <div style="font-size: 12px;">AS4134</div>
     </a>
   </div>
 

@@ -4,12 +4,6 @@ nav:
     - Navigation:       index.md
     - Profile:          src/jiao/profile.md
     - CV:               src/jiao/cv.md
-    - 🇭🇰:               src/jiao/live/hk.md
-    - 🇯🇵:               src/jiao/live/jp.md
-    - 🇫🇷:               src/jiao/live/fr.md
-    - 🇩🇰:               src/jiao/live/dk.md
-    - 🇮🇸:               src/jiao/live/is.md
-    - 🇺🇸:               src/jiao/live/us.md
 
   - 🪂 Algorithm:
     - Pre:              src/algorithm/pre.md
@@ -66,6 +60,7 @@ nav:
   
   - 🤖 AI:
     - AI:               src/ai/ai.md
+    - d2l:              src/ai/d2l.md
 
   - 🌥️ DevOps:
     - 🧑‍💻 MacOS:         src/dev/macos.md
