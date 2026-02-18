@@ -1,0 +1,6911 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E5%BE%AE%E7%A7%AF%E5%88%86/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/head.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>概率论 - DAI X.L.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="DAI X.L." class="md-header__button md-logo" aria-label="DAI X.L." data-md-component="logo">
+      
+  <img src="../../../assets/head.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DAI X.L.
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              概率论
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dxlcq" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dxlcq.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+  Jiao
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../algorithm/pre/" class="md-tabs__link">
+          
+  
+  
+  🪂 Algorithm
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cpp/cpp/" class="md-tabs__link">
+          
+  
+  
+  🚀 C/C++
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ai/ai/" class="md-tabs__link">
+          
+  
+  
+  🤖 AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dev/macos/" class="md-tabs__link">
+          
+  
+  
+  🌥️ DevOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../language/py/env/" class="md-tabs__link">
+          
+  
+  
+  🌿 Language
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../cs/" class="md-tabs__link">
+          
+  
+  
+  📖 CS
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DAI X.L." class="md-nav__button md-logo" aria-label="DAI X.L." data-md-component="logo">
+      
+  <img src="../../../assets/head.png" alt="logo">
+
+    </a>
+    DAI X.L.
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dxlcq" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dxlcq.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jiao
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jiao
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🪂 Algorithm
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🪂 Algorithm
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/pre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pre
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/really/csp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/really/gesp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GESP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/really/cie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CIE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/base/binary-answer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    二分
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    搜索
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    搜索
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/search/DFS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深搜
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图论
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    图论
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/graph/binary-tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    二叉树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动规
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    动规
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/dp/number-triangles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数字三角形
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/dp/subsequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    子序列模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据结构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/data-struct/linked-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/data-struct/segment-tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线段树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/raft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    raft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 C/C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🚀 C/C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/stl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/thread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/qt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/av/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/ros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/gcc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔩 GCC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/gdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔩 GDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/make/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔩 Make
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/cmake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔩 CMake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/perf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔩 Perf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/gtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 GTest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/boost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 Boost
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/grpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 Grpc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/kafka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 Kafka
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/openssl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 OpenSSL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/ffmpeg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 FFmpeg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/cyclonedds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 cyclonedds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/subprocess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 subprocess
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/taskflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 taskflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/rocksdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 rocksdb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/hmbdc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 HMBDC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/sqlpp11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 sqlpp11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/d2l/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    d2l
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌥️ DevOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🌥️ DevOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/macos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧑‍💻 MacOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐧 Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/openwrt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📡 OpenWrt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🪟 Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/containerd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Containerd
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/prometheus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Prometheus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/grpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚡 gRPC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/kafka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚡 Kafka
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/postgresql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/nginx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 Nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/openssh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 OpenSSH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/coturn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 Coturn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/frp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 FRP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/ddns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 DDNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/mysql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌿 Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🌿 Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/py/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    env
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/py/pandas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pandas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/py/openpyxl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    openpyxl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/py/tornado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tornado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/py/deeplearning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    deeplearning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Golang
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Golang
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/go/go/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    go
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/go/gin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/go/websocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    websocket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/js/websocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    websocket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/js/webrtc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    webrtc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/java/main_java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    main/java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/java/main_resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    main/resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/java/test_java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    test/java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTML
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    HTML
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/html/html/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/html/css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 CS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📖 CS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    操作系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作系统结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网络
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    网络
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/%E5%86%B2%E6%B5%AA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    冲浪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_2" id="__nav_7_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Application
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_3" id="__nav_7_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transport
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Transport
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UDP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_4" id="__nav_7_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/ipv4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPv4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_5" id="__nav_7_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DataLink
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DataLink
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/pppoe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PPPoE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/mtu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MTU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据结构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataStruct/list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataStruct/queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    队列
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据库
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataBase/t/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一章
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../designPattern/designPattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    设计模式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemArchitecture/systemArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineer/engineer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工程师
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    马克思主义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../historyOfChina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国近代史
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%BE%AE%E7%A7%AF%E5%88%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    微积分
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概率论
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概率论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        引子
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、概率论的基本概念
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、概率论的基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、全概率与贝叶斯 \(^1\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、事件 \(^*\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1、事件 \(^*\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        事件的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        事件的运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概率
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、随机变量及其分布
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、随机变量及其分布">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0、题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分布律求分布函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概率密度求分布函数 \(^2\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概率密度求概率密度 \(^4\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、随机变量及分布函数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1、随机变量及分布函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        随机变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        累计分布函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概率分布
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、离散型随机变量 / 分布律
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2、离散型随机变量 / 分布律">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0-1分布
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3、连续型随机变量 / 概率密度
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、多维随机变量及其分布
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、多维随机变量及其分布">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、边缘概率密度 \(^3\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、随机变量的数字特征
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、随机变量的数字特征">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、求期望方差 \(^5\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-ex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、数学期望 \(E(X)\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1、数学期望 \(E(X)\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        离散型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、方差 \(D(X)\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2、方差 \(D(X)\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        硬算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cov" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3、协方差与相关系数 \(Cov\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3、协方差与相关系数 \(Cov\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4、性质 \(^*\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、参数估计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、参数估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、求矩或极大似然估计 \(^6\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、矩估计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1、矩估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本思想
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、极大似然估计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2、极大似然估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本思想
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、假设检验
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、假设检验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、假设检验 \(^7\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、公式 \(^*\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见分布 \(^*\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见分布 \(^*\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二项分布 \(B\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        泊松分布 \(P\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        均匀分布 \(U\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指数分布 \(E\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正态分布 \(N\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        引子
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、概率论的基本概念
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、概率论的基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、全概率与贝叶斯 \(^1\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、事件 \(^*\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1、事件 \(^*\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        事件的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        事件的运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概率
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、随机变量及其分布
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、随机变量及其分布">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0、题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分布律求分布函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概率密度求分布函数 \(^2\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概率密度求概率密度 \(^4\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、随机变量及分布函数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1、随机变量及分布函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        随机变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        累计分布函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概率分布
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、离散型随机变量 / 分布律
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2、离散型随机变量 / 分布律">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0-1分布
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3、连续型随机变量 / 概率密度
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、多维随机变量及其分布
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、多维随机变量及其分布">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、边缘概率密度 \(^3\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、随机变量的数字特征
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、随机变量的数字特征">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、求期望方差 \(^5\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-ex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、数学期望 \(E(X)\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1、数学期望 \(E(X)\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        离散型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、方差 \(D(X)\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2、方差 \(D(X)\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        硬算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cov" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3、协方差与相关系数 \(Cov\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3、协方差与相关系数 \(Cov\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4、性质 \(^*\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、参数估计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、参数估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、求矩或极大似然估计 \(^6\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、矩估计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1、矩估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本思想
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、极大似然估计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2、极大似然估计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本思想
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、假设检验
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="八、假设检验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0、假设检验 \(^7\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、公式 \(^*\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见分布 \(^*\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见分布 \(^*\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二项分布 \(B\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        泊松分布 \(P\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        均匀分布 \(U\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指数分布 \(E\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正态分布 \(N\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>概率论</h1>
+
+<h2 id="_1">引子</h2>
+<blockquote>
+<p>如果不挂科，不考数一、三，大抵是不会更新了</p>
+<p>**，挂了。。。</p>
+</blockquote>
+<p>概率论研究 <strong>不确定</strong> 事件发生的 <strong>可能性</strong></p>
+<p>事件可以推导出概率，概率 <strong>不可以</strong> 推导出事件</p>
+<p><br></p>
+<hr />
+<h2 id="_2">一、概率论的基本概念</h2>
+<h3 id="0-1">0、全概率与贝叶斯 <strong><span class="arithmatex">\(^1\)</span></strong></h3>
+<blockquote>
+<p>（1）有 <span class="arithmatex">\(10\)</span> 箱产品，<span class="arithmatex">\(1, 2, 3\)</span> 分别有 <span class="arithmatex">\(5, 3, 2\)</span> 箱，次品率为 <span class="arithmatex">\(0.1, 0.2, 0.3\)</span>，任选一箱，再取一个产品，为良品的概率</p>
+</blockquote>
+<p><span class="arithmatex">\(A\)</span> 为抽到某家的概率
+<span class="arithmatex">\(B\)</span> 为良品的概率</p>
+<p><span class="arithmatex">\(P(A_1) = 0.5, P(B | A_1) = 0.9\)</span>
+<span class="arithmatex">\(P(A_2) = 0.3, P(B | A_2) = 0.8\)</span>
+<span class="arithmatex">\(P(A_3) = 0.2, P(B | A_3) = 0.7\)</span></p>
+<p>由全概率公式 <span class="arithmatex">\(P(B) = \sum_{i=1}^n P(B|A_i) P(A_i)\)</span></p>
+<p><span class="arithmatex">\(P(B) = 0.9*0.5 + 0.8*0.3 + 0.7*0.2 = 0.83\)</span></p>
+<p>答：任选一箱，再取一个产品，为良品的概率为 <span class="arithmatex">\(0.83\)</span></p>
+<p><br></p>
+<blockquote>
+<p>（2）<span class="arithmatex">\(1, 2, 3\)</span> 三车间加工一产品，加工量占总量的 <span class="arithmatex">\(0.25, 0.35, 0.40\)</span>，次品率分别为 <span class="arithmatex">\(0.03, 0.02, 0.01\)</span>，现从所有产品中抽取一个产品：（1）求产品为次品的概率；（2）是次品，次品来自 <span class="arithmatex">\(2\)</span> 车间的概率</p>
+</blockquote>
+<p><span class="arithmatex">\((1)\)</span></p>
+<p><span class="arithmatex">\(A\)</span> 为抽到某家的概率
+<span class="arithmatex">\(B\)</span> 为次品的概率</p>
+<p><span class="arithmatex">\(P(A_1) = 0.25, P(B_1 | A_1) = 0.03\)</span>
+<span class="arithmatex">\(P(A_2) = 0.35, P(B_2 | A_2) = 0.02\)</span>
+<span class="arithmatex">\(P(A_3) = 0.40, P(B_3 | A_3) = 0.01\)</span></p>
+<p>由全概率公式 <span class="arithmatex">\(P(B) = \sum_{i=1}^n P(B|A_i) P(A_i)\)</span></p>
+<p><span class="arithmatex">\(P(B) = 0.03 * 0.25 + 0.02 * 0.35 + 0.01 * 0.40 = 0.0185\)</span></p>
+<p>答：产品为次品的概率为 <span class="arithmatex">\(0.0185\)</span></p>
+<p><span class="arithmatex">\((2)\)</span></p>
+<p>由贝叶斯公式 <span class="arithmatex">\(P(A_j|B) = \frac{P(B|A_j) P(A_j)}{\sum_{i=1}^n P(B|A_i) P(A_i)}\)</span></p>
+<p><span class="arithmatex">\(P(A_2|B) = \frac{0.02*0.35}{0.0185} = 0.378\)</span></p>
+<p>答：是次品，次品来自 <span class="arithmatex">\(2\)</span> 车间的概率为 <span class="arithmatex">\(0.378\)</span></p>
+<p><br></p>
+<blockquote>
+<p>（3）三个箱子，第 <span class="arithmatex">\(1\)</span> 箱有 <span class="arithmatex">\(7\)</span> 个黑球和 <span class="arithmatex">\(1\)</span> 个白球，第 <span class="arithmatex">\(2\)</span> 箱有 <span class="arithmatex">\(3\)</span> 个黑球和 <span class="arithmatex">\(3\)</span> 个白球，第 <span class="arithmatex">\(3\)</span> 箱有 <span class="arithmatex">\(5\)</span> 个黑球和 <span class="arithmatex">\(3\)</span> 个白球，现任取一箱（取到每个箱子是等可能的），再任取一球：（1）求取到的是白球的概率；（2）是白球，则属于第 <span class="arithmatex">\(2\)</span> 箱的概率</p>
+</blockquote>
+<p><span class="arithmatex">\((1)\)</span></p>
+<p><span class="arithmatex">\(A\)</span> 为抽到某箱的概率
+<span class="arithmatex">\(B\)</span> 为抽到白球的概率</p>
+<p><span class="arithmatex">\(P(A_1) = \frac{1}{3}, P(B | A_1) = \frac{1}{8}\)</span>
+<span class="arithmatex">\(P(A_2) = \frac{1}{3}, P(B | A_2) = \frac{3}{6}\)</span>
+<span class="arithmatex">\(P(A_3) = \frac{1}{3}, P(B | A_3) = \frac{3}{8}\)</span></p>
+<p><span class="arithmatex">\(P(B) = \frac{1}{8}*\frac{1}{3} + \frac{3}{6}*\frac{1}{3} + \frac{3}{8}*\frac{1}{3} = \frac{1}{3}\)</span></p>
+<p>由全概率公式 <span class="arithmatex">\(P(B) = \sum_{i=1}^n P(B|A_i) P(A_i)\)</span></p>
+<p>答：取到的是白球的概率为 <span class="arithmatex">\(\frac{1}{3}\)</span></p>
+<p><span class="arithmatex">\((2)\)</span></p>
+<p>由贝叶斯公式 <span class="arithmatex">\(P(A_j|B) = \frac{P(B|A_j) P(A_j)}{\sum_{i=1}^n P(B|A_i) P(A_i)}\)</span></p>
+<p><span class="arithmatex">\(P(A_2|B) = \frac{\frac{3}{6} * \frac{1}{3}}{ \frac{1}{3} } = \frac{1}{2}\)</span></p>
+<p>答：是白球，属于第 <span class="arithmatex">\(2\)</span> 箱的概率为 <span class="arithmatex">\(\frac{1}{2}\)</span></p>
+<p><br></p>
+<blockquote>
+<p>（4）甲乙丙三人同时向一架飞机射击，设击中飞机的概率分别为 <span class="arithmatex">\(0.4, 0.5, 0.7\)</span>，若只有 <span class="arithmatex">\(1\)</span> 人击中飞机，则飞机被击落的概率为 <span class="arithmatex">\(0.2\)</span>，若有 <span class="arithmatex">\(2\)</span> 人击中飞机，则飞机被击落的概率为 <span class="arithmatex">\(0.6\)</span>，若三人击中飞机，则飞机一定被击落，求飞机被击落的概率</p>
+</blockquote>
+<p><span class="arithmatex">\(A\)</span> 有几人击中飞机的概率
+<span class="arithmatex">\(B\)</span> 飞机被击落的概率</p>
+<p><span class="arithmatex">\(P(A_1) = 0.4(中)*0.5*0.3 + 0.6*0.5(中)*0.3 + 0.6*0.5*0.7(中) = 0.36\)</span>
+<span class="arithmatex">\(P(A_2) = 0.4(中)*0.5(中)*0.3 + 0.6*0.5(中)*0.7(中) + 0.4(中)*0.5*0.7(中) = 0.41\)</span>
+<span class="arithmatex">\(P(A_3) = 0.4(中)*0.5(中)*0.7(中) = 0.14\)</span></p>
+<p><span class="arithmatex">\(P(B | A_1) = 0.2\)</span>
+<span class="arithmatex">\(P(B | A_2) = 0.6\)</span>
+<span class="arithmatex">\(P(B | A_3) = 1\)</span></p>
+<p>由全概率公式 <span class="arithmatex">\(P(B) = \sum_{i=1}^n P(B|A_i) P(A_i)\)</span></p>
+<p><span class="arithmatex">\(P(B) = 0.2*0.36 + 0.6*0.41 + 1*0.14 = 0.458\)</span></p>
+<p>答：飞机被击落的概率为 <span class="arithmatex">\(0.458\)</span></p>
+<p><br></p>
+<blockquote>
+<p>（5）某道单项选择题（<span class="arithmatex">\(4\)</span> 个选项），不会做的学生从中随机选择，假定学生会做此题的概率为 <span class="arithmatex">\(0.7\)</span>：（1）学生答对此题的概率；（2）答对此题的学生确实会做的概率</p>
+</blockquote>
+<p><span class="arithmatex">\((1)\)</span></p>
+<p><span class="arithmatex">\(A\)</span> 为确实会做的概率
+<span class="arithmatex">\(B\)</span> 为答对此题的概率</p>
+<p><span class="arithmatex">\(P(A) = 0.7, P(B|A) = 1\)</span>
+<span class="arithmatex">\(P(\bar A) = 0.3, P(B|\bar A) = \frac{1}{4}\)</span></p>
+<p>由全概率公式 <span class="arithmatex">\(P(B) = \sum_{i=1}^n P(B|A_i) P(A_i)\)</span></p>
+<p><span class="arithmatex">\(P(B) = 1*0.7 + \frac{1}{4}*0.3 = 0.775\)</span></p>
+<p>答：学生答对此题的概率为 <span class="arithmatex">\(0.775\)</span></p>
+<p><span class="arithmatex">\((2)\)</span></p>
+<p>由贝叶斯公式 <span class="arithmatex">\(P(A_j|B) = \frac{P(B|A_j) P(A_j)}{\sum_{i=1}^n P(B|A_i) P(A_i)}\)</span></p>
+<p><span class="arithmatex">\(P(A|B) = \frac{1*0.7}{0.775} = \frac{28}{31}\)</span></p>
+<p>答：答对此题的学生确实会做的概率为 <span class="arithmatex">\(\frac{28}{31}\)</span></p>
+<p><br></p>
+<blockquote>
+<p>（6）某病人发烧，认为病人患 <span class="arithmatex">\(A, B, C\)</span> 三种病的概率分别为 <span class="arithmatex">\(0.5, 0.2, 0.3\)</span>，在这三种病之下，发烧的概率分别为 <span class="arithmatex">\(0.2, 0.5, 0.8\)</span>，请推断该病人发烧由那一种病引起的可能性比较大</p>
+</blockquote>
+<p><span class="arithmatex">\(D\)</span> 为病人患某病的概率
+<span class="arithmatex">\(E\)</span> 为病人发烧的概率</p>
+<p><span class="arithmatex">\(P(D_A)=0.5, P(E|D_A) = 0.2\)</span>
+<span class="arithmatex">\(P(D_B)=0.2, P(E|D_B) = 0.5\)</span>
+<span class="arithmatex">\(P(D_C)=0.3, P(E|D_C) = 0.8\)</span></p>
+<p>由全概率公式 <span class="arithmatex">\(P(E) = \sum_{i=1}^n P(E|D_i) P(D_i)\)</span></p>
+<p><span class="arithmatex">\(P(E) = 0.2 * 0.5 + 0.5 * 0.2 + 0.8 * 0.3 = 0.44\)</span></p>
+<p>由贝叶斯公式 <span class="arithmatex">\(P(D_j|E) = \frac{P(E|D_j) P(D_j)}{\sum_{i=1}^n P(E|D_i) P(D_i)}\)</span></p>
+<p><span class="arithmatex">\(P(D_A|E) = \frac{0.2 * 0.5}{0.44} = 0.227\)</span></p>
+<p><span class="arithmatex">\(P(D_B|E) = \frac{0.5 * 0.2}{0.44} = 0.227\)</span></p>
+<p><span class="arithmatex">\(P(D_C|E) = \frac{0.8 * 0.3}{0.44} = 0.545\)</span></p>
+<p>答：病人发烧由 <span class="arithmatex">\(C\)</span> 病引发的可能性大</p>
+<p><br></p>
+<blockquote>
+<p><span class="arithmatex">\(A\)</span> 患者占 <span class="arithmatex">\(0.35\)</span>，<span class="arithmatex">\(B\)</span> 患者占 <span class="arithmatex">\(0.6\)</span>，<span class="arithmatex">\(C\)</span> 患者占 <span class="arithmatex">\(0.05\)</span>，又知患 <span class="arithmatex">\(A, B, C\)</span> 三种病的病人阳性的可能性分别为 <span class="arithmatex">\(0.8, 0.3, 0.85\)</span>，每位患者只可能患一种病，现确认阳性，求该病人确实换 <span class="arithmatex">\(A\)</span> 病的概率</p>
+</blockquote>
+<p><span class="arithmatex">\(A\)</span> 为患者患病的概率
+<span class="arithmatex">\(B\)</span> 为确认阳性的概率</p>
+<p><span class="arithmatex">\(P(A_A) = 0.35, P(B_A | A_A) = 0.8\)</span>
+<span class="arithmatex">\(P(A_B) = 0.6, P(B_B | A_B) = 0.3\)</span>
+<span class="arithmatex">\(P(A_C) = 0.05, P(B_C | A_C) = 0.85\)</span></p>
+<p><span class="arithmatex">\(P(B) = 0.8*0.35 + 0.3*0.6 + 0.85*0.05 = 0.5025\)</span></p>
+<p><span class="arithmatex">\(P(A_A|B) = \frac{0.8*0.35}{0.5025} = 0.5572\)</span></p>
+<p><br></p>
+<blockquote>
+<p>某地区肥胖者占 <span class="arithmatex">\(0.1\)</span>，正常者占 <span class="arithmatex">\(0.82\)</span>，瘦者占 <span class="arithmatex">\(0.08\)</span>，又知肥胖患者高血压的概率为 <span class="arithmatex">\(0.2\)</span>，正常者为 <span class="arithmatex">\(0.1\)</span>，瘦者为 <span class="arithmatex">\(0.05\)</span>：（1）求该地区高血压的概率；（2）患高血压，属于肥胖的概率</p>
+</blockquote>
+<p>肥胖：<span class="arithmatex">\(1\)</span>
+正常：<span class="arithmatex">\(2\)</span>
+瘦弱：<span class="arithmatex">\(3\)</span></p>
+<p><span class="arithmatex">\(A\)</span> 为各种体型的概率
+<span class="arithmatex">\(B\)</span> 为高血压的概率</p>
+<p><span class="arithmatex">\(P(A_1) = 0.1, P(B_1|A_1) = 0.2\)</span>
+<span class="arithmatex">\(P(A_2) = 0.82, P(B_2|A_2) = 0.1\)</span>
+<span class="arithmatex">\(P(A_3) = 0.08, P(B_3|A_3) = 0.05\)</span></p>
+<p><span class="arithmatex">\(P(B) = 0.2*0.1 + 0.1*0.82 + 0.05*0.08 = 0.106\)</span></p>
+<p><span class="arithmatex">\(P(A_1|B) = \frac{0.2*0.1}{0.106} = 0.1886\)</span></p>
+<p><br></p>
+<hr />
+<h3 id="1">1、事件 <strong><span class="arithmatex">\(^*\)</span></strong></h3>
+<h5 id="_3">事件的关系</h5>
+<ul>
+<li>
+<p>包含：<span class="arithmatex">\(A \subset B\)</span>，，<span class="arithmatex">\(B\)</span> 包含 <span class="arithmatex">\(A\)</span>，事件 <span class="arithmatex">\(A\)</span> 发生必然导致事件 <span class="arithmatex">\(B\)</span> 发生</p>
+</li>
+<li>
+<p><span style="color:orange;">并：<span class="arithmatex">\(A \cup B\)</span>，事件 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 至少发生一个，也写作 <span class="arithmatex">\(A + B\)</span></span></p>
+</li>
+<li>
+<p><span style="color:orange;">交：<span class="arithmatex">\(A \cap B\)</span>，事件 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 同时发生，也写作 <span class="arithmatex">\(AB\)</span></span></p>
+</li>
+<li>
+<p>差：<span class="arithmatex">\(A - B\)</span>，事件 <span class="arithmatex">\(A\)</span> 发生而 <span class="arithmatex">\(B\)</span> 不发生</p>
+</li>
+<li>
+<p>逆（对立）：<span class="arithmatex">\(\bar{A}\)</span>，事件 <span class="arithmatex">\(A\)</span> 不发生</p>
+</li>
+<li>
+<p>互斥：<span class="arithmatex">\(A \cap B = \emptyset\)</span>，事件 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 不可能同时发生</p>
+</li>
+<li>
+<p>互斥：<span class="arithmatex">\(A \cap \bar{A} = \emptyset\)</span>，<span class="arithmatex">\(A \cup \bar{A} = S\)</span>，事件 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(\bar{A}\)</span> 互斥</p>
+</li>
+</ul>
+<p><span style="color:orange;">对立（概率之和为 1） -&gt; 互斥（互不相容）（概率之和不一定为 1） -&gt; 独立（联合概率为各自乘积）</span></p>
+<h5 id="_4">事件的运算</h5>
+<ul>
+<li>交换律：<span class="arithmatex">\(A \cup B = B \cup A\)</span>，<span class="arithmatex">\(A \cap B = B \cap A\)</span></li>
+<li>结合律：<span class="arithmatex">\((A \cup B) \cup C = A \cup (B \cup C)\)</span>，<span class="arithmatex">\((A \cap B) \cap C = A \cap (B \cap C)\)</span></li>
+<li>分配律：<span class="arithmatex">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span>，<span class="arithmatex">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></li>
+<li>德摩根律：<span class="arithmatex">\(\overline{A \cup B} = \bar{A} \cap \bar{B}\)</span>，<span class="arithmatex">\(\overline{A \cap B} = \bar{A} \cup \bar{B}\)</span></li>
+</ul>
+<h5 id="_5">概率</h5>
+<p>事件 <span class="arithmatex">\(A\)</span> 发生的可能性大小的度量，记作 <span class="arithmatex">\(P(A)\)</span></p>
+<p>性质：</p>
+<ul>
+<li>非负性：<span class="arithmatex">\(P(A) \geq 0\)</span></li>
+<li>规范性：<span class="arithmatex">\(P(S) = 1\)</span></li>
+<li>可列可加性：若 <span class="arithmatex">\(A_1, A_2, \cdots\)</span> 两两互斥，则 <span class="arithmatex">\(P(\bigcup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} P(A_i)\)</span></li>
+</ul>
+<p>根据性质拓展：</p>
+<ul>
+<li><span class="arithmatex">\(P(\emptyset) = 0\)</span></li>
+<li><span class="arithmatex">\(P(\bar{A}) = 1 - P(A)\)</span></li>
+<li>若 <span class="arithmatex">\(A \subset B\)</span>，则 <span class="arithmatex">\(P(A) \leq P(B)\)</span>，有 <span class="arithmatex">\(P(B - A) = P(B) - P(A)\)</span></li>
+<li><span style="color:orange;"><span class="arithmatex">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span></span></li>
+<li><span style="color:orange;"><span class="arithmatex">\(P(A-B) = P(A) - P(A \cap B) = P(A \cap \bar B)\)</span></span></li>
+<li><span style="color:orange;"><span class="arithmatex">\(P(A \cap B) = P(A|B) P(B)\)</span></span><ul>
+<li>若独立，则 <span style="color:orange;"><span class="arithmatex">\(P(A \cap B) = P(A)P(B)\)</span></span></li>
+</ul>
+</li>
+</ul>
+<p><strong>条件概率</strong>：</p>
+<p>在事件 <span class="arithmatex">\(B\)</span> 已经发生的条件下，事件 <span class="arithmatex">\(A\)</span> 发生的概率，记作 <span class="arithmatex">\(P(A|B)\)</span></p>
+<ul>
+<li><span style="color:orange;"><span class="arithmatex">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></span></li>
+</ul>
+<p>可拓展：</p>
+<ul>
+<li>全概率公式：</li>
+</ul>
+<p><strong><span style="color:orange;">$<span class="arithmatex">\(P(B) = \sum_{i=1}^n P(B|A_i) P(A_i)\)</span>$</span></strong></p>
+<ul>
+<li>贝叶斯公式：</li>
+</ul>
+<p><strong><span style="color:orange;">$<span class="arithmatex">\(P(A_j|B) = \frac{P(B|A_j) P(A_j)}{\sum_{i=1}^n P(B|A_i) P(A_i)}\)</span>$</span></strong></p>
+<p><br>
+<br></p>
+<hr />
+<h2 id="_6">二、随机变量及其分布</h2>
+<h3 id="0">0、题</h3>
+<h4 id="_7">分布律求分布函数</h4>
+<blockquote>
+<p>设随机变量 <span class="arithmatex">\(X\)</span> 与 <span class="arithmatex">\(Y\)</span> 独立分布，且他们取 <span class="arithmatex">\(-1, 0, 1\)</span> 三个值的概率分别为 <span class="arithmatex">\(\frac{1}{6}, \frac{1}{3}, \frac{1}{2}\)</span>，则 <span class="arithmatex">\(P\{X + Y = 0\}\)</span></p>
+</blockquote>
+<p><span class="arithmatex">\(P\{X + Y = 0\} = P\{X=-1, Y=1\} + P\{X=0, Y=0\} + P\{X=1, Y=-1\}\)</span>
+<span class="arithmatex">\(P\{X + Y = 0\} = \frac{1}{6} * \frac{1}{2} + \frac{1}{3} * \frac{1}{3} + \frac{1}{2} * \frac{1}{6}\)</span>
+<span class="arithmatex">\(P\{X + Y = 0\} = \frac{5}{18}\)</span></p>
+<p><br></p>
+<h4 id="2">概率密度求分布函数 <strong><span class="arithmatex">\(^2\)</span></strong></h4>
+<blockquote>
+<p>设随机变量 <span class="arithmatex">\(X\)</span> 服从 <span class="arithmatex">\((0, 2)\)</span> 上的均匀分布，则 <span class="arithmatex">\(P\{1 &lt; X &lt; 3\}\)</span></p>
+</blockquote>
+<p><span class="arithmatex">\(f(x) = \begin{cases} \frac{1}{b-a}, &amp; a &lt; x &lt; b \\ 0, &amp; else \end{cases}\)</span></p>
+<p><span class="arithmatex">\(f(x) = \begin{cases} \frac{1}{2}, &amp; 0 &lt; x &lt; 2 \\ 0, &amp; else \end{cases}\)</span></p>
+<p><span class="arithmatex">\(P\{1 &lt; x &lt; 3\} = \int_1^2 \frac{1}{2} \text{d}x\)</span></p>
+<p><span class="arithmatex">\(P\{1 &lt; x &lt; 3\} = \frac{1}{2}x |_1^2 = 1 - \frac{1}{2} = \frac{1}{2}\)</span></p>
+<p><br></p>
+<blockquote>
+<p><span class="arithmatex">\(f(x) = \begin{cases} Ke^{-5x}, x&gt;0 \\ 0, x \leq 0 \end{cases}\)</span>，（1）确定 <span class="arithmatex">\(K\)</span>；（2）求 <span class="arithmatex">\(P\{X&gt;0.2\}\)</span>；（3）求分布函数 <span class="arithmatex">\(F(x)\)</span></p>
+</blockquote>
+<p><span class="arithmatex">\((1)\)</span></p>
+<p><strong><span class="arithmatex">\(\int_{-\infty}^{+\infty}f(x) \text{d} x = 1\)</span></strong></p>
+<p><span class="arithmatex">\(\int_0^{+\infty} Ke^{-5x} = \int_0^{+\infty} -\frac{K}{5} e^{-5x} \text{d}(-5x) = 1\)</span></p>
+<p><span class="arithmatex">\(= -\frac{K}{5}e^{-5x} |_0^{+\infty} = \frac{K}{5} = 1\)</span></p>
+<p><span class="arithmatex">\(K = 5\)</span></p>
+<p><span class="arithmatex">\((2)\)</span></p>
+<p><span class="arithmatex">\(P\{X&gt;0.2\} = \int_{0.2}^{+\infty} 5e^{-5x} \text{d}x = \int_{0.2}^{+\infty} -\frac{5}{5} e^{-5x} \text{d}(-5x) = -e^{-5x}|_{0.2}^{+\infty} = e^{-1}\)</span></p>
+<p><span class="arithmatex">\((3)\)</span></p>
+<p><strong><span class="arithmatex">\(F(x) = \int_{-\infty}^{+\infty} f(x) \text{d}x\)</span></strong></p>
+<p><span class="arithmatex">\(\begin{cases} 0, &amp; x \leq 0 \\ \int_{0}^{+\infty}5e^{-5x} \text{d}x, &amp; x &gt; 0 \end{cases} \Rightarrow F(x) = \begin{cases} 0, &amp; x \leq 0 \\ 1, &amp; x &gt; 0 \end{cases}\)</span></p>
+<p><br></p>
+<blockquote>
+<p>设连续型随机变量 <span class="arithmatex">\(X\)</span> 的密度函数为 <span class="arithmatex">\(f(x) = \begin{cases} Ax, &amp; 0 \leq x \leq 1 \\ A(2-x), &amp; 1 &lt; x \leq 2 \\ 0, &amp; else \end{cases}\)</span>，求（1）常数 <span class="arithmatex">\(A\)</span>；（2）<span class="arithmatex">\(X\)</span> 的分布函数 <span class="arithmatex">\(F(x)\)</span>；（3）<span class="arithmatex">\(P\{\frac{1}{2} &lt; X &lt; \frac{3}{2}\}\)</span></p>
+</blockquote>
+<p><span class="arithmatex">\((1)\)</span></p>
+<p><strong><span class="arithmatex">\(\int_{-\infty}^{+\infty}f(x)\text{d}x = 1\)</span></strong></p>
+<p><span class="arithmatex">\(\int_{0}^{1} Ax \text{d}x + \int_{1}^{2} A(2-x) \text{d}x = 1\)</span></p>
+<p><span class="arithmatex">\(\frac{A}{2} x^2 |_0^1 + (2Ax - \frac{A}{2}x^2)|_1^2 = 1\)</span></p>
+<p><span class="arithmatex">\(A = 1\)</span></p>
+<p><span class="arithmatex">\((2)\)</span></p>
+<p><strong><span class="arithmatex">\(F(x) = \int_{-\infty}^{+\infty} f(x) \text{d}x\)</span></strong></p>
+<p><span class="arithmatex">\(\begin{cases} 0, &amp; x &lt; 0 \\ \int_{0}^{x} x \text{d}x, &amp; 0 \leq x &lt; 1 \\ \int_0^1 x \text{d}x + \int_1^x (2-x) \text{d}x, &amp; 1 \leq x &lt; 2 \\ \int_{0}^{1}x\text{d}x + \int_1^2 (2-x) \text{d}x, &amp; x \geq 2 \end{cases} \Rightarrow F(x) = \begin{cases} 0, &amp; x &lt; 0 \\ \frac{1}{2}x^2, &amp; 0 \leq x &lt; 1 \\ 2x - \frac{1}{2}x^2-1, &amp; 1 \leq x &lt; 2 \\ 1, &amp; x \geq 2 \end{cases}\)</span></p>
+<p><span class="arithmatex">\((3)\)</span></p>
+<p><span class="arithmatex">\(P\{\frac{1}{2} &lt; X &lt; \frac{3}{2}\} = \int_{\frac{1}{2}}^{\frac{3}{2}} f(x) \text{d}x = \int_{\frac{1}{2}}^{1}x\text{d}x + \int_{1}^{\frac{3}{2}} (2-x) \text{d} x = \frac{3}{4}\)</span></p>
+<p><br></p>
+<blockquote>
+<p>设连续型随机变量 <span class="arithmatex">\(X\)</span> 的密度为 <span class="arithmatex">\(f(x) = \begin{cases} A \sin x ,&amp; 0&lt;x&lt; \pi \\ 0, &amp; else\end{cases}\)</span> 求（1）<span class="arithmatex">\(A\)</span>；（2）<span class="arithmatex">\(X\)</span> 的分布函数 <span class="arithmatex">\(F(x)\)</span>；（3）<span class="arithmatex">\(P\{0&lt; x &lt; \frac{\pi}{4} \}\)</span></p>
+</blockquote>
+<p><span class="arithmatex">\((1)\)</span></p>
+<p><strong><span class="arithmatex">\(\int_{-\infty}^{+\infty}f(x) \text{d}x = 1\)</span></strong></p>
+<p><span class="arithmatex">\(\int_0^\pi A \sin x \text{d} x = 1\)</span></p>
+<p><span class="arithmatex">\(-A \cos x |_0^\pi = 1\)</span></p>
+<p><span class="arithmatex">\(2A = 1 \Rightarrow A = \frac{1}{2}\)</span></p>
+<p><span class="arithmatex">\((2)\)</span></p>
+<p><strong><span class="arithmatex">\(F(x) = \int_{-\infty}^{+\infty} f(x) \text{d}x\)</span></strong></p>
+<p><span class="arithmatex">\(F(x) = \begin{cases} 0, &amp; x &lt; 0 \\ \int_0^x \frac{1}{2} \sin x \text{d} x , &amp; 0 \leq x &lt; \pi \\ \int_0^\pi \frac{1}{2} \sin x \text{d}x, &amp; x \geq \pi \end{cases} \Rightarrow \begin{cases} 0, &amp; x &lt; 0  \\ 1-\frac{1}{2} \cos x , &amp; 0 \leq x &lt; \pi \\ 1 , &amp; x \geq \pi \end{cases}\)</span></p>
+<p><span class="arithmatex">\((3)\)</span></p>
+<p><span class="arithmatex">\(P\{ 0 &lt; x &lt; \frac{\pi}{4} \} = \int_0^{\frac{\pi}{4}} \frac{1}{2} \sin x \text{d} x = \frac{2 - \sqrt{2}}{4}\)</span></p>
+<p><br></p>
+<h4 id="4">概率密度求概率密度 <strong><span class="arithmatex">\(^4\)</span></strong></h4>
+<blockquote>
+<p>设随机变量 <span class="arithmatex">\(X\)</span> 的密度为 <span class="arithmatex">\(f(x) = \begin{cases} x, &amp; 0 \leq x \leq 1 \\ 2-x , &amp; 1 &lt; x \leq 2 \\ 0 , &amp; else\end{cases}\)</span>，求（1）<span class="arithmatex">\(Y = -2X+1\)</span> 的密度；（2）<span class="arithmatex">\(Z=e^X\)</span> 的密度</p>
+</blockquote>
+<p><span class="arithmatex">\((1)\)</span></p>
+<p><span class="arithmatex">\(F(y) = P\{Y \leq y\} = P\{-2X+1 \leq y\} = P\{X \geq \frac{1-y}{2}\} = \int_{\frac{1-y}{2}}^{+\infty} f(x) \text{d} x\)</span></p>
+<p><span class="arithmatex">\(=\begin{cases} 1, &amp; \frac{1-y}{2} &lt; 0 \\ \int_{\frac{1-y}{2}}^{1} \frac{1-y}{2} \text{d} \frac{1-y}{2} + \int_{1}^{2} (2 - \frac{1-y}{2}) \text{d} \frac{1-y}{2}, &amp; 0 \leq \frac{1-y}{2} &lt; 1 \\ \int_{\frac{1-y}{2}}^{2} ( 2 - \frac{1-y}{2}) \text{d} \frac{1-y}{2}, &amp; 1 \leq \frac{1-y}{2} &lt; 2 \\ 0, &amp; \frac{1-y}{2} \geq 2 \end{cases}\)</span></p>
+<p><span class="arithmatex">\(=\begin{cases} 1, &amp; \frac{1-y}{2} &lt; 0 \\ 1-\frac{1}{2} * (\frac{1-y}{2})^2, &amp; 0 \leq \frac{1-y}{2} &lt; 1 \\ 2 - 2 * \frac{1-y}{2} + \frac{1}{2}(\frac{1-y}{2})^2, &amp; 1 \leq \frac{1-y}{2} &lt; 2 \\ 0, &amp; \frac{1-y}{2} \geq 2 \end{cases}\)</span></p>
+<p><span class="arithmatex">\(f(y) = F^{'}(y) = \begin{cases} \frac{y}{4}-\frac{1}{4}, &amp; -1 &lt; y &lt; 1 \\ \frac{y}{4} + \frac{3}{4} , &amp; -3 &lt; y &lt; -1 \\ 0, &amp; else \end{cases}\)</span></p>
+<p><span class="arithmatex">\((2)\)</span></p>
+<p><span class="arithmatex">\(F(y) = P\{Y \leq y\} = P\{ e^X \leq y\} = P\{ X \leq \ln y \} = \int_{-\infty}^{\ln y} f(x) \text{d} x\)</span></p>
+<p>$= \begin{cases} 0, &amp; \ln y &lt; 0\ \int_{0}^{\ln y} (\ln y)\text{d} \ln y , &amp; 0 \leq \ln y &lt; 1 \ \int_{0}^{1} (\ln y) \text{d}\ln y + \int_{1}^{\ln y} (2-\ln y) \text{d}\ln y , &amp; 1 \leq \ln y &lt; 2 \ 1, &amp; \ln y \geq 2 \end{cases} $</p>
+<p><span class="arithmatex">\(= \begin{cases} 0, &amp; \ln y &lt; 0 \\ \frac{1}{2}(\ln y)^2 , &amp; 0 \leq \ln y &lt; 1 \\ 2 \ln y - \frac{1}{2}(\ln y)^2 - 1, &amp; 1 \leq \ln y &lt; 2 \\ 1, &amp; \ln y \geq 2 \end{cases}\)</span></p>
+<p><span class="arithmatex">\(f(y) = F^{'}(y) = \begin{cases} \frac{\ln y}{y}, &amp; 0 &lt; y &lt; e \\ \frac{2}{y} - \frac{\ln y}{y}, &amp; e &lt; y &lt; e^2 \\ 0 , &amp; else\end{cases}\)</span></p>
+<p><br></p>
+<blockquote>
+<p>设 <span class="arithmatex">\(X \sim f_X(x) = \begin{cases} \frac{x}{8}, &amp; 0&lt;x&lt;4\\ 0, &amp; else\end{cases}\)</span>，（1）求 <span class="arithmatex">\(Y=2X+8\)</span> 的密度函数 <span class="arithmatex">\(f_Y(y)\)</span>；（2）求 <span class="arithmatex">\(Y=2X-1\)</span> 的密度函数 <span class="arithmatex">\(f_Y(y)\)</span></p>
+</blockquote>
+<p><span class="arithmatex">\((1)\)</span></p>
+<p>$F(y) = P{Y \leq y} = P{2X + 8 \leq y} = P{X \leq \frac{y-8}{2}}= \int_{-\infty}^{\frac{y-8}{2}} f(x) \text{d} x $</p>
+<p><span class="arithmatex">\(= \begin{cases} 0, &amp; \frac{y-8}{2} &lt; 0 \\ \int_0^{\frac{y-8}{2}} (\frac{\frac{y-8}{2}}{8}) \text{d} \frac{y-8}{2}, &amp; 0 \leq \frac{y-8}{2} &lt; 4 \\ 1, &amp; \frac{y-8}{2} \geq 4 \end{cases}\)</span></p>
+<p><span class="arithmatex">\(= \begin{cases} 0, &amp; \frac{y-8}{2} &lt; 0 \\ \frac{1}{8} * \frac{1}{2} * (\frac{y-8}{2})^2 , &amp; 0 \leq \frac{y-8}{2} &lt; 4 \\ 1, &amp; \frac{y-8}{2} \geq 4 \end{cases}\)</span></p>
+<p><span class="arithmatex">\(f(y) = F^{'}(y) = \begin{cases} \frac{y-8}{32}, &amp; 8 &lt; y &lt; 16 \\ 0, &amp; else\end{cases}\)</span></p>
+<p><span class="arithmatex">\((2)\)</span></p>
+<p><span class="arithmatex">\(F(y) = P\{Y \leq y\} = P\{2X-1 \leq y\} = P\{X \leq \frac{y+1}{2}\} = \int_{-\infty}^{\frac{y+1}{2}} f(x) \text{d} x\)</span></p>
+<p><span class="arithmatex">\(= \begin{cases} 0, &amp; \frac{y+1}{2} &lt; 0 \\ \int_{0}^{\frac{y+1}{2}} \frac{\frac{y+1}{2}}{8} \text{d} \frac{y+1}{2}, &amp; 0 \leq \frac{y+1}{2} &lt; 4 \\ 1, &amp; \frac{y+1}{2} \geq 4 \end{cases}\)</span></p>
+<p><span class="arithmatex">\(= \begin{cases} 0, &amp; \frac{y+1}{2} &lt; 0 \\ \frac{1}{8} * \frac{1}{2} * (\frac{y+1}{2})^2, &amp; 0 \leq \frac{y+1}{2} &lt; 4 \\ 1, &amp; \frac{y+1}{2} \geq 4 \end{cases}\)</span></p>
+<p><span class="arithmatex">\(f(y) = F^{'}(y) = \begin{cases} \frac{y+1}{32}, &amp; -1 &lt; y &lt; 7 \\ 0, &amp; else\end{cases}\)</span></p>
+<p><br></p>
+<blockquote></blockquote>
+<p><br></p>
+<hr />
+<h3 id="1_1">1、随机变量及分布函数</h3>
+<h4 id="_8">随机变量</h4>
+<p>随机变量就是随机试验结果的 <strong>数值化</strong></p>
+<blockquote>
+<p>例如：<strong>抛硬币</strong>，正面为 <strong>1</strong>，反面为 <strong>0</strong>
+例如：<strong>选球</strong>，红球为 <strong>1</strong>，白球为 <strong>2</strong>，黑球为 <strong>3</strong></p>
+</blockquote>
+<p>数值化后，更有利于建立数学模型，进行数学分析</p>
+<h4 id="_9">累计分布函数</h4>
+<p>对于一个随机变量 <span class="arithmatex">\(X\)</span>，其分布函数 <span class="arithmatex">\(F(x)\)</span> 定义为： </p>
+<p><strong><span style="color:orange;">$<span class="arithmatex">\(F(x) = P \{X \leq x\}\)</span>$</span></strong></p>
+<p><span class="arithmatex">\(F(x)\)</span> 等于 <span class="arithmatex">\(X\)</span> 的值 <span class="arithmatex">\(\leq x\)</span> 的 <strong>概率</strong></p>
+<blockquote>
+<p>具体的，假设我们在抛一个六面骰子，那么 <span class="arithmatex">\(F(x)\)</span> 就是：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">x</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">5</th>
+<th style="text-align: center;">6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">F(x)</td>
+<td style="text-align: center;">1/6</td>
+<td style="text-align: center;">2/6</td>
+<td style="text-align: center;">3/6</td>
+<td style="text-align: center;">4/6</td>
+<td style="text-align: center;">5/6</td>
+<td style="text-align: center;">6/6</td>
+</tr>
+</tbody>
+</table>
+<p><span class="arithmatex">\(F(3)\)</span> 指，抛出的骰子的点数小于等于 <span class="arithmatex">\(3\)</span> 的概率，即 <span class="arithmatex">\(1/2\)</span>
+<span class="arithmatex">\(F(4)\)</span> 指，抛出的骰子的点数小于等于 <span class="arithmatex">\(4\)</span> 的概率，即 <span class="arithmatex">\(2/3\)</span></p>
+<p><a href="https://www.zhihu.com/question/26298175/answer/60140036">知乎</a> 上有一个更加形象的解释：</p>
+<p>假设现在有全世界所有人的身高的分布，那么我们可以得到一个分布函数</p>
+<p>我的身高 <span class="arithmatex">\(180\)</span>，那么 <span class="arithmatex">\(F(180)\)</span> =  <span class="arithmatex">\(\frac{身高 &lt;= 180 的人数}{全世界人数}\)</span></p>
+<p>姚明身高 <span class="arithmatex">\(226\)</span>，那么 <span class="arithmatex">\(F(226)\)</span> =  <span class="arithmatex">\(\frac{身高 &lt;= 226 的人数}{所有的人数}\)</span></p>
+</blockquote>
+<p>其具有以下性质：</p>
+<ul>
+<li>单调不减：<span class="arithmatex">\(x_1 &lt; x_2 \Rightarrow F(x_1) \leq F(x_2)\)</span></li>
+<li>非负性：<span class="arithmatex">\(0 \leq F(x) \leq 1\)</span></li>
+<li>规范性：<span class="arithmatex">\(F(x)\)</span> 是一个概率，<span style="color:orange;"><span class="arithmatex">\(F(-\infty) = 0\)</span>，<span class="arithmatex">\(F(+\infty) = 1\)</span></span></li>
+</ul>
+<h4 id="_10">概率分布</h4>
+<p><br></p>
+<p><strong>概率分布</strong> <strong><span class="arithmatex">\(f\)</span></strong> 
+* 通常是指 <strong>分布律</strong>（离散）和 <strong>概率密度函数</strong>（连续）</p>
+<p><strong>累计分布函数</strong> <strong><span class="arithmatex">\(F\)</span></strong>
+* 即 <span class="arithmatex">\(F(x) = P \{X \leq x\}\)</span></p>
+<p><br></p>
+<hr />
+<h3 id="2_1">2、离散型随机变量 / 分布律</h3>
+<p>离散型随机变量：
+* 指其取值为 <strong>有限个</strong> 数值的随机变量
+* 在取值上是有间隔的
+* 通常描述可以数出来、可以分隔的随机现象</p>
+<p>离散型随机变量的分布律：
+* 一个函数，描述了随机变量的取值和其概率的对应关系
+* 表示为：<span style="color:orange;"><span class="arithmatex">\(P(X=x_i) = p_i\)</span></span>，满足：
+    * 对于所有的 <span class="arithmatex">\(i\)</span>，<span class="arithmatex">\(p_i \geq 0\)</span>，即概率非负
+    * <span class="arithmatex">\(\sum p_i = 1\)</span>，即概率和为 <span class="arithmatex">\(1\)</span></p>
+<blockquote>
+<p>例如，抛一个六面骰子，随机变量 <span class="arithmatex">\(X\)</span> 表示抛出的点数，那么 <span class="arithmatex">\(X\)</span> 的分布律为：
+X | 1 | 2 | 3 | 4 | 5 | 6
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+p(X) | 1/6 | 1/6 | 1/6 | 1/6 | 1/6 | 1/6</p>
+</blockquote>
+<h4 id="0-1_1">0-1分布</h4>
+<p>设随机变量 <span class="arithmatex">\(X\)</span> 只能取 <span class="arithmatex">\(0\)</span> 或 <span class="arithmatex">\(1\)</span>，其分布律为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">X</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">p(X)</td>
+<td style="text-align: center;">1-p</td>
+<td style="text-align: center;">p</td>
+</tr>
+</tbody>
+</table>
+<p>分布函数：</p>
+<div class="arithmatex">\[ P \{ X=k \} = p^k (1-p)^{1-k} $$ $$ 其中 (k=0,1), (0&lt;p&lt;1) \]</div>
+<p><br></p>
+<hr />
+<h3 id="3">3、连续型随机变量 / 概率密度</h3>
+<p>连续型随机变量：</p>
+<ul>
+<li>指其取值为 <strong>无限个</strong> 数值的随机变量</li>
+<li>在取值上是无间隔的</li>
+</ul>
+<blockquote>
+<p>例如：<strong>时间</strong>，<strong>长度</strong>，<strong>面积</strong></p>
+</blockquote>
+<p>概率密度函数：</p>
+<ul>
+<li>计算随机变量落在某个区间内的概率</li>
+</ul>
+<p>对于随机变量 <span class="arithmatex">\(X\)</span>，存在非负可积函数 <span class="arithmatex">\(f(x)\)</span>，使得对于任意实数 <span class="arithmatex">\(x\)</span>，有：</p>
+<div class="arithmatex">\[F(x) = \int_{-\infty}^{x} f(t) dt$$ $$其中, -\infty &lt; x &lt; +\infty\]</div>
+<p><span class="arithmatex">\(x\)</span> 为连续型随机变量，<span class="arithmatex">\(f(x)\)</span> 称为 <span class="arithmatex">\(X\)</span> 的概率密度函数</p>
+<p><br></p>
+<hr />
+<h2 id="_11">三、多维随机变量及其分布</h2>
+<h3 id="0-3">0、边缘概率密度 <strong><span class="arithmatex">\(^3\)</span></strong></h3>
+<blockquote>
+<p>设二维随机变量 <span class="arithmatex">\((X, Y)\)</span> 的概率密度为 <span class="arithmatex">\(f(x, y) = \begin{cases} kx^2y , &amp; x^2 \leq y \leq 1 \\ 0 , &amp; else\end{cases}\)</span> 求
+（1）常数 <span class="arithmatex">\(k\)</span>；（2）边缘概率密度；（3）<span class="arithmatex">\(X\)</span> 与 <span class="arithmatex">\(Y\)</span> 是否独立</p>
+</blockquote>
+<ol>
+<li>
+<p>由规范性 <span class="arithmatex">\(\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(x, y) \text{d}x \text{d}y = 1\)</span></p>
+<p><span class="arithmatex">\(\int_{-1}^{1} \int_{x^2}^{1} kx^2y \text{d}y \text{d}x = 1\)</span></p>
+<p><span class="arithmatex">\(k = \frac{21}{4}\)</span></p>
+</li>
+</ol>
+<p><br></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\begin{cases}f_X(x) = \int_{-\infty}^{+\infty} f(x,y) \text{d}y \\ f_Y(y) = \int_{-\infty}^{+\infty} f(x,y) \text{d}x \end{cases}\)</span></p>
+<p><span class="arithmatex">\(f_X(x) = \begin{cases} \int_{x^2}^{1} \frac{21}{4} x^2 y \text{d}y, &amp; -1 \leq x \leq  1 \\ 0, &amp; else\end{cases} = \begin{cases} \frac{21x^2-21x^6}{8}, &amp; -1 \leq x \leq 1 \\ 0, &amp; else\end{cases}\)</span></p>
+<p><span class="arithmatex">\(f_Y(y) = \begin{cases} \int_{-\sqrt y}^{ \sqrt y} \frac{21}{4} x^2 y \text{d}x, &amp; 0 \leq y \leq 1 \\ 0, &amp; else\end{cases} = \begin{cases} \frac{21y^2 \sqrt y}{6}, &amp; 0 \leq y \leq 1 \\ 0, &amp; else\end{cases}\)</span></p>
+</li>
+</ol>
+<p><br></p>
+<ol>
+<li>由于 <span class="arithmatex">\(f(x,y) \neq f_X(x)f_Y(y)\)</span>，所以 <span class="arithmatex">\(X\)</span> 与 <span class="arithmatex">\(Y\)</span> 不独立</li>
+</ol>
+<p><br></p>
+<blockquote>
+<p>设二维连续型随机变量 <span class="arithmatex">\((X, Y)\)</span> 的联合概率密度函数为 $ f(x,y) = \begin{cases} 4xy, &amp; 0 &lt; x &lt; 1, 0 &lt; y &lt; 1 \ 0 , &amp; else \end{cases}$ 求（1）边缘密度函数；（2）<span class="arithmatex">\(X, Y\)</span> 是否独立；（3）求 <span class="arithmatex">\(P\{Y \leq X^2\}\)</span></p>
+</blockquote>
+<ol>
+<li>
+<p><span class="arithmatex">\(\begin{cases}f_X(x) = \int_{-\infty}^{+\infty} f(x,y) \text{d}y \\ f_Y(y) = \int_{-\infty}^{+\infty} f(x,y) \text{d}x \end{cases}\)</span></p>
+<p><span class="arithmatex">\(f_X(x) = \begin{cases} \int_0^1 4xy \text{d}y , &amp; 0 &lt; x &lt; 1 \\ 0 , &amp; else \end{cases} = \begin{cases} 2x, &amp; 0 &lt; x &lt; 1 \\ 0 , &amp; else \end{cases}\)</span></p>
+<p><span class="arithmatex">\(f_Y(y) = \begin{cases} \int_0^1 4xy \text{d}x , &amp; 0 &lt; y &lt; 1 \\ 0 , &amp; else \end{cases} = \begin{cases} 2y, &amp; 0 &lt; y &lt; 1 \\ 0 , &amp; else \end{cases}\)</span></p>
+</li>
+</ol>
+<p><br></p>
+<ol>
+<li>由于 <span class="arithmatex">\(f(x,y) = f_X(x)f_Y(y)\)</span>，所以 <span class="arithmatex">\(X\)</span> 与 <span class="arithmatex">\(Y\)</span> 独立</li>
+</ol>
+<p><br></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(P\{Y \leq X^2 \} = \underset{G^{'}}{\int\int} f(x, y) \text{d} x \text{d} y\)</span></p>
+<p><span class="arithmatex">\(\int_0^1 \int_0^{x^2} 4xy \text{d}y \text{d}x = \frac{1}{3}\)</span></p>
+</li>
+</ol>
+<p><br></p>
+<hr />
+<h2 id="_12">四、随机变量的数字特征</h2>
+<h3 id="0-5">0、求期望方差 <strong><span class="arithmatex">\(^5\)</span></strong></h3>
+<blockquote>
+<p>（1）设随机变量 <span class="arithmatex">\(X\)</span> 的密度函数为 <span class="arithmatex">\(f(x) = \begin{cases} 2x, &amp; 0 \leq x &lt; 1 \\ 0, &amp; else \end{cases}\)</span>：（1）求 <span class="arithmatex">\(E(X)\)</span>；（2）求 <span class="arithmatex">\(D(X)\)</span></p>
+</blockquote>
+<ol>
+<li>
+<p><span class="arithmatex">\(E(X) = \int_{-\infty}^{+\infty} x f(x) \text{d}x\)</span></p>
+<p><span class="arithmatex">\(E(X) = \int^1_0 x(2x) \text{d}x = \frac{2}{3} x^3 |^1_0 = \frac{2}{3}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(D(X) = E(X^2) - E^2(X)\)</span></p>
+<p><span class="arithmatex">\(E(X^2) = \int^1_0 x^2(2x) \text{d}x = \frac{1}{2}x^4 |^1_0 = \frac{1}{2}\)</span></p>
+<p><span class="arithmatex">\(D(X) = \frac{1}{2} - (\frac{2}{3})^2 = \frac{1}{18}\)</span></p>
+</li>
+</ol>
+<p><br></p>
+<blockquote>
+<p>（2）设随机变量 <span class="arithmatex">\(X \sim B(n, p), E(X)=1.8, D(X)=1.26\)</span>，则参数 <span class="arithmatex">\(n, p\)</span> 的值为</p>
+</blockquote>
+<ol>
+<li>
+<p>由二项分布的期望方差</p>
+<p><span class="arithmatex">\(E(X) = np = 1.8\)</span></p>
+<p><span class="arithmatex">\(D(X) = np(1-p) = 1.26\)</span></p>
+<p><span class="arithmatex">\(n = 6, p = 0.3\)</span></p>
+</li>
+</ol>
+<p><br></p>
+<blockquote>
+<p>（3）设 <span class="arithmatex">\(X_i \sim P(\lambda)(i=1,2,3)\)</span>，且 <span class="arithmatex">\(\lambda = 3\)</span>，<span class="arithmatex">\(X_1, X_2, X_3\)</span> 相互独立，则 <span class="arithmatex">\(D[\frac{1}{3}(X_1 + X_2 + X_3)]\)</span></p>
+</blockquote>
+<p><span class="arithmatex">\(D[\frac{1}{3}(X_1 + X_2 + X_3)] = \frac{1}{9} D(X_1 + X_2 + X_3)\)</span></p>
+<p><span class="arithmatex">\(D(X_1 + X_2 + X_3) = D(X_1) + D(X_2) + D(X_3) + 2(E(X_1 X_2) - E(X_1)E(X_2)) + 2(E(X_1 X_3) - E(X_1)E(X_3)) + 2(E(X_2 X_3) - E(X_2)E(X_3))\)</span></p>
+<p>因为独立，<span class="arithmatex">\(E(XY) = E(X)E(Y)\)</span></p>
+<p>所以原式 <span class="arithmatex">\(= \frac{1}{9}(D(X_1) + D(X_2) + D(X_3)) = 1\)</span></p>
+<p><br></p>
+<hr />
+<h3 id="1-ex">1、数学期望 <span class="arithmatex">\(E(X)\)</span></h3>
+<h5 id="_13">离散型</h5>
+<p><strong>离散期望 = 取值乘概率再求和</strong></p>
+<p><span class="arithmatex">\(X\)</span>：</p>
+<div class="arithmatex">\[E(X) = \sum_{i=1}^{n} x_i p_i\]</div>
+<p><span class="arithmatex">\(X^2\)</span>：</p>
+<div class="arithmatex">\[E(X^2) = \sum_{i=1}^{n} x_i^2 p_i\]</div>
+<p><span class="arithmatex">\(Y=g(X)\)</span>：</p>
+<div class="arithmatex">\[E(Y) = \sum_{i=1}^{n} g(x_i) p_i\]</div>
+<p><span class="arithmatex">\(Z=g(X, Y)\)</span>：</p>
+<div class="arithmatex">\[E(Z) = \sum_{i=1}^{n} \sum_{j=1}^{m} g(x_i, y_j) p_{ij}\]</div>
+<h5 id="_14">连续型</h5>
+<p><strong>连续期望 = 取值乘密度再积分</strong></p>
+<p><span class="arithmatex">\(X\)</span>：</p>
+<div class="arithmatex">\[E(X) = \int_{-\infty}^{+\infty} x f(x) \text{d}x\]</div>
+<p><span class="arithmatex">\(X^2\)</span>：</p>
+<div class="arithmatex">\[E(X^2) = \int_{-\infty}^{+\infty} x^2 f(x) \text{d}x\]</div>
+<p><span class="arithmatex">\(Y=g(X)\)</span>：</p>
+<div class="arithmatex">\[E(g(X)) = \int_{-\infty}^{+\infty} g(x) f(x) dx\]</div>
+<p><span class="arithmatex">\(Z=g(X, Y)\)</span>：</p>
+<div class="arithmatex">\[E(g(X,Y)) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} g(x, y) f(x, y) dx dy\]</div>
+<p><br></p>
+<hr />
+<h3 id="2-dx">2、方差 <span class="arithmatex">\(D(X)\)</span></h3>
+<h5 id="_15">硬算</h5>
+<p><a href="https://www.stats.gov.cn/zs/tjll/sjms/202307/t20230719_1941405.html">国家统计局：方差与标准（均方）差</a></p>
+<p>总体方差 = <span class="arithmatex">\(\sigma^2 = \frac{\sum_{i=1}^n (x_i-\bar x)^2}{n}\)</span></p>
+<p>样本方差 = <span class="arithmatex">\(s^2 = \frac{\sum_{i=1}^n (x_i-\bar x)^2}{n-1}\)</span></p>
+<h5 id="_16">公式</h5>
+<p><strong>$<span class="arithmatex">\(D(X) = E(X^2) - E^2(X)\)</span>$</strong></p>
+<div class="arithmatex">\[E(X^2) = D(X) + E^2(X)\]</div>
+<p><br></p>
+<hr />
+<h3 id="3-cov">3、协方差与相关系数 <span class="arithmatex">\(Cov\)</span></h3>
+<h5 id="_17">公式</h5>
+<div class="arithmatex">\[Cov(X,Y) = E(XY) - E(X)E(Y)\]</div>
+<div class="arithmatex">\[Cov(X,X) = D(X)\]</div>
+<div class="arithmatex">\[D(X+Y) = D(X) + D(Y) + 2Cov(X, Y)\]</div>
+<p><br></p>
+<hr />
+<h3 id="4_1">4、性质 <strong><span class="arithmatex">\(^*\)</span></strong></h3>
+<p><span class="arithmatex">\(C\)</span> 为常数</p>
+<p>期望：</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(E(C)=C\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(E(CX) = CE(X)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(E(X \pm C) = E(X) \pm C\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(E(X \pm Y) = E(X) \pm E(Y)\)</span></p>
+<ul>
+<li>独立，有 <span class="arithmatex">\(E(XY) = E(X)E(Y)\)</span>（不能反推）</li>
+</ul>
+</li>
+</ul>
+<p>方差：</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(D(C)=0\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(D(CX) = C^2D(X)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(D(X \pm C) = D(X)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(D(X \pm Y) = D(X) + D(Y) \pm 2(E(XY) - E(X)E(Y))\)</span></p>
+<ul>
+<li>独立，有 <span class="arithmatex">\(D(X \pm Y) = D(X) + D(Y)\)</span>（不能反推）（就是 <span class="arithmatex">\(+\)</span>，没写错）</li>
+<li><span class="arithmatex">\(\rho(X,Y) = \frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}\)</span></li>
+<li><span class="arithmatex">\(Cov(X,Y) = E(XY) - E(X)(Y)\)</span></li>
+</ul>
+</li>
+</ul>
+<p>斜方差：</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(Cov(X,Y) = Cov(Y, X)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(Cov(aX,bY) = abCov(X, Y)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(Cov(X+Y,Z) = Cov(X,Z)+Cov(Y,Z)\)</span></p>
+</li>
+</ul>
+<p><br></p>
+<hr />
+<h2 id="_18">七、参数估计</h2>
+<h3 id="0-6">0、求矩或极大似然估计 <strong><span class="arithmatex">\(^6\)</span></strong></h3>
+<blockquote>
+<p>（1）设总体 <span class="arithmatex">\(X \sim B(1, p)\)</span> 其中 <span class="arithmatex">\(p\)</span> 是未知参数，<span class="arithmatex">\(X_1, X_2, X_3, X_4, X_5\)</span> 是总体的样本，若样本观测值为 <span class="arithmatex">\(1, 1, 0, 1, 0\)</span>，求 <span class="arithmatex">\(p\)</span> 的矩估计量</p>
+</blockquote>
+<ol>
+<li>
+<p>求出总体矩 <span class="arithmatex">\(E(X)\)</span></p>
+<p><span class="arithmatex">\(E(X) = np = p\)</span></p>
+</li>
+<li>
+<p>令 <span class="arithmatex">\(\bar X = E(X)\)</span></p>
+<p><span class="arithmatex">\(\frac{\sum_{i=1}^5 X_i}{5} = p\)</span></p>
+</li>
+<li>
+<p>求解方程
+    <span class="arithmatex">\(\hat p = \frac{3}{5}\)</span></p>
+</li>
+</ol>
+<p><br></p>
+<blockquote>
+<p>（2）设总体 <span class="arithmatex">\(X \sim \pi(\lambda)\)</span>，<span class="arithmatex">\(\lambda\)</span> 未知，<span class="arithmatex">\(X_1, X_2, ..., X_m\)</span> 是来自总体得简单随机样本，试求参数 <span class="arithmatex">\(\lambda\)</span> 的矩估计量</p>
+</blockquote>
+<ol>
+<li>
+<p>求出总体矩 <span class="arithmatex">\(E(X)\)</span></p>
+<p><span class="arithmatex">\(E(X) = \lambda\)</span></p>
+</li>
+<li>
+<p>令 <span class="arithmatex">\(\bar X = E(X)\)</span></p>
+<p><span class="arithmatex">\(\frac{\sum_{i=1}^{m} X_i}{m} = \lambda\)</span></p>
+</li>
+<li>
+<p>求解方程</p>
+<p><span class="arithmatex">\(\hat \lambda = \frac{\sum_{i=1}^{m} X_i}{m}\)</span></p>
+</li>
+</ol>
+<p><br></p>
+<blockquote>
+<p>（3）设总体 <span class="arithmatex">\(X\)</span> 的分布律为
+| <span class="arithmatex">\(X\)</span> | <span class="arithmatex">\(1\)</span> | <span class="arithmatex">\(2\)</span> | <span class="arithmatex">\(3\)</span> |
+|:-:|:-:|:-:|:-:|
+| <span class="arithmatex">\(P\)</span> | <span class="arithmatex">\(\theta^2\)</span> | <span class="arithmatex">\(2\theta(1-\theta)\)</span> | <span class="arithmatex">\((1-\theta)^2\)</span> |</p>
+<p>其中 <span class="arithmatex">\(\theta ( 0 &lt; \theta &lt; 1 )\)</span> 是未知参数，利用总体 <span class="arithmatex">\(X\)</span> 的如下样本值：<span class="arithmatex">\(1, 2, 1\)</span>，求 <span class="arithmatex">\(\theta\)</span> 的矩估计量和最大似然估计量</p>
+</blockquote>
+<ol>
+<li>
+<p>求出总体矩 <span class="arithmatex">\(E(X)\)</span></p>
+<p>$E(X) = \sum_{i=1}^k(X_i * P_i) $</p>
+<p>$= \theta^2 + 4\theta(1-\theta) + 3(1-\theta)^2 $</p>
+<p><span class="arithmatex">\(= 3 - 2\theta\)</span></p>
+</li>
+<li>
+<p>令 <span class="arithmatex">\(\bar X = E(X)\)</span></p>
+<p><span class="arithmatex">\(\bar X = \frac{1+2+1}{3} = \frac{4}{3}\)</span></p>
+<p><span class="arithmatex">\(\frac{4}{3} = 3 - 2\theta\)</span></p>
+</li>
+<li>
+<p>求解方程</p>
+<p><span class="arithmatex">\(\hat \theta = \frac{5}{6}\)</span></p>
+</li>
+</ol>
+<p><br></p>
+<ol>
+<li>
+<p>写出样本似然函数 <span class="arithmatex">\(L (\theta)\)</span></p>
+<p><span class="arithmatex">\(L(x, \theta) = \prod_{i=1}^{3} P\{X=x_i\}\)</span></p>
+<p>$ = \theta^2 * 2\theta(1-\theta) *\theta^2$</p>
+<p>$ = 2 \theta^5  - 2 \theta^6$</p>
+</li>
+<li>
+<p>求导数 <span class="arithmatex">\(\frac{\text{d} L(\theta) }{\text{d} \theta} = 0\)</span></p>
+<p><span class="arithmatex">\(\frac{\text{d} L(x, \theta) }{\text{d} \theta} = 10 \theta^4 - 12\theta^5 = 0\)</span></p>
+<p><span class="arithmatex">\(\hat \theta = \frac{5}{6}\)</span></p>
+</li>
+</ol>
+<p><br></p>
+<blockquote>
+<p>（4）设总体 <span class="arithmatex">\(X\)</span> 的概率密度函数为 <span class="arithmatex">\(f(x;\theta) = \begin{cases} \theta e^{-\theta x}, &amp; 0 &lt; x \\ 0 , &amp; else \end{cases}\)</span>，设 <span class="arithmatex">\(X_1, X_2, ... , X_n\)</span> 为总体 <span class="arithmatex">\(X\)</span> 的一个样本，试求参数 <span class="arithmatex">\(\theta\)</span> 的最大似然估计量 <span class="arithmatex">\(\hat \theta\)</span></p>
+</blockquote>
+<ol>
+<li>
+<p>写出样本似然函数 <span class="arithmatex">\(L (\theta)\)</span></p>
+<p><span class="arithmatex">\(L(x, \theta) = \prod_{i=1}^{n} f(x_i)\)</span></p>
+<p><span class="arithmatex">\(= \prod_{i=1}^{\theta} \theta e^{-\theta x_i}\)</span></p>
+<p><span class="arithmatex">\(= \theta ^ n e^{-\theta \sum_{i=1}^{n}x_i}\)</span></p>
+</li>
+<li>
+<p>对似然函数取对数 <span class="arithmatex">\(\ln L(\theta)\)</span></p>
+<p><span class="arithmatex">\(\ln L(x, \theta) = \ln \theta^n + \ln e^{-\theta \sum_{i=1}^{n} x_i}\)</span></p>
+<p><span class="arithmatex">\(= n \ln \theta - \theta \sum_{i=1}^{n}x_i\)</span></p>
+</li>
+<li>
+<p>求导数 <span class="arithmatex">\(\frac{\text{d}\ln L(\theta) }{\text{d} \theta} = 0\)</span></p>
+<p><span class="arithmatex">\(\frac{\text{d}\ln L(x, \theta) }{\text{d} \theta} = \frac{n}{\theta} - \sum_{i=1}^{n}x_i = 0\)</span></p>
+<p><span class="arithmatex">\(\hat \theta = \frac{n}{\sum_{n}^{i=1}x_i}\)</span></p>
+</li>
+</ol>
+<p><br></p>
+<hr />
+<h3 id="1_2">1、矩估计</h3>
+<h5 id="_19">基本思想</h5>
+<p>用样本矩 <span class="arithmatex">\(A_k = \frac{\sum_{i=1}^n X_i^k}{n}\)</span> 代替总体矩 <span class="arithmatex">\(\mu_k = E(X^k)\)</span> （大数定理）</p>
+<h5 id="_20">基本步骤</h5>
+<ol>
+<li>
+<p>求出总体矩（期望） <span class="arithmatex">\(E(X)\)</span></p>
+</li>
+<li>
+<p>令 <span class="arithmatex">\(\bar X\)</span> （样本均值） <span class="arithmatex">\(= E(X)\)</span></p>
+</li>
+<li>
+<p>解得 <span class="arithmatex">\(\hat \theta\)</span> 即为矩估计量</p>
+</li>
+</ol>
+<p><br></p>
+<hr />
+<h3 id="2_2">2、极大似然估计</h3>
+<h5 id="_21">基本思想</h5>
+<p>使得当前样本 <span class="arithmatex">\(x_1, x_2, x_3, ... , x_n\)</span> 出现的概率最大的参数值 <span class="arithmatex">\(\hat \theta\)</span> 即为极大似然估计</p>
+<h5 id="_22">基本步骤</h5>
+<ol>
+<li>
+<p>设 <span class="arithmatex">\(x_1, x_2, x_3, ... , x_n\)</span> 为一组观测值</p>
+</li>
+<li>
+<p>样本似然函数 <span class="arithmatex">\(L(x, \theta) = \prod_{i=1}^n f(x_i)\)</span></p>
+</li>
+<li>
+<p>取对数 <span class="arithmatex">\(\ln L(\theta)\)</span></p>
+</li>
+<li>
+<p>求导数 <span class="arithmatex">\(\frac{\text{d}\ln L(\theta) }{\text{d} \theta} = 0\)</span></p>
+</li>
+</ol>
+<blockquote>
+<p>部分情况 0, 2 可以省略</p>
+</blockquote>
+<p><br></p>
+<hr />
+<h2 id="_23">八、假设检验</h2>
+<h3 id="0-7">0、假设检验 <strong><span class="arithmatex">\(^7\)</span></strong></h3>
+<blockquote>
+<p>（1）某工厂生产的铜丝的折断力服从正态分布 <span class="arithmatex">\(N(\mu, \sigma^2)\)</span>。从某天所生产的铜丝中抽取 <span class="arithmatex">\(10\)</span> 根，进行折断力试验，测得其样本均值为 <span class="arithmatex">\(572.2\)</span>，方差为 <span class="arithmatex">\(75.7\)</span>，若 <span class="arithmatex">\(\mu\)</span> 未知，是否可以认为这一天生产的铜丝折断力的标准差是 <span class="arithmatex">\(8\)</span>？（取显著性水平 <span class="arithmatex">\(\alpha = 0.05\)</span>）</p>
+</blockquote>
+<p>已知：<span class="arithmatex">\(n = 10, \bar X = 572.2, S^2 = 75.7\)</span></p>
+<ol>
+<li>
+<p>提出假设
+<span class="arithmatex">\(H_0: \sigma_0 = 8\)</span> 
+<span class="arithmatex">\(H_1: \sigma_0 \neq 8\)</span></p>
+</li>
+<li>
+<p>构建检验统计量
+<span class="arithmatex">\({\chi^2} = \frac{(n-1)S^2}{\sigma_0^2} = 10.645\)</span></p>
+</li>
+<li>
+<p>求出拒绝域
+<span class="arithmatex">\({\chi^2}_{1-\frac{\alpha}{2}}(n-1) = 2.7\)</span>
+<span class="arithmatex">\({\chi^2}_{\frac{\alpha}{2}}(n-1) = 19.022\)</span>
+拒绝域 <span class="arithmatex">\(M\)</span>：<span class="arithmatex">\((-\infty, 2.7) \cup (19.022, +\infty)\)</span></p>
+</li>
+<li>
+<p>接收或拒绝
+<span class="arithmatex">\(10.645 \notin M\)</span> ，接受原假设 <span class="arithmatex">\(H_0\)</span></p>
+</li>
+</ol>
+<p>答：可以认为这一天生产的铜丝折断力的标准差是 <span class="arithmatex">\(8\)</span></p>
+<p><br></p>
+<blockquote>
+<p>（2）某切割机在正常工作时，切割每段金属棒的平均长度为 <span class="arithmatex">\(10.5\)</span>，今从一批产品中随机的抽取 <span class="arithmatex">\(16\)</span> 段进行测试，得样本均值和样本方差分别为 <span class="arithmatex">\(\bar x, S^2 = 0.237^2\)</span>，假定切割的长度服从正态分布，试问该机器工作是否正常？（取显著性水平 <span class="arithmatex">\(\alpha = 0.05\)</span>）<span class="arithmatex">\(t_{0.025}(15) = 2.131\)</span></p>
+</blockquote>
+<p>已知：<span class="arithmatex">\(n = 16, \bar X = 10.46, S^2 = 0.237^2\)</span></p>
+<ol>
+<li>
+<p>提出假设
+<span class="arithmatex">\(H_0: \mu_0 = 10.5\)</span>
+<span class="arithmatex">\(H_1: \mu_0 \neq 10.5\)</span></p>
+</li>
+<li>
+<p>构建检验统计量
+<span class="arithmatex">\(T = \frac{\bar X - \mu_0}{S / \sqrt{n}} = -0.675\)</span></p>
+</li>
+<li>
+<p>求出拒绝域
+<span class="arithmatex">\(T_{\frac{\alpha}{2}}(n-1) = 2.131\)</span>
+拒绝域 <span class="arithmatex">\(M\)</span>：<span class="arithmatex">\((-\infty, -2.131) \cup (2.131, +\infty)\)</span></p>
+</li>
+<li>
+<p>接受或拒绝
+<span class="arithmatex">\(-0.675 \notin M\)</span>，接受原假设 <span class="arithmatex">\(H_0\)</span></p>
+</li>
+</ol>
+<p>答：可以认为该机器正常</p>
+<p><br></p>
+<blockquote>
+<p>（3）测定某种溶液中的硫酸铜，设硫酸铜含量的总体服从正态分布 <span class="arithmatex">\(N(\mu, \sigma^2)\)</span>，得到的 <span class="arithmatex">\(10\)</span> 个测定值给出 <span class="arithmatex">\(\bar X = 0.452, S = 0.037\)</span>，试问可否认为硫酸铜含量的方差为 <span class="arithmatex">\(\sigma^2 = 0.04\)</span>？（检验水平 <span class="arithmatex">\(\alpha = 0.05\)</span>）</p>
+</blockquote>
+<p>已知：<span class="arithmatex">\(n = 10, \bar X = 0.452, S = 0.037\)</span></p>
+<ol>
+<li>
+<p>提出假设
+<span class="arithmatex">\(H_0: \sigma_0^2 = 0.04\)</span>
+<span class="arithmatex">\(H_1: \sigma_0^2 \neq 0.04\)</span></p>
+</li>
+<li>
+<p>构建检验统计量
+<span class="arithmatex">\({\chi^2} = \frac{(n-1)S^2}{\sigma_0^2} = 0.308\)</span></p>
+</li>
+<li>
+<p>求出拒绝域
+<span class="arithmatex">\({\chi^2}_{1-\frac{\alpha}{2}}(n-1) = 2.7\)</span>
+<span class="arithmatex">\({\chi^2}_{\frac{\alpha}{2}}(n-1) = 19.022\)</span>
+拒绝域 <span class="arithmatex">\(M\)</span>：<span class="arithmatex">\((-\infty, 2.7) \cup (19.022, +\infty)\)</span></p>
+</li>
+<li>
+<p>接受或拒绝
+<span class="arithmatex">\(0.308 \in M\)</span>，拒绝原假设 <span class="arithmatex">\(H_0\)</span></p>
+</li>
+</ol>
+<p>答：不可以认为硫酸铜含量的方差为 <span class="arithmatex">\(\sigma^2 = 0.04\)</span></p>
+<p><br></p>
+<blockquote>
+<p>（4）设某味精厂生产的味精在手工包装时的每袋重量 <span class="arithmatex">\(N(15, 0.05)\)</span>。技术革新后，改用机器包装，现抽查 <span class="arithmatex">\(8\)</span> 个样品测得重量：<span class="arithmatex">\(14.7, 15.1, 14.8, 15, 15.3, 14.9, 15.2, 14.6\)</span>，已知方差不变，问机器包装的味精每袋平均重量是否仍为 <span class="arithmatex">\(15\)</span>？（显著性水平 <span class="arithmatex">\(\alpha = 0.05\)</span>）</p>
+</blockquote>
+<p>已知：<span class="arithmatex">\(n = 8, \bar X = 14.95, \sigma^2 = 0.05\)</span></p>
+<ol>
+<li>
+<p>提出假设
+<span class="arithmatex">\(H_0: \mu_0 = 15\)</span>
+<span class="arithmatex">\(H_1: \mu_0 \neq 15\)</span></p>
+</li>
+<li>
+<p>构建检验统计量
+<span class="arithmatex">\(Z = \frac{\bar X - \mu_0}{\sigma / \sqrt{n}} = -0.632\)</span></p>
+</li>
+<li>
+<p>求出拒绝域
+<span class="arithmatex">\(Z_{\frac{\alpha}{2}} = 1.96\)</span>
+拒绝域 <span class="arithmatex">\(M\)</span>：<span class="arithmatex">\((-\infty, -1.96) \cup (1.96, +\infty)\)</span></p>
+</li>
+<li>
+<p>接受或拒绝
+<span class="arithmatex">\(-0.632 \notin M\)</span>，接受原假设 <span class="arithmatex">\(H_0\)</span></p>
+</li>
+</ol>
+<p>答：可以认为机器包装的味精每袋平均重量仍为 <span class="arithmatex">\(15\)</span></p>
+<p><br></p>
+<blockquote>
+<p>（5）已知某炼铁厂铁水含量服从正态分布 <span class="arithmatex">\(N(4.55, 0.108^2)\)</span>，现测定了 <span class="arithmatex">\(9\)</span> 炉铁水，其中平均含碳量为 <span class="arithmatex">\(4.484\)</span>，如果估计方差没有变化，可否认为现在生产的铁水平均含碳量仍为 <span class="arithmatex">\(4.55\)</span>（取显著性水平 <span class="arithmatex">\(\alpha = 0.05\)</span>）</p>
+</blockquote>
+<p>已知，<span class="arithmatex">\(\sigma^2 = 0.108^2, n = 9, \bar X = 4.484\)</span></p>
+<ol>
+<li>
+<p>提出假设</p>
+<p><span class="arithmatex">\(H_0: \mu_0 = 4.55\)</span>
+<span class="arithmatex">\(H_1: \mu_0 \neq 4.55\)</span></p>
+</li>
+<li>
+<p>构建检验统计量</p>
+<p><span class="arithmatex">\(Z = \frac{\bar X - \mu_0}{\sigma / \sqrt{n}} = -\frac{11}{6} = -1.833\)</span></p>
+</li>
+<li>
+<p>求出拒绝域
+    <span class="arithmatex">\(Z_{\frac{\alpha}{2}} = 1.96\)</span>
+    拒绝域 <span class="arithmatex">\(M\)</span>：<span class="arithmatex">\((-\infty, -1.96) \cup (1.96, +\infty)\)</span></p>
+</li>
+<li>
+<p>接受或拒绝
+    <span class="arithmatex">\(-1.833 \notin M\)</span>，接受原假设 <span class="arithmatex">\(H_0\)</span></p>
+</li>
+</ol>
+<p>答：可以认为现在生产的铁水平均含碳量仍为 <span class="arithmatex">\(4.55\)</span></p>
+<p><br></p>
+<blockquote>
+<p>（6）已知某种食品每袋重量应为 <span class="arithmatex">\(50\)</span> 克，现随机抽查市售的该种食品 <span class="arithmatex">\(4\)</span> 袋测得重量如下：<span class="arithmatex">\(45.0, 49.5, 50.5, 46.5\)</span>，设每袋重量服从均方差为 <span class="arithmatex">\(3\)</span> 克的正态分布，试在显著性水平 <span class="arithmatex">\(a = 0.05\)</span> 下检验该食品平均袋重是否合格</p>
+</blockquote>
+<p>已知：<span class="arithmatex">\(\bar X = 47.875, \sigma = 3, n = 4\)</span></p>
+<ol>
+<li>
+<p>提出假设</p>
+<p><span class="arithmatex">\(H_0: \mu_0 = 50\)</span>
+<span class="arithmatex">\(H_1: \mu_0 \neq 50\)</span></p>
+</li>
+<li>
+<p>构建检验统计量</p>
+<p><span class="arithmatex">\(Z = \frac{\bar{X}-\mu_0}{\sigma / \sqrt{n}} = 1.416666\)</span></p>
+</li>
+<li>
+<p>求出拒绝域</p>
+<p><span class="arithmatex">\(Z_{\frac{\alpha}{2}} = 1.96\)</span>
+拒绝域 <span class="arithmatex">\(M\)</span>：<span class="arithmatex">\((-\infty, -1.96) \cup (1.96, +\infty)\)</span></p>
+</li>
+<li>
+<p>接受或拒绝</p>
+<p><span class="arithmatex">\(1.14 \notin M\)</span>，接受原假设 <span class="arithmatex">\(H_0\)</span></p>
+</li>
+</ol>
+<p>答：可以认为该食品平均袋重为 <span class="arithmatex">\(50\)</span> 克</p>
+<p><br></p>
+<h3 id="1_3">1、公式 <strong><span class="arithmatex">\(^*\)</span></strong></h3>
+<p>检验统计量：</p>
+<p><strong>$<span class="arithmatex">\(Z = \frac{\bar X - \mu_0}{\sigma / \sqrt{n}}\)</span>$</strong></p>
+<p><strong>$<span class="arithmatex">\(T = \frac{\bar X - \mu_0}{S / \sqrt{n}}\)</span>$</strong></p>
+<p><strong>$<span class="arithmatex">\({\chi^2} = \frac{(n-1)S^2}{\sigma_0^2}\)</span>$</strong></p>
+<p><br></p>
+<p>拒绝域：</p>
+<p><strong>$<span class="arithmatex">\((-\infty, -Z_\frac{\alpha}{2}) \cup (Z_\frac{\alpha}{2}, +\infty)\)</span>$</strong></p>
+<p><strong>$<span class="arithmatex">\((-\infty, -T_{\frac{\alpha}{2}}(n-1)) \cup (T_{\frac{\alpha}{2}}(n-1), +\infty)\)</span>$</strong></p>
+<p><strong>$<span class="arithmatex">\(( -\infty, {\chi^2}_{1-\frac{\alpha}{2}}(n-1)) \cup ({\chi^2}_{\frac{\alpha}{2}}(n-1), +\infty)\)</span>$</strong></p>
+<p><br></p>
+<hr />
+<h2 id="_24">常见分布 <strong><span class="arithmatex">\(^*\)</span></strong></h2>
+<h3 id="b">二项分布 <span class="arithmatex">\(B\)</span></h3>
+<p>二项分布是 <span class="arithmatex">\(n\)</span> 重伯努利试验</p>
+<blockquote>
+<ul>
+<li>伯努利试验
+  设试验 <span class="arithmatex">\(E\)</span> 只有两个可能结果：<span class="arithmatex">\(A\)</span>（事件 <span class="arithmatex">\(A\)</span> 发生）和 <span class="arithmatex">\(B\)</span>（事件 <span class="arithmatex">\(A\)</span> 不发生，也称 <span class="arithmatex">\(\bar{A}\)</span>），且 <span class="arithmatex">\(P(A) = p\)</span>，<span class="arithmatex">\(P(B) = 1-p\)</span>，则称 <span class="arithmatex">\(E\)</span> 为一次伯努利试验</li>
+<li>n重伯努利试验
+将上述试验 <span class="arithmatex">\(E\)</span> 重复 <span class="arithmatex">\(n\)</span> 次，称为 <span class="arithmatex">\(n\)</span> 重伯努利试验</li>
+</ul>
+</blockquote>
+<p>设 <span class="arithmatex">\(X\)</span> 为 <span class="arithmatex">\(n\)</span> 重伯努利试验中事件 <span class="arithmatex">\(A\)</span> 发生的次数，则 <span class="arithmatex">\(X\)</span> 服从参数为 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(p\)</span> 的二项分布，记作：</p>
+<div class="arithmatex">\[X \sim b(n,p)\]</div>
+<p>二项分布的分布函数：</p>
+<div class="arithmatex">\[P \{ X=k \} = {C_n^k} p^k (1-p)^{n-k}$$ $$其中, k 表示成功的次数, n 表示试验的总次数, p 表示每次试验成功的概率(不变)\]</div>
+<p>期望方差：</p>
+<div class="arithmatex">\[E(X) = np$$ $$D(X) = np(1-p)\]</div>
+<blockquote>
+<p>特殊的，当 <span class="arithmatex">\(n=1\)</span> 时，二项分布就是 0-1 分布</p>
+</blockquote>
+<h3 id="p">泊松分布 <span class="arithmatex">\(P\)</span></h3>
+<p>泊松分布的分布函数：</p>
+<div class="arithmatex">\[P \{ X=k \} = \frac{\lambda^k}{k!} e^{-\lambda}$$ $$其中, k=0,1,2,..., \lambda &gt; 0\]</div>
+<p>记作：</p>
+<div class="arithmatex">\[ X \sim P(\lambda) \]</div>
+<blockquote>
+<p>单位时间内，某一件事情发生的次数
+常见的：单位时间内，某一机器发生故障的次数，单位时间内，某一服务台接待的顾客数</p>
+</blockquote>
+<p>期望方差：</p>
+<div class="arithmatex">\[E(X) = \lambda$$ $$D(X) = \lambda\]</div>
+<h3 id="u">均匀分布 <span class="arithmatex">\(U\)</span></h3>
+<p>若连续型随机变量 <span class="arithmatex">\(X\)</span> 的概率密度函数为：</p>
+<div class="arithmatex">\[f(x) = \begin{cases} \frac{1}{b-a}, &amp; a &lt; x &lt; b \\ 0, &amp; else \end{cases}\]</div>
+<p>则 <span class="arithmatex">\(X\)</span> 在区间 <span class="arithmatex">\((a,b)\)</span> 上服从 <strong>均匀分布</strong>，记作：</p>
+<div class="arithmatex">\[X \sim U(a,b)\]</div>
+<p>期望方差：</p>
+<div class="arithmatex">\[E(X) = \frac{a+b}{2}$$ $$D(X) = \frac{(b-a)^2}{12}\]</div>
+<blockquote>
+<p>对于随机变量 <span class="arithmatex">\(X\)</span>，落在区间 <span class="arithmatex">\(a,b\)</span> 中任意 <strong>等长度</strong> 的子区间的概率相等</p>
+<p>概率密度函数为常数，区间内所有点的概率密度相等</p>
+</blockquote>
+<h3 id="e">指数分布 <span class="arithmatex">\(E\)</span></h3>
+<p>若连续型随机变量 <span class="arithmatex">\(X\)</span> 的概率密度函数为：</p>
+<div class="arithmatex">\[f(x) = \begin{cases} \lambda e^{-\lambda x}, &amp; x &gt; 0 \\ 0, &amp; x \leq 0 \end{cases}$$ $$其中, \lambda &gt; 0\]</div>
+<p>则 <span class="arithmatex">\(X\)</span> 服从 <strong>指数分布</strong>，记作：</p>
+<div class="arithmatex">\[X \sim E(\lambda)\]</div>
+<p>期望方差：</p>
+<div class="arithmatex">\[E(X) = \frac{1}{\lambda}$$ $$D(X) = \frac{1}{\lambda^2}\]</div>
+<blockquote>
+<p>电子原件的寿命分布都近似的服从指数分布</p>
+</blockquote>
+<h3 id="n">正态分布 <span class="arithmatex">\(N\)</span></h3>
+<p>若连续型随机变量 <span class="arithmatex">\(X\)</span> 的概率密度函数为：</p>
+<div class="arithmatex">\[f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$ $$其中 \mu 为均值, \sigma 为标准差, -\infty &lt; x &lt; +\infty\]</div>
+<p>则 <span class="arithmatex">\(X\)</span> 服从 <strong>正态分布</strong>，记作：
+$<span class="arithmatex">\(X \sim N(\mu, \sigma^2)\)</span>$</p>
+<p>期望方差：</p>
+<div class="arithmatex">\[E(X) = \mu$$ $$D(X) = \sigma^2\]</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2020 - 2026 Workers of All Lands
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.tabs", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

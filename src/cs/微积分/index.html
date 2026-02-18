@@ -1,0 +1,6538 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../historyOfChina/">
+      
+      
+        <link rel="next" href="../%E6%A6%82%E7%8E%87%E8%AE%BA/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/head.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>微积分 - DAI X.L.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="DAI X.L." class="md-header__button md-logo" aria-label="DAI X.L." data-md-component="logo">
+      
+  <img src="../../../assets/head.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DAI X.L.
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              微积分
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dxlcq" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dxlcq.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+  Jiao
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../algorithm/pre/" class="md-tabs__link">
+          
+  
+  
+  🪂 Algorithm
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cpp/cpp/" class="md-tabs__link">
+          
+  
+  
+  🚀 C/C++
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ai/ai/" class="md-tabs__link">
+          
+  
+  
+  🤖 AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dev/macos/" class="md-tabs__link">
+          
+  
+  
+  🌥️ DevOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../language/py/env/" class="md-tabs__link">
+          
+  
+  
+  🌿 Language
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../cs/" class="md-tabs__link">
+          
+  
+  
+  📖 CS
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DAI X.L." class="md-nav__button md-logo" aria-label="DAI X.L." data-md-component="logo">
+      
+  <img src="../../../assets/head.png" alt="logo">
+
+    </a>
+    DAI X.L.
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dxlcq" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dxlcq.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jiao
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jiao
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🪂 Algorithm
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🪂 Algorithm
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/pre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pre
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/really/csp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/really/gesp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GESP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/really/cie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CIE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/base/binary-answer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    二分
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    搜索
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    搜索
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/search/DFS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深搜
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图论
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    图论
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/graph/binary-tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    二叉树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动规
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    动规
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/dp/number-triangles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数字三角形
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/dp/subsequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    子序列模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据结构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/data-struct/linked-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/data-struct/segment-tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线段树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/raft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    raft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 C/C++
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🚀 C/C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/stl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/thread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thread
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/qt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/av/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/ros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/gcc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔩 GCC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/gdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔩 GDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/make/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔩 Make
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/cmake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔩 CMake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/perf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔩 Perf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/gtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 GTest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/boost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 Boost
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/grpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 Grpc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/kafka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 Kafka
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/openssl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 OpenSSL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/ffmpeg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 FFmpeg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/cyclonedds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 cyclonedds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/subprocess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 subprocess
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/taskflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 taskflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/rocksdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 rocksdb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/hmbdc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 HMBDC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cpp/sqlpp11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 sqlpp11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/d2l/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    d2l
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌥️ DevOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🌥️ DevOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/macos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧑‍💻 MacOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐧 Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/openwrt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📡 OpenWrt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🪟 Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/containerd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Containerd
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/prometheus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Prometheus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/grpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚡 gRPC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/kafka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚡 Kafka
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/postgresql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/nginx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 Nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/openssh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 OpenSSH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/coturn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 Coturn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/frp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 FRP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/ddns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 DDNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/mysql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪🏻 MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌿 Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🌿 Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/py/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    env
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/py/pandas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pandas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/py/openpyxl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    openpyxl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/py/tornado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tornado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/py/deeplearning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    deeplearning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Golang
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Golang
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/go/go/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    go
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/go/gin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/go/websocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    websocket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/js/websocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    websocket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/js/webrtc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    webrtc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/java/main_java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    main/java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/java/main_resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    main/resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/java/test_java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    test/java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTML
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    HTML
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/html/html/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/html/css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 CS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📖 CS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    操作系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作系统结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网络
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    网络
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/%E5%86%B2%E6%B5%AA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    冲浪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_2" id="__nav_7_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Application
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_3" id="__nav_7_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transport
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Transport
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UDP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_4" id="__nav_7_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/ipv4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPv4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_5" id="__nav_7_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DataLink
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DataLink
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/pppoe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PPPoE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/mtu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MTU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据结构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataStruct/list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataStruct/queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    队列
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据库
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataBase/t/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一章
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../designPattern/designPattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    设计模式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemArchitecture/systemArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineer/engineer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工程师
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    马克思主义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../historyOfChina/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国近代史
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    微积分
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    微积分
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        引子
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lim_x-to-x_0-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        \(\lim_{x \to x_0} = A\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="\(\lim_{x \to x_0} = A\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三角函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对数函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指数函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        幂函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        极限
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="极限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数列极限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数极限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无穷大小
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="连续">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        间断点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textdy-a-textdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        \(\text{d}y = A \ \text{d}x\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="\(\text{d}y = A \ \text{d}x\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inta_b-fx-textdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        \(\int^a_b f(x) \ \text{d}x\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="\(\int^a_b f(x) \ \text{d}x\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定积分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不定积分
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多元函数微分
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多元函数积分
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分方程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        --------下面是旧的----------
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一节 函数与极限
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一节 函数与极限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数列极限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数极限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无穷小
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无穷大
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        洛必达法则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        等价代换 x-&gt;0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        泰勒公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七类不定式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单调有界定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        夹逼定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定积分定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二节 导数与微分
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二节 导数与微分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="导数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        间断
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】基本初等函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】四则运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】复合函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】隐函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】反函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】参数方程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】对数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】高阶导数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A6%82%E7%8E%87%E8%AE%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概率论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        引子
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lim_x-to-x_0-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        \(\lim_{x \to x_0} = A\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="\(\lim_{x \to x_0} = A\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三角函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对数函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指数函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        幂函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        极限
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="极限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数列极限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数极限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无穷大小
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性质
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="连续">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        间断点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textdy-a-textdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        \(\text{d}y = A \ \text{d}x\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="\(\text{d}y = A \ \text{d}x\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inta_b-fx-textdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        \(\int^a_b f(x) \ \text{d}x\)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="\(\int^a_b f(x) \ \text{d}x\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定积分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不定积分
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多元函数微分
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多元函数积分
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分方程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        --------下面是旧的----------
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一节 函数与极限
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一节 函数与极限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数列极限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数极限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无穷小
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无穷大
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        洛必达法则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        等价代换 x-&gt;0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        泰勒公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七类不定式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单调有界定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        夹逼定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定积分定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二节 导数与微分
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二节 导数与微分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="导数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        间断
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】基本初等函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】四则运算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】复合函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】隐函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】反函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】参数方程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】对数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【求导公式】高阶导数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>微积分</h1>
+
+<h2 id="_1">引子</h2>
+<p><a href="https://www.geogebra.org/graphing?lang=zh_CN">画图</a> / <a href="https://mathsolver.microsoft.com/zh">计算</a> / <a href="https://mathdf.com/cn/">备用计算</a></p>
+<p><br></p>
+<hr />
+<h2 id="lim_x-to-x_0-a"><strong><span class="arithmatex">\(\lim_{x \to x_0} = A\)</span></strong></h2>
+<h3 id="_2">函数</h3>
+<h4 id="_3">三角函数</h4>
+<p><a href="https://zhuanlan.zhihu.com/p/386465494">公式参考</a></p>
+<p>正弦函数：<span class="arithmatex">\(\sin x\)</span></p>
+<p>余弦函数：<span class="arithmatex">\(\cos x\)</span></p>
+<p>正切函数：<span class="arithmatex">\(\tan x\)</span> = <span class="arithmatex">\(\frac{\sin x}{\cos x}\)</span></p>
+<p>余切函数：<span class="arithmatex">\(\cot x\)</span> = <span class="arithmatex">\(\frac{\cos x}{\sin x}\)</span></p>
+<p>反正弦函数：<span class="arithmatex">\(\arcsin x\)</span> = <span class="arithmatex">\(\sin^{-1} x\)</span></p>
+<p>反余弦函数：<span class="arithmatex">\(\arccos x\)</span> = <span class="arithmatex">\(\cos^{-1} x\)</span></p>
+<p>反正切函数：<span class="arithmatex">\(\arctan x\)</span> = <span class="arithmatex">\(\tan^{-1} x\)</span></p>
+<p>反余切函数：<span class="arithmatex">\(\text{arccot} \ x\)</span> = <span class="arithmatex">\(\text{cot}^{-1} x\)</span></p>
+<p>正割函数：<span class="arithmatex">\(\sec x\)</span> = <span class="arithmatex">\(\frac{1}{\cos x}\)</span></p>
+<p>余割函数：<span class="arithmatex">\(\csc x\)</span> = <span class="arithmatex">\(\frac{1}{\sin x}\)</span></p>
+<h4 id="_4">对数函数</h4>
+<p>一般对数函数：<span class="arithmatex">\(\log_a x\)</span></p>
+<p>自然对数函数：<span class="arithmatex">\(\ln x\)</span> = <span class="arithmatex">\(\log_e x\)</span></p>
+<p>常用对数函数：<span class="arithmatex">\(\lg x\)</span> = <span class="arithmatex">\(\log_{10} x\)</span></p>
+<h4 id="_5">指数函数</h4>
+<p>指数函数：<span class="arithmatex">\(a^x\)</span></p>
+<h4 id="_6">幂函数</h4>
+<p>幂函数：<span class="arithmatex">\(x^a\)</span></p>
+<h4 id="_7">性质</h4>
+<ol>
+<li>
+<p>有界性</p>
+</li>
+<li>
+<p>单调性</p>
+</li>
+<li>
+<p>奇偶性</p>
+</li>
+<li>
+<p>周期性</p>
+</li>
+</ol>
+<p><br></p>
+<h3 id="_8">极限</h3>
+<h4 id="_9">数列极限</h4>
+<p>如果序列中的元素，随着序号的增加，而越来越接近某个特定的值，那么这个值就是此序列的极限</p>
+<blockquote>
+<p>$ a_n = \frac{1}{n} $</p>
+<p>计算数列前几项</p>
+<p>$ a_1 = \frac{1}{1} \ \ a_2 = \frac{1}{2} \ \ a_3 = \frac{1}{3} $</p>
+<p>当 <span class="arithmatex">\(n\)</span> 越来越大时，数列每一项都变得越来越小，但是不会变成 <span class="arithmatex">\(0\)</span>，而是趋近于 <span class="arithmatex">\(0\)</span></p>
+<p>（我们只关注趋势，对于某一点是否能取到特定值，无所谓）</p>
+<p>故表达为：<span class="arithmatex">\(\lim_{b \to \infty} \frac{1}{n} = 0\)</span> </p>
+</blockquote>
+<p><strong>定义</strong></p>
+<p><span class="arithmatex">\({\forall} \ {\epsilon} &gt; 0\)</span>，$ {\exists} \ N &gt; 0$，当 <span class="arithmatex">\(n &gt; N\)</span> 时，<span class="arithmatex">\(|a_n - A| &lt; {\epsilon}\)</span>，则 <span class="arithmatex">\(\lim_{n \to \infty} a_n = A\)</span></p>
+<blockquote>
+<p>给定一个 <strong>任意小</strong> 的正数 <span class="arithmatex">\(\epsilon\)</span>，使得从第 <span class="arithmatex">\(N+1\)</span> 起的每一项，其与极限值 <span class="arithmatex">\(A\)</span> 之间的差异都小于 <span class="arithmatex">\(\epsilon\)</span></p>
+<p>例：</p>
+<p><span class="arithmatex">\(|a_n - A| &lt; e^{\frac{\epsilon}{10}}\)</span> 不是极限</p>
+<p>因为 <span class="arithmatex">\(e^{\frac{\epsilon}{10}}\)</span> 不是任意小的正数</p>
+<ul>
+<li>
+<p><span class="arithmatex">\({\frac{\epsilon}{10}}\)</span> 的值域 <span class="arithmatex">\((0, +\infty)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(e^{\frac{\epsilon}{10}}\)</span> 的值域 <span class="arithmatex">\((1, +\infty)\)</span></p>
+</li>
+</ul>
+</blockquote>
+<p><strong>充要条件</strong></p>
+<p><span class="arithmatex">\(\lim_{n \to \infty} u_n = A \iff \lim_{n \to \infty} u_{2n} = \lim_{n \to \infty} u_{2n-1} = A\)</span></p>
+<p><br></p>
+<h4 id="_10">函数极限</h4>
+<p>函数在某一点或无穷远处，趋近于某个值，那么这个值就是函数的极限</p>
+<blockquote>
+<p><span class="arithmatex">\(\lim_{x \to \infty} \frac{1}{x} = 0\)</span>
+当 <span class="arithmatex">\(x\)</span> 越来越大时，函数值越来越小，但是不会变成 <span class="arithmatex">\(0\)</span>，而是趋近于 <span class="arithmatex">\(0\)</span>
+（同上，我们只关注函数在某一点附近的趋势，而不是该点上的取值）
+故表达为：<span class="arithmatex">\(\lim_{x \to \infty} \frac{1}{x} = 0\)</span></p>
+<p><span class="arithmatex">\(\lim_{x \to 2} x^2 = 4\)</span>
+当 <span class="arithmatex">\(x\)</span> 趋近于 <span class="arithmatex">\(2\)</span> 时，函数值趋近于 <span class="arithmatex">\(4\)</span>
+故表达为：<span class="arithmatex">\(\lim_{x \to 2} x^2 = 4\)</span>
+因为函数在 <span class="arithmatex">\(x=2\)</span> 处的确切取值 <span class="arithmatex">\(f(2)\)</span> 也等于 <span class="arithmatex">\(4\)</span>，也可以说函数在 <span class="arithmatex">\(x=2\)</span> 处是收敛的</p>
+</blockquote>
+<p><strong>定义</strong></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(x \to x_0\)</span></p>
+<ul>
+<li><span class="arithmatex">\(\forall \ \epsilon &gt; 0, \exists \ \delta &gt; 0\)</span>，当 <span class="arithmatex">\(0 &lt; |x - x_0| &lt; \delta\)</span> 时，<span class="arithmatex">\(|f(x) - A| &lt; \epsilon\)</span>，称 <span class="arithmatex">\(\lim_{x \to x_0} f(x) = A\)</span>
+    &gt; 给定 <strong>任意小</strong> 的正数 <span class="arithmatex">\(\epsilon\)</span> 和 <span class="arithmatex">\(\delta\)</span>，当 <span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(x_0\)</span> 之间的差异小于 <span class="arithmatex">\(\delta\)</span> 时
+    &gt; 函数值与极限值 <span class="arithmatex">\(A\)</span> 之间的差异都小于 <span class="arithmatex">\(\epsilon\)</span></li>
+</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(x \to \infty\)</span></p>
+<ul>
+<li><span class="arithmatex">\(\forall \ \epsilon &gt; 0, \exists \ \delta &gt; 0\)</span>，当 <span class="arithmatex">\(|x| &gt; \delta\)</span> 时，<span class="arithmatex">\(|f(x) - A| &lt; \epsilon\)</span>，称 <span class="arithmatex">\(\lim_{x \to \infty} f(x) = A\)</span>
+    &gt; 给定 <strong>任意小</strong> 的正数 <span class="arithmatex">\(\epsilon\)</span> 和 <span class="arithmatex">\(\delta\)</span>，当 <span class="arithmatex">\(x\)</span> 的绝对值大于 <span class="arithmatex">\(\delta\)</span> 时
+    &gt; 函数值与极限值 <span class="arithmatex">\(A\)</span> 之间的差异都小于 <span class="arithmatex">\(\epsilon\)</span></li>
+</ul>
+</li>
+</ol>
+<p><strong>充要条件</strong></p>
+<p><span class="arithmatex">\(\lim_{x \to x_0} f(x) = A \iff f(x_0^-) = f(x_0^+) = A\)</span></p>
+<h4 id="_11">无穷大小</h4>
+<p><br></p>
+<h4 id="_12">性质</h4>
+<p><br></p>
+<h4 id="_13">运算</h4>
+<p><br></p>
+<h3 id="_14">连续</h3>
+<p>函数在某个区间内的所有点都 <strong>存在</strong> 且 <strong>无间断</strong>，那么这个函数就是连续的</p>
+<h4 id="_15">间断点</h4>
+<p><br></p>
+<hr />
+<h2 id="textdy-a-textdx"><strong><span class="arithmatex">\(\text{d}y = A \ \text{d}x\)</span></strong></h2>
+<p><br></p>
+<h3 id="_16">导数</h3>
+<p><strong>导数</strong> 用来描述函数在某一点的 <strong>变化率</strong> 或 <strong>斜率</strong></p>
+<blockquote>
+<p>平行于 <span class="arithmatex">\(X\)</span> 轴的直线 <span class="arithmatex">\(f(x) = 5\)</span>
+无论 <span class="arithmatex">\(x\)</span> 取多少，<span class="arithmatex">\(y\)</span> 都是 <span class="arithmatex">\(5\)</span>
+因此不存在斜率变化，故 <span class="arithmatex">\(f'(x) = 0\)</span></p>
+</blockquote>
+<p><strong>定义</strong>：导数的极限定义</p>
+<div class="arithmatex">\[f'(x_0) = \lim_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0} = \left. \frac{\text{d} f}{\text{d} x} \right|_{x=x_0}\]</div>
+<ol>
+<li>计算函数在 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(x_0\)</span> 的函数值：<span class="arithmatex">\(f(x)\)</span> 和 <span class="arithmatex">\(f(x_0)\)</span></li>
+<li>计算两点间的变化量：<span class="arithmatex">\(f(x)-f(x_0)\)</span></li>
+<li>将变化量除以 <span class="arithmatex">\(x-x_0\)</span></li>
+<li>
+<p>当 <span class="arithmatex">\(x\)</span> 趋近于 <span class="arithmatex">\(x_0\)</span> 时，可以得知函数在 <span class="arithmatex">\(x_0\)</span> 点的瞬时变化率
+<strong>可导</strong></p>
+</li>
+<li>
+<p><span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(x_0\)</span> 处 连续</p>
+</li>
+</ol>
+<p><br></p>
+<h3 id="_17">微分</h3>
+<p><br></p>
+<hr />
+<h2 id="inta_b-fx-textdx"><strong><span class="arithmatex">\(\int^a_b f(x) \ \text{d}x\)</span></strong></h2>
+<p><br></p>
+<h3 id="_18">定积分</h3>
+<p><strong>牛顿-莱布利兹定理</strong></p>
+<p><span class="arithmatex">\(\int^a_b f(x) \ \text{d}x = F(x)|_a^b = F(b) - F(a)\)</span></p>
+<p><br></p>
+<h3 id="_19">不定积分</h3>
+<p><br></p>
+<hr />
+<h2 id="_20">多元函数微分</h2>
+<p><br></p>
+<hr />
+<h2 id="_21">多元函数积分</h2>
+<p><br></p>
+<hr />
+<h2 id="_22">微分方程</h2>
+<h2 id="-">--------下面是旧的----------</h2>
+<p>微积分之前先 <strong>化简</strong> <span class="arithmatex">\(\left\{
+\begin{aligned}
+    拆项、提项、同乘、同除 \\
+    对数公式 \\
+    三角公式 \\
+\end{aligned}
+\right.\)</span></p>
+<p><strong>对数公式</strong>
+1. <span class="arithmatex">\(▢ = e^{\ln ▢} = \ln e^▢\)</span>
+2. <span class="arithmatex">\(\ln ab = \ln a + \ln b\)</span>
+3. <span class="arithmatex">\(\ln \frac{a}{b} = \ln a - \ln b\)</span>
+4. <span class="arithmatex">\(\log _a ^b = \frac{\ln b}{\ln a}\)</span></p>
+<h2 id="_23">第一节 函数与极限</h2>
+<p>要多近有多近（柯西 cauchy 说的）</p>
+<ul>
+<li>
+<p>数列极限</p>
+<ol>
+<li>单调有界</li>
+<li>夹逼定理</li>
+<li>定积分定义（用无穷个长方形的面积逼近曲线下的面积）</li>
+</ol>
+</li>
+<li>
+<p>函数极限</p>
+<ol>
+<li>洛必达（简单函数，容易求导，越求越简单）</li>
+<li>等价代换（3组）</li>
+<li>泰勒公式（8个）</li>
+<li>导数定义（导数是变换率的极限，牛顿研究加速度）</li>
+<li>拉格朗日中值定理（导数的几何意义，切线斜率）</li>
+</ol>
+</li>
+</ul>
+<h3 id="_24">函数</h3>
+<p>单调性</p>
+<p>有界性</p>
+<p>奇偶性</p>
+<p>周期性</p>
+<hr />
+<h3 id="_25">数列极限</h3>
+<p><strong>数列极限概念</strong> </p>
+<p>定义：<span class="arithmatex">\(\lim_{n \to \infty} a_n = a\)</span></p>
+<p><strong><span class="arithmatex">\({\forall} {\epsilon} &gt; 0, {\exists}  N &gt; 0\)</span>，当<span class="arithmatex">\(n &gt; N\)</span>时，<span class="arithmatex">\(|a_n - a| &lt; {\epsilon}\)</span></strong></p>
+<p>注意：<span class="arithmatex">\(|a_n - a| &lt; {\epsilon}\)</span> 中的 <span class="arithmatex">\({\epsilon}\)</span> 是任意小的正数，不是固定的，如果不是任意小，那么就不是极限了。</p>
+<blockquote>
+<p><span class="arithmatex">\(|a_n - a| &lt; e^{\frac{\epsilon}{10}}\)</span>
+这个不是极限，因为 <span class="arithmatex">\(e^{\frac{\epsilon}{10}}\)</span> 不是任意小的正数
+* <span class="arithmatex">\({\frac{\epsilon}{10}}\)</span> 的值域 <span class="arithmatex">\((0, +\infty)\)</span>
+* <span class="arithmatex">\(e^{\frac{\epsilon}{10}}\)</span> 的值域 <span class="arithmatex">\((1, +\infty)\)</span></p>
+<p>所以 <span class="arithmatex">\(e^{\frac{\epsilon}{10}}\)</span> 不是任意小的正数。</p>
+</blockquote>
+<p><strong>数列极限的充要条件</strong></p>
+<p><strong><span class="arithmatex">\(\lim_{n \to \infty} a_n = a &lt;=&gt; {\forall} 子列均收敛于 a\)</span></strong></p>
+<p><span class="arithmatex">\(\lim_{n \to \infty} a_n = a &lt;=&gt; \lim_{n \to \infty} a_{2n} = \lim_{n \to \infty} a_{2n+1} = a\)</span></p>
+<p><span class="arithmatex">\(\lim_{n \to \infty} a_n = a &lt;=&gt; \lim_{n \to \infty} a_{3n} = \lim_{n \to \infty} a_{3n+1} = \lim_{n \to \infty} a_{3n+2} = a\)</span></p>
+<p><strong>数列极限的性质</strong></p>
+<ol>
+<li>唯一性：<span class="arithmatex">\(\lim_{n \to \infty} a_n = a\)</span>，<span class="arithmatex">\(\lim_{n \to \infty} a_n = b\)</span>，则 <span class="arithmatex">\(a = b\)</span></li>
+<li>有界性：<span class="arithmatex">\(\lim_{n \to \infty} a_n {\exists}\)</span>，则 <span class="arithmatex">\({a_n}\)</span> 有界</li>
+<li>局部保号性：<span class="arithmatex">\(\lim_{n \to \infty} a_n = a &gt; 0\)</span>，则 <span class="arithmatex">\({\exists} N &gt; 0\)</span>，当 <span class="arithmatex">\(n &gt; N\)</span> 时，<span class="arithmatex">\(a_n &gt; 0\)</span></li>
+</ol>
+<hr />
+<h3 id="_26">函数极限</h3>
+<p><strong>函数极限概念</strong> </p>
+<p>定义：</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(x -&gt; x_0\)</span></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\lim_{x \to x_0} f(x) = A\)</span>：<span class="arithmatex">\({\forall} {\epsilon} &gt; 0, {\exists} {\delta} &gt; 0\)</span>，当 <span class="arithmatex">\(0 &lt; |x - x_0| &lt; {\delta}\)</span> 时，<span class="arithmatex">\(|f(x) - A| &lt; {\epsilon}\)</span>
+函数极限 <span class="arithmatex">\(x-&gt;x_0\)</span> 但不允许 <span class="arithmatex">\(x=x_0\)</span>（函数在 <span class="arithmatex">\(x_0\)</span> 处不一定有定义）。</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\lim_{x \to x_0^+} f(x) = A\)</span>：<span class="arithmatex">\({\forall} {\epsilon} &gt; 0, {\exists} {\delta} &gt; 0\)</span>，当 <span class="arithmatex">\(0 &lt; x - x_0 &lt; {\delta}\)</span> 时，<span class="arithmatex">\(|f(x) - A| &lt; {\epsilon}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\lim_{x \to x_0^-} f(x) = A\)</span>：<span class="arithmatex">\({\forall} {\epsilon} &gt; 0, {\exists} {\delta} &gt; 0\)</span>，当 <span class="arithmatex">\(0 &lt; x_0 - x &lt; {\delta}\)</span> 时，<span class="arithmatex">\(|f(x) - A| &lt; {\epsilon}\)</span></p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(x -&gt; \infty\)</span></p>
+<ul>
+<li><span class="arithmatex">\(\lim_{x \to \infty} f(x) = A\)</span>：<span class="arithmatex">\({\forall} {\epsilon} &gt; 0, {\exists} X &gt; 0\)</span>，当 <span class="arithmatex">\(|x| &gt; X\)</span> 时，<span class="arithmatex">\(|f(x) - A| &lt; {\epsilon}\)</span></li>
+<li><span class="arithmatex">\(\lim_{x \to \infty^+} f(x) = A\)</span>：<span class="arithmatex">\({\forall} {\epsilon} &gt; 0, {\exists} X &gt; 0\)</span>，当 <span class="arithmatex">\(x &gt; X\)</span> 时，<span class="arithmatex">\(|f(x) - A| &lt; {\epsilon}\)</span></li>
+<li><span class="arithmatex">\(\lim_{x \to \infty^-} f(x) = A\)</span>：<span class="arithmatex">\({\forall} {\epsilon} &gt; 0, {\exists} X &gt; 0\)</span>，当 <span class="arithmatex">\(x &lt; -X\)</span> 时，<span class="arithmatex">\(|f(x) - A| &lt; {\epsilon}\)</span></li>
+</ul>
+</li>
+</ol>
+<p><strong>函数极限的充要条件</strong></p>
+<p><span class="arithmatex">\(\lim_{x \to x_0} f(x) = A &lt;=&gt; \lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x) = A\)</span></p>
+<p><span class="arithmatex">\(\lim_{x \to \infty} f(x) = A &lt;=&gt; \lim_{x \to \infty^+} f(x) = \lim_{x \to \infty^-} f(x) = A\)</span></p>
+<p><strong>函数极限的性质</strong></p>
+<ol>
+<li>唯一性：<span class="arithmatex">\(\lim_{x \to x_0} f(x) = A\)</span>，<span class="arithmatex">\(\lim_{x \to x_0} f(x) = B\)</span>，则 <span class="arithmatex">\(A = B\)</span></li>
+<li>局部有界性：<span class="arithmatex">\(\lim_{x \to x_0} f(x) = A\)</span>，则 <span class="arithmatex">\({\exists} {\delta} &gt; 0\)</span>， <span class="arithmatex">\(M &gt; 0\)</span>，当 <span class="arithmatex">\(0 &lt; |x - x_0| &lt; {\delta}\)</span> 时，<span class="arithmatex">\(|f(x)| &lt;= M\)</span></li>
+<li>局部保号性：<span class="arithmatex">\(\lim_{x \to x_0} f(x) = A &gt; 0\)</span>，则 <span class="arithmatex">\({\exists} {\delta} &gt; 0\)</span>，当 <span class="arithmatex">\(0 &lt; |x - x_0| &lt; {\delta}\)</span> 时，<span class="arithmatex">\(f(x) &gt; 0\)</span>
+    推论：
+    <span class="arithmatex">\(f(x) &gt;= 0\)</span>，且 <span class="arithmatex">\(\lim_{x \to x_0} f(x) = A\)</span>，则 <span class="arithmatex">\(A &gt;= 0\)</span></li>
+</ol>
+<blockquote>
+<p>$ f(x) &gt; 0$，且 <span class="arithmatex">\(\lim_{n \to \infty} f(n) = A\)</span>，则 <span class="arithmatex">\(A &gt;= 0\)</span>
+<span class="arithmatex">\(f(x) = 1/x\)</span>，且 <span class="arithmatex">\(\lim_{x \to 0} f(x) = A\)</span>，则 <span class="arithmatex">\(A &gt;= 0\)</span> </p>
+</blockquote>
+<p><strong>四则运算法则</strong></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\lim_{x \to x_0} [f(x) \pm g(x)] = \lim_{x \to x_0} f(x) \pm \lim_{x \to x_0} g(x)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\lim_{x \to x_0} f(x) \cdot g(x) = \lim_{x \to x_0} f(x) \cdot \lim_{x \to x_0} g(x)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\lim_{x \to x_0} \frac{f(x)}{g(x)} = \frac{\lim_{x \to x_0} f(x)}{\lim_{x \to x_0} g(x)}\)</span>，其中 <span class="arithmatex">\(\lim_{x \to x_0} g(x) \neq 0\)</span></p>
+</li>
+</ol>
+<p>推论：（提非零因子）
+设 <span class="arithmatex">\(\lim_{x \to x_0} f(x) = A \neq 0\)</span>，
+则 <span class="arithmatex">\(\lim_{x \to x_0} f(x) \cdot g(x) = A \cdot \lim_{x \to x_0} g(x)\)</span></p>
+<p>注意：四则运算法则（加减乘除拆开）求极限时，要求：
+1. 极限存在
+2. 极限值有意义（除数不为0）</p>
+<blockquote>
+<p>$  \lim_{x \to \infty}  \frac{2x^3+3x-4}{3x^3-4x+3} \overset{ 同除x^3 }{=} \lim_{x \to \infty} \frac{2 + \frac{3}{x^2} - \frac{4}{x^3}}{3 - \frac{4}{x^2} + \frac{3}{x^3}} = \frac{2}{3}$</p>
+</blockquote>
+<hr />
+<h3 id="_27">无穷小</h3>
+<p><strong>无穷小概念</strong></p>
+<p>定义：$ \lim_{x \to x_0} f(x) = 0$，则称 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\(x \to x_0\)</span> 时的无穷小</p>
+<p><strong>无穷小的性质</strong></p>
+<ol>
+<li>有限个无穷小的和是无穷小（注意，不是无穷）</li>
+<li>有限个无穷小的积是无穷小</li>
+<li>无穷小乘以有界量是无穷小</li>
+</ol>
+<blockquote>
+<p>有界量：<span class="arithmatex">\(|f(x)| &lt;= M\)</span>，<span class="arithmatex">\(M\)</span> 是常数
+$ \lim_{x \to {\infty}} \frac{sinx}{x} = \lim_{x \to {\infty}} \frac{1}{x} \cdot sinx = 0 \cdot sinx = 0$</p>
+</blockquote>
+<p><strong>无穷小阶的比较</strong></p>
+<p>$ \lim_{x \to x_0} f(x) = 0<span class="arithmatex">\(，\)</span> \lim_{x \to x_0} g(x) = 0$，则：</p>
+<ol>
+<li>$ \lim_{x \to x_0} \frac{f(x)}{g(x)} = 0$，称 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\(g(x)\)</span> 的 <strong>高阶</strong> 无穷小，记作 <span class="arithmatex">\(f(x) = o(g(x))\)</span>
+    特别的，0是任意无穷小的高阶无穷小</li>
+</ol>
+<blockquote>
+<p>$ \lim_{x \to 0} \frac{x^4}{x^3} = 0<span class="arithmatex">\(，\)</span>x^4$ 是 <span class="arithmatex">\(x^3\)</span> 的高阶无穷小，记作 <span class="arithmatex">\(x^4 = o(x^3)\)</span>
+<strong><span class="arithmatex">\(o\)</span> 的本质是阶数高的一类函数的集合，故有 $ {{x^5, x^6, ...}} ∈ o(x^3)$</strong></p>
+</blockquote>
+<ol>
+<li>
+<p>$ \lim_{x \to x_0} \frac{f(x)}{g(x)} = A \neq 0$，称 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\(g(x)\)</span> 的 <strong>同阶</strong> 无穷小
+    特别的，当 <span class="arithmatex">\(A = 1\)</span> 时，称 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\(g(x)\)</span> 的 <strong>等价</strong> 无穷小，记作 <span class="arithmatex">\(f(x) \sim g(x)\)</span></p>
+</li>
+<li>
+<p>$ \lim_{x \to x_0} \frac{f(x)}{g^k(x)} = C \neq 0$，称 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\(g(x)\)</span> 的 <strong>k阶</strong> 无穷小</p>
+</li>
+</ol>
+<p><strong>高阶无穷小的性质</strong> <span class="arithmatex">\(x \to 0\)</span></p>
+<ol>
+<li><span class="arithmatex">\(o(x^m) + o(x^n) = o(x^l)\)</span>，其中 <span class="arithmatex">\(l = min(m, n)\)</span></li>
+</ol>
+<blockquote>
+<p><span class="arithmatex">\(o(x^3) + o(x^2) = o(x^2)\)</span></p>
+<p><span class="arithmatex">\(o(x^2) - o(x^2) = o(x^2)\)</span>
+因为 <span class="arithmatex">\(o(x^2.1) - o(x^2) = o(x^2)\)</span>，<span class="arithmatex">\(o(x^2.1)\)</span> 是 <span class="arithmatex">\(o(x^2)\)</span> 的高阶无穷小</p>
+</blockquote>
+<ol>
+<li><span class="arithmatex">\(k \cdot o(x^n) = o(x^n)\)</span></li>
+</ol>
+<blockquote>
+<p><span class="arithmatex">\(2 \cdot o(x^3) = o(x^3)\)</span></p>
+</blockquote>
+<ol>
+<li>
+<p><span class="arithmatex">\(x^m \cdot o(x^n) = o(x^m) \cdot x^n = o(x^m) \cdot o(x^n) = o(x^{m+n})\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\frac{o(x^m)}{x^n} = o(x^{m-n}) \ \ 条件：(m&gt;n)\)</span></p>
+</li>
+</ol>
+<h3 id="_28">无穷大</h3>
+<p><strong>无穷大的概念</strong></p>
+<p>定义：</p>
+<ol>
+<li>
+<p>$ \lim_{x \to x_0} f(x) = \infty$，则称 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\(x \to x_0\)</span> 时的无穷大
+    <span class="arithmatex">\(\forall M&gt;0, \exists \delta &gt; 0\)</span>，当 $ 0&lt;|x-x_0|&lt; \delta$ 时，有 <span class="arithmatex">\(f(x) &gt; M\)</span></p>
+</li>
+<li>
+<p>$ \lim_{x \to \infty} f(x) = \infty$，则称 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\(x \to \infty\)</span> 时的无穷大
+    <span class="arithmatex">\(\forall M&gt;0, \exists X &gt; 0\)</span>，当 $ |x| &gt; X$ 时，有 <span class="arithmatex">\(|f(x)| &gt; M\)</span></p>
+</li>
+</ol>
+<p><strong>无穷大的性质</strong></p>
+<ol>
+<li>
+<p>无穷大的倒数为无穷小
+   <strong>非零</strong>无穷小的倒数为无穷大</p>
+</li>
+<li>
+<p>无穷大一定是无界量（$ \forall M &gt; 0, \exists x_0$，使得 <span class="arithmatex">\(|f(x)| &gt; M\)</span>）
+   无界量不一定是无穷大</p>
+<blockquote>
+<p><span class="arithmatex">\(f(x) = x \cdot sinx, x \to \infty\)</span>
+令 <span class="arithmatex">\(x_n = 2n\pi + \frac{\pi}{x}\)</span>，则 <span class="arithmatex">\(f(x_n) = 2n\pi + \frac{\pi}{2}\)</span>，<span class="arithmatex">\(f(x_n) = (2n\pi + \frac{\pi}{2}) \cdot 1 \to \infty\)</span>
+令 <span class="arithmatex">\(x_n = 2n\pi\)</span>，则 <span class="arithmatex">\(f(x_n) = 0\)</span>，故<span class="arithmatex">\(f(x)\)</span>为无界量，但不是无穷大</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>无穷大阶的比较</strong></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(x \to +\infty\)</span>
+   <span class="arithmatex">\(ln^\alpha x \ll x^\beta \ll a^x \ll x^x\)</span>，其中，$ \alpha $ 和 <span class="arithmatex">\(\beta &gt; 0\)</span>, <span class="arithmatex">\(a&gt;1\)</span>
+   对数函数也叫伪无穷大（最弱的无穷大）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(n \to \infty\)</span>  数列的 n 趋于无穷，都是 <span class="arithmatex">\(\to + \infty\)</span>
+   <span class="arithmatex">\(ln^\alpha n \ll n^\beta \ll a^n \ll n! \ll n^n\)</span>，其中，$ \alpha $ 和 <span class="arithmatex">\(\beta &gt; 0\)</span>, <span class="arithmatex">\(a&gt;1\)</span></p>
+<blockquote>
+<p><span class="arithmatex">\(\lim_{n \to \infty} \frac{a^n}{n!} = 0\)</span></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="_29">洛必达法则</h3>
+<p>若：</p>
+<ol>
+<li><span class="arithmatex">\(\lim_{x \to x_0} \frac{f(x)}{g(x)} = \frac{0}{0}\)</span> 或 $ = \frac{\infty}{\infty}$</li>
+<li><span class="arithmatex">\(f(x), g(x) 可导\)</span></li>
+<li><span class="arithmatex">\(\lim_{x \to x_0} \frac{f^{'}(x)}{g^{'}(x)}\)</span> 存在 或 无穷</li>
+</ol>
+<p>则可洛必达：</p>
+<p>$ \lim_{x \to x_0} \frac{f(x)}{g(x)} = \lim_{x \to x_0} \frac{f^{'}(x)}{g^{'}(x)}$</p>
+<blockquote>
+<p>$ \lim_{x \to \infty} \frac{x+sinx}{x} \overset{\frac{\infty}{\infty}} = \lim_{x \to \infty}(1+cosx)$ 震荡。（不存在了，不能使用洛必达）</p>
+<p><span class="arithmatex">\(\lim_{x \to 0} \frac{ \sqrt{1+x} + \sqrt{1-x} - 2}{x^2}\)</span>
+=$ \lim_{x \to 0} \frac{ \frac{1}{2 \sqrt{1+x}} - \frac{1}{2 \sqrt{1-x}}}{2x} $
+=$ \frac{1}{4} \lim_{x \to 0} \frac{\sqrt{1-x} - \sqrt{1+x}}{x \sqrt{1+x} \sqrt{1-x}}$</p>
+</blockquote>
+<h3 id="x-0">等价代换 x-&gt;0</h3>
+<ol>
+<li>
+<p><span class="arithmatex">\(x \sim sinx \sim tanx\)</span>
+    <span class="arithmatex">\(\sim arcsinx \sim arctanx\)</span>
+    <span class="arithmatex">\(\sim ln(1+x) \sim e^x-1\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\((1+x)^2-1 \sim 2x\)</span>
+    特别的，<span class="arithmatex">\(\sqrt{1+x}-1 \sim \frac{x}{2}\)</span>
+    所以有，<span class="arithmatex">\(\sqrt[n]{1+x}-1 \sim \frac{x}{n}\)</span></p>
+<p><span class="arithmatex">\(a^x-1 \sim xlna\)</span></p>
+<p><span class="arithmatex">\(x-ln(1+x) \sim 1-cosx \sim \frac{x^2}{2}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(x-sinx \sim arcsinx-x \sim \frac{x^3}{6}\)</span> 弦
+    <span class="arithmatex">\(tanx-x \sim x-arctanx \sim \frac{x^3}{3}\)</span> 切
+    <span class="arithmatex">\(tanx-sinx \sim arcsinx-arctanx \sim \frac{x^3}{2}\)</span> 弦+切</p>
+</li>
+<li>
+<p>等价代换求极限</p>
+<ol>
+<li>乘除可以代换，加减最简形式 <span class="arithmatex">\((x, x^2...)\)</span> 不抵消时可以代换<blockquote>
+<p><span class="arithmatex">\(ln(1+x) - sinx\)</span> 
+经典错误：
+<span class="arithmatex">\(\sim x-x=0\)</span>
+<span class="arithmatex">\(\sim x-sinx \sim \frac{x^3}{6}\)</span>
+法1：Taylor
+<span class="arithmatex">\(= x - \frac{x^2}{2} + o(x^2) - [x-\frac{x^3}{3!} + o(x^3)]\)</span>
+<span class="arithmatex">\(= -\frac{x^2}{2} + o(x^2) \sim -\frac{x^2}{2}\)</span>
+法2：拆项等价
+<span class="arithmatex">\(ln(1+x) - x + x -sinx\)</span>
+<span class="arithmatex">\(-\frac{x^2}{2} + \frac{x^3}{3!} \sim -\frac{x^2}{2}\)</span></p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p><span class="arithmatex">\(1-cosx+x^2 \sim \frac{x^2}{2}+x^2 = \frac{3x^2}{2}\)</span></p>
+</blockquote>
+<ol>
+<li><span class="arithmatex">\(x \to 0\)</span> 可以推广为 $ ▢ \to 0$</li>
+</ol>
+<blockquote>
+<p><span class="arithmatex">\(▢ = x^2\)</span> 随便装，不过要趋于0
+<span class="arithmatex">\(ln(1+▢) \sim ▢, ▢ \to 0\)</span></p>
+<p><span class="arithmatex">\(▢ - sin▢ \sim \frac{x^3}{6}, ▢ \to 0\)</span></p>
+<p><span class="arithmatex">\(\lim_{x \to 0} \frac{(sinx - sinsinx)sinx}{x^4}\)</span>
+<span class="arithmatex">\(= \lim_{x \to 0} \frac{ \frac{sin^3x}{6} sinx}{x^4}\)</span>
+<span class="arithmatex">\(= \lim_{x \to 0} \frac{ \frac{sin^4x}{6}}{x^4}\)</span>
+<span class="arithmatex">\(= \frac{1}{6}\)</span></p>
+<p><span class="arithmatex">\(\lim_{x \to 0} \frac{arctanx - x}{ln(1+2x^3)}\)</span>
+<span class="arithmatex">\(= \lim_{x \to 0} \frac{- \frac{x^3}{3}}{2x^3}\)</span> 
+<span class="arithmatex">\(= - \frac{1}{6}\)</span></p>
+<p><span class="arithmatex">\(\lim_{x \to 0} \frac{arctanx -sinx}{x^3}\)</span>
+<span class="arithmatex">\(= \lim_{x \to 0} \frac{arctanx - x + x - sinx}{x^3}\)</span>
+<span class="arithmatex">\(= \lim_{x \to 0} \frac{- \frac{x^3}{3} + \frac{x^3}{6} }{x^3}\)</span> 
+<span class="arithmatex">\(= - \frac{1}{6}\)</span></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="_30">泰勒公式</h3>
+<p>Taylor</p>
+<p><strong>泰勒公式</strong>：<span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(x=x_0\)</span> 的某邻域内 <span class="arithmatex">\(n+1\)</span> 阶可导，则有：</p>
+<p><span class="arithmatex">\(f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \ldots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + R_n(x)\)</span> </p>
+<p><span class="arithmatex">\(R_n(x)\)</span> 有两种：</p>
+<ul>
+<li>
+<p>拉格朗日（Lagrange）余项：$ \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}<span class="arithmatex">\(，\)</span> \xi $ 在 <span class="arithmatex">\(x_0\)</span> 与 <span class="arithmatex">\(x\)</span> 之间</p>
+</li>
+<li>
+<p>佩亚诺（Peano）余项：$ o((x-x_0)^n)$</p>
+</li>
+</ul>
+<p>麦克劳林公式 Maclaurin：<span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(x=0\)</span> 的某邻域内 <span class="arithmatex">\(n+1\)</span> 阶可导，则有：</p>
+<p><span class="arithmatex">\(f(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \ldots + \frac{f^{(n)}(0)}{n!}x^n + R_n(x)\)</span></p>
+<p><strong>八个常见函数的泰勒公式</strong></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(e^x = 1 + x + \frac{x^2}{2!} + o(x^2)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} + o(x^3)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\((1+x)^\alpha = 1 + \alpha x + \frac{\alpha(\alpha-1)}{2!} x^2 + o(x^2)\)</span>
+    特别地：<span class="arithmatex">\(\sqrt{1+x} = 1 + \frac{x}{2} - \frac{x^2}{8} + o(x^2)\)</span></p>
+</li>
+<li>
+<p>$ cosx = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} + o(x^4)$
+    $ cosx = 1 - \frac{x^2}{2!} + o(x^2)$</p>
+</li>
+</ol>
+<p><br></p>
+<ol>
+<li>
+<p>$ sinx = x - \frac{x^3}{3!} + o(x^3)$</p>
+</li>
+<li>
+<p>$ arcsinx = x + \frac{x^3}{3!} + o(x^3)$ <em>（正负互换）</em></p>
+</li>
+<li>
+<p>$ tanx = x + \frac{x^3}{3} + o(x^3)$ <em>（去掉阶乘）</em></p>
+</li>
+<li>
+<p>$ arctanx = x - \frac{x^3}{3} + o(x^3)$ <em>（正负互换）</em></p>
+</li>
+</ol>
+<p><strong>泰勒公式求极限</strong></p>
+<ol>
+<li><span class="arithmatex">\(x \to 0\)</span> 可以推广为 <span class="arithmatex">\(▢ \to 0\)</span></li>
+</ol>
+<blockquote>
+<p><span class="arithmatex">\(e^{x^2} = 1 + x^2 + \frac{(x^2)^2}{2!} + o((x^2)^2)\)</span></p>
+<p><span class="arithmatex">\(\lim_{x \to 0} \frac{ \sqrt{1+x} + \sqrt{1-x} - 2}{x^2}\)</span>
+<span class="arithmatex">\(= \lim_{x \to 0} \frac{1+ \frac{x}{2} - \frac{x^2}{8} + o(x^2) + 1 - \frac{x}{2} - \frac{x^2}{8} + o(x^2) - 2}{x^2}\)</span>
+<span class="arithmatex">\(= \lim_{x \to 0} \frac{- \frac{x^2}{4} + o(x^2)}{x^2}\)</span>
+<span class="arithmatex">\(= - \frac{1}{4}\)</span></p>
+</blockquote>
+<ol>
+<li>分子分母同阶原则，加减不抵消原则</li>
+</ol>
+<blockquote>
+<p><span class="arithmatex">\(\lim_{x \to 0} \frac{cosx - e^{- \frac{x^2}{2}}}{x^4}\)</span>
+<span class="arithmatex">\(= \lim_{x \to 0} \frac{1 - \frac{x^2}{2} + \frac{x^4}{4!} + o(x^4) - (1 - \frac{x^2}{2} + \frac{x^4}{2!} + o(x^4))}{x^4}\)</span></p>
+<p><span class="arithmatex">\(\lim_{x \to 0} \frac{cosx - e^{-\frac{x^2}{2}}}{x^4}\)</span>
+<span class="arithmatex">\(= \lim_{x \to 0} \frac{1 - \frac{x^2}{2} + \frac{x^4}{4!} + o(x^4) - (1 - \frac{x^2}{2} + \frac{x^4}{2!*4} + o(x^4))}{x^4}\)</span>
+<span class="arithmatex">\(= \lim_{x \to 0} \frac{ \frac{x^4}{4!} - \frac{x^4}{2!*4} + o(x^4)}{x^4}\)</span>
+<span class="arithmatex">\(= \frac{1}{12}\)</span></p>
+</blockquote>
+<h3 id="_31">七类不定式</h3>
+<ol>
+<li>
+<p><strong><span class="arithmatex">\(\frac{0}{0}\)</span></strong></p>
+<ul>
+<li>洛必达 -&gt; 等价 -&gt; 泰勒</li>
+</ul>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(\frac{\infty}{\infty}\)</span></strong></p>
+<ul>
+<li>洛必达 -&gt; 同除（最高次幂） -&gt; 抓大头（每个因式保留高阶无穷大）</li>
+</ul>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(0 \cdot \infty\)</span></strong></p>
+<ul>
+<li>同除简单因式（转换为 <span class="arithmatex">\(\frac{0}{0} \frac{\infty}{\infty}\)</span>） -&gt; 拆项等价 -&gt; 洛必达</li>
+</ul>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(\infty - \infty\)</span></strong></p>
+<ul>
+<li>通分（有分数） -&gt; 有理化（有根式） -&gt; 倒带换（令 <span class="arithmatex">\(x = \frac{1}{t}\)</span> ）</li>
+</ul>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(0^0\)</span></strong></p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(\infty^0\)</span></strong></p>
+<ul>
+<li><span class="arithmatex">\(\lim_{x \to ▢}u^v = \lim_{x \to ▢} e ^ {v \ln u} \overset{ 极限交换, e^x连续 }{=} e ^{\lim_{x \to ▢}v \ln u}\)</span></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><span class="arithmatex">\(\lim_{x \to 0^+} x^\alpha \ln ^ \beta x = 0 (\alpha, \beta &gt; 0)\)</span></p>
+</blockquote>
+<ol>
+<li>
+<p><strong><span class="arithmatex">\(1^\infty\)</span></strong></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\lim_{x \to ▢}(1 + u)^v = e ^ {\lim_{x \to ▢} v \ln (1+u)} = e^{\lim_{x \to ▢} u v} (u \to 0, v \to \infty)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\lim_{x \to ▢}u^v = \lim_{x \to ▢}(1 + (u-1))^v = e^{\lim_{x \to ▢} (u-1) v} (u \to 1, v \to \infty)\)</span></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="_32">单调有界定理</h3>
+<p><span class="arithmatex">\(\{x_n\} \uparrow\)</span> 有上界或 <span class="arithmatex">\(\{x_n\} \downarrow\)</span> 有下界，则 <span class="arithmatex">\(\lim_{n \to \infty} x_n\)</span> 存在。
+注：上界或下界不唯一</p>
+<h3 id="_33">夹逼定理</h3>
+<h3 id="_34">定积分定义</h3>
+<p><br></p>
+<hr />
+<h2 id="_35">第二节 导数与微分</h2>
+<h3 id="_36">导数</h3>
+<h4 id="_37">连续</h4>
+<h4 id="_38">间断</h4>
+<h3 id="_39">微分</h3>
+<h3 id="_40">【求导公式】基本初等函数</h3>
+<h3 id="_41">【求导公式】四则运算</h3>
+<h3 id="_42">【求导公式】复合函数</h3>
+<h3 id="_43">【求导公式】隐函数</h3>
+<h3 id="_44">【求导公式】反函数</h3>
+<h3 id="_45">【求导公式】参数方程</h3>
+<h3 id="_46">【求导公式】对数</h3>
+<h3 id="_47">【求导公式】高阶导数</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2020 - 2026 Workers of All Lands
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.tabs", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
