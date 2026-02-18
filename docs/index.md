@@ -69,7 +69,7 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
 
   <div class="item">
     <a href="http://10.0.0.12:8088" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/ISS-40_Thunderheads_near_Borneo.jpg/330px-ISS-40_Thunderheads_near_Borneo.jpg"></div>
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Nuvola_devices_nfs_unmount.png"></div>
       <div style="font-size: 12px;">私有云盘</div>
     </a>
   </div>

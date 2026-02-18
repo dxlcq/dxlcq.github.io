@@ -2,8 +2,8 @@
 nav:
   - Jiao:               
     - Navigation:       index.md
-    - Profile:          src/jiao/profile.md
-    - CV:               src/jiao/cv.md
+    - Profile:          profile.md
+    - CV:               cv.md
 
   - 🪂 Algorithm:
     - Pre:              src/algorithm/pre.md
