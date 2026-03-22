@@ -59,8 +59,11 @@ nav:
     - 📦 sqlpp11:       src/cpp/sqlpp11.md
   
   - 🤖 AI:
-    - AI:               src/ai/ai.md
+    - AI:               src/ai/index.md
     - d2l:              src/ai/d2l.md
+    - llm:              src/ai/llm.md
+    - prompt:           src/ai/prompt.md
+    - Post-Training:    src/ai/post-training.md
 
   - 🌥️ DevOps:
     - 🧑‍💻 MacOS:         src/dev/macos.md

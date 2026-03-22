@@ -272,6 +272,50 @@ git commit -m "提交说明"
 
 ---
 
+## 冲突
+
+场景: 当 remote 已经领先于 local 时
+
+1. stash local changes
+
+    ```shell
+    git stash
+    ```
+
+2. pull remote changes
+
+    ```shell
+    git pull
+    ```
+
+    > 如果这里出现冲突, 此时需要具体问题具体分析, 常见情形:
+    >
+    > local 文件未 add, 无法 stash 此文件, 但 remote 存在同名文件
+    >
+    > 1. `git add <file>`
+    >
+    > 2. `git stash`
+    >
+    > 3. `git pull`
+
+3. apply local changes
+
+    ```shell
+    git stash apply
+    ```
+
+    > 如果这里出现冲突, 此时需要具体问题具体分析, 常见情形:
+    >
+    > local 文件与 remote 文件存在冲突
+    >
+    > 1. 手动修改冲突文件, 解决冲突
+    >
+    > 2. `git add <file>`
+    >
+
+
+
+
 ## 子模块
 
 * 拉取含有子模块的仓库
@@ -522,12 +566,6 @@ git remote rm origin
 > 因为我们只是给 `origin` 添加了多个 `URL`
 >
 > 虽然效果上看起来是推送到了多个仓库，但是实际上只是推送到了一个仓库
-
-### gitee 记住账号密码
-
-```shell
-git config --local credential.helper store
-```
 
 <br>
 

@@ -51,13 +51,13 @@ a2 = torch.diag(torch.tensor([1, 2, 3])) # [[1, 0, 0], [0, 2, 0], [0, 0, 3]]
 
 ## 神经网络
 
-本质就是线性函数+非线性函数+线性函数+非线性函数+..., 最终使其能够拟合任意复杂的函数, 从而能够处理各种复杂的任务
+本质就是线性函数+非线性激活函数+线性函数+非线性激活函数+...(**前向传播**), 再通过**反向传播**算法(计算梯度)来调整权重和偏置(梯度下降), 使得预测结果更接近真实值, 最终使其能够拟合任意复杂的函数
 
 > 线性回归就是一个线性函数
 >
 > * y_pred -> (无变换) -> 预测值 -> 均方误差损失
 > 
-> Softmax 回归就是一个线性函数 + Softmax 函数
+> 多项逻辑回归就是一个线性函数 + Softmax 函数
 > 
 > * 线性输出 -> Softmax 函数 -> 概率分布 -> 交叉熵损失
 >
@@ -69,7 +69,7 @@ a2 = torch.diag(torch.tensor([1, 2, 3])) # [[1, 0, 0], [0, 2, 0], [0, 0, 3]]
 
 ### 线性回归 (数值预测)
 
-找出一组权重 w 和偏置 b，让预测值 y 尽可能接近真实值
+找出一组权重 w 和偏置 b, 让预测值 y 尽可能接近真实值
 
 ```python
 import torch
@@ -147,7 +147,9 @@ with torch.no_grad():  # 禁用梯度计算
 
 > 在小数据集上, Mini-batch SGD 比 GD 更慢
 
-### Softmax 回归 (多项逻辑回归)
+### 多项逻辑回归 Softmax
+
+添加一个激活函数
 
 ```python
 import torch
@@ -206,7 +208,7 @@ with torch.no_grad():
     print(f'Accuracy: {accuracy.item():.4f}')
 ```
 
-### 逻辑回归 (Sigmoid)
+### 逻辑回归 Sigmoid
 
 ### Fashion-MNIST
 
@@ -277,17 +279,183 @@ with torch.no_grad():
 
 ## 多层感知机 MLP
 
+之前的逻辑回归问题, 只有一个线性函数 + 一个激活函数(非线性函数), 我们管其叫输出层
 
+多层感知机 = 输入层 + 全连接隐藏层 + 输出层
 
-## CNN 卷积神经网络
+> 输入层为 28 * 28 = 784 (每个像素为一个输入特征) (为了方便理解和实现而抽象出的概念)
+>
+> 全连接隐藏层
+> 
+> 输出层为 10 (每个类别为一个输出特征) (线性函数 + Softmax 函数计算出每个类别的概率)
 
-## 现代卷积神经网络
+```python
+import torch
+import torchvision
 
-## RNN 循环神经网络
+transform = torchvision.transforms.Compose(
+    [
+        torchvision.transforms.ToTensor(),
+        torchvision.transforms.Normalize((0.5,), (0.5,)),
+    ]
+)
 
-## 现代循环神经网络
+model = torch.nn.Sequential(
+    # 张量展平
+    torch.nn.Flatten(),
+    # 输入层到隐藏层的线性变换
+    torch.nn.Linear(28 * 28, 256),
+    # 激活函数
+    torch.nn.ReLU(),
+    # 隐藏层到输出层的线性变换
+    torch.nn.Linear(256, 10),
+)
 
-## Attention 注意力机制
+model.to(device="cuda")
+
+# 数据加载器
+train_loader = torch.utils.data.DataLoader(
+    torchvision.datasets.FashionMNIST(
+        root="./", train=True, download=True, transform=transform
+    ),
+    batch_size=256,
+    shuffle=True,
+)
+
+# 损失函数 Softmax + 交叉熵损失
+criterion = torch.nn.CrossEntropyLoss()
+
+# 优化器, adam, 同时使用动量 + 自适应学习率
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+
+for epoch in range(10):
+    for images, labels in train_loader:
+        images, labels = images.to("cuda"), labels.to("cuda")
+        # 前向传播
+        outputs = model(images)
+        loss = criterion(outputs, labels)
+
+        # 反向传播和优化
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    print(f"Epoch [{epoch+1}], Loss: {loss.item():.4f}")
+
+# 保存模型
+torch.save(model.state_dict(), "fashion_mnist_model.pth")
+
+# -----------------------------------------------
+
+# 数据加载器
+test_loader = torch.utils.data.DataLoader(
+    torchvision.datasets.FashionMNIST(
+        root="./", train=False, download=True, transform=transform
+    ),
+    batch_size=256,
+    shuffle=False,
+)
+
+# 加载模型
+model.load_state_dict(torch.load("fashion_mnist_model.pth"))
+
+# 评估模型
+model.eval()
+
+with torch.no_grad():
+    correct = 0  # 累计预测正确的样本数
+    total = 0  # 累计总样本数
+    for images, labels in test_loader:
+        images, labels = images.to("cuda"), labels.to("cuda")
+        # 前向传播
+        outputs = model(images)
+
+        # 获取预测结果
+        # 得到最大值的索引，即预测的类别
+        _, predicted = torch.max(outputs.data, 1)
+
+        # 预测正确的样本数
+        correct += (predicted == labels).sum().item()
+        # 累计总样本数
+        total += labels.size(0)
+
+print(f"Test Accuracy: {100 * correct / total:.2f}%")
+```
+
+### 全连接隐藏层
+
+由一个线性函数 + 一个激活函数组成, 其输入是前一层的输出, 其输出是下一层的输入
+
+常见的激活函数有 [ReLU](https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E6%95%B4%E6%B5%81%E5%87%BD%E6%95%B0), [Sigmoid](https://zh.wikipedia.org/wiki/S%E5%9E%8B%E5%87%BD%E6%95%B0), [Tanh](https://zh.wikipedia.org/wiki/%E5%8F%8C%E6%9B%B2%E5%87%BD%E6%95%B0) 等
+
+```python
+model = torch.nn.Sequential(
+    ''' 全连接隐藏层 '''
+    # 线性变换
+    torch.nn.Linear(28 * 28, 256),
+    # 激活函数
+    torch.nn.ReLU(),
+    ''' 全连接隐藏层 '''
+)
+```
+
+### 拟合与泛化
+
+**拟合**: 数据在 train 上的表现
+
+**泛化**: 数据在 test 上的表现
+
+* 欠拟合: 模型简单, 无法捕捉数据规律, train loss 过大, test loss 过大, 泛化能力差
+
+* 过拟合: 模型复杂, 捕捉了数据中的噪声, train loss 很小, 但 test loss 过大, 泛化能力差
+
+## 卷积神经网络 CNN
+
+可以发现, 以上的模型是将每个像素作为**独立**的输入特征, 但在图像中, 每个像素与其周围的像素是**相关**的, 例如边缘、纹理等局部特征, 卷积神经网络就是为了捕捉这些局部特征而设计的
+
+* 有一张 32x32 的图像, 使用一个 3x3 的卷积核, 从 [1,1] 的位置开始计算
+
+* 点积运算: **对应位置相乘, 然后全部求和**, 得到一个数值, 最终得到一个 32x32 的特征
+
+* 卷积核的权重就是模型的参数, 通过训练来优化这些参数
+
+* 为了降低特征图尺寸, 有了**池化层**, 例如最大池化, 取一个 2x2 的区域, 取其中的最大值, 得到一个 16x16 的特征图
+
+* 卷积层和池化层可以堆叠多层, 最后通过全连接层来进行分类
+
+```python
+model = torch.nn.Sequential(
+    # 卷积
+    torch.nn.Conv2d(1, 32, kernel_size=3, padding=1),  # 卷积核的数量为 32, 各扫描 1 遍
+    torch.nn.ReLU(),
+    # 池化
+    torch.nn.MaxPool2d(kernel_size=2, stride=2),  #[N, 32, 28, 28] -> [N, 32, 14, 14]
+    # 张量展平
+    torch.nn.Flatten(),  # [N, 32, 14, 14] -> [N, 32*14*14]
+    # 输入层到隐藏层的线性变换
+    torch.nn.Linear(32 * 14 * 14, 512),
+    # 激活函数
+    torch.nn.ReLU(),
+    # 隐藏层到输出层的线性变换
+    torch.nn.Linear(512, 10),
+)
+```
+
+### AlexNet
+
+### ResNet
+
+### YOLO
+
+## 循环神经网络 RNN
+
+### LSTM
+
+### GRU
+
+## 注意力机制 Transformer
+
+### Attention
 
 ## 算法优化
 

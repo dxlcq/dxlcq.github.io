@@ -94,7 +94,7 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
 
   <div class="item">
     <a href="https://www.icloud.com/iclouddrive/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/160px-Apple_logo_black.svg.png"></div>
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/250px-Apple_logo_black.svg.png"></div>
       <div style="font-size: 12px;">iCloud</div>
     </a>
   </div>
@@ -163,7 +163,7 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
   </div>
 
   <div class="item">
-    <a href="https://fiber.google.com/speedtest/" target="_blank">
+    <a href="https://fast.com/" target="_blank">
       <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/04/fa/ac/04faace5-ae8f-313f-4d10-d809fb397e7f/AppIcon-85-220-0-4-2x.png/460x0w.webp"></div>
       <div style="font-size: 12px;">UN</div>
     </a>
@@ -189,7 +189,7 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
 
   <div class="item">
     <a href="http://10.0.0.2" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/2880px-Cisco_logo_blue_2016.svg.png"></div>
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/500px-Cisco_logo_blue_2016.svg.png"></div>
       <div style="font-size: 12px;">Switch</div>
     </a>
   </div>
@@ -220,16 +220,16 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
   </div>
 
   <div class="item">
-    <a href="https://portal.azure.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/300px-Microsoft_Azure.svg.png"></div>
-      <div style="font-size: 12px;">Azure</div>
+    <a href="1234" target="_blank">
+      <div class="rounded-icon"><img src="1234"></div>
+      <div style="font-size: 12px;">1234</div>
     </a>
   </div>
 
   <div class="item">
-    <a href="https://home.console.aliyun.com/" target="_blank">
-      <div class="rounded-icon"><img src="https://img.alicdn.com/tfs/TB1qNVdXlGw3KVjSZFDXXXWEpXa-620-620.png"></div>
-      <div style="font-size: 12px;">阿里云</div>
+    <a href="1234" target="_blank">
+      <div class="rounded-icon"><img src="1234"></div>
+      <div style="font-size: 12px;">1234</div>
     </a>
   </div>
 
@@ -258,7 +258,7 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
     </div>
     <div class="item">
       <a href="https://x.com/dxlcqy" target="_blank">
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/220px-X_logo_2023.svg.png"></div>
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/X_%28formerly_Twitter%29_logo_late_2025.svg/330px-X_%28formerly_Twitter%29_logo_late_2025.svg.png"></div>
         <div style="font-size: 12px;">X</div>
       </a> 
     </div>

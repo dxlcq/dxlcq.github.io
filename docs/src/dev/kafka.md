@@ -63,11 +63,15 @@
 1. 下载
 
     ```shell
-    wget https://dlcdn.apache.org/kafka/3.9.1/kafka_2.13-3.9.1.tgz
+    wget https://dlcdn.apache.org/kafka/3.9.2/kafka_2.13-3.9.2.tgz
     wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
+    tar -zxvf kafka_2.13-3.9.2.tgz
+    tar -zxvf jdk-21_linux-x64_bin.tar.gz
     ```
 
 2. 设置环境变量
+
+    `vim ~/.bashrc`
 
     ```shell
     export JAVA_HOME=.../jdk-21.0.10
@@ -76,8 +80,9 @@
 
 3. 修改配置文件
 
+    `vim config/server.properties`
+
     ```shell
-    # config/server.properties
     # 监听地址为本机 IP 地址
     advertised.listeners=PLAINTEXT://x.x.x.x:9092
     # 单条消息最大大小 100MB
