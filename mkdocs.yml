@@ -3,151 +3,66 @@ nav:
   - Jiao:               
     - Navigation:       index.md
     - Profile:          profile.md
-    - CV:               cv.md
 
-  - 🪂 Algorithm:
-    - Pre:              src/algorithm/pre.md
-    - CSP:              src/algorithm/really/csp.md
-    - GESP:             src/algorithm/really/gesp.md
-    - CIE:              src/algorithm/really/cie.md
-    - 基础:
-      - 二分:           src/algorithm/base/binary-answer.md
-    - 搜索:
-      - 深搜:            src/algorithm/search/DFS.md
-    - 图论:
-      - 二叉树:         src/algorithm/graph/binary-tree.md
-    - 动规:
-      - 数字三角形:     src/algorithm/dp/number-triangles.md
-      - 子序列模型:     src/algorithm/dp/subsequence.md
-      #- 背包问题:       src/algorithm/dp/knapsack.md
-      #- 状态机:         src/algorithm/dp/state-machine.md
-      #- 线性DP:         src/algorithm/dp/linear-dp.md
-      #- 状压DP:         src/algorithm/dp/state-compression.md
-    #- 数学:
-    #- 数论:
-    - 数据结构:
-      - 链表:           src/algorithm/data-struct/linked-list.md
-      - 线段树:         src/algorithm/data-struct/segment-tree.md
-    #- 字符串:
-    #- 计算几何:
-    - raft:             src/algorithm/raft.md
+  - Infra:
+    - Navigation:        src/infra/index.md
+    - 🛜 modern network: src/infra/net.md
+    - 🛜 router:         src/infra/router.md
+    - 🛜 openwrt:        src/infra/openwrt.md
+    - 🧮 kvm:            src/infra/kvm.md
+    - 💾 oss:            src/infra/oss.md
+    - 💾 nfs:            src/infra/nfs.md
+    - 💾 smb:            src/infra/smb.md
 
-  - 🚀 C/C++:
-    - CPP:              src/cpp/cpp.md
-    - STL:              src/cpp/stl.md
-    - Thread:           src/cpp/thread.md
-    - Network:          src/cpp/network.md
-    - Qt:               src/cpp/qt.md
-    - AV:               src/cpp/av.md
-    - ROS:              src/cpp/ros.md
-    - 🔩 GCC:           src/cpp/gcc.md
-    - 🔩 GDB:           src/cpp/gdb.md
-    - 🔩 Make:          src/cpp/make.md
-    - 🔩 CMake:         src/cpp/cmake.md
-    - 🔩 Perf:          src/cpp/perf.md
-    - 📦 GTest:         src/cpp/gtest.md
-    - 📦 Boost:         src/cpp/boost.md
-    - 📦 Grpc:          src/cpp/grpc.md
-    - 📦 Kafka:         src/cpp/kafka.md
-    - 📦 OpenSSL:       src/cpp/openssl.md
-    - 📦 FFmpeg:        src/cpp/ffmpeg.md
-    - 📦 cyclonedds:    src/cpp/cyclonedds.md
-    - 📦 subprocess:    src/cpp/subprocess.md
-    - 📦 taskflow:      src/cpp/taskflow.md
-    - 📦 rocksdb:       src/cpp/rocksdb.md
-    - 📦 HMBDC:         src/cpp/hmbdc.md
-    - 📦 sqlpp11:       src/cpp/sqlpp11.md
+  - Container:
+    - Navigation:        src/container/index.md
+    - 🧠 runc:           src/container/runc.md
+    - 🐳 docker:         src/container/docker.md
+    - 🐳 containerd:     src/container/containerd.md
+    - 🚢 kubernetes:     src/container/kubernetes.md
+
+  - Middleware:
+    - Navigation:       src/middleware/index.md
+    - ⚓️ nginx:         src/middleware/nginx.md
+    - 🗄️ postgres:      src/middleware/postgres.md
+    - 🗄️ redis:         src/middleware/redis.md
+    - 💬 kafka:         src/middleware/kafka.md
   
-  - 🤖 AI:
-    - AI:               src/ai/index.md
-    - d2l:              src/ai/d2l.md
-    - llm:              src/ai/llm.md
-    - prompt:           src/ai/prompt.md
-    - Post-Training:    src/ai/post-training.md
+  - DevOps:
+    - Navigation:       src/devops/index.md
+    - git:              src/devops/git.md
+    - gitlab:           src/devops/gitlab.md
+    - cicd:             src/devops/cicd.md
+    - prometheus:       src/devops/prometheus.md
+    - grafana:          src/devops/grafana.md
+  
+  - AI:
+    - index:             src/ai/index.md
+    - d2l:               src/ai/d2l.md
 
-  - 🌥️ DevOps:
-    - 🧑‍💻 MacOS:         src/dev/macos.md
-    - 🐧 Linux:         src/dev/linux.md
-    - 📡 OpenWrt:       src/dev/openwrt.md
-    - 🪟 Windows:       src/dev/windows.md
-        
-    #- 💻GitLab:        src/dev/gitlab.md
-    - 🚀 Docker:        src/dev/docker.md
-    - 🚀 Containerd:    src/dev/containerd.md
-    - 🚀 Kubernetes:    src/dev/kubernetes.md
-    - 🚀 Prometheus:    src/dev/prometheus.md
+  - Linux:
+    - Navigation:        src/linux/index.md
+    - 🕒 net:            src/linux/net.md
+    - 💾 disk:           src/linux/disk.md
+    - 📜 file:           src/linux/file.md
+    - 🧮 process:        src/linux/process.md
+    - 📝 memory:         src/linux/memory.md
+    - 📦 package:        src/linux/package.md
+    - 🪟 windows:        src/linux/windows.md
 
-    - 🚡 gRPC:          src/dev/grpc.md
-    - 🚡 Kafka:         src/dev/kafka.md
+  - C++:
+    - cpp:              src/cpp/cpp.md
+    - stl:              src/cpp/stl.md
+    - thread:           src/cpp/thread.md
+    - network:          src/cpp/network.md
+    - build-essential:  src/cpp/gcc.md
 
-    - 📦 PostgreSQL:    src/dev/postgresql.md
-
-    - 💻 Git:           src/dev/git.md
-    
-    - 💪🏻 Nginx:         src/dev/nginx.md
-    - 💪🏻 OpenSSH:       src/dev/openssh.md
-    - 💪🏻 Coturn:        src/dev/coturn.md
-    - 💪🏻 FRP:           src/dev/frp.md
-    - 💪🏻 DDNS:          src/dev/ddns.md
-    - 💪🏻 MySQL:         src/dev/mysql.md
-
-  - 🌿 Language:
-    - Python:
-      - env:            src/language/py/env.md
-      - pandas:         src/language/py/pandas.md
-      - openpyxl:       src/language/py/openpyxl.md
-      - tornado:        src/language/py/tornado.md
-      - deeplearning:   src/language/py/deeplearning.md
-    - Golang:
-      - go:             src/language/go/go.md
-      - gin:            src/language/go/gin.md
-      - websocket:      src/language/go/websocket.md
-    - JS:
-      - websocket:      src/language/js/websocket.md
-      - webrtc:         src/language/js/webrtc.md
-    - Java:
-      - main/java:      src/language/java/main_java.md
-      - main/resources: src/language/java/main_resources.md
-      - test/java:      src/language/java/test_java.md
-    - HTML:
-      - HTML:           src/language/html/html.md
-      - CSS:            src/language/html/css.md
-  - 📖 CS:
-    - CS:               src/cs/cs.md
-    - 操作系统:
-      - OS:             src/cs/os/os.md
-      - 操作系统结构:    src/cs/os/操作系统结构.md
-    - 网络:
-      - 冲浪:           src/cs/net/冲浪.md
-      - Application:
-        - HTTP:         src/cs/net/http.md
-      - Transport:
-        - TCP:          src/cs/net/tcp.md
-        - UDP:          src/cs/net/udp.md
-      - Network:
-        - IPv4:         src/cs/net/ipv4.md
-      - DataLink:
-        - Ethernet:     src/cs/net/ethernet.md
-        - PPPoE:        src/cs/net/pppoe.md
-        - MTU:          src/cs/net/mtu.md
-    - 数据结构:
-      - 线性表:         src/cs/dataStruct/list.md
-      - 队列:           src/cs/dataStruct/queue.md
-    - 数据库:
-      - 第一章:         src/cs/dataBase/t.md
-    - 设计模式:         src/cs/designPattern/designPattern.md
-    - 系统架构:         src/cs/systemArchitecture/systemArchitecture.md
-    - 工程师:           src/cs/engineer/engineer.md
-    - 马克思主义:       src/cs/marx.md
-    - 中国近代史:       src/cs/historyOfChina.md
-    - 微积分:           src/cs/微积分.md
-    - 概率论:           src/cs/概率论.md
-
-
-
+  - Language:
+    - python:           src/language/python.md
+    - go:               src/language/go.md
 
 site_name: DAI X.L.
-copyright: Copyright © 2020 - 2026 Workers of All Lands
+copyright: Copyright © 2020 - Forever. Workers of All Lands
 repo_name: dxlcq.github.io
 repo_url: https://github.com/dxlcq
 
@@ -198,7 +113,11 @@ extra_javascript:
 markdown_extensions:
   - pymdownx.details        # 详情折叠扩展
   # 代码块
-  - pymdownx.superfences    # 代码块处理
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:     # 代码块高亮
       linenums: true        # 显示行号
       auto_title: true      # 显示编程语言名称
@@ -207,5 +126,4 @@ markdown_extensions:
       generic: true         # 启用通用的数学公式支持 貌似是 $$ 的支持
 
 plugins:
-  - include-markdown        # pip install mkdocs-include-markdown-plugin
   - search

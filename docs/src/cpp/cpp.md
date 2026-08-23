@@ -165,41 +165,6 @@
         
         > **链接器会检查函数的定义，如果找不到定义，就会报错**
 
-### vscode 如何配置
-
-```json
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "cmake",
-            "type": "shell",
-            "command": [
-                "rm -rf ${workspaceFolder}/build &&",
-                "cmake -B ${workspaceFolder}/build -DCMAKE_BUILD_TYPE=Debug &&",
-                "cmake --build ${workspaceFolder}/build -j"
-            ]
-        }
-    ]
-}
-```
-
-```json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "preLaunchTask": "cmake",
-            "name": "gdb",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/main",
-            "cwd": "${fileDirname}"
-        }
-    ]
-}
-```
-
 <br>
 
 ---

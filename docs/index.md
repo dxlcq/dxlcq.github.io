@@ -32,26 +32,40 @@
 
 # Welcome to DAI X.L.'s Home Page !
 
-{%
-include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
-%}
+<div
+  class="remote-md"
+  data-url="https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script>
+document.querySelectorAll(".remote-md").forEach(async el => {
+  const res = await fetch(el.dataset.url, {
+    cache: "no-store"
+  });
+
+  const md = await res.text();
+
+  el.innerHTML = marked.parse(md);
+});
+</script>
 
 <br>
 
 <div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="https://mail.cqu.edu.cn/" target="_blank">
+    <a href="https://edu.icoremail.net/" target="_blank">
       <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/7/74/Chongqing_University_logo.svg"></div>
-      <div style="font-size: 12px;">dxlcq@stu.cqu.edu.cn</div>
-      <a href="https://edu.icoremail.net/" style="font-size: 12px;"> 30187416@alu.cqu.edu.cn </a>
+      <div style="font-size: 12px;">30187416@alu.cqu.edu.cn</div>
     </a>
   </div>
 
   <div class="item" style="font-size: 14px;">
     <br>
-    <div><a href="https://chatgpt.com/" target="_blank"> chatgpt </a> / <a href="https://aistudio.google.com/prompts/new_chat" target="_blank"> gemini </a> / <a href="https://grok.com/chat" target="_blank"> grok </a> </div>
-    <div><a href="https://www.perplexity.ai/" target="_blank"> perplexity </a> / <a href="https://github.com/copilot" target="_blank"> copilot </a> / <a href="http://10.0.0.11" target="_blank"> ragflow </a></div>
+    <div><a href="https://claude.ai" target="_blank"> claude </a> /
+    <a href="https://chatgpt.com/" target="_blank"> chatgpt </a></div>
   </div>
 
   <div class="item">
@@ -66,11 +80,57 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
 ---
 
 <div class="container"> <!-- 1 -->
+    <div class="item">
+      <a href="https://web.telegram.org/a/" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/250px-Telegram_2019_Logo.svg.png"></div>
+        <div style="font-size: 12px;">@dxlcq</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://www.instagram.com/dxlcqins/" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/330px-Instagram_logo_2022.svg.png"></div>
+        <div style="font-size: 12px;">@dxlcqins</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://x.com/dxlcqy" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/X_%28formerly_Twitter%29_logo_late_2025.svg/330px-X_%28formerly_Twitter%29_logo_late_2025.svg.png"></div>
+        <div style="font-size: 12px;">@dxlcqy</div>
+      </a> 
+    </div>
+</div>
+
+
+
+<div class="container"> <!-- 1 -->
+    <div class="item">
+      <a href="https://www.youtube.com/@骄骄" target="_blank">
+        <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f5/ac/a8/f5aca8ee-b304-1aec-c656-66a36ae88a94/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-6-0-0-0-85-220.png/492x0w.webp"></div>
+        <div style="font-size: 12px;">@骄骄</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://space.bilibili.com/35306765" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/zh/thumb/b/bd/Bilibili_Logo_Blue.svg/500px-Bilibili_Logo_Blue.svg.png"></div>
+        <div style="font-size: 12px;">@骄骄是骄傲的骄骄</div>
+      </a> 
+    </div>
+    <div class="item">
+      <a href="https://www.xiaohongshu.com/user/profile/5eb496510000000001007fa0" target="_blank">
+        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/XiaohongshuLOGO.png"></div>
+        <div style="font-size: 12px;">@骄骄</div>
+      </a> 
+    </div>
+</div>
+
+---
+
+<div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="http://10.0.0.12:8088" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Nuvola_devices_nfs_unmount.png"></div>
-      <div style="font-size: 12px;">私有云盘</div>
+    <a href="http://10.0.0.16:8063" target="_blank">
+      <div class="rounded-icon"><img src="https://mtmt.tech/static/logo-3f05b1a973912674791f80200cb9815d.png"></div>
+      <div style="font-size: 12px;">照片管理</div>
     </a>
   </div>
 
@@ -82,9 +142,9 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
   </div>
 
   <div class="item">
-    <a href="https://www.alipan.com/drive/file/all" target="_blank">
-      <div class="rounded-icon"><img src="https://img.alicdn.com/imgextra/i2/O1CN011vHpiQ251TseXpbH7_!!6000000007466-2-tps-120-120.png"></div>
-      <div style="font-size: 12px;">阿里云盘</div>
+    <a href="http://10.0.0.16:52020" target="_blank">
+      <div class="rounded-icon"><img src="https://docs.sftpgo.com/enterprise/assets/logo.png"></div>
+      <div style="font-size: 12px;">SFTP</div>
     </a>
   </div>
 
@@ -101,7 +161,7 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
   
   <div class="item">
     <a href="https://drive.google.com/drive/my-drive" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png"></div>
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/1920px-Google_Favicon_2025.svg.png"></div>
       <div style="font-size: 12px;">Google Drive</div>
     </a>
   </div>
@@ -142,7 +202,7 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
 <div class="container"> <!-- 1 -->
 
   <div class="item">
-    <a href="http://10.0.0.12:2026" target="_blank">
+    <a href="http://10.0.0.16:54321" target="_blank">
       <div class="rounded-icon"><img src="https://avatars.githubusercontent.com/u/55735736?s=200&v=4"></div>
       <div style="font-size: 12px;">Speed Test</div>
     </a>
@@ -182,7 +242,7 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
 
   <div class="item">
     <a href="https://smbcloud.tp-link.com.cn/login.html" target="_blank">
-      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/TPLINK_Logo_2.svg/2880px-TPLINK_Logo_2.svg.png"></div>
+      <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/TPLINK_Logo_2.svg/250px-TPLINK_Logo_2.svg.png"></div>
       <div style="font-size: 12px;">Router</div>
     </a>
   </div>
@@ -221,74 +281,16 @@ include-markdown "https://raw.githubusercontent.com/dxlcq/dxlcq/main/README.md"
 
   <div class="item">
     <a href="1234" target="_blank">
-      <div class="rounded-icon"><img src="1234"></div>
-      <div style="font-size: 12px;">1234</div>
+      <div class="rounded-icon"></div>
+      <div style="font-size: 12px;"></div>
     </a>
   </div>
 
   <div class="item">
     <a href="1234" target="_blank">
-      <div class="rounded-icon"><img src="1234"></div>
-      <div style="font-size: 12px;">1234</div>
+      <div class="rounded-icon"></div>
+      <div style="font-size: 12px;"></div>
     </a>
   </div>
 
-</div>
-
----
-
-<div class="container"> <!-- 1 -->
-    <div class="item">
-      <a href="https://open.spotify.com/user/312fhhabg3hdhdlcyq5r7zidpt5e?si=2f6fcb6ff1c64a79&nd=1&dlsi=12f6bab9fb1446d8" target="_blank">
-        <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/7a/63/7a7a63b4-6370-c782-c7c5-68d0f85d753a/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/460x0w.webp"></div>
-        <div style="font-size: 12px;">Spotify</div>
-      </a> 
-    </div>
-    <div class="item">
-      <a href="https://www.youtube.com/@骄骄" target="_blank">
-        <div class="rounded-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f5/ac/a8/f5aca8ee-b304-1aec-c656-66a36ae88a94/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-6-0-0-0-85-220.png/492x0w.webp"></div>
-        <div style="font-size: 12px;">YouTube</div>
-      </a> 
-    </div>
-    <div class="item">
-      <a href="https://www.instagram.com/dxlcqins/" target="_blank">
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/330px-Instagram_logo_2022.svg.png"></div>
-        <div style="font-size: 12px;">Instagram</div>
-      </a> 
-    </div>
-    <div class="item">
-      <a href="https://x.com/dxlcqy" target="_blank">
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/X_%28formerly_Twitter%29_logo_late_2025.svg/330px-X_%28formerly_Twitter%29_logo_late_2025.svg.png"></div>
-        <div style="font-size: 12px;">X</div>
-      </a> 
-    </div>
-</div>
-
-
-
-<div class="container"> <!-- 1 -->
-    <div class="item">
-      <a href="https://web.telegram.org/a/" target="_blank">
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/300px-Telegram_2019_Logo.svg.png"></div>
-        <div style="font-size: 12px;">Telegram</div>
-      </a> 
-    </div>
-    <div class="item">
-      <a href="https://www.bilibili.com/" target="_blank">
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Bilibili_logo.svg/1024px-Bilibili_logo.svg.png?20210929021120"></div>
-        <div style="font-size: 12px;">噼里啪啦</div>
-      </a> 
-    </div>
-    <div class="item">
-      <a href="https://www.xiaohongshu.com/user/profile/5eb496510000000001007fa0" target="_blank">
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/XiaohongshuLOGO.png"></div>
-        <div style="font-size: 12px;">🍠</div>
-      </a> 
-    </div>
-    <div class="item">
-      <a href="https://www.tiktok.com/@dxlcq" target="_blank"> 
-        <div class="rounded-icon"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/TikTok_logo.svg/440px-TikTok_logo.svg.png"></div>
-        <div style="font-size: 12px;">TikTok</div>
-      </a> 
-    </div>
 </div>

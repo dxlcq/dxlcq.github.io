@@ -10,59 +10,60 @@
 
 <span style="font-size: 20px;">戴兴龙</span>
 
-**求职方向：系统研发 / C++**
+**求职方向：C++ / 基础设施 / 分布式系统**
 
-1 年+ 工作经验 ｜ 本科 ｜ 24 岁 ｜ 134 xxxx xxxx ｜ dxlcq@outlook.com ｜ dxlcq.cn
+1.5 年工作经验 ｜ 本科 ｜ 24 岁 ｜ 134 6666 6666 ｜ dxlcq@outlook.com ｜ dxlcq.cn
 
 ---
 
 #### 工作经历
 
-* **中科海讯** ｜ 北京 ｜ 通用计算事业部 ｜ C++ 工程师（实习转正） <span style="float: right; margin-right: 10px;">2025.03 – 2026.07</span>
+* **北京中科海讯数字科技股份有限公司** ｜ 北京 ｜ 通用计算部 ｜ C++ 工程师（实习转正） ｜ 2025.03 – 2026.07
 
-    负责水下安防系统的研发与水声算法工程化，对接中科院声学所算法团队，完成算法集成、接口适配与多轮联合调试
+    面向**水下安防/水声大数据系统**，对接**中科院声学所**算法团队，负责**算法工程化**、**高性能数据传输**及**跨平台部署支持**
 
-    * 针对原有组件性能及扩展性不足，独立重构 C++ 数据流组件，实现算法配置化编排、TCP/UDP、Kafka、Redis 等数据通道接入、跨节点自动发现，内置链路及性能监控，降低多机部署及问题排查成本；组件 1132B 报文压测 20w pps
+    * 设计并实现数据流框架，统一TCP/UDP、kafka、redis等多源数据的接入、处理、路由与输出
+        
+        支持配置化编排算法处理链、算法温变更及跨平台数据流转。典型 1KB 级消息吞吐约 20w pps
+    
+    * 针对算法工程化落地需求，封装科研代码为可复用算法模块，统一算法接口，针对性能瓶颈设计并行化处理方案
 
-    * 针对算法服务部署耗时长、频次高的问题，独立开发 Go 分布式调度工具，实现进程调度、资源监控、日志采集及配置管理；通过自动化部署与运行编排，将算法服务平均部署周期由约 3 天缩短至 1 小时以内
+        支持国产 Linux、ARM/x86 等多种平台编译部署，以及 CPU/GPU 异构计算与多节点并行执行
 
-    * 参与3个项目、4个实施现场的跨团队联调，闭环国产OS适配、性能异常等问题的定位及修复，保障项目顺利交付
+    * 开发分布式调度工具，实现进程调度、资源监控、日志采集及配置管理。算法服务部署周期由约 3 天缩短至 1 小时
+
+    * 参与 3 个项目、4 个实施现场的跨团队联调，定位并解决系统性能异常及软硬件兼容问题，完成算法平台交付
 
 
 #### 个人项目
 
-* **自动驾驶分布式仿真测试系统** ｜ 本科毕业设计 ｜ 中国汽研横向科研 <span style="float: right; margin-right: 10px;">2025.01 – 2025.03</span>
+* **自动驾驶分布式仿真测试系统** ｜ 本科毕业设计 ｜ https://github.com/dxlcq/EIE/tree/master/YMCA
 
-    基于 Kubernetes + CARLA 搭建分布式仿真测试系统，GPU 资源利用率提升 40%，并发测试实例数量提升 100%
+    基于 Kubernetes + CARLA 的智驾测试平台，单机 GPU 资源利用率提升 40%，并发测试实例数量 1 -> 2
 
-    * **GPU 调度：**二次开发 Kubernetes Scheduler，结合 NVIDIA DCGM 实现 GPU 资源感知与细粒度调度
+    * **GPU 调度：**基于 Scheduling Framework 开发插件，在 Filter / Score 阶段结合 DCGM 实现 GPU 资源感知调度
 
-    * **测试链路：**完成仿真场景生成器的容器化部署与结果分析链路建设，自动输出仿真视频、车辆运行数据及 TTC 等指标
-
+    * **测试链路：**搭建场景生成、仿真运行、结果采集与分析链路，输出仿真视频、车辆行驶数据与 TTC 等测试指标
 
 #### 技术技能
 
-* **C++ / Linux：**熟练使用 C++17 进行 Linux 服务端开发，掌握 STL、多线程与网络编程，及使用 CMake、GDB 编译调试
+* **C++ / Linux：** 熟练使用现代 C++ 在 Linux 平台开发，掌握 CMake、GDB、Perf 等编译、调试、性能分析工具
 
-* **基础设施：**熟悉 DDS、Kafka、Redis 等中间件，使用过私有云、对象存储集群，能根据业务需求进行技术选型与性能调优
+* **网络与并发：** 理解 Reactor / Proactor 模型，熟悉基于 epoll / io_uring 的 Boost.Asio 异步网络框架
 
-* **AI 协作：**能够借助 Agent 加速需求分析、方案设计、编码测试、故障排查全流程，持续提升项目迭代及问题闭环效率
+* **中间件与分布式：** 熟悉 DDS/Kafka/Redis 等中间件，具备服务发现、任务分片、可观测性、节点调度等分布式系统实践
 
 #### 荣誉证书
 
 * **ACM-ICPC：** 2023 年重庆市银奖、2024 年重庆市铜奖、2024 年四川省铜奖
 
-* **国家级：** 睿抗机器人开发者大赛全国一等奖、第十四届蓝桥杯 C/C++ 本科 B 组全国二等奖、第五届码蹄杯全国金奖等
-
-* **其他：** 重庆市工业大数据算法第 3 名、工信部工业互联网平台中级人才证书、2022-2024 清华大学出版社 TIPCC 志愿者
+* **其他：** 睿抗机器人开发者大赛全国一等奖、第十四届蓝桥杯 C/C++ 全国二等奖、百度之星重庆市银奖等
 
 #### 教育经历
 
-* **重庆大学** ｜ 智能网联汽车 ｜ 国家卓越工程师学院交换生 <span style="float: right; margin-right: 10px;">2024.09 – 2025.06</span>
+* **重庆大学** ｜ 国家卓越工程师学院 智能网联汽车 ｜ 大四交换学习 1 年
 
-* **重庆科技大学** ｜ 计算机科学与技术 ｜ 全日制本科 <span style="float: right; margin-right: 10px;">2023.09 – 2025.06</span>
-
-* **重庆工业职业技术学院** ｜ 计算机网络技术 ｜ 全日制专科 <span style="float: right; margin-right: 10px;">2020.09 – 2023.06</span>
+* **重庆科技大学** ｜ 计算机科学与技术 ｜ 统招全日制本科 ｜ 2025年毕业
 
 <br><br><br>
 
@@ -133,7 +134,7 @@
 
 <div style="display: flex; align-items: center;">
   <div style="flex: 1;">
-    <img src="https://www2.cqu.edu.cn/Uploads/CQUmain/nowvi.png" alt="Image" style="max-width: 100%; height: auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/zh/7/74/Chongqing_University_logo.svg" alt="Image" style="max-width: 100%; height: auto;">
   </div>
   <div style="flex: 3; padding-left: 20px;">
     <ol>
@@ -217,12 +218,12 @@
 
 <div style="display: flex; align-items: center;">
   <div style="flex: 1;">
-    <img src="https://img202.yun300.cn/img/zklogoa.png?tenantId=19949&viewType=1&k=1658733974000" alt="Image" style="max-width: 100%; height: auto;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXIkzlGpVhJNNe-hVeAUEbD1fGJfoarC4IfcIMy3llfQ&s" alt="Image" style="max-width: 100%; height: auto;">
   </div>
   <div style="flex: 3; padding-left: 20px;">
     <ol>
-      <ul>时间：2025.3 - 至今</ul>
-      <ul>职务：[全职] 通用计算事业部 - C/C++工程师</ul>
+      <ul>时间：2025.3 - 2026.7</ul>
+      <ul>职务：[全职] 通用计算事业部 - C++工程师</ul>
       <ul>职责：开发</ul>
     </ol>
   </div>

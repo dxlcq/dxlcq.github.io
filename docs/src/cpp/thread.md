@@ -2,7 +2,7 @@
 
 对 C++ 的补充
 
-* 以 [《C++ 并发编程实战》](https://www.kdocs.cn/l/ce26I9gpXyOu) 为主线
+* 以 [《C++ 并发编程实战》](https://nj.gitbooks.io/c/content/) 为主线
 
 <br>
 
@@ -12,13 +12,14 @@
 
 ### 并发与并行
 
-1. 并发（Concurrency）是逻辑上的，并行（Parallelism）是物理上的。
+1. 并发（Concurrency）是逻辑上的，并行（Parallelism）是物理上的
 
     * 并发是指一个 **时间段** 内有多个程序在同一个处理器上运行
     
     * 并行是指多个处理器或者是多核的处理器 **同一时刻** 运行多个程序
 
     > 当关注的重点在于任务分离或任务响应时，就会讨论到程序的并发性
+    > 
     > 在讨论使用当前可用硬件来提高批量数据处理的速度时，我们会讨论程序的并行性
 
 2. 并发包含并行
@@ -27,19 +28,16 @@
 
     * 如果有多个处理器，那么这些线程可能会同时运行，此时并发包含了并行
 
+    ```mermaid
+    graph LR
+    1[核心 1] --> A[task a] --> B[task b] --> C[task c]
+    2[核心 2] --> D[task c] --> E[task b] --> F[task a]
+
+    cpu[cpu] --> 1
+    cpu[cpu] --> 2
+    ```
+
 3. 并发适用于 I/O 密集型任务，并行适用于 CPU 密集型任务
-
-<br>
-
----
-
-### 为什么使用并发
-
-1. 为了分离关注点
-
-    * 通过并发，可以将程序分解为多个独立的任务，每个任务都可以独立地执行
-
-2. 为了性能
 
 <br>
 
@@ -47,148 +45,142 @@
 
 ## 2 线程管理
 
-
 ### 启动线程 thread
 
 `std::thread` 接受多种可调用对象
 
 1. 普通函数
 
-```cpp
-void f(int n) {
-  for (int i = 1; i <= n; i++)
-    std::cout << i << std::endl;
-}
+    ```cpp
+    void f(int n) {
+        for (int i = 1; i <= n; i++)
+            std::cout << i << std::endl;
+    }
 
-int main() {
-  std::thread t1(f, 1e3);   // 创建线程 t1
-  // 调用的函数是 f
-  // 传递的参数是 1e3
-  t1.join();
-  return 0;
-}
-```
+    int main() {
+        std::thread t(f, 1e3);
+        // 调用的函数是 f
+        // 传递的参数是 1e3
+        t.join();
+        return 0;
+    }
+    ```
 
 2. 成员函数
 
-```cpp
-class A {
-public:
-  void f(int n) {
-    for (int i = 1; i <= n; i++)
-      std::cout << i << std::endl;
-  }
-};
+    ```cpp
+    class A {
+       public:
+        void f(int n) {
+            for (int i = 1; i <= n; i++)
+                std::cout << i << std::endl;
+        }
+    };
 
-int main() {
-  A a;
-  std::thread t1(&A::f, &a, 1e3);  // 创建线程 t1
-  // 调用的函数是 A::f
-  // 调用的对象是 a
-  // 传递的参数是 1e3
-  t1.join();
-  return 0;
-}
-```
+    int main() {
+        A a;
+        std::thread t(&A::f, &a, 1e3);
+        // 调用的函数是 A::f
+        // 调用的对象是 a
+        // 传递的参数是 1e3
+        t.join();
+        return 0;
+    }
+    ```
 
 3. 函数指针
 
-```cpp
-void f(int n) {
-  for (int i = 1; i <= n; i++)
-    std::cout << i << std::endl;
-}
+    ```cpp
+    void f(int n) {
+        for (int i = 1; i <= n; i++)
+            std::cout << i << std::endl;
+    }
 
-int main() {
-  void (*p)(int) = f;
-  std::thread t1(p, 1e3);   // 创建线程 t1
-  // 调用的函数是 f
-  // 传递的参数是 1e3
-  t1.join();
-  return 0;
-}
-```
+    int main() {
+        void (*p)(int) = f;
+        std::thread t(p, 1e3);  // 创建线程 t
+        // 调用的函数是 f
+        // 传递的参数是 1e3
+        t.join();
+        return 0;
+    }    
+    ```
 
 4. 函数对象
 
-```cpp
-#include <iostream>
-#include <thread>
+    ```cpp
+    class A {
+       public:
+        A() = default;
 
-class A {
-public:
-  void operator()(int n) {
-    for (int i = 1; i <= n; i++)
-      std::cout << i << std::endl;
-  }
-};
+        // 重载 () 运算符
+        void operator()(int n) {
+            for (int i = 1; i <= n; i++)
+                std::cout << i << std::endl;
+        }
+    };
 
-int main() {
-  A a;
-  std::thread t1(a, 1e3);   // 创建线程 t1
-  // 调用的函数是 f
-  // 传递的参数是 1e3
-  std::thread t2{A(), 1e3};
-  // 调用的是 A 的临时对象
-  // 传递的参数是 1e3
-  t1.join();
-  t2.join();
-  return 0;
-}
-```
+    int main() {
+        std::thread t{A(), 1e3};
+        // 调用的是 A 的临时对象
+        // 传递的参数是 1e3
+        t.join();
+        return 0;
+    }
+    ```
 
 5. `Lambda`
 
-```cpp
-int main() {
-  std::thread t1(
-      [](int n) {
-        for (int i = 1; i <= n; i++)
-          std::cout << i << std::endl;
-      },
-      1e3); // 创建线程 t1
-  // 调用的函数是 lambda
-  // 传递的参数是 1e3
-  t1.join();
-  return 0;
-}
-```
+    ```cpp
+    int main() {
+        std::thread t(
+            [](int n) {
+                for (int i = 1; i <= n; i++)
+                    std::cout << i << std::endl;
+            },
+            1e3);
+        // 调用的函数是 lambda
+        // 传递的参数是 1e3
+        t.join();
+        return 0;
+    }
+    ```
 
 6. `std::function`
 
-```cpp
-void f(int n) {
-  for (int i = 1; i <= n; i++)
-    std::cout << i << std::endl;
-}
+    ```cpp
+    void f(int n) {
+        for (int i = 1; i <= n; i++)
+            std::cout << i << std::endl;
+    }
 
-int main() {
-  std::function<void(int)> func = f;
-  std::thread t1(func, 1e3); // 创建线程 t1
-  // 调用的函数是 func
-  // 传递的参数是 1e3
-  t1.join();
-  return 0;
-}
-```
+    int main() {
+        std::function<void(int)> func = f;
+        std::thread t(func, 1e3);  // 创建线程 t
+        // 调用的函数是 func
+        // 传递的参数是 1e3
+        t.join();
+        return 0;
+    }
+    ```
 
 7. `std::bind`
 
-```cpp
-void f(int n) {
-  for (int i = 1; i <= n; i++)
-    std::cout << i << std::endl;
-}
+    ```cpp
+    void f(int n) {
+        for (int i = 1; i <= n; i++)
+            std::cout << i << std::endl;
+    }
 
-int main() {
-  auto func = std::bind(f, 1e3);
-  std::thread t1(func); // 创建线程 t1
-  // 调用的函数是 func
-  // 传递的参数是 1e3
-  t1.join();
-  return 0;
-}
-```
+    int main() {
+        auto func = std::bind(f, 1e3);
+        std::thread t(func);
+        // 调用的函数是 func
+        // 传递的参数是 1e3
+        t.join();
+        return 0;
+    }
+    ```
 
 <br>
 
@@ -208,297 +200,344 @@ int main() {
 
 ---
 
+### 管理线程 jthread
 
-## thread
+```cpp
+int main() {
+    std::jthread t([](std::stop_token st) {
+        while (!st.stop_requested()) {  // 是否收到停止请求
+            std::cout << "running\n";
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
 
-## thread：线程
+        std::cout << "stop\n";
+    });
 
-* `join` 方式：等待线程结束，再继续执行。
-* `detach` 方式：分离线程，线程结束后自动回收资源。
+    std::this_thread::sleep_for(std::chrono::seconds(3));
 
-```cpp  
-#include <iostream>
-#include <thread>
-using namespace std;
+    t.request_stop();  // 发送停止信号
 
-void func(int i){
-    cout << "hello "<< i <<" Thread" << endl;
-}
-
-int main(){
-    thread (func, 1).detach();  // 创建匿名线程并分离
-                                // 主线程结束，此线程也会结束
-    thread t(func, 2);  // 创建线程 t
-    t.join();           // 等待线程 t 结束
-    return 0;
+    return 0;  // jthread 自动 join
 }
 ```
-主函数创建了一个线程，然后分离，主函数结束，线程也结束。
-主函数创建了一个线程，然后等待，主函数结束，线程也结束。
 
-## this_thread：线程本身
+<br>
 
 ---
 
-## mutex
+## 3 线程间共享数据
 
-## mutex：互斥量
+### mutex 锁
 
-* `lock`：上锁。
-* `unlock`：解锁。
+* `std::mutex`
 
-```cpp
-#include <iostream>
-#include <thread>
-#include <mutex>
-using namespace std;
+    ```cpp
+    std::mutex mtx; // 创建一个互斥锁
 
-int value;  // 分别对此变量进行加 [1,1e6] 和减 [1,1e6] 操作
-int m_value;// 互斥锁保护的变量，同样进行加减操作
-mutex mtx;  // 互斥锁
-
-void add(){
-    for(int i = 1; i <= 1e6; i++) value++;
-}
-
-void sub(){
-    for(int i = 1; i <= 1e6; i++) value--;
-}
-
-void m_add(){
-    for(int i = 1; i <= 1e6; i++){
+    void f() {
         mtx.lock();   // 上锁
-        m_value++;
+        // 临界区代码
         mtx.unlock(); // 解锁
     }
-}
+    ```
 
-void m_sub(){
-    for(int i = 1; i <= 1e6; i++){
-        mtx.lock();   // 上锁
-        m_value--;
-        mtx.unlock(); // 解锁
+* `std::shared_mutex`
+
+    ```cpp
+    std::shared_mutex smtx; // 创建一个共享互斥锁
+
+    void read() {
+        smtx.lock_shared();   // 上共享锁
+        // 读取共享数据
+        smtx.unlock_shared(); // 解锁共享锁
     }
-}
+    ```
 
-int main(){
-    thread t1 (add);
-    thread t2 (sub);
-    t1.join();
-    t2.join();
-    cout<<value<<endl;
+* `std::timed_mutex`
 
-    thread t3 (m_add);
-    thread t4 (m_sub);
-    t3.join();
-    t4.join();
-    cout<<m_value<<endl;
-    return 0;
-}
-```
+    ```cpp
+    std::timed_mutex tmtx; // 创建一个定时互斥锁
 
-主函数首先创建了两个线程，分别对 value 进行加减操作，然后输出 value 的值。
-在加减操作中，没有对 value 进行保护，所以最后输出的 value 的值不一定是 0。
-
-主函数接着创建了两个线程，分别对 m_value 进行加减操作，然后输出 m_value 的值。
-在加减操作中，对 m_value 进行了保护，所以最后输出的 m_value 的值一定是 0。
-
-## lock_guard：锁保护
-
-简单理解，作用域内自动上锁解锁。
-
-```cpp
-#include <iostream>
-#include <thread>
-#include <mutex>
-using namespace std;
-
-mutex mtx;  // 锁
-int value = 0;
-
-void add(int i){
-    for(int i=1; i<=1e6; i++){
-        lock_guard<mutex> lock(mtx);  // 加锁
-        value++;
+    void f() {
+        if (tmtx.try_lock_for(std::chrono::seconds(1))) { // 尝试上锁，最多等待 1 秒
+            // 临界区代码
+            tmtx.unlock(); // 解锁
+        } else {
+            // 上锁失败，处理超时情况
+        }
     }
-}
+    ```
 
-void sub(int i){
-    for(int i=1; i<=1e6; i++){
-        lock_guard<mutex> lock(mtx);  // 加锁
-        value--;
-    }
-}
+* `std::recursive_mutex`
 
-int main(){
-    thread t1(add, 1);
-    thread t2(sub, 2);
-    t1.join();
-    t2.join();
-    cout << value << endl;
-    return 0;
-}
-```
+    递归互斥锁，允许同一个线程多次上锁同一个互斥锁
 
-主函数创建了两个线程，分别对 value 进行加减操作，然后输出 value 的值。
-在加减操作中，使用 lock_guard<mutex> lock(mtx) 对 value 进行保护，所以最后输出的 value 的值一定是 0。
+* `std::recursive_timed_mutex`
 
-## unique_lock：独占锁
+### lock 锁管理器
 
-相较于 lock_guard，unique_lock 更加灵活，提供了更多的功能。
+* `std::lock_guard`
 
-**延迟锁定**
+    ```cpp
+    std::mutex mtx; // 创建一个互斥锁
 
-在构建 unique_lock 对象时，可以指定参数 `std::defer_lock`，表示延迟锁定，即不上锁。
-在后面需要上锁时，调用 `lock` 方法即可。
+    void f() {
+        std::lock_guard<std::mutex> lock(mtx); // 上锁
+        // 临界区代码
+    } // 离开作用域时自动解锁
+    ```
 
-```cpp
-#include <mutex>
+* `std::shared_lock`
 
-std::mutex mtx; // 一个互斥锁
+    ```cpp
+    std::shared_mutex smtx; // 创建一个共享互斥锁
 
-void f(){
-    std::unique_lock<std::mutex> lock(mtx, std::defer_lock); // 延迟锁定
-    // 执行一些不需要互斥访问的操作
-    lock.lock();    // 在需要时手动上锁
-    // 执行需要互斥访问的操作
-}   // 在作用域结束时自动解锁
+    void read() {
+        std::shared_lock<std::shared_mutex> lock(smtx); // 上共享锁
+        // 读取共享数据
+    } // 离开作用域时自动解锁共享锁
 
-int main() {
-    f();
-    return 0;
-}
-```
+    void write() {
+        std::unique_lock<std::shared_mutex> lock(smtx); // 上独占锁
+        // 写入共享数据
+    } // 离开作用域时自动解锁独占锁
+    ```
 
-**递归锁定**
+* `std::unique_lock`
 
-`std::unique_lock` 允许同一个线程多次上锁同一个互斥锁，即递归锁定。在这种情况下，线程需要在解锁时正确地进行相应次数的解锁操作，否则互斥锁不会被解锁。
+    ```cpp
+    std::mutex mtx; // 创建一个互斥锁
 
-```cpp
-#include <iostream>
-#include <mutex>
+    void f() {
+        std::unique_lock<std::mutex> lock(mtx); // 上锁
+        // 临界区代码
+        lock.unlock(); // 手动解锁
+        // 其他代码
+        lock.lock();   // 再次上锁
+        // 临界区代码
+    } // 离开作用域时自动解锁
+    ```
 
-std::recursive_mutex mtx; // 一个递归互斥锁
+* `std::scoped_lock`
 
-void recursiveFunction(int depth) {
-    std::unique_lock<std::recursive_mutex> lock(mtx, std::defer_lock);
-    if (depth > 0) {
-        lock.lock(); // 手动上锁
-        std::cout << "Depth: " << depth << std::endl;
-        recursiveFunction(depth - 1); // 递归调用
-    }
-}
+    ```cpp
+    std::mutex mtx1, mtx2; // 创建两个互斥锁
 
-int main() {
-    recursiveFunction(3);
-    return 0;
-}
-```
+    void f() {
+        std::scoped_lock lock(mtx1, mtx2); // 同时上锁两个互斥锁
+        // 临界区代码
+    } // 离开作用域时自动解锁两个互斥锁
+    ```
 
+## 4 同步并发操作
+
+### candition_variable 条件变量
+
+
+### promise / future 异步操作
+
+
+<br>
 
 ---
 
-## atomic
+## 5 原子类型操作
 
-原子操作是一种不可被中断的操作，要么全部执行，要么完全不执行，不会出现在操作过程中被其他线程干扰的情况。在并发编程中，原子操作是确保数据一致性和避免竞态条件的关键。
+### atomic 原子操作
 
-## atomic：原子操作
+> 为什么更快
+>
+> 1. 现代 CPU 通常通过[缓存一致性协议](https://www.amazonaws.cn/what-is/cache-consistency/)独占缓存行实现原子性，并不是每次都锁总线
+>
+> 2. 原子操作主要的优势是省掉了阻塞、唤醒和上下文切换的开销
+>
+> 3. 原子操作只适用于简单的操作，如计数器、标志位等
+>
+> * 在高竞争的情况下，原子操作可能会导致自旋等待，从而降低性能
 
-包装基本数据类型，提供原子性的读取、修改、操作。
+* `std::atomic<bool>`
 
-**加减、与非、异或**
+    ```cpp
+    std::atomic<bool> flag(false);
+    flag.store(true)    // 原子存储
+    flag.load()         // 原子加载
+    ```
+
+* `std::atomic<int>`
+
+    ```cpp
+    std::atomic<int> counter(0);
+    counter.fetch_add(1) // 原子加 1
+    counter.fetch_sub(1) // 原子减 1
+    ```
+
+### memory_order 内存序
+
+* `std::memory_order_relaxed`
+    
+    不建立与其他内存操作之间的顺序关系，适用于计数器等简单操作
+
+* `std::memory_order_acquire` for `load`
+    
+    保证当前线程中，所有在 acquire 之后的读操作，不会被重排到 acquire 之前
+
+* `std::memory_order_release` for `store`
+
+    保证当前线程中，所有在 release 之前的写操作，不会被重排到 release 之后
+
+* `std::memory_order_acq_rel`
+
+* `std::memory_order_seq_cst` for `load` and `store`
+
+    保证全局顺序性，所有线程都看到相同的顺序，是最严格的内存序，默认使用此内存序
+
+### CAS
+
+<br>
+
+---
+
+## 6 有锁并发数据结构设计
+
+### MPMC
 
 ```cpp
-#include <atomic>
-#include <iostream>
+template <typename QAQ>
+class MPMCQueue {
+   public:
+    bool push(QAQ value) {
+        {
+            std::lock_guard<std::mutex> lock(_mutex);
+            if (_closed)
+                return false;
+            _queue.push(std::move(value));
+        }
 
-std::atomic<int> counter(-2); // 创建一个原子整数
+        _cv.notify_one();
+        return true;
+    }
 
-void increment() {
-    counter.fetch_add(1, std::memory_order_relaxed); // 原子性地增加计数器的值
-}
+    bool pop(QAQ& value) {
+        std::unique_lock<std::mutex> lock(_mutex);
 
-int main() {
-    increment();
-    std::cout << counter.load(std::memory_order_acquire) << std::endl;
-    return 0;
-}
+        _cv.wait(lock, [this] { return !_queue.empty() || _closed; });
+
+        if (_queue.empty() && _closed)
+            return false;
+
+        value = std::move(_queue.front());
+        _queue.pop();
+        return true;
+    }
+
+    void close() {
+        {
+            std::lock_guard<std::mutex> lock(_mutex);
+            _closed = true;
+        }
+        _cv.notify_all();
+    }
+
+   private:
+    std::queue<QAQ> _queue;
+    std::mutex _mutex;
+    std::condition_variable _cv;
+    bool _closed = false;
+};
 ```
 
-**原子加载和存储**
+<br>
+
+---
+
+
+## 7 无锁并发数据结构设计
+
+### SPSC
 
 ```cpp
-#include <atomic>
-#include <iostream>
+template <typename QAQ, std::size_t SIZE>
+class SPSCQueue {
+   public:
+    bool push(const QAQ& value) {
+        auto tail = _tail.load(std::memory_order_relaxed);
 
-std::atomic<int> value(42);
+        if (tail - _head.load(std::memory_order_acquire) >= SIZE)
+            return false;  // full
+        _queue[tail % SIZE] = value;
 
-int readValue() {
-    return value.load(std::memory_order_acquire); // 原子加载操作
-}
+        _tail.store(tail + 1, std::memory_order_release);
+        return true;
+    }
 
-void modifyValue(int newValue) {
-    value.store(newValue, std::memory_order_release); // 原子存储操作
-}
+    bool pop(QAQ& value) {
+        auto head = _head.load(std::memory_order_relaxed);
 
-int main() {
-    modifyValue(43);
-    std::cout << readValue() << std::endl;
-    return 0;
-}
+        if (head == _tail.load(std::memory_order_acquire))
+            return false;  // empty
+        value = _queue[head % SIZE];
+
+        _head.store(head + 1, std::memory_order_release);
+        return true;
+    }
+
+   private:
+    std::array<QAQ, SIZE> _queue;
+    alignas(64) std::atomic<std::size_t> _head{0};  // 内存对齐以独享 cache line
+    alignas(64) std::atomic<std::size_t> _tail{0};
+};
 ```
 
-**比较交换**
-
-* 同步原语
-* 无锁数据结构
-* 解决竞态条件
-* 乐观锁
-
-## atomic_flag：轻量级原子操作
-
+<br>
 
 ---
 
-## condition_variable
 
-条件变量，允许线程等待某个特定条件得到满足，然后再继续执行。
-它提供了一个阻塞机制，当某个条件不满足时，线程可以等待在条件变量上，直到其他线程通知它满足条件。
+## 8 并发代码设计
 
-## condition_variable：条件变量
 
-## condition_variable_any：通用条件变量
+
+<br>
 
 ---
 
-## future
 
-## future：异步操作
+## 9 高级线程管理
 
-## shared_future：共享异步操作
+### Thread Pool
 
-## promise：异步操作
+```cpp
+class ThreadPool {
+   public:
+    explicit ThreadPool(size_t threadNum) {
+        while (threadNum--)  // 创建线程
+            _workers.emplace_back([this] {
+                std::function<void()> task;
+                while (_tasks.pop(task))  // 取不到任务会阻塞在 pop
+                    task();
+            });
+    }
 
-## packaged_task：异步操作
+    bool submit(std::function<void()> task) { return _tasks.push(std::move(task)); }
 
+    ~ThreadPool() {
+        _tasks.close();                // 不再接收新任务
+        for (auto& worker : _workers)  // 等待所有线程退出
+            if (worker.joinable())
+                worker.join();
+    }
 
+   private:
+    MPMCQueue<std::function<void()>> _tasks;
+    std::vector<std::thread> _workers;
+};
+```
+
+<br>
 
 ---
 
-[康康](https://www.zhihu.com/question/397916107)
 
-## 线程池
-
-1. 线程管理者
-
-初始化、创建线程，启动、停止线程，调配任务。
-
-2. 工作线程
-
-执行任务。
-
-3. 任务队列
-
-存放任务。一种缓冲机制，平衡生产者和消费者的速度差异。
+## 10 多线程程序的测试和调试
 
 
