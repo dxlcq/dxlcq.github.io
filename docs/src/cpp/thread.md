@@ -446,6 +446,59 @@ class MPMCQueue {
 };
 ```
 
+### Memory Pool
+
+```cpp
+struct Node {
+    Node* next;
+};
+
+class Stack {  // 链式栈
+   public:
+    void push(Node* node) {
+        std::lock_guard<std::mutex> lock(_mutex);
+        node->next = _head;
+        _head = node;
+    }
+
+    Node* pop() {
+        std::lock_guard<std::mutex> lock(_mutex);
+        if (!_head)
+            return nullptr;
+        Node* node = _head;
+        _head = _head->next;
+        return node;
+    }
+
+   private:
+    Node* _head{nullptr};
+    std::mutex _mutex;
+};
+
+class MemoryPool {
+   public:
+    MemoryPool(size_t blockSize, size_t count) : _blockSize(blockSize), _memory(blockSize * count) { init(); }
+
+    void* allocate() { return _stack.pop(); }
+
+    void deallocate(void* ptr) { _stack.push(static_cast<Node*>(ptr)); }
+
+   private:
+    void init() {
+        auto* start = _memory.data();
+        for (size_t i = 0; i < _memory.size(); i += _blockSize) {
+            Node* node = reinterpret_cast<Node*>(start + i);
+            _stack.push(node);
+        }
+    }
+
+   private:
+    size_t _blockSize;
+    std::vector<std::byte> _memory;
+    Stack _stack;
+};
+```
+
 <br>
 
 ---
