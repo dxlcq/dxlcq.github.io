@@ -4,9 +4,9 @@
 
 * [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
 
-* 格式化 `"C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Chromium, IndentWidth: 4}",`
+* 格式化 `"C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Chromium, IndentWidth: 4, ColumnLimit: 199}",`
 
-* 以 [《C++ Primer Plus》](https://www.kdocs.cn/l/cbUGSlyNNZ5o) 为主线
+* 以 [《C++ Primer Plus》](https://www.google.com/books/edition/C++_Primer_5th_Edition_%E4%B8%AD%E6%96%87%E7%89%88_%E9%9B%BB%E5%AD%90/b9i8DwAAQBAJ) 为主线
 
 * 以 [《Effective C++》](https://www.kdocs.cn/l/cjUist8CmOmt) 与 [《More Effecitve C++》](https://www.kdocs.cn/l/clykya3sDwyW) 、[《Effective Modern C++》](https://www.kdocs.cn/l/ckkj7wm8s8lg) 为规范
 
@@ -1373,22 +1373,132 @@ xixi 0x16f777338 6 0x12be05f00
 
 **`RAII` 的复制策略必须与资源语义保持一致**
 
-* 独占，禁止复制、允许移动
+
+### 智能指针
+
+```cpp
+#include <memory>
+
+std::unique_ptr<int> uniquePtr = std::make_unique<int>();
+std::shared_ptr<int> sharedPtr = std::make_shared<int>();
+std::weak_ptr<int> weakPtr(sharedPtr);
+```
+
+为了解决内存泄漏、野（wild）指针、悬空（dangling）指针的问题，引入了智能指针
+
+**内存泄漏**
+
+* 含义：申请的内存没有被释放，导致无法再次使用该内存
 
     ```cpp
-    class OnlyOne {
-       public:
-        OnlyOne() = default;
-        OnlyOne(const OnlyOne&) = delete;             // 禁止拷贝构造
-        OnlyOne& operator=(const OnlyOne&) = delete;  // 禁止拷贝赋值
-        OnlyOne(OnlyOne&&) = default;                 // 允许移动构造
-        OnlyOne& operator=(OnlyOne&&) = default;      // 允许移动赋值
-    };
+    #include <iostream>
+
+    int main(){
+        while(true)                 // 死循环
+            auto* ptr = new int();  // 申请堆空间
+        return 0;
+    }
     ```
 
-* 共享，引用计数 `std::shared_ptr`
+* 原因：忘了 `delete`
 
-* 可复制，深度拷贝
+* 后果：`Killed`，内存占用过多，程序崩溃
+
+
+**野指针**
+
+* 含义：指针根本没有正确初始化，指向的是随机内存位置，可能从未被分配过
+
+    ```cpp
+    #include <iostream>
+
+    int main(){
+        int* ptr;
+        *ptr = 666;
+        return 0;
+    }
+    ```
+
+* 原因：忘了 `new` 就直接用
+
+* 后果：`Segmentation fault (core dumped)`
+
+**悬空指针**
+
+* 含义：曾经指向有效内存，但由于所指向的内存已被释放或对象生命周期已结束，现在变得无效
+
+    ```cpp
+    #include <iostream>
+
+    int main(){
+        int* ptr1 = new int;
+        delete ptr1;
+        *ptr1 = 666;        // 此时实际上是越界访问了
+        std::cout << "ptr1: " << *ptr1 << "\n";
+
+        int* ptr2 = new int;
+        *ptr2 = 888;        // 这个值会覆盖 *ptr1
+        std::cout << "ptr1: " << *ptr1 << "\n";
+        return 0;
+    }
+    ```
+
+* 原因：`delete` 后还在用
+
+* 后果：越界访问
+
+**独占指针 `unique_ptr`**
+
+当 `unique_ptr` 被销毁时，它所指向的对象也被销毁
+
+```cpp
+void func(){
+    std::unique_ptr<int> ptr = std::make_unique<int>(666);
+}   // 当函数结束时, ptr 被销毁, ptr 指向的内存也被销毁
+```
+
+**共享指针 `shared_ptr`**
+
+多个 `shared_ptr` 可以指向同一个对象，当最后一个 `shared_ptr` 被销毁时（引用记数为 0 的时候），它所指向的对象也被销毁
+
+```cpp
+#include <iostream>
+#include <memory>
+
+// 通过引用传递智能指针
+// p1 和 p2 指向同一个对象, 引用计数为 2
+void f2(std::shared_ptr<int> &p1){
+    std::shared_ptr<int> p2 = std::make_shared<int>(666);
+    p1 = p2;
+    // 此时p2和p1指向同一个对象, 引用计数为 2
+    std::cout << p1.use_count() << std::endl;
+}
+
+// 创建一个空的智能指针，通过引用传递给f2函数
+void f1(){
+    std::shared_ptr<int> p1;
+    f2(p1);
+    // 当 f2 函数执行完毕后, f2 函数内部的 p2 指针被销毁, 引用计数为 1
+    std::cout << p1.use_count() << std::endl;
+    std::cout << *p1 << std::endl;
+}
+
+int main(){
+    f1();
+    return 0;
+}
+```
+
+
+
+```cpp
+ptr.reset();        // 销毁 ptr 指向的内存
+ptr.reset(nullptr); // 销毁 ptr 指向的内存（等价）
+```
+
+**指针 `weak_ptr`**
+
+为了避免 `shared_ptr` 的循环引用问题，引入了 `weak_ptr`
 
 
 <br>
@@ -1455,141 +1565,3 @@ int x;          // 定义一个变量
 void func(){}   // 定义一个函数
 class A{};      // 定义一个类
 ```
-
-
-<br>
-
----
-
-## 智能指针
-
-为了解决内存泄漏、野（wild）指针、悬空（dangling）指针的问题，引入了智能指针
-
-**内存泄漏**
-
-* 含义：申请的内存没有被释放，导致无法再次使用该内存
-
-```cpp
-#include <iostream>
-
-int main(){
-    while(true)                 // 死循环
-        auto* ptr = new int();  // 申请堆空间
-    return 0;
-}
-```
-
-* 原因：忘了 `delete`
-
-* 后果：`Killed`，内存占用过多，程序崩溃
-
-
-**野指针**
-
-* 含义：指针根本没有正确初始化，指向的是随机内存位置，可能从未被分配过
-
-```cpp
-#include <iostream>
-
-int main(){
-    int* ptr;
-    *ptr = 666;
-    return 0;
-}
-```
-
-* 原因：忘了 `new` 就直接用
-
-* 后果：`Segmentation fault (core dumped)`
-
-**悬空指针**
-
-* 含义：曾经指向有效内存，但由于所指向的内存已被释放或对象生命周期已结束，现在变得无效
-
-* 原因：`delete` 后还在用
-
-```cpp
-#include <iostream>
-
-int main(){
-    int* ptr1 = new int;
-    delete ptr1;
-    *ptr1 = 666;        // 此时实际上是越界访问了
-    std::cout << "ptr1: " << *ptr1 << "\n";
-
-    int* ptr2 = new int;
-    *ptr2 = 888;        // 这个值会覆盖 *ptr1
-    std::cout << "ptr1: " << *ptr1 << "\n";
-    return 0;
-}
-```
-
-* 后果：越界访问
-
-<br>
-
-### 创建
-
-```cpp
-#include <memory>
-
-std::unique_ptr<int> uniquePtr = std::make_unique<int>();
-std::shared_ptr<int> sharedPtr = std::make_shared<int>();
-std::weak_ptr<int> weakPtr(sharedPtr);
-```
-
-**独占指针 `unique_ptr`**
-
-当 `unique_ptr` 被销毁时，它所指向的对象也被销毁
-
-```cpp
-void func(){
-    std::unique_ptr<int> ptr = std::make_unique<int>(666);
-}   // 当函数结束时, ptr 被销毁, ptr 指向的内存也被销毁
-```
-
-**共享指针 `shared_ptr`**
-
-多个 `shared_ptr` 可以指向同一个对象，当最后一个 `shared_ptr` 被销毁时（引用记数为 0 的时候），它所指向的对象也被销毁
-
-```cpp
-#include <iostream>
-#include <memory>
-
-// 通过引用传递智能指针
-// p1 和 p2 指向同一个对象, 引用计数为 2
-void f2(std::shared_ptr<int> &p1){
-    std::shared_ptr<int> p2 = std::make_shared<int>(666);
-    p1 = p2;
-    // 此时p2和p1指向同一个对象, 引用计数为 2
-    std::cout << p1.use_count() << std::endl;
-}
-
-// 创建一个空的智能指针，通过引用传递给f2函数
-void f1(){
-    std::shared_ptr<int> p1;
-    f2(p1);
-    // 当 f2 函数执行完毕后, f2 函数内部的 p2 指针被销毁, 引用计数为 1
-    std::cout << p1.use_count() << std::endl;
-    std::cout << *p1 << std::endl;
-}
-
-int main(){
-    f1();
-    return 0;
-}
-```
-
-
-
-```cpp
-ptr.reset();        // 销毁 ptr 指向的内存
-ptr.reset(nullptr); // 销毁 ptr 指向的内存（等价）
-```
-
-**指针 `weak_ptr`**
-
-为了避免 `shared_ptr` 的循环引用问题，引入了 `weak_ptr`
-
-todo
-
